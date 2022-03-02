@@ -1,0 +1,103 @@
+{
+	"name": "gzipdecompressor",
+	"displayName": "Gzip Decompressor",
+	"description": "gzip decompressor",
+	"license": "LICENSE",
+	"icon": "images/icon.png",
+	"version": "1.2.0",
+	"publisher": "HyunKyunMoon",
+	"bugs": {
+		"url": "https://github.com/hyeongyun0916/GZIP_Decompressor/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hyeongyun0916/GZIP_Decompressor.git"
+	},
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"keywords": [
+		"vscode",
+		"gzip",
+		"gz",
+		"decompress",
+		"ungzip",
+		"extract"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "gz.decompress",
+				"title": "gzip decompress",
+				"icon": {
+					"light": "./images/gz-icon.svg",
+					"dark": "./images/gz-icon-dark.svg"
+				}
+			},
+			{
+				"command": "gz.decompress.plain",
+				"title": "gzip decompress to plain"
+			},
+			{
+				"command": "gz.dialogopen",
+				"title": "Show content of the selected .gz in an Open dialog"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "gz.decompress",
+					"group": "navigation",
+					"when": "resourceExtname == .gz"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "gz.decompress",
+					"when": "resourceExtname == .gz"
+				},
+				{
+					"command": "gz.decompress.plain",
+					"when": "resourceExtname == .gz"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "gz.decompress",
+					"when": "resourceExtname == .gz"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.46.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"__metadata": {
+		"id": "ba01a2ca-57ea-48d7-a6fd-44d2714d5cc5",
+		"publisherId": "66463634-f57e-4624-a9a4-62091eb183c2",
+		"publisherDisplayName": "HyunKyun Moon",
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1645123497237
+	}
+}

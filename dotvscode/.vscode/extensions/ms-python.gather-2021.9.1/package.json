@@ -1,0 +1,177 @@
+{
+	"name": "gather",
+	"displayName": "Gather",
+	"description": "Adds gather functionality in the Python language to the Jupyter Extension",
+	"version": "2021.9.1",
+	"publisher": "ms-python",
+	"author": {
+		"name": "Microsoft Corporation"
+	},
+	"license": "LICENSE",
+	"homepage": "https://github.com/microsoft/vscode-jupyter",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode-gather"
+	},
+	"bugs": {
+		"url": "https://github.com/microsoft/vscode-jupyter/issues"
+	},
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other",
+		"Extension Packs",
+		"Data Science",
+		"Machine Learning",
+		"Notebooks"
+	],
+	"icon": "icon.png",
+	"activationEvents": [
+		"onLanguage:python",
+		"onLanguage:jupyter",
+		"onNotebook:jupyter-notebook",
+		"onCustomEditor:jupyter.notebook.ipynb",
+		"onCommand:jupyter.opennotebook",
+		"onCommand:jupyter.opennotebookInPreviewEditor",
+		"onCommand:jupyter.createnewnotebook",
+		"onCommand:jupyter.createnewinteractive"
+	],
+	"main": "./out/extension.js",
+	"capabilities": {
+		"virtualWorkspaces": true
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "gather.gatherCodeNativeNotebook",
+				"title": "Gather code",
+				"icon": "$(gather)",
+				"category": "Gather"
+			},
+			{
+				"command": "gather.smartSelect",
+				"title": "Smart Select",
+				"icon": "$(wand)",
+				"category": "Gather"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "gather.gatherCodeNativeNotebook",
+					"title": "Gather code",
+					"when": "false",
+					"category": "Gather"
+				},
+				{
+					"command": "gather.smartSelect",
+					"title": "Smart Select",
+					"when": "false",
+					"category": "Gather"
+				}
+			],
+			"notebook/cell/title": [
+				{
+					"command": "gather.gatherCodeNativeNotebook",
+					"when": "notebookType == jupyter-notebook && notebookCellType == code",
+					"group": "inline/cell@2",
+					"category": "Gather"
+				},
+				{
+					"command": "gather.smartSelect",
+					"when": "notebookType == jupyter-notebookxxx && notebookCellType == code",
+					"group": "inline/cell@2",
+					"category": "Gather"
+				}
+			],
+			"interactive/cell/title": [
+				{
+					"command": "gather.gatherCodeNativeNotebook",
+					"when": "notebookType == interactive && notebookCellType == code",
+					"group": "inline@2",
+					"category": "Gather"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Gather",
+			"properties": {
+				"gather.gatherToScript": {
+					"type": "boolean",
+					"default": false,
+					"description": "Gather code to a python script rather than a notebook.",
+					"scope": "resource"
+				},
+				"gather.gatherSpecPath": {
+					"type": "string",
+					"default": "",
+					"description": "This setting specifies a folder that contains additional or replacement spec files used for analysis.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"extensionDependencies": [
+		"ms-toolsai.jupyter"
+	],
+	"scripts": {
+		"prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-watch": "webpack --mode development --watch",
+		"lint": "eslint src --ext ts",
+		"compile": "tsc -watch -p ./",
+		"vsix": "npm run webpack && vsce package",
+		"npm-auth": "vsts-npm-auth -config .npmrc",
+		"test": "mocha --config ./src/test/.mocha.config.json"
+	},
+	"devDependencies": {
+		"@types/copy-webpack-plugin": "^4.4.2",
+		"@types/fs-extra": "^5.0.1",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"@types/stack-trace": "0.0.29",
+		"@types/vscode": "^1.54.0",
+		"@typescript-eslint/eslint-plugin": "^3.7.0",
+		"@typescript-eslint/parser": "^3.7.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"copy-webpack-plugin": "^5.1.1",
+		"eslint": "^7.2.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.2.0",
+		"ts-loader": "^7.0.5",
+		"ts-node": "^8.10.2",
+		"typemoq": "^2.1.0",
+		"typescript": "^4.0.2",
+		"vscode-dts": "^0.3.1",
+		"vscode-test": "^1.3.0",
+		"webpack": "^5.53.0",
+		"webpack-cli": "^4.8.0"
+	},
+	"dependencies": {
+		"@jupyterlab/coreutils": "^3.1.0",
+		"@jupyterlab/services": "^4.2.0",
+		"@msrvida/python-program-analysis": "^0.5.4",
+		"@opentelemetry/api": "^0.11.0",
+		"@opentelemetry/tracing": "^0.11.0",
+		"@types/uuid": "^3.4.3",
+		"fs-extra": "^4.0.3",
+		"npm": "^6.14.8",
+		"path": "^0.12.7",
+		"stack-trace": "0.0.10",
+		"uuid": "^3.3.2",
+		"vscode-extension-telemetry": "0.1.4",
+		"webpack-bundle-analyzer": "^3.8.0"
+	},
+	"__metadata": {
+		"id": "1efd3211-484a-47d0-ae12-f9eb4245a6a7",
+		"publisherId": "998b010b-e2af-44a5-a6cd-0b5fd3b9b6f8",
+		"publisherDisplayName": "Microsoft",
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1645095114764
+	}
+}

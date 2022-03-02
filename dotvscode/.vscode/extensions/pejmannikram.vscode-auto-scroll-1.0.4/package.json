@@ -1,0 +1,81 @@
+{
+	"name": "vscode-auto-scroll",
+	"displayName": "Auto Scroll",
+	"description": "auto scroll to the end of file",
+	"version": "1.0.4",
+	"publisher": "pejmannikram",
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/PejmanNik/vscode-autoScroll.git"
+	},
+	"engines": {
+		"vscode": "^1.18.0"
+	},
+	"keywords": [
+		"Log",
+		"Log File",
+		"Scroll",
+		"Auto Scroll",
+		"End of file"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:log",
+		"onCommand:autoScroll.enable"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "autoScroll.toggle",
+				"title": "Toggle Auto Scroll",
+				"category": "Auto Scroll"
+			},
+			{
+				"command": "autoScroll.enable",
+				"title": "Enable Auto Scroll",
+				"category": "Auto Scroll"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "AutoScroll",
+			"properties": {
+				"autoscroll.keepLastLineInCenter": {
+					"type": "boolean",
+					"default": true,
+					"description": "Keep last line in center of view."
+				},
+				"autoscroll.autoScrollAllOpenedFiles": {
+					"type": "boolean",
+					"default": false,
+					"description": "Auto scroll all opened files"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.4.1",
+		"vscode": "^1.1.33",
+		"@types/node": "^11.13.0",
+		"@types/mocha": "^5.2.6"
+	},
+	"__metadata": {
+		"id": "687fb9d6-ecd8-4aa4-a4f6-d285fad5c8d9",
+		"publisherId": "f8e9162d-a63a-4427-a744-27c1c9eb6b37",
+		"publisherDisplayName": "Pejman Nikram",
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1645183625363
+	}
+}
