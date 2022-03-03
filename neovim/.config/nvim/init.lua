@@ -22,5 +22,4 @@ require "user.autocommands"
 require "user.julia-vim"
 require "user.slime"
 require "user.zen-mode"
--- require "user.JuliaFormatter"
-
+require "user.plug-colorizer"

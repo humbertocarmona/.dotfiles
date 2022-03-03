@@ -28,13 +28,13 @@ then
         # append the current directory (%~), substitute home directories with a tilde.
         # "\a" bell (man 1 echo)
         # "print" must be used here; echo cannot handle prompt expansions (%L)
-        print -Pn "\e]0;$(id --user --name)@$(hostname): zsh[%L] %~\a"
+        print -Pn "\e]0;$(id --user --name)@$(hostnamectl hostname): zsh[%L] %~\a"
     }
 
     preexec()
     {
         # output current executed command with parameters
-        echo -en "\e]0;$(id --user --name)@$(hostname): ${1}\a"
+        echo -en "\e]0;$(id --user --name)@$(hostnamectl hostname): ${1}\a"
     }
 fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -77,6 +77,7 @@ alias :Q="exit"
 
 source ~/.myenv/bin/activate 
 cd $HOME
-
+source ${HOME}/.config/ranger/scripts/shell_automatic_cd.sh
+alias rr="ranger_cd"
 archey3
 

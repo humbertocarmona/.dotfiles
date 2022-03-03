@@ -18,17 +18,17 @@
 ;==========================================================
 
 [colors]
-background = #aa1e1e1e
-background-alt = #611e1e1e
-;foreground = ${xrdb:color7:#222}
-;foreground-alt = ${xrdb:color7:#222}
-;foreground = #20577A
-;foreground-alt = #20577a
-foreground = #ffffff
-foreground-alt = #ffffff
-primary = #ffffff
-secondary = #aaaaaa
-alert = #bd2c40
+background = #551E1E1E
+background-alt = #551E1E1E
+foreground = #FFFFFF
+foreground-alt = #FFFFFF
+primary = #FFFFFF
+secondary = #AAAAAA
+alert = #BD2C40
+cramp1 = #55AA55
+cramp2 = #F5A70A
+cramp3 = #FF5555
+
 
 [bar/example]
 monitor = ${env:MONITOR}
@@ -71,7 +71,7 @@ font-8 = MesloLGS NF:pixelsize=10
 font-9 = MesloLGS NF:pixelsize=10
 
 modules-left = bspwm 
-modules-center = xwindow
+modules-center = xwindow 
 modules-right =  running-screen alsa alsa2 bluetooth wlan date powermenu
 
 separator =""
@@ -103,13 +103,12 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground}
-# format-prefix-background = #ffbb00
 
 [module/polybar-windows]
 type = custom/script
 exec = ~/.config/polybar/scripts/polybar-windows.sh 
 format = <label>
-format-prefix-foreground = #ffbb00
+format-prefix-foreground = ${colors.foreground}
 label = %output%
 label-padding = 1
 interval = 1
@@ -118,7 +117,7 @@ interval = 1
 type = custom/script
 exec = ~/.config/polybar/scripts/running-screen.sh
 format = <label>
-format-prefix-foreground = #ffbb00
+format-prefix-foreground = ${colors.foreground}
 label = %output%
 label-padding = 1
 interval = 1
@@ -129,6 +128,7 @@ type = custom/script
 exec = rofi-bluetooth --status | awk {'print $1'}
 interval = 10
 tail = true
+label = ""
 click-left = blueman-manager &
 
 ; [module/system-bluetooth-bluetoothctl]
@@ -143,7 +143,7 @@ click-left = blueman-manager &
 type = internal/xwindow
 label = %{T2}%title:0:30:...%%{T-}
 ;format = <label>
-;format-foreground = #fcb515
+;format-foreground = ${colors.foreground}
 
 [module/filesystem]
 type = internal/fs
@@ -179,29 +179,27 @@ ws-icon-default = " "
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-foreground = #000000
-label-mode-background = #FFBB00
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.foreground}
 
-label-focused="%{B#D8DEE9 F#D8DEE9}%{B- F-}%{B#D8DEE9}%{F#2E3440} %icon% %{F-}%{B#D8DEE9 F#D8DEE9}%{B- F-}"
+label-focused="%{B#D8DEE9}%{F#2E3440} %icon% %{F- B-}"
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background}
-
 ;label-focused-underline= ${colors.primary}
 ;label-focused-overline= ${colors.primary}
-
 label-focused-padding = 1
 
-label-unfocused="%{B#3b4252 F#3b4252}%{B- F-}%{B#3b4252}%{F#D8DEE9} %icon% %{F-}%{B#3b4252 F#3b4252}%{B- F-}"
+label-unfocused="%{B#3B4252}%{F#D8DEE9} %icon% %{F- B-}
 label-unfocused-padding = 1
-label-unfocused-background = ${colors.primary}
 label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
 label-unfocused-underline = ${colors.background}
 label-unfocused-overline = ${colors.background}
 
-label-visible = %icon% %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${colors.background}
-label-visible-padding = 1
+;label-visible = %icon% %name%
+;label-visible-background = ${colors.background}
+;label-visible-underline = ${colors.background}
+;label-visible-padding = 1
 
 label-empty = %icon%
 label-empty-foreground = ${colors.secondary}
@@ -209,7 +207,7 @@ label-empty-padding = 1
 
 label-occupied = %icon%
 label-occupied-padding = 1
-label-occupied-foreground = ${colors.foreground}
+label-occupied-foreground = ${colors.primary}
 
 label-urgent = %icon%!
 label-urgent-background = ${colors.alert}
@@ -233,11 +231,11 @@ format = <label> <bar>
 label = BL
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = ${colors.foreground}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -252,7 +250,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${color.foreground}
 label = %percentage:2%%
 
 [module/memory]
@@ -260,28 +258,28 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.foreground}
 label = %gb_used%
 ;label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
 interface = wlp3s0
-interval = 3.0
+interval = 5.0
 format-connected = <ramp-signal> <label-connected>
 label-connected = %{T2}%essid%%{T-}
 format-disconnected = _
-ramp-signal-0 = " 睊"
-ramp-signal-1 = " 直" 
-ramp-signal-2 = " 直"
-ramp-signal-3 = "  "
+ramp-signal-0 = "  睊"
+ramp-signal-1 = "  直" 
+ramp-signal-2 = "  直"
+ramp-signal-3 = "   "
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = eno1:warn
-interval = 3.0
-format-connected-underline = #55aa55
+interval = 5.0
+format-connected-underline = ${colors.foreground}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -297,7 +295,7 @@ interval = 5
 date = %m/%d%
 time = %H:%M
 format-prefix-foreground = ${colors.foreground}
-label = "    %date%     %time% "
+label = "    %date%  %time%  "
 
 ;[module/date]
 ;type = internal/date
@@ -317,15 +315,15 @@ format-volume = <label-volume> <bar-volume>
 label-volume =  
 label-volume-foreground = ${colors.foreground}
 label-muted = ? muted
-label-muted-foreground = #666
+label-muted-foreground = ${colors.foreground}
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.cramp1}
+bar-volume-foreground-1 = ${colors.cramp1}
+bar-volume-foreground-2 = ${colors.cramp1}
+bar-volume-foreground-3 = ${colors.cramp1}
+bar-volume-foreground-4 = ${colors.cramp1}
+bar-volume-foreground-5 = ${colors.cramp2}
+bar-volume-foreground-6 = ${colors.cramp3}
 bar-volume-gradient = false
 bar-volume-indicator = .
 bar-volume-indicator-font = 2
@@ -340,29 +338,32 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/alsa
 format-volume = <label-volume><bar-volume>
 format-muted = <label-muted>
-label-volume = "%{T3}%{T-}"
+label-volume = "%{T3} %{T-}"
 label-volume-underline = ${colors.background}
 label-volume-overline = ${colors.background}
-label-volume-foreground = #50fa7b
+label-volume-foreground = ${color.foreground} 
 format-muted-prefix =
-label-muted = ""
+label-muted = ""
 label-muted-foreground = ${colors.primary}
-bar-volume-width = 10
+bar-volume-width = 20
 bar-volume-gradient = true
 bar-volume-indicator = "█"
-bar-volume-indicator-foreground = #50fa7b
+bar-volume-indicator-foreground = ${colors.background}
 bar-volume-indicator-font = 0
 bar-volume-fill ="█"
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.cramp1}
+bar-volume-foreground-1 = ${colors.cramp1}
+bar-volume-foreground-2 = ${colors.cramp1}
+bar-volume-foreground-3 = ${colors.cramp1}
+bar-volume-foreground-4 = ${colors.cramp1}
+bar-volume-foreground-5 = ${colors.cramp2}
+bar-volume-foreground-6 = ${colors.cramp2}
+bar-volume-foreground-7 = ${colors.cramp3}
+bar-volume-foreground-8 = ${colors.cramp3}
+bar-volume-foreground-9 = ${colors.cramp3}
 bar-volume-fill-font = 0
 bar-volume-empty ="█"
-bar-volume-empty-foreground = ${colors.main}
+bar-volume-empty-foreground = ${colors.foreground}
 bar-volume-empty-font = 0
 bar-volume-underline = ${colors.background}
 bar-volume-overline = ${colors.background}
@@ -372,23 +373,34 @@ type = internal/alsa
 format-volume = <ramp-volume>
 format-muted = <label-muted>
 label-volume = ""
-;label-volume = "%{B$colors.background F#ffffff}%{F-}%{F#ffffff}"
-label-volume-foreground = ${colors.fg}
+label-volume-foreground = ${colors.foreground}
 format-volume-background =${colors.background}
-format-volume-foreground = ${colors.fg}
+format-volume-foreground = ${colors.foreground}
 format-muted-prefix =
 label-muted = ""
 label-muted-foreground = ${colors.primary}
+
+ramp-volume-0-foreground = ${colors.foreground}
+ramp-volume-1-foreground = ${colors.foreground}
+ramp-volume-2-foreground = ${colors.foreground}
+ramp-volume-3-foreground = ${colors.foreground}
+ramp-volume-4-foreground = ${colors.foreground}
+ramp-volume-5-foreground = ${colors.foreground}
+ramp-volume-6-foreground = ${colors.foreground}
+ramp-volume-7-foreground = ${colors.foreground}
+ramp-volume-8-foreground = ${colors.foreground}
+ramp-volume-9-foreground = ${colors.cramp3}
+
 ramp-volume-0 =" "
-ramp-volume-0-foreground = ${colors.main}
 ramp-volume-1 =" "
-ramp-volume-1-foreground = ${colors.main}
 ramp-volume-2 =" "
-ramp-volume-2-foreground = ${colors.main}
 ramp-volume-3 =" "
-ramp-volume-3-foreground = ${colors.main}
 ramp-volume-4 =" "
-ramp-volume-4-foreground = #50fa7b
+ramp-volume-5 =" "
+ramp-volume-6 =" "
+ramp-volume-7 =" "
+ramp-volume-8 =" "
+ramp-volume-9 =" "
 
 ramp-headphones-0 =""
 ramp-headphones-1 =""
@@ -399,7 +411,6 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 format = <ramp> <label>
-format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 label =  %temperature-c%
