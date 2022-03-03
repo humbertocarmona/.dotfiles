@@ -72,7 +72,7 @@ window:
   #   # scrollback is enabled (history > 0).
   #   multiplier: 10
   # Allow terminal applications to change Alacritty's window title.
-  dynamic_title: false
+  dynamic_title: true
 
   # # If `true`, bold text is drawn using the bright color variants.
   # draw_bold_text_with_bright_colors: true

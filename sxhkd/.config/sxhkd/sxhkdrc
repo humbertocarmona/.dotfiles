@@ -19,7 +19,7 @@ super + Return
 #	 rofi -show drun
 
 super + g
-   firefox 
+  google-chrome-stable
 
 super + space
     rofi -show drun -modi drun  \

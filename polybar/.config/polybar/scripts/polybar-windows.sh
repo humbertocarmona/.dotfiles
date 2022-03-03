@@ -33,7 +33,8 @@ current_display=$(wmctrl -d|grep "*"|awk '{print $1}')
 # Decorated version BEGIN
 #
 color0="20577a"
-color1="ffffff"
+color2="ffffff"
+color1="ffaa00"
 active_window_decoration_style_left_side="%{F#$color1}%{+u}%{u#$color1}"
 active_window_decoration_style_right_side="%{-u}%{F-}"
 
@@ -51,9 +52,9 @@ current_windows=$(wmctrl -lx -F | awk -v \
 		  split($3,window_title,".")
       split(var,icons_arr,";")
 		  if ($1==active_window || $1==active_window2) {
-			  window_title[1]=active_window_decoration_style_left_side icons_arr[$2+1]" "window_title[1]" "$5 active_window_decoration_style_right_side
+			  window_title[1]=active_window_decoration_style_left_side icons_arr[$2+1]" "$5 active_window_decoration_style_right_side
 		  }else{
-        window_title[1]=icons_arr[$2+1]" "window_title[1]" "$5
+        window_title[1]=icons_arr[$2+1]" "$5
       }
       print "%{A1: wmctrl -ia "$1" & disown:}"window_title[1]"%{A}"
 		}

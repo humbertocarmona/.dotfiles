@@ -32,23 +32,33 @@ alert = #bd2c40
 
 [bar/example]
 monitor = ${env:MONITOR}
-;bottom = true
-width = 100%
+enable-ipc=true
+bottom = false
+
 height = 20
-offset-x = 0.0%
+width = 100%
 offset-y = 0.0%
+offset-x = 0.0%
 radius = 0
 fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 1
-;line-color = #00564d
-border-size = 0
-border-color = ${colors.foreground}
+module-margin-left = 0
+module-margin-right = 0
+
+;overline-size = 295
+;overline-color = ${colors.background}
+;underline-size = 2
+;underline-color = ${colors.background}
+
 padding-left = 0
 padding-right = 0
-module-margin-left = 0
-module-margin-right = 1
+
+border-size = 0
+border-color = ${colors.foreground}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 0
+
 font-0 = JuliaMono:style=Regular:pixelsize=10
 font-1 = JuliaMono:style=Regular:pixelsize=10
 font-2 = Font Awesome 6 Free:pixelsize=10
@@ -61,10 +71,10 @@ font-8 = MesloLGS NF:pixelsize=10
 font-9 = MesloLGS NF:pixelsize=10
 
 modules-left = bspwm 
-modules-center = polybar-windows date pacman-updates
-modules-right =  running-screen bluetooth wlan alsa powermenu
+modules-center = xwindow
+modules-right =  running-screen alsa alsa2 bluetooth wlan date powermenu
 
-separator =  | 
+separator =""
 wm-restack = bspwm
 
 ;override-redirect = true
@@ -117,8 +127,8 @@ interval = 1
 [module/bluetooth]
 type = custom/script
 exec = rofi-bluetooth --status | awk {'print $1'}
-interval = 1
-#click-left = rofi-bluetooth &
+interval = 10
+tail = true
 click-left = blueman-manager &
 
 ; [module/system-bluetooth-bluetoothctl]
@@ -131,9 +141,9 @@ click-left = blueman-manager &
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:10:...%
-format = <label>
-format-foreground = #fcb515
+label = %{T2}%title:0:30:...%%{T-}
+;format = <label>
+;format-foreground = #fcb515
 
 [module/filesystem]
 type = internal/fs
@@ -147,40 +157,63 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-format = <label-state> <label-mode>
-index-sort = true
+format = <label-state><label-mode>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+index-sort = false
 wrapping-scroll = false
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-8 = IX;
-ws-icon-9 = X;
-;ws-icon-default = 
-separator = | 
+pin-workspaces = true
+reverse-scroll = false
 
-label-focused = %icon%!
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+;ws-icon-6 = 7;
+;ws-icon-7 = 8I;
+;ws-icon-8 = 9;
+ws-icon-9 = 0;
+ws-icon-default = " "
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-foreground = #000000
+label-mode-background = #FFBB00
+
+label-focused="%{B#D8DEE9 F#D8DEE9}%{B- F-}%{B#D8DEE9}%{F#2E3440} %icon% %{F-}%{B#D8DEE9 F#D8DEE9}%{B- F-}"
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background}
-label-focused-underline= ${colors.primary}
+
+;label-focused-underline= ${colors.primary}
+;label-focused-overline= ${colors.primary}
+
 label-focused-padding = 1
-; label-empty = %index%
+
+label-unfocused="%{B#3b4252 F#3b4252}%{B- F-}%{B#3b4252}%{F#D8DEE9} %icon% %{F-}%{B#3b4252 F#3b4252}%{B- F-}"
+label-unfocused-padding = 1
+label-unfocused-background = ${colors.primary}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-underline = ${colors.background}
+label-unfocused-overline = ${colors.background}
+
+label-visible = %icon% %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${colors.background}
+label-visible-padding = 1
+
 label-empty = %icon%
 label-empty-foreground = ${colors.secondary}
 label-empty-padding = 1
+
 label-occupied = %icon%
 label-occupied-padding = 1
 label-occupied-foreground = ${colors.foreground}
+
 label-urgent = %icon%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
-
-; Separator in between workspaces
-label-separator = ""
 
 
 [module/mpd]
@@ -235,14 +268,13 @@ label = %gb_used%
 type = internal/network
 interface = wlp3s0
 interval = 3.0
-format-connected = <label-connected><ramp-signal>
-label-connected = %essid%
+format-connected = <ramp-signal> <label-connected>
+label-connected = %{T2}%essid%%{T-}
 format-disconnected = _
-ramp-signal-0 = "_"
-ramp-signal-1 = ". " 
-ramp-signal-2 = ".. "
-ramp-signal-3 = "... "
-ramp-signal-4 = ".... "
+ramp-signal-0 = " 睊"
+ramp-signal-1 = " 直" 
+ramp-signal-2 = " 直"
+ramp-signal-3 = "  "
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -261,15 +293,23 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 1
-date = "%A %d/%m"
-;date-alt = "%A %d-%m-%Y"
-time = "%H:%M "
-;time-alt = "%H:%M:%S "
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground} 
-format-foreground = ${colors.foreground}
-label = %date% %time%
+interval = 5
+date = %m/%d%
+time = %H:%M
+format-prefix-foreground = ${colors.foreground}
+label = "    %date%     %time% "
+
+;[module/date]
+;type = internal/date
+;interval = 1
+;date = "%A %d/%m"
+;;date-alt = "%A %d-%m-%Y"
+;time = "%H:%M "
+;;time-alt = "%H:%M:%S "
+;format-prefix = "  "
+;format-prefix-foreground = ${colors.foreground} 
+;format-foreground = ${colors.foreground}
+;label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -298,14 +338,21 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
-format-volume = <label-volume> <bar-volume>
-label-volume = 
-label-volume-foreground = ${colors.primary}
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
+format-volume = <label-volume><bar-volume>
+format-muted = <label-muted>
+label-volume = "%{T3}%{T-}"
+label-volume-underline = ${colors.background}
+label-volume-overline = ${colors.background}
+label-volume-foreground = #50fa7b
+format-muted-prefix =
+label-muted = ""
+label-muted-foreground = ${colors.primary}
 bar-volume-width = 10
+bar-volume-gradient = true
+bar-volume-indicator = "█"
+bar-volume-indicator-foreground = #50fa7b
+bar-volume-indicator-font = 0
+bar-volume-fill ="█"
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -313,15 +360,39 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = ${colors.primary}
-bar-volume-fill = -
-bar-volume-fill-font = 2
-bar-volume-empty = -
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.primary}
+bar-volume-fill-font = 0
+bar-volume-empty ="█"
+bar-volume-empty-foreground = ${colors.main}
+bar-volume-empty-font = 0
+bar-volume-underline = ${colors.background}
+bar-volume-overline = ${colors.background}
+
+[module/alsa2]
+type = internal/alsa
+format-volume = <ramp-volume>
+format-muted = <label-muted>
+label-volume = ""
+;label-volume = "%{B$colors.background F#ffffff}%{F-}%{F#ffffff}"
+label-volume-foreground = ${colors.fg}
+format-volume-background =${colors.background}
+format-volume-foreground = ${colors.fg}
+format-muted-prefix =
+label-muted = ""
+label-muted-foreground = ${colors.primary}
+ramp-volume-0 =" "
+ramp-volume-0-foreground = ${colors.main}
+ramp-volume-1 =" "
+ramp-volume-1-foreground = ${colors.main}
+ramp-volume-2 =" "
+ramp-volume-2-foreground = ${colors.main}
+ramp-volume-3 =" "
+ramp-volume-3-foreground = ${colors.main}
+ramp-volume-4 =" "
+ramp-volume-4-foreground = #50fa7b
+
+ramp-headphones-0 =""
+ramp-headphones-1 =""
+
 
 [module/temperature]
 type = internal/temperature
@@ -347,8 +418,9 @@ label-open = "   "
 label-open-foreground = ${colors.alert}
 label-close = "  cancel"
 label-close-foreground = ${colors.alert}
-label-separator = |
-label-separator-foreground = ${colors.alert}
+label-separator = -
+label-separator-foreground = ${colors.foreground}
+menu-0-0-foreground=${color.alert}
 menu-0-0 = reboot
 menu-0-0-exec = systemctl reboot
 menu-0-1 = logout
