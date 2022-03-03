@@ -1,6 +1,6 @@
 # Enable Powerlevel10k instant prompt. 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 
@@ -15,7 +15,28 @@ export ZSH="/$HOME/.oh-my-zsh"
 export LIBGL_ALWAYS_SOFTWARE=1
 export TERMINFO=/usr/share/terminfo
 export EDITOR=nvim
+if [[ $(uname -n) == "carmona-notebook" ]]
+then
+    export TERM="alacritty"
+    alias hostname="hostname.exe"
+fi
+if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]]
+then
+    precmd()
+    {
+        # output on which level (%L) this shell is running on.
+        # append the current directory (%~), substitute home directories with a tilde.
+        # "\a" bell (man 1 echo)
+        # "print" must be used here; echo cannot handle prompt expansions (%L)
+        print -Pn "\e]0;$(id --user --name)@$(hostname): zsh[%L] %~\a"
+    }
 
+    preexec()
+    {
+        # output current executed command with parameters
+        echo -en "\e]0;$(id --user --name)@$(hostname): ${1}\a"
+    }
+fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # load plugins
@@ -28,6 +49,7 @@ plugins=(zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 autoload svg2png
+autoload rsynnn
 autoload rsyncc
 autoload winhide
 autoload jl
@@ -54,4 +76,7 @@ alias :Q="exit"
 #export prompt='%n%F{red}@%f%m $'
 
 source ~/.myenv/bin/activate 
+cd $HOME
+
 archey3
+
