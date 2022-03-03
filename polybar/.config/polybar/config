@@ -18,12 +18,14 @@
 ;==========================================================
 
 [colors]
-background = #551e1e1e
+background = #aa1e1e1e
 background-alt = #611e1e1e
 ;foreground = ${xrdb:color7:#222}
 ;foreground-alt = ${xrdb:color7:#222}
-foreground = #20577A
-foreground-alt = #20577a
+;foreground = #20577A
+;foreground-alt = #20577a
+foreground = #ffffff
+foreground-alt = #ffffff
 primary = #ffffff
 secondary = #aaaaaa
 alert = #bd2c40
@@ -75,7 +77,7 @@ eursor-scroll = ns-resize
 
 [module/xkeyboard]
 type = internal/xkeyboard
-label-layout-foreground = #ffffff
+label-layout-foreground = ${colors.foreground}
 label-layout = %name% %icon%
 layout-icon-default = :) 
 layout-icon-0 = us;U

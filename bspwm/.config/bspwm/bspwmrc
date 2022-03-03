@@ -1,6 +1,9 @@
 #! /bin/sh
 
-setxkbmap us -variant intl #-option grp:ctrls_toggle -option ctrl:nocaps 
+
+setxkbmap us -variant intl -option ctrl:nocaps
+# other options wuld be ... -option grp:ctrls_toggle -option ctrl:nocaps 
+
 nitrogen --restore &
 xsetroot -cursor_name left_ptr
 picom  -f &
