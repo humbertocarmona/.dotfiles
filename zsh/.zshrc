@@ -1,8 +1,3 @@
-# Enable Powerlevel10k instant prompt. 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 
 path+=($HOME/.local/bin)
 path+=($HOME/basilisk/src)
@@ -10,34 +5,18 @@ fpath+=~/.zfunc
 
 export PATH
 export BASILISK=$HOME/basilisk/src
-export ZSH="/$HOME/.oh-my-zsh"
-#required by gephi
-export LIBGL_ALWAYS_SOFTWARE=1
-export TERMINFO=/usr/share/terminfo
-export EDITOR=nvim
-if [[ $(uname -n) == "carmona-notebook" ]]
-then
-    export TERM="alacritty"
-    alias hostname="hostname.exe"
-fi
-if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]]
-then
-    precmd()
-    {
-        # output on which level (%L) this shell is running on.
-        # append the current directory (%~), substitute home directories with a tilde.
-        # "\a" bell (man 1 echo)
-        # "print" must be used here; echo cannot handle prompt expansions (%L)
-        print -Pn "\e]0;$(id --user --name)@$(hostnamectl hostname): zsh[%L] %~\a"
-    }
 
-    preexec()
-    {
-        # output current executed command with parameters
-        echo -en "\e]0;$(id --user --name)@$(hostnamectl hostname): ${1}\a"
-    }
-fi
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
+export ZSH=$HOME/.oh-my-zsh
+
+
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="firefox"
+
+export TERMINFO=/usr/share/terminfo
+
 
 # load plugins
 plugins=(zsh-syntax-highlighting zsh-autosuggestions)

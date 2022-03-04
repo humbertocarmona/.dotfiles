@@ -6,10 +6,6 @@
 # terminal emulator
 # super + alt + Return
 #	urxvt
-# super + Return
-#     terminator
-super + a
-    alacritty
 
 super + Return
     kitty

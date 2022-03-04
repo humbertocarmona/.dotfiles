@@ -1,21 +1,60 @@
 #! /bin/sh
 
 
-setxkbmap us -variant intl -option ctrl:nocaps
-# other options wuld be ... -option grp:ctrls_toggle -option ctrl:nocaps 
+# nitrogen --restore &
+# Random Photo Every Login
+# feh --bg-fill --randomize ~/Pictures/Wallpapers/* &
+feh --bg-fill ~/Pictures/Wallpapers/bspwm1.jpg
 
-nitrogen --restore &
+
+# Monitor Config
+# xrandr --auto --output DVI-D-0 --mode 2560x1440 --left-of HDMI-0
+ 
+# xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
+xrandr --output HDMI1 --mode 1920x1080
+
+# Network Manager Applet
+nm-applet --indicator &
+
+# Don't Randomly Turn off
+xset s off
+xset -dpms
+xset s noblank
+
+# Speedy keys
+xset r rate 210 40
+
+
+# Compositor
+picom -b
+
+# Hide mouse when typing
+# xbanish &
+
+# Screenshots
+flameshot &
+
+# Bluetooth systray icon
+# blueman-applet &
+
+
+# remap caps to escape
+setxkbmap us,us -variant intl, -option ctrl:nocaps -optio ctrl:ctrls_toggle
+# swap escape and caps
+# setxkbmap -option caps:swapescape
+
 xsetroot -cursor_name left_ptr
-picom  -f &
-rato=$(xinput list --id-only 'MX Anywhere 2S Mouse')
+rato=$(xinput list --id-only 'MX Anywhere 1S Mouse')
 xinput set-prop $rato 315 1 # reverse mouse
 
 /bin/sh -c "backintime pw-cache start 2>&1 >/dev/null"
 
-pkill polybar
-$HOME/.config/polybar/polybar-wrapper.sh &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Status Bar
+pkill polybar
+$HOME/.config/polybar/polybar-wrapper.sh &
 
 # use 'xrandr -q' or 'bspc query -M --names' to find the monitor names
 bspc monitor -d 1 2 3 4 5 6 7 8 9 

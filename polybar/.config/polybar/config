@@ -18,8 +18,8 @@
 ;==========================================================
 
 [colors]
-background = #551E1E1E
-background-alt = #551E1E1E
+background = #1E1E1E
+background-alt = #1E1E1E
 foreground = #FFFFFF
 foreground-alt = #FFFFFF
 primary = #FFFFFF
@@ -345,7 +345,7 @@ label-volume-foreground = ${color.foreground}
 format-muted-prefix =
 label-muted = ""
 label-muted-foreground = ${colors.primary}
-bar-volume-width = 20
+bar-volume-width = 8
 bar-volume-gradient = true
 bar-volume-indicator = "█"
 bar-volume-indicator-foreground = ${colors.background}
@@ -359,8 +359,8 @@ bar-volume-foreground-4 = ${colors.cramp1}
 bar-volume-foreground-5 = ${colors.cramp2}
 bar-volume-foreground-6 = ${colors.cramp2}
 bar-volume-foreground-7 = ${colors.cramp3}
-bar-volume-foreground-8 = ${colors.cramp3}
-bar-volume-foreground-9 = ${colors.cramp3}
+;bar-volume-foreground-8 = ${colors.cramp3}
+;bar-volume-foreground-9 = ${colors.cramp3}
 bar-volume-fill-font = 0
 bar-volume-empty ="█"
 bar-volume-empty-foreground = ${colors.foreground}
@@ -445,7 +445,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 compositing-border = over
-pseudo-transparency = true
+pseudo-transparency = false
 
 [global/wm]
 margin-top = 0
