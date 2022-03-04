@@ -39,7 +39,7 @@ flameshot &
 
 
 # remap caps to escape
-setxkbmap us,us -variant intl, -option ctrl:nocaps -optio ctrl:ctrls_toggle
+setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_toggle'
 # swap escape and caps
 # setxkbmap -option caps:swapescape
 
@@ -55,6 +55,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Status Bar
 pkill polybar
 $HOME/.config/polybar/polybar-wrapper.sh &
+
 
 # use 'xrandr -q' or 'bspc query -M --names' to find the monitor names
 bspc monitor -d 1 2 3 4 5 6 7 8 9 

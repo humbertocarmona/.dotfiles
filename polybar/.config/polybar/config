@@ -18,8 +18,8 @@
 ;==========================================================
 
 [colors]
-background = #1E1E1E
-background-alt = #1E1E1E
+background = #aa1E1E1E
+background-alt = #aa1E1E1E
 foreground = #FFFFFF
 foreground-alt = #FFFFFF
 primary = #FFFFFF
@@ -72,7 +72,7 @@ font-9 = MesloLGS NF:pixelsize=10
 
 modules-left = bspwm 
 modules-center = xwindow 
-modules-right =  running-screen alsa alsa2 bluetooth wlan date powermenu
+modules-right =  running-screen xkeyboard alsa alsa2 bluetooth wlan date powermenu
 
 separator =""
 wm-restack = bspwm
