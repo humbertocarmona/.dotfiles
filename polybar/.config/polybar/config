@@ -72,7 +72,7 @@ font-9 = MesloLGS NF:pixelsize=10
 
 modules-left = bspwm 
 modules-center = xwindow 
-modules-right =  running-screen xkeyboard alsa alsa2 bluetooth wlan date powermenu
+modules-right =  running-screen bluetooth xkeyboard alsa alsa2 wlan date powermenu
 
 separator =""
 wm-restack = bspwm
@@ -128,7 +128,7 @@ type = custom/script
 exec = rofi-bluetooth --status | awk {'print $1'}
 interval = 10
 tail = true
-label = ""
+label = "  "
 click-left = blueman-manager &
 
 ; [module/system-bluetooth-bluetoothctl]
@@ -171,11 +171,11 @@ ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
-;ws-icon-6 = 7;
-;ws-icon-7 = 8I;
-;ws-icon-8 = 9;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
 ws-icon-9 = 0;
-ws-icon-default = " "
+;ws-icon-default = " "
 
 label-mode = %mode%
 label-mode-padding = 1

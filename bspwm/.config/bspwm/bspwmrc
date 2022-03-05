@@ -3,8 +3,8 @@
 
 # nitrogen --restore &
 # Random Photo Every Login
-# feh --bg-fill --randomize ~/Pictures/Wallpapers/* &
-feh --bg-fill ~/Pictures/Wallpapers/bspwm1.jpg
+feh --bg-fill --randomize ~/Pictures/Wallpapers/* &
+#feh --bg-fill ~/Pictures/Wallpapers/bspwm1.jpg
 
 
 # Monitor Config
@@ -22,7 +22,7 @@ xset -dpms
 xset s noblank
 
 # Speedy keys
-xset r rate 210 40
+# xset r rate 210 40
 
 
 # Compositor
@@ -36,7 +36,7 @@ flameshot &
 
 # Bluetooth systray icon
 # blueman-applet &
-
+udiskie &
 
 # remap caps to escape
 setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_toggle'
@@ -44,7 +44,7 @@ setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_to
 # setxkbmap -option caps:swapescape
 
 xsetroot -cursor_name left_ptr
-rato=$(xinput list --id-only 'MX Anywhere 1S Mouse')
+rato=$(xinput list --id-only 'MX Anywhere 2S Mouse')
 xinput set-prop $rato 315 1 # reverse mouse
 
 /bin/sh -c "backintime pw-cache start 2>&1 >/dev/null"
@@ -60,7 +60,7 @@ $HOME/.config/polybar/polybar-wrapper.sh &
 # use 'xrandr -q' or 'bspc query -M --names' to find the monitor names
 bspc monitor -d 1 2 3 4 5 6 7 8 9 
 
-bspc config window_gap          8
+bspc config window_gap          10
 bspc config top_padding         0
 bspc config bottom_padding      0
 ##Color settings
@@ -89,7 +89,9 @@ bspc rule -a QGIS3 desktop='^4' follow=on
 bspc rule -a Gimp-2.10 desktop='^5' follow=on
 bspc rule -a Inkscape desktop='^5' follow=on
 bspc rule -a "Mendeley Desktop" desktop='^6' follow=on
-bspc rule -a okular desktop='^7' follow=on
+bspc rule -a okular desktop='^9' follow=on
+bspc rule -a qtws desktop='^7' follow=on
+bspc rule -a "YouTube Music" desktop='^7' follow=on
 
 bspc rule -a Eog follow=on state=floating
 bspc rule -a Gthumb follow=on state=floating
