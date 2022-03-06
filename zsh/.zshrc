@@ -103,5 +103,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
-
+cd $HOME
 

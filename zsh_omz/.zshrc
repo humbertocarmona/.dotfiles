@@ -36,19 +36,21 @@ autoload ss
 autoload py
 autoload -Uz colors && colors
 autoload -U zmv
-alias mmv='noglob zmv -W'
-alias ls="exa -s name"
-alias l="ls -lh"
-alias ll="l -a"
-alias cat="bat"
-alias rsync="rsync -h --progress"
-alias vim="nvim"
-alias o='xdg-open'
-alias c="clear"
-alias chistory='echo "" > ~/.zsh_history & exec $SHELL -l'
-alias :q="exit"
-alias :Q="exit"
 
+source $HOME/.config/zsh/zsh-aliases
+# alias mmv='noglob zmv -W'
+# alias ls="exa -s name"
+# alias l="ls -lh"
+# alias ll="l -a"
+# alias cat="bat"
+# alias rsync="rsync -h --progress"
+# alias vim="nvim"
+# alias o='xdg-open'
+# alias c="clear"
+# alias chistory='echo "" > ~/.zsh_history & exec $SHELL -l'
+# alias :q="exit"
+# alias :Q="exit"
+#
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -58,5 +60,5 @@ source ~/.myenv/bin/activate
 cd $HOME
 source ${HOME}/.config/ranger/scripts/shell_automatic_cd.sh
 alias rr="ranger_cd"
-archey3
+# archey3
 

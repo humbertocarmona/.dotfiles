@@ -1,8 +1,8 @@
-#!/bin/sh
-# alias j='z'
-# alias f='zi'
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
 alias g='lazygit'
-alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
@@ -41,51 +41,15 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
 
 alias pse='ps -ef'
-# gpg encryption
-# verify signature for isos
-# alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# receive the key of a developer
-# alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
 # For when keys break
 alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 
-# systemd
-# alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
-
-# alias mach_java_mode="export SDKMAN_DIR="$HOME/.sdkman" && [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh""
-
-# alias m="git checkout master"
-# alias s="git checkout stable"
-alias l='ls -lh'
+alias l='exa -lh'
 alias ll='l -a'
 alias cat='bat'
 alias :q='exit'
 alias :Q='exit'
 alias mmv='noglob zmv -W'
 alias paru='paru --skipreview'
-if [[ $TERM == "xterm-kitty" ]]; then
-  alias ssh="kitty +kitten ssh"
-fi
 
-source ${HOME}/.config/ranger/scripts/shell_automatic_cd.sh
-alias rr="ranger_cd"
-
-case "$(uname -s)" in
-
-Darwin)
-	# echo 'Mac OS X'
-	alias ls='ls -G'
-	;;
-
-Linux)
-	alias ls='exa -s name'
-	;;
-
-CYGWIN* | MINGW32* | MSYS* | MINGW*)
-	# echo 'MS Windows'
-	;;
-*)
-	# echo 'Other OS'
-	;;
-esac
+cd $HOME
