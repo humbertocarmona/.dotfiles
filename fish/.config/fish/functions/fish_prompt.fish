@@ -28,33 +28,14 @@ function fish_prompt
     set -q __fish_git_prompt_showupstream
     or set -g __fish_git_prompt_showupstream auto
 
+
     function _nim_prompt_wrapper
         set retc $argv[1]
         set -l field_name $argv[2]
         set -l field_value $argv[3]
 
         set_color normal
-        set_color $retc
-        echo -n '─'
-        set_color -o green
-        echo -n '['
-        set_color normal
-        test -n $field_name
-        and echo -n $field_name:
-        set_color $retc
-        echo -n $field_value
-        set_color -o green
-        echo -n ']'
-    end
-
-    function _nim_prompt_wrapper2
-        set retc $argv[1]
-        set -l field_name $argv[2]
-        set -l field_value $argv[3]
-
-        set_color normal
-        set_color $retc
-        echo -n '─'
+        echo -n ' ─ '
         set_color -o blue
         echo -n '('
         set_color normal
@@ -118,12 +99,12 @@ function fish_prompt
     set -q VIRTUAL_ENV_DISABLE_PROMPT
     or set -g VIRTUAL_ENV_DISABLE_PROMPT true
     set -q VIRTUAL_ENV
-    and _nim_prompt_wrapper $retc V (basename "$VIRTUAL_ENV")
+    and _nim_prompt_wrapper $retc  (basename "$VIRTUAL_ENV")
 
     # git
     set -l prompt_git (fish_git_prompt '%s')
     test -n "$prompt_git"
-    and _nim_prompt_wrapper2 cyan  $prompt_git
+    and _nim_prompt_wrapper cyan  $prompt_git
 
     # Battery status
     type -q acpi
