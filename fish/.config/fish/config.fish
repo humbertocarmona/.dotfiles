@@ -20,7 +20,7 @@ export EASE='192.168.15.63'
 # alias restream='restream -p'
 
 # Colorize grep output (good for log files)
-alias rg='rg -.'
+alias rrg='rg -.'
 alias grep='rg'
 alias fgrep='fgrep --color=auto'
 
@@ -51,5 +51,7 @@ alias :q='exit'
 alias :Q='exit'
 alias mmv='noglob zmv -W'
 alias paru='paru --skipreview'
+alias x startx
 
-cd $HOME
+
+# cd $HOME

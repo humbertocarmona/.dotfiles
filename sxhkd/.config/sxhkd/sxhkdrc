@@ -20,6 +20,8 @@ super + Return
 super + g
   google-chrome-stable
 
+super + b
+  brave
 super + space
     rofi -show drun -modi drun  \
 		 -font "Hack Nerd Font 12" \
@@ -108,7 +110,7 @@ super + {1-9,0}
 
 # send to desktop
 super + shift + {1-9,0}
-    id=$(bspc query -N -n); bspc node -d '^{1-9,10}'; bspc node -f ${id}
+    set -l id (bspc query -N -n); bspc node -d '^{1-9,10}'; bspc node -f ${id}
 
 # preselect
 #

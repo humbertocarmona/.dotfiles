@@ -75,35 +75,33 @@ function fish_prompt
 
 
     # Virtual Environment
-    set -q VIRTUAL_ENV_DISABLE_PROMPT
-    or set -g VIRTUAL_ENV_DISABLE_PROMPT true
-    set -q VIRTUAL_ENV
-    and _nim_prompt_wrapper $retc  (basename "$VIRTUAL_ENV")
+    # set -q VIRTUAL_ENV_DISABLE_PROMPT
+    # or set -g VIRTUAL_ENV_DISABLE_PROMPT true
+    # set -q VIRTUAL_ENV
+    # and _nim_prompt_wrapper $retc  (basename "$VIRTUAL_ENV")
 
 
     # git
-    set -l prompt_git (fish_git_prompt '%s')
-    test -n "$prompt_git"
-    and _nim_prompt_wrapper cyan  $prompt_git
+    # set -l prompt_git (fish_git_prompt '%s')
+    # test -n "$prompt_git"
+    # and _nim_prompt_wrapper cyan  $prompt_git
 
 
     # Battery status
-    type -q acpi
-    and test (acpi -a 2> /dev/null | string match -r off)
-    and _nim_prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
+    # type -q acpi
+    # and test (acpi -a 2> /dev/null | string match -r off)
+    # and _nim_prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
 
     # Background jobs
     set_color normal
 
-    #for job in (jobs)
-    #    set_color $retc
-    #    echo -n '│ '
-    #    set_color brown
-    #    echo $job
-    #end
-    #set_color normal
-    
-    # new line
-    echo
-    echo '$ '
+    for job in (jobs)
+       set_color $retc
+       echo -n '│ '
+       set_color brown
+       echo $job
+    end
+    set_color normal
+    # new line    echo
+    echo ': '
 end

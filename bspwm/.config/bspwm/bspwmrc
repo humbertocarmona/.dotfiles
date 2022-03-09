@@ -45,7 +45,11 @@ setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_to
 
 xsetroot -cursor_name left_ptr
 rato=$(xinput list --id-only 'MX Anywhere 2S Mouse')
-xinput set-prop $rato 315 1 # reverse mouse
+rato_props=$(xinput list-props 'MX Anywhere 2S Mouse' | rg "Natural Scrolling" |awk -F '[()]' '{print $2}')
+for p in $rato_props;
+do
+    xinput set-prop $rato $p 1 # reverse mouse;
+done
 
 /bin/sh -c "backintime pw-cache start 2>&1 >/dev/null"
 

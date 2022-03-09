@@ -34,7 +34,7 @@ local options = {
     sidescrolloff = 8,
     guifont = "JuliaMono:h12",               -- the font used in graphical neovim applications
     foldmethod = "indent",
-    foldlevel = 1,
+    foldlevel = 5,
     foldclose = "all"
 
 

@@ -50,7 +50,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
-	use("nvim-lualine/lualine.nvim")
+    use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
@@ -63,7 +63,7 @@ return packer.startup(function(use)
     use("folke/zen-mode.nvim")
     use("norcalli/nvim-colorizer.lua")
     -- use("metakirby5/codi.vim")
-
+    use("p00f/nvim-ts-rainbow")
 	use("JuliaEditorSupport/julia-vim")
 	-- use "kdheepak/JuliaFormatter.vim"
 	-- LanguageServer.jl now supports JuliaFormatter.jl,
@@ -73,8 +73,10 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("lunarvim/darkplus.nvim")
 	use("Shatur/neovim-ayu")
+    use("folke/tokyonight.nvim")
+    use("wojciechkepka/vim-github-dark")
 
-	-- cmp plugins
+    -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
