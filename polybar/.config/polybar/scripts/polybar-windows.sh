@@ -1,62 +1,44 @@
 #!/bin/sh
 
-active_window=$(xprop -root _NET_ACTIVE_WINDOW|cut -d ' ' -f 5 |sed -e 's/../00&/2')
-active_window2=$(xprop -root _NET_ACTIVE_WINDOW|cut -d ' ' -f 5 |sed -e 's/../0&/2')
+active_window1=$(xprop -root _NET_ACTIVE_WINDOW|cut -d ' ' -f 5 |sed -e 's/../00&/2')
+active_window0=$(xprop -root _NET_ACTIVE_WINDOW|cut -d ' ' -f 5 |sed -e 's/../0&/2')
 
 current_display=$(wmctrl -d|grep "*"|awk '{print $1}')
 
-#########################
-# Simple version BEGIN
-#
-#current_windows=$(wmctrl -lx|awk -v current_display="$current_display" -v active_window="$active_window" '
-#
-#	{if ($2==current_display) {
-#
-#		if ($1==active_window) {
-#
-#			$3="#"$3;
-#
-#			}
-#
-#		split($3,window_title,".")
-#
-#		print "%{A1: wmctrl -ia "$1" & disown:}"window_title[1]"%{A}"
-#
-#		}
-#
-#	}')
-#
-# Simple version END
-#########################
+primary="#F0C674"
 
-#########################
-# Decorated version BEGIN
-#
-color0="20577a"
-color2="ffffff"
-color1="ffaa00"
-active_window_decoration_style_left_side="%{F#$color1}%{+u}%{u#$color1}"
-active_window_decoration_style_right_side="%{-u}%{F-}"
+left_side="%{F$primary}"
+right_side="%{F-}"
 
-icons=";;;;;;;;;"
- 
+icons="%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-};%{T2}%{T-}"
 
-current_windows=$(wmctrl -lx -F | awk -v \
+
+
+
+
+
+# awk separate wmctrl -l by the host name
+#   $1 = contais window and workspace id
+#   $2 = contains the running command
+current_windows=$(wmctrl -l | awk -F'ease' -v \
     var=$icons \
     -v current_display="$current_display" \
-    -v active_window="$active_window" \
-    -v active_window2="$active_window2" \
-    -v active_window_decoration_style_left_side="$active_window_decoration_style_left_side" \
-    -v active_window_decoration_style_right_side="$active_window_decoration_style_right_side" '
-	{if ($2>-1) {
-		  split($3,window_title,".")
-      split(var,icons_arr,";")
-		  if ($1==active_window || $1==active_window2) {
-			  window_title[1]=active_window_decoration_style_left_side icons_arr[$2+1]" "$5 active_window_decoration_style_right_side
-		  }else{
-        window_title[1]=icons_arr[$2+1]" "$5
-      }
-      print "%{A1: wmctrl -ia "$1" & disown:}"window_title[1]"%{A}"
+    -v active_window0="$active_window0" \
+    -v active_window1="$active_window1" \
+    -v left_side="$left_side" \
+    -v right_side="$right_side" '
+    {
+        split($1,ids," ");
+        win=ids[1]
+        wks=ids[2]
+        if (wks>-1) {
+            split(var,icons_arr,";");
+            cmd=substr($2,1,30)"...";
+            title=icons_arr[wks+1]" "cmd;
+		    if (win==active_window0 || win==active_window1) {
+			    title=left_side title right_side;
+		    }
+            print "%{A1: wmctrl -ia "win" & disown:}" title "%{A}";
 		}
 	}')
 #
