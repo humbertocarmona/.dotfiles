@@ -7,13 +7,13 @@ end
 
 if status is-interactive
     source $HOME/.config/fish/fish_files/zoxide.fish
+    source $HOME/.config/ranger/scripts/ranger_cd.fish
     cd $HOME
 end
 
 alias g='lazygit'
 alias nvimrc='nvim ~/.config/nvim/'
-
-# alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
+alias fishrc='nvim ~/.config/fish/'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -36,7 +36,6 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-alias cd='z'
 # easier to read disk
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
@@ -54,12 +53,9 @@ alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate ar
 
 alias l='exa -lh'
 alias ll='l -a'
-alias cat='bat'
-alias :q='exit'
-alias :Q='exit'
-alias mmv='noglob zmv -W'
-alias paru='paru --skipreview'
 alias x startx
 
+
+# TODO: make alias for udiskie-umount -d /dev/sda1
 
 # cd $HOME

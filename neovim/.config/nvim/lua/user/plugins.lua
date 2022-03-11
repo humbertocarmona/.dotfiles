@@ -41,12 +41,12 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- My plugins here
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
@@ -62,13 +62,9 @@ return packer.startup(function(use)
     use("klafyvel/vim-slime-cells")
     use("folke/zen-mode.nvim")
     use("norcalli/nvim-colorizer.lua")
-    -- use("metakirby5/codi.vim")
     use("p00f/nvim-ts-rainbow")
 	use("JuliaEditorSupport/julia-vim")
-	-- use "kdheepak/JuliaFormatter.vim"
-	-- LanguageServer.jl now supports JuliaFormatter.jl,
-	-- so you may not want to use this if you already are
-	-- using lsp with vim/neovim
+    use("lervag/vimtex")
 
 	-- Colorschemes
 	use("lunarvim/darkplus.nvim")

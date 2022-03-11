@@ -15,6 +15,7 @@ null_ls.setup({
 		formatting.black,
 		--formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
+        formatting.latexindent,
 		diagnostics.flake8,
 		--diagnostics.selene
 	},

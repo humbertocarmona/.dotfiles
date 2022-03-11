@@ -4,11 +4,24 @@ local options = {
     cmdheight = 2,                           -- more space in the neovim command line for displaying messages
     completeopt = { "menuone", "noselect" }, -- mostly just for cmp
     conceallevel = 0,                        -- so that `` is visible in markdown files
+    cursorline = true,                       -- highlight the current line
+    expandtab = true,                        -- convert tabs to spaces
+    foldmethod = "indent",
+    foldlevel = 5,
+    foldclose = "all",
+    guifont = "JuliaMono:h12",               -- the font used in graphical neovim applications
     fileencoding = "utf-8",                  -- the encoding written to a file
     hlsearch = true,                         -- highlight all matches on previous search pattern
     ignorecase = true,                       -- ignore case in search patterns
     mouse = "a",                             -- allow the mouse to be used in neovim
+    number = true,                           -- set numbered lines
+    numberwidth = 2,                         -- set number column width to 2 {default 4}
     pumheight = 10,                          -- pop up menu height
+    relativenumber = true,                   -- set relative numbered lines
+    scrolloff = 8,                           -- is one of my fav
+    sidescrolloff = 8,
+    signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+    shiftwidth = 4,                          -- the number of spaces inserted for each indentation
     showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2,                         -- always show tabs
     smartcase = true,                        -- smart case
@@ -16,6 +29,7 @@ local options = {
     splitbelow = true,                       -- force all horizontal splits to go below current window
     splitright = true,                       -- force all vertical splits to go to the right of current window
     swapfile = false,                        -- creates a swapfile
+    tabstop = 4,                             -- insert 2 spaces for a tab
     termguicolors = true,                    -- set term gui colors (most terminals support this)
     timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,                         -- enable persistent undo
@@ -36,8 +50,6 @@ local options = {
     foldmethod = "indent",
     foldlevel = 5,
     foldclose = "all"
-
-
 }
 
 vim.opt.shortmess:append "c"
@@ -47,5 +59,9 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
+--vim.cmd [[set wrap linebreak]]
+--vim.cmd [[set colorcolumn=+1 ]]
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd [[syntax enable]]
+vim.cmd "filetype plugin indent on"

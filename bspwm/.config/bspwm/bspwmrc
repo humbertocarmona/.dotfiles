@@ -93,7 +93,7 @@ bspc rule -a QGIS3 desktop='^4' follow=on
 bspc rule -a Gimp-2.10 desktop='^5' follow=on
 bspc rule -a Inkscape desktop='^5' follow=on
 bspc rule -a "Mendeley Desktop" desktop='^6' follow=on
-bspc rule -a okular desktop='^9' follow=on
+# bspc rule -a okular desktop='^9' follow=on
 bspc rule -a qtws desktop='^7' follow=on
 bspc rule -a "YouTube Music" desktop='^7' follow=on
 
@@ -107,4 +107,4 @@ bspc rule -a Pavucontrol follow=on state=floating
 bspc rule -a Gnome-screenshot follow=state=floating
 bspc rule -a Blueman-manager follow=on state=floating
 bspc rule -a matplotlib follow=on state=floating
-
+bspc rule -a Zathura follow=off state=tiled

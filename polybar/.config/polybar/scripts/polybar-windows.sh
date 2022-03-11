@@ -33,7 +33,7 @@ current_windows=$(wmctrl -l | awk -F'ease' -v \
         wks=ids[2]
         if (wks>-1) {
             split(var,icons_arr,";");
-            cmd=substr($2,1,30)"...";
+            cmd=substr($2,1,12)"...";
             title=icons_arr[wks+1]" "cmd;
 		    if (win==active_window0 || win==active_window1) {
 			    title=left_side title right_side;
