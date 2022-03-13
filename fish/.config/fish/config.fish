@@ -6,9 +6,12 @@ if status is-login
 end
 
 if status is-interactive
-    source $HOME/.config/fish/fish_files/zoxide.fish
+    source $HOME/.config/fish/scripts/zoxide.fish
+    source $HOME/.config/fish/scripts/spot.fish
     source $HOME/.config/ranger/scripts/ranger_cd.fish
+    export BROWSER=google-chrome-stable
     cd $HOME
+
 end
 
 alias g='lazygit'

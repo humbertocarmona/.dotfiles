@@ -3,8 +3,8 @@
 
 # nitrogen --restore &
 # Random Photo Every Login
-feh --bg-fill --randomize ~/Pictures/Wallpapers/* &
-#feh --bg-fill ~/Pictures/Wallpapers/bspwm1.jpg
+#feh --bg-fill --randomize ~/Pictures/Wallpapers/* &
+feh --bg-fill ~/Pictures/Wallpapers/img032.jpg &
 
 
 # Monitor Config
@@ -86,25 +86,14 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action2 resize_corner
 
-bspc rule -a Code desktop='^2' follow=on private=on
-bspc rule -a Google-chrome desktop='^3' follow=on private=on
-bspc rule -a firefox desktop='^3' follow=on private=on
-bspc rule -a QGIS3 desktop='^4' follow=on
-bspc rule -a Gimp-2.10 desktop='^5' follow=on
-bspc rule -a Inkscape desktop='^5' follow=on
-bspc rule -a "Mendeley Desktop" desktop='^6' follow=on
-# bspc rule -a okular desktop='^9' follow=on
-bspc rule -a qtws desktop='^7' follow=on
-bspc rule -a "YouTube Music" desktop='^7' follow=on
-
-bspc rule -a Eog follow=on state=floating
-bspc rule -a Gthumb follow=on state=floating
-
+bspc rule -r "*"
 bspc rule -a Matplotlib follow=on state=floating
 bspc rule -a zoom follow=on state=floating
 bspc rule -a vlc follow=on state=floating
-bspc rule -a Pavucontrol follow=on state=floating
-bspc rule -a Gnome-screenshot follow=state=floating
+# 1920 x 1080
+# x = 1920 - width - border_width - window_gap
+# y = polybar+ window_gap + border_width
+bspc rule -a Pavucontrol follow=on rectangle=530x350+1379+31 state=floating
 bspc rule -a Blueman-manager follow=on state=floating
 bspc rule -a matplotlib follow=on state=floating
 bspc rule -a Zathura follow=off state=tiled

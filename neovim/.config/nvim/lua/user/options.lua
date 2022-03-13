@@ -47,7 +47,7 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[
     set wrap linebreak
     set textwidth=82
-    set colorcolumn=+1
+    set colorcolumn=83
     ]]
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

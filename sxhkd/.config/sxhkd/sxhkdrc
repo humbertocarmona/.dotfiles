@@ -83,8 +83,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {shift + p,shift + b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {shift + p,shift + b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -146,6 +146,10 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# open pulse audio control
+super + shift + p
+    pavucontrol rectangle=800x600+0+0
 
 # rotate parenr
 super + shift + r
