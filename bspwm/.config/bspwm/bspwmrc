@@ -38,6 +38,9 @@ flameshot &
 # blueman-applet &
 udiskie &
 
+# notifications
+dunst &
+
 # remap caps to escape
 setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_toggle'
 # swap escape and caps
@@ -48,11 +51,10 @@ rato=$(xinput list --id-only 'MX Anywhere 2S Mouse')
 rato_props=$(xinput list-props 'MX Anywhere 2S Mouse' | rg "Natural Scrolling" |awk -F '[()]' '{print $2}')
 for p in $rato_props;
 do
-    xinput set-prop $rato $p 1 # reverse mouse;
+     xinput set-prop $rato $p 1 # reverse mouse;
 done
 
 /bin/sh -c "backintime pw-cache start 2>&1 >/dev/null"
-
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
