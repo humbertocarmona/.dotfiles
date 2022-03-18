@@ -1,0 +1,1 @@
+/home/carmona/.local/share/broot/launcher/fish/br.fish

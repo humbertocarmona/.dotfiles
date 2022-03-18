@@ -12,6 +12,7 @@ vim.cmd([[
         \   '-verbose',
         \   '-synctex=1',
         \   '-interaction=nonstopmode',
+        \   '-logfilewarnings-',
         \ ],
         \}
 ]])

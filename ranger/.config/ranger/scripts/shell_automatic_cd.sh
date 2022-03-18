@@ -10,14 +10,14 @@
 # To undo the effect of this function, you can type "cd -" to return to the
 # original directory.
 
-#ranger_cd() {
+ranger_cd() {
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
     ranger --choosedir="$temp_file" -- "${@:-$PWD}"
     if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
         cd -- "$chosen_dir"
     fi
     rm -f -- "$temp_file"
-#}
+}
 
 # This binds Ctrl-O to ranger-cd:
 # bind '"\C-o":"ranger-cd\C-m"'

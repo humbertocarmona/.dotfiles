@@ -36,5 +36,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 
-#exec gnome-session
+export FZF_DEFAULT_COMMAND='find .'
+
+# exec gnome-session
 exec bspwm

@@ -9,14 +9,20 @@ if status is-interactive
     source $HOME/.config/fish/scripts/zoxide.fish
     source $HOME/.config/fish/scripts/spot.fish
     source $HOME/.config/ranger/scripts/ranger_cd.fish
-    export BROWSER=google-chrome-stable
-    cd $HOME
+    source $HOME/.config/lf/icons
 
+    export CCHEFE="$HOME/Projetos/Cientista-Chefe/"
+    export ANALISE="$HOME/Projetos/Cientista-Chefe/COVID/analysis/"
+    export PREPRO="$HOME/Projetos/Cientista-Chefe/COVID/preprocessaISUS/"
 end
 
 alias g='lazygit'
 alias nvimrc='nvim ~/.config/nvim/'
 alias fishrc='nvim ~/.config/fish/'
+alias bspwmrc='nvim ~/.config/bspwm/'
+alias polybarrc='nvim ~/.config/polybar/'
+alias picomrc='nvim ~/.config/picom/'
+alias xkbrc='nvim ~/.config/sxhkd/sxhkdrc'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -30,13 +36,12 @@ alias @ease='ssh 192.168.15.63'
 export EASE='192.168.15.63'
 # alias restream='restream -p'
 
-# Colorize grep output (good for log files)
-alias rrg='rg -.'
+alias rgh='rg -.'
 alias grep='rg'
 alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
-alias cp="cp -i"
+alias cpi="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 # easier to read disk
@@ -57,8 +62,6 @@ alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate ar
 alias l='exa -lh'
 alias ll='l -a'
 alias x startx
+alias fvim="nvim (fzf --height=40% --reverse)"
+alias rmusb='udiskie-umount -d /dev/sda1'
 
-
-# TODO: make alias for udiskie-umount -d /dev/sda1
-
-# cd $HOME
