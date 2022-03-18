@@ -6,11 +6,12 @@ if status is-login
 end
 
 if status is-interactive
+    fish_add_path -g $HOME/.local/bin
     source $HOME/.config/fish/scripts/zoxide.fish
     source $HOME/.config/fish/scripts/spot.fish
     source $HOME/.config/ranger/scripts/ranger_cd.fish
     source $HOME/.config/lf/icons
-
+    source $HOME/.config/fish/scripts/gitaddrem.fish
     export CCHEFE="$HOME/Projetos/Cientista-Chefe/"
     export ANALISE="$HOME/Projetos/Cientista-Chefe/COVID/analysis/"
     export PREPRO="$HOME/Projetos/Cientista-Chefe/COVID/preprocessaISUS/"
