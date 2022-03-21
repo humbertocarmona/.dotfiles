@@ -1,1 +1,1 @@
-/home/carmona/.local/share/broot/launcher/fish/br.fish
+/home/humberto/.local/share/broot/launcher/fish/br.fish
