@@ -45,7 +45,7 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[
-    set wrap linebreak
+    set nowrap
     set textwidth=82
     set colorcolumn=83
     ]]

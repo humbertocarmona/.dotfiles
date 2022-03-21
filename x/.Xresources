@@ -45,3 +45,4 @@ xterm*disallowedWindowOps: 20,21,SetXProp
 *.color7:       #ABB2BF
 *.color15:      #D8DEE9
 
+

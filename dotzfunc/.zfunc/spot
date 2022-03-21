@@ -1,0 +1,5 @@
+#! /usr/bin/zsh
+
+killall spotifyd
+spotifyd
+spt

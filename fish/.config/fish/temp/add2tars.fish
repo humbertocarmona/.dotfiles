@@ -1,3 +1,0 @@
-
-
-for f in $(find . -type d -name "[A-Z]*"); do echo $f; tar --append --file=$f.tar $f/*; rm -rf $f; done

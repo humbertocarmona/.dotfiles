@@ -1,0 +1,51 @@
+ee          $$editor "$f"
+u           $view "$f"
+az          zip
+at          tar
+ag          targz
+ab          targz
+au          unarchiv
+<enter>     shell
+dd          trash
+dd          delete
+<delete>    trash
+x           &xdg-open $f
+X           $mimeopen --ask $f
+.           set hidden!
+dd          delete
+p           paste
+d           cut
+y           copy
+mf          mkfile
+mr          sudomkfile
+md          mkdir
+ms          $mkscript
+ch          chmod
+bg          setwallpaper
+o           open_config
+br          $ed
+r           rename
+h           top
+l           bottom
+r           reload
+c           clear
+u           unselect
+gtr         cd ~/.local/share/trash/files
+gus         cd /run/media/humberto/
+gv.         cd ~/videos
+gp.         cd ~/pictures
+gw.         cd ~/pictures/wallpapers
+gd          cd ~/documents
+gd          cd ~/downloads
+ge          cd ~/desktop
+gc.         cd ~/.config
+gcl         cd ~/.config/lf
+gcp         cd ~/.config/polybar
+gcb         cd ~/.config/bspwm
+gcu         cd ~/.config/pulse
+gl          cd ~/.local
+ge          cd /etc
+gu.         cd /usr
+gus         cd /usr/share
+\;j         cd ~
+

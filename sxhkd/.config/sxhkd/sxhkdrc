@@ -7,8 +7,11 @@
 # super + alt + Return
 #	urxvt
 
+# super + Return
+#    kitty
+
 super + Return
-    kitty
+    alacritty
 
 
 # program launcher
