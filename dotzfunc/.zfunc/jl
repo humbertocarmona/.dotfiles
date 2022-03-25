@@ -1,2 +1,0 @@
-#!/usr/bin/env zsh
-screen -p 0 -mS ss julia --project=.

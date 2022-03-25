@@ -2,30 +2,40 @@
 colors:
   # Default colors
   primary:
-    background: '#0A0E14'
-    foreground: '#B3B1AD'
+    background: '#161616'
+    foreground: '#e4e4e4'
+
+  # Cursor volors
+  cursor:
+    text: '#feffff'
+    cursor: '#ffb472'
 
   # Normal colors
   normal:
-    black: '#01060E'
-    red: '#EA6C73'
-    green: '#91B362'
-    yellow: '#F9AF4F'
-    blue: '#53BDFA'
-    magenta: '#FAE994'
-    cyan: '#90E1C6'
-    white: '#C7C7C7'
+    black: '#a3a3a3'
+    red: '#e98885'
+    green: '#a3c38b'
+    yellow: '#ffc68d'
+    blue: '#a6cae2'
+    magenta: '#e7cdfb'
+    cyan: '#00a69f'
+    white: '#e4e4e4'
 
   # Bright colors
   bright:
-    black: '#686868'
-    red: '#F07178'
-    green: '#C2D94C'
-    yellow: '#FFB454'
-    blue: '#59C2FF'
-    magenta: '#FFEE99'
-    cyan: '#95E6CB'
-    white: '#FFFFFF'
+    black: '#c8c8c8'
+    red: '#ffb2b0'
+    green: '#c8e2b9'
+    yellow: '#ffe1af'
+    blue: '#bddff7'
+    magenta: '#fce2ff'
+    cyan: '#0bbdb6'
+    white: '#feffff'
+
+  # Selection colors
+  selection:
+    text: '#5963a2'
+    background: '#f6f6f6'
 
 cursor:
   style:
@@ -91,4 +101,4 @@ key_bindings:
   # - { key: Add, mods: Control, action: IncreaseFontSize }
   # - { key: Subtract, mods: Control, action: DecreaseFontSize }
   # - { key: N, mods: Control, action: SpawnNewInstance }
-theme: Ayu-Dark
+theme: Jellybeans

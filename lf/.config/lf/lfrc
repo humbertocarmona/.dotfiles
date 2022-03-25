@@ -205,7 +205,7 @@ map br $ed
 map r rename
 map h top
 map l bottom
-map r reload
+map R reload
 map C clear
 map u unselect
 

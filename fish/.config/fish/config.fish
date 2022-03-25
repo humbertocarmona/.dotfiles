@@ -2,7 +2,7 @@
 set fish_greeting "fishing with $TERM .."
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx -- -keeptty
+        # exec startx -- -keeptty
     end
 end
 
@@ -29,7 +29,9 @@ alias xkbrc='nvim ~/.config/sxhkd/sxhkdrc'
 alias lfrc='nvim ~/.config/lf/lfrc'
 alias lf='~/.local/bin/lfrun'
 alias fgrep='fgrep --color=auto'
+alias cdwm="nvim ~/.config/dwm-hac"
 
+alias rev="xinput set-prop 'MX Anywhere 2S Mouse' 315 1" 
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -61,7 +63,7 @@ alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate ar
 
 alias l='exa -lh'
 alias ll='l -a'
-alias x startx
+alias x='startx'
 alias fvim="nvim (fzf --height=40% --reverse)"
 alias rmusb='udiskie-umount -d /dev/sda1'
-alias q exit
+alias q='exit'

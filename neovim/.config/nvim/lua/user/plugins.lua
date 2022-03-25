@@ -71,7 +71,7 @@ return packer.startup(function(use)
 	use("Shatur/neovim-ayu")
     use("folke/tokyonight.nvim")
     use("wojciechkepka/vim-github-dark")
-
+    use("nanotech/jellybeans.vim")
     -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions

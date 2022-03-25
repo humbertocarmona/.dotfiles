@@ -18,7 +18,7 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 export READER="zathura"
 export VISUAL="neovide"
-export BROWSER="brave"
+export BROWSER="google-chrome-stable"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export COLORTERM="truecolor"
@@ -88,8 +88,10 @@ setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_to
 # setxkbmap -option caps:swapescape
 /bin/sh -c "backintime pw-cache start 2>&1 >/dev/null"
 
+xinput set-prop 'MX Anywhere 2S Mouse' 315 1 
 # exec gnome-session
 # redshift -O3500; xset -r rate 300 50; exec bspwm
 
-#slstatus &
-redshift -O3500; xset r rate 300 50; exec dwm
+slstatus &
+redshift -O3500; set r rate 240 50; exec dwm 
+

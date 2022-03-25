@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-source $HOME/.myenv/bin/activate 
-screen -p 0 -mS ss python3
