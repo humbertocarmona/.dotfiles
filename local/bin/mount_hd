@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+d="d"
+mpoint="/mnt/$d"
+
+while getopts d:f: flag
+do
+    case "${flag}" in
+        d) drive=${OPTARG};;
+        d) mpoint=${OPTARG};;
+    esac
+done
+
+mkdir -p mpoint
+mount -t drvfs $drive: $mpoint 
