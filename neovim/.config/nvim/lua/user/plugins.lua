@@ -65,7 +65,7 @@ return packer.startup(function(use)
     use("p00f/nvim-ts-rainbow")
 	use("JuliaEditorSupport/julia-vim")
     use("lervag/vimtex")
-
+    use("ap/vim-css-color")
 	-- Colorschemes
 	use("lunarvim/darkplus.nvim")
 	use("Shatur/neovim-ayu")

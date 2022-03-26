@@ -15,7 +15,7 @@ fi
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export READER="zathura"
 export VISUAL="neovide"
 export BROWSER="google-chrome-stable"
@@ -92,6 +92,8 @@ xinput set-prop 'MX Anywhere 2S Mouse' 315 1
 # exec gnome-session
 # redshift -O3500; xset -r rate 300 50; exec bspwm
 
-slstatus &
+# slstatus &
+# mpd &
+# dwmblocks &
 redshift -O3500; set r rate 240 50; exec dwm 
 

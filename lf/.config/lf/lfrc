@@ -5,7 +5,7 @@ set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/preview
 set preview true
 set nohidden true
-set drawbox false
+set nodrawbox true
 set icons true
 set ignorecase true
 
@@ -85,6 +85,7 @@ cmd mkDir ${{
 
 cmd show_help ${{
         bat ~/.config/lf/maps
+        read ans
     }}
 
 cmd mkFile ${{
@@ -153,40 +154,54 @@ cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 
-# Bindings
+cmd on-cd &{{
+    # display git repository status in your prompt
+    source /usr/share/git/completion/git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=auto
+    GIT_PS1_SHOWSTASHSTATE=auto
+    GIT_PS1_SHOWUNTRACKEDFILES=auto
+    GIT_PS1_SHOWUPSTREAM=auto
+    GIT_PS1_COMPRESSSPARSESTATE=auto
+    git=$(__git_ps1 " [GIT BRANCH:> %s]") || true
+    fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m$git\033[0m"
+    lf -remote "send $id set promptfmt \"$fmt\""
+}}
+
+# bindings
 # First remove some defaults
-map m
-map o
-map n
 map "'"
 map '"'
-map d
+map a
 map c
+map d
 map e
 map f
-map x
 map j
+map m
+map n
+map o
+map x
+
 # File Openers
 map ee $$editor "$f"
-map u $view "$f"
+map eu $view "$f"
+
 # archive mappings
 map az zip
 map at tar
 map ag targz
 map ab targz
 map au unarchiv
-
-# map <enter> shell
+map ax extract
 
 # use enter for shell commands
 # trash mappings
-map <delete> trash
-map dd trash
+map dd cut
 map dD delete
-map dd trash
-map c cut
-map tc clear_trash
-map tr restore_trash
+map <delete> trash
+map dt. trash
+map dtc clear_trash
+map dtr restore_trash
 
 # dedicated keys for file opener actions
 map x &xdg-open $f
@@ -209,7 +224,7 @@ map R reload
 map C clear
 map u unselect
 
-# Dragon Mapping
+# Dragon Mappin
 map dr dragon
 map ds dragon-stay
 map di dragon-individual
@@ -218,29 +233,30 @@ map dc cpdragon
 map dl dlfile
 
 # movement
-map gtr cd ~/.local/share/Trash/files
-map gum cd /run/media/humberto/
 
-map gv. cd ~/Videos
+map gm cd ~/Music
+map gv cd ~/Videos
 map gp. cd ~/Pictures
-map gw. cd ~/Pictures/Wallpapers
-
-map gD cd ~/Documents
-map gd cd ~/Downloads
-map ge cd ~/Desktop
-
-map gc. cd ~/.config
+map gpw cd ~/Pictures/Wallpapers
+map gc.  cd ~/.config
 map gcl cd ~/.config/lf
 map gcp cd ~/.config/polybar
-map gcb cd ~/.config/bspwm
+map gcb cd ~/.config/dwmblocks
 map gcu cd ~/.config/pulse
 map gcd cd ~/.dotfiles
+map gcw cd ~/.config/dwm-hac
+map gdD cd ~/Documents
+map gdd cd ~/Downloads
+map gde cd ~/Desktop
+map glb cd ~/.local/bin
+map gtr cd ~/.local/share/Trash/files
 
-map gl cd ~/.local
 map ge cd /etc
 map gu. cd /usr
 map gus cd /usr/share
+map gum cd /run/media/humberto
 
 map j broot_jump
 
-map s? show_help
+
+map s? show_helpBindings

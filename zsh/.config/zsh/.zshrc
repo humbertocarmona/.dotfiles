@@ -1,9 +1,9 @@
 #!/bin/sh
 
 export ZDOTDIR=$HOME/.config/zsh
-if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-     exec startx -- -keeptty
-fi
+#if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+#     exec startx -- -keeptty
+#fi
 
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -38,6 +38,7 @@ autoload -Uz colors && colors
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
 source ~/.config/lf/icons
+source /usr/share/lf-git/lfcd.sh
 
 # Normal files to source
 zsh_add_file "zsh-exports"
@@ -54,11 +55,9 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
-bindkey -s '^o' 'ranger^M'
+bindkey -s '^o' 'lf^M'
 bindkey -s '^f' 'zi^M'
 bindkey -s '^s' 'ncdu^M'
-# bindkey -s '^n' 'nvim $(fzf)^M'
-# bindkey -s '^v' 'nvim\n'
 bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
 bindkey "^p" up-line-or-beginning-search # Up
@@ -69,9 +68,9 @@ bindkey -r "^u"
 bindkey -r "^d"
 
 # Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
+# autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # archey3
 source $HOME/.local/share/broot/launcher/bash/br
-
+eval "$(zoxide init zsh)"

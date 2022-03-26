@@ -264,6 +264,11 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
+  },
   ["vim-github-dark"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-github-dark",

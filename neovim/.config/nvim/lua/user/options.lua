@@ -9,7 +9,7 @@ local options = {
     foldmethod = "indent",
     foldlevel = 5,
     foldclose = "all",
-    guifont = "Hack Nerd Font Mono:h11",
+    guifont = "Hack Nerd Font Mono:h10",
     fileencoding = "utf-8",
     hlsearch = true,
     ignorecase = true,
@@ -35,6 +35,7 @@ local options = {
     undofile = true,
     updatetime = 300,
     writebackup = false,
+    textwidth = 80,
 }
 
 vim.opt.shortmess:append "c"
@@ -43,14 +44,11 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[
-    set nowrap
-    set textwidth=82
-    set colorcolumn=83
-    ]]
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.cmd [[syntax enable]]
-vim.cmd "filetype plugin indent on"
+vim.cmd [[ set whichwrap+=<,>,[,],h,l ]]
+vim.cmd [[ set nowrap ]]
+vim.cmd [[ set colorcolumn=82 ]]
+-- vim.cmd [[set iskeyword+=-]]
+-- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd [[ syntax on ]]
+vim.cmd [[ filetype plugin indent on ]]
 
