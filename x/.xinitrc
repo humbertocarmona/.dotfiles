@@ -87,13 +87,13 @@ setxkbmap "us,us" -variant ",intl" -option ctrl:nocaps -option 'grp:alt_shift_to
 # swap escape and caps
 # setxkbmap -option caps:swapescape
 /bin/sh -c "backintime pw-cache start 2>&1 >/dev/null"
+xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1
 
-xinput set-prop 'MX Anywhere 2S Mouse' 315 1 
 # exec gnome-session
 # redshift -O3500; xset -r rate 300 50; exec bspwm
 
 # slstatus &
 # mpd &
 # dwmblocks &
-redshift -O3500; set r rate 240 50; exec dwm 
-
+set r rate 240 50
+exec dwm 

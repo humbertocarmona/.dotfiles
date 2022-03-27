@@ -35,7 +35,7 @@ local options = {
     undofile = true,
     updatetime = 300,
     writebackup = false,
-    textwidth = 80,
+    --textwidth = 82,
 }
 
 vim.opt.shortmess:append "c"
@@ -51,4 +51,3 @@ vim.cmd [[ set colorcolumn=82 ]]
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[ syntax on ]]
 vim.cmd [[ filetype plugin indent on ]]
-

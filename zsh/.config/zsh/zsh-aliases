@@ -1,18 +1,21 @@
 #!/bin/sh
 
 alias g='lazygit'
-alias nvimrc='nvim ~/.config/nvim/lua/user/'
-alias fishrc='nvim ~/.config/fish/config.fish'
-alias bspwmrc='nvim ~/.config/bspwm/bspwmrc'
-alias polybarrc='nvim ~/.config/polybar/config.ini'
-alias picomrc='nvim ~/.config/picom/picom.conf'
-alias xkbrc='nvim ~/.config/sxhkd/sxhkdrc'
-alias lfrc='nvim ~/.config/lf/lfrc'
+
+alias cdnvim='cd ~/.config/nvim/lua/user'
+alias cdfish='cd ~/.config/fish'
+alias cdbspwm='cd ~/.config/bspwm'
+alias cdpolybar='cd ~/.config/polybar'
+alias cdpicom='cd ~/.config/picom'
+alias cdsxhkd='cd ~/.config/sxhkd'
+alias cdlf='cd ~/.config/lf'
+alias cdzsh='cd ~/.config/zsh'
+alias cddwm='cd ~/.config/dwm-hac'
+alias cddotfiles='cd ~/.dotfiles'
+
 alias lf='~/.local/bin/lfrun'
 alias fgrep='fgrep --color=auto'
-alias dwmrc="cd ~/.config/dwm-hac/; nvim config.def.h"
-alias rev="xinput set-prop 'MX Anywhere 2S Mouse' 315 1" 
-alias zshrc='nvim ~/.config/zsh'
+alias rev="xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1"
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # get fastest mirrors
@@ -49,3 +52,4 @@ alias x='startx'
 alias fvim="nvim (fzf --height=40% --reverse)"
 alias rmusb='udiskie-umount -d /dev/sda1'
 alias q='exit'
+alias ff="lfcd"
