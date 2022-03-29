@@ -96,8 +96,7 @@ local mappings = {
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["z"] = { "<cmd>ZenMode<cr>", "Zen mode"},
-	["r"] = { "<Plug>SlimeCellsSendAndGoToNext", "Slime Send Cell"},
-	["n"] = { "<Plug>SlimeCellsSendNext", "Slime Next Cell"},
+
     p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -130,7 +129,7 @@ local mappings = {
 		},
 	},
 
-	l = {
+	k = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
@@ -179,6 +178,13 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+	
+    l = {
+        name = "Slime",
+        v = { "<Plug>SlimeConfig", "Slime Config"},
+        l = { "<Plug>SlimeCellsSendAndGoToNext", "Slime Send Cell"},
+	    j = { "<Plug>SlimeCellsSendNext", "Slime Next Cell"},
+    }
 }
 
 which_key.setup(setup)

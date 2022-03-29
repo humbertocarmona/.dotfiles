@@ -19,4 +19,16 @@ if status is-interactive
     export PREPRO="$HOME/Projetos/Cientista-Chefe/COVID/preprocessaISUS/"
 end
 
-source $HOME/.config/zsh/zsh-aliases
+#source $HOME/.config/zsh/zsh-aliases
+
+# set -g fish_key_bindings fish_vi_key_bindings
+# bind \cc -M insert kill-while-line repaint
+
+bind \ce 'source ~/.myenv/bin/activate.fish' 
+bind \ee 'deactivate'
+bind \co 'lf'
+bind \cf 'tmux-sessionizer'
+bind \ch 'tmux-sessionizer ~/'
+bind \cl 'tmux-configs'
+bind \cs 'ncdu'
+bind \cz 'zi'

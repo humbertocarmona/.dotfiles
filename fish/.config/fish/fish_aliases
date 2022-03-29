@@ -1,0 +1,40 @@
+# alias --save g='lazygit'
+
+# alias --save lf='~/.local/bin/lfrun'
+# alias --save fgrep='fgrep --color=auto'
+# alias --save rev="xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1"
+# alias --save zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+
+# get fastest mirrors
+# alias --save mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+# alias --save mirrorb="sudo reflector -c Brazil -f 10 -l 10 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+# alias --save mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+# alias --save mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+# alias --save mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# Remarkable
+# alias --save @ease='ssh 192.168.15.63'
+
+
+# confirm before overwriting something
+# alias --save mv='mv -i'
+# alias --save rm='rm -i'
+# easier to read disk
+# alias --save df='df -h'     # human-readable sizes
+# alias --save free='free -m' # show sizes in MB
+# get top process eating memory
+# alias --save psmem='ps auxf | sort -nr -k 4 | head -5'
+# get top process eating cpu ##
+# alias --save pscpu='ps auxf | sort -nr -k 3 | head -5'
+# alias --save pse='ps -ef'
+
+# For when keys break
+# alias --save archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+# alias --save ls='exa'
+# alias --save l='exa -lh'
+# alias --save ll='exa -lha'
+# alias --save x='startx'
+# alias --save fvim="nvim (fzf --height=40% --reverse)"
+# alias --save rmusb='udiskie-umount -d /dev/sda1'
+# alias --save q='exit'
+# alias --save ff="lfcd"

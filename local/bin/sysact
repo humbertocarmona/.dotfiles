@@ -6,15 +6,15 @@ case "$(readlink -f /sbin/init)" in
 	*systemd*) ctl='systemctl' ;;
 	*) ctl='loginctl' ;;
 esac
-
-case "$(printf " leave dwm\n renew dwm\n鈴 hibernate\n鈴 sleep\n reboot\n shutdown\n display off\n lock" | dmenu -fn 'Hack Nerd Font-9' -i -p 'Action: ')" in
+ctl='systemctl'
+case "$(printf " leave dwm\n renew dwm\n鈴 hibernate\n鈴 sleep\n勒 reboot\n shutdown\n display off\n lock" | dmenu -fn 'Hack Nerd Font-9' -i -p 'Action: ')" in
 	' lock') slock ;;
 	' leave dwm') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
 	' renew dwm') kill -HUP "$(pgrep -u "$USER" "\bdwm$")";;
 	'鈴 hibernate') slock $ctl hibernate ;;
 	'鈴 sleep') slock $ctl suspend ;;
-	' reboot') $ctl reboot ;;
-	' hutdown') $ctl poweroff ;;
+	'勒 reboot') $ctl reboot ;;
+	' shutdown') $ctl poweroff ;;
 	' display off') xset dpms force off ;;
 	*) exit 1 ;;
 esac

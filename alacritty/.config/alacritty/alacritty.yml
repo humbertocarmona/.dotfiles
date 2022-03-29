@@ -28,8 +28,11 @@ colors:
     white: '#FFFFFF'
 
 cursor:
+  text: CellBackground
+  cursor: CellForeground
   style:
-    blinking: Never
+    shape: Block
+    blinking: On
 
 font:
   # The normal (roman) font face to use.

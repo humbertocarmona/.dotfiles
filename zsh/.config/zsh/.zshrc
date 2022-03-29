@@ -57,6 +57,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # Key-bindings
 bindkey -s '^o' 'lf^M'
 bindkey -s '^f' 'tmux-sessionizer^M'
+bindkey -s '^h' 'tmux-sessionizer ~/^M'
 bindkey -s '^l' 'tmux-configs^M'
 bindkey -s '^s' 'ncdu^M'
 bindkey -s '^z' 'zi^M'
@@ -71,7 +72,9 @@ bindkey -r "^d"
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
-
 # archey3
+
 source $HOME/.local/share/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
+# eval "$(tmux-sessionizer ~/)"
+# source $HOME/.myenv/bin/activate
