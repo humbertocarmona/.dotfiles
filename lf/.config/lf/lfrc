@@ -8,6 +8,7 @@ set nohidden true
 set nodrawbox true
 set icons true
 set ignorecase true
+set ifs "\n"
 
 # set internal field separator (IFS) to "\n" for shell commands This is useful to
 # automatically split file names in $fs and $fx properly since default file
@@ -134,6 +135,10 @@ cmd cpdragon %cpdragon
 cmd mvdragon %mvdragon
 cmd dlfile %dlfil
 
+cmd lazy_git ${{
+        lazygit -p "$f" 
+    }}
+
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
@@ -154,6 +159,8 @@ cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 
+
+
 cmd on-cd &{{
     # display git repository status in your prompt
     source /usr/share/git/completion/git-prompt.sh
@@ -172,59 +179,27 @@ cmd on-cd &{{
 map "'"
 map '"'
 map a
-map c
-map d
-map e
-map f
-map j
-map m
-map n
-map o
-map x
-
-# File Openers
-map ee $$editor "$f"
-map eu $view "$f"
-
-# archive mappings
 map az zip
 map at tar
 map ag targz
-map ab targz
+map ab tarbz2
 map au unarchiv
 map ax extract
 
-# use enter for shell commands
-# trash mappings
+map bg setwallpaper
+map bj broot_jump
+
+
+map c clear
+map C clear
+map ch chMod
+
+map d
 map dd cut
 map dD delete
-map <delete> trash
 map dt. trash
 map dtc clear_trash
 map dtr restore_trash
-
-# dedicated keys for file opener actions
-map x &xdg-open $f
-map X $mimeopen --ask $f
-
-# basic functions
-map . set hidden!
-map p paste
-map y copy
-map mf mkFile
-map md mkDir
-map ch chMod
-map bg setwallpaper
-map o open_config
-map br $ed
-map r rename
-map h top
-map l bottom
-map R reload
-map C clear
-map u unselect
-
-# Dragon Mappin
 map dr dragon
 map ds dragon-stay
 map di dragon-individual
@@ -232,12 +207,13 @@ map dm mvdragon
 map dc cpdragon
 map dl dlfile
 
-# movement
+map e
+map ee $$editor "$f"
+map eu $view "$f"
 
-map gm cd ~/Music
-map gv cd ~/Videos
-map gp. cd ~/Pictures
-map gpw cd ~/Pictures/Wallpapers
+map f
+
+map g
 map gc.  cd ~/.config
 map gcl cd ~/.config/lf
 map gcp cd ~/.config/polybar
@@ -248,15 +224,42 @@ map gcw cd ~/.config/dwm-hac
 map gdD cd ~/Documents
 map gdd cd ~/Downloads
 map gde cd ~/Desktop
-map glb cd ~/.local/bin
-map gtr cd ~/.local/share/Trash/files
-
 map ge cd /etc
+map gg lazy_git
+map glb cd ~/.local/bin
+map gm cd ~/Music
+map gp. cd ~/Pictures
+map gpw cd ~/Pictures/Wallpapers
+map gtr cd ~/.local/share/Trash/files
 map gu. cd /usr
 map gus cd /usr/share
 map gum cd /run/media/humberto
+map gv cd ~/Videos
 
-map j broot_jump
+map k down
 
+map l up
 
+map m
+map mf mkFile
+map md mkDir
+
+map n
+map o open_config
+map p paste
+
+map s
 map s? show_helpBindings
+map r rename
+map R reload
+map u unselect
+
+map x &xdg-open $f
+map X $mimeopen --ask $f
+map y copy
+
+map <delete> trash
+map . set hidden!
+
+
+
