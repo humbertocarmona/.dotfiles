@@ -1,32 +1,22 @@
-#! /usr/bin/zsh
+#!/bin/sh
 
-d=0  # delete
-if [[ "$@" =~ (^|[[:space:]])"-d"($|[[:space:]]) ]] ; then
-    d=1
-fi
-
-n=0  # do nothing 
-if [[ "$@" =~ (^|[[:space:]])"-n"($|[[:space:]]) ]] ; then
-    n=1
-fi
-
-if [ $n -eq 1 ]; then
-    echo "dry run"
-fi
-
-if [ $d -eq 1 ]; then
-    echo "deleting"
-fi
+dd=false
+nn=false
+while getopts 'dn' c
+do
+    case $c in
+        d) dd=true;;
+        n) nn=true;;
+    esac
+done
 
 for f in "$@"; do
-  if [[ ( $f != "-d" ) && ( $f != "-n" ) ]]; then
-    echo "compressing "$f
-    if [ $n -eq 0 ]; then
-       tar -cvjSf $f.tar.bz2 $f
-       if [ $d -eq 1 ]; then
-         echo "deleting "$f
-         rm -rf $f
-       fi
+    if [ $f != "-n" -a $f != '-d' ]; then
+        [ $dd = false ] && echo "compressing " $f
+        [ $dd = true ] && echo "compressing and deleting" $f
+        if [ $nn = false ]; then 
+            tar -cvjSf $f.tar.bz2 $f
+            [ $dd = true ] && rm -rf $f
+        fi
     fi
-  fi
-done;
+done

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 
 o_root=(-r .)
@@ -14,7 +14,7 @@ o_help=("")
 
 zparseopts -K -F -- p:=o_patt n:=o_dens r:=o_root d=o_del h=o_help
 
-if [[ $? != 0 || "$o_help" != "" ]]; then
+if [ $? != 0 || "$o_help" != "" ]; then
     echo Usage: $(basename "$0") "[-p PATTERN] [-d DENSITY] [-r ROOT DIR]"
 else
     loc=$o_root[2]
@@ -25,7 +25,7 @@ else
       newfile=$(echo "$f" | sed -e s/svg/png/)
       echo "converting $f  to  $newfile"; 
       convert -density $dens $f $(echo "$f" | sed -e s/svg/png/);
-      if [[ "$o_del" != ""  ]]; then
+      if [ "$o_del" != ""  ]; then
           rm "$f"
       fi
     done
@@ -33,4 +33,4 @@ fi
 
 
 
-#if [[ $root[1] != '/' ]]; then root="$PWD/$root"; fi
+#if [ $root[1] != '/' ]; then root="$PWD/$root"; fi

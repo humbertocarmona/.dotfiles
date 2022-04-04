@@ -2,7 +2,7 @@
 set fish_greeting "fishing with $TERM .."
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        # exec startx -- -keeptty
+        #exec startx -- -keeptty
     end
 end
 
@@ -20,15 +20,14 @@ if status is-interactive
 end
 
 
-# set -g fish_key_bindings fish_vi_key_bindings
-# bind \cc -M insert kill-while-line repaint
+set -g fish_key_bindings fish_vi_key_bindings
+bind \cc -M insert kill-while-line repaint
 
-bind \ce 'source ~/.myenv/bin/activate.fish' 
-bind \ee 'deactivate'
-bind \co 'lf'
-bind \cf 'tmux-sessionizer'
-bind \ch 'tmux-sessionizer ~/'
-bind \cl 'tmux-configs'
-bind \cu 'ncdu'
-bind \cz 'zi'
-bind \cr 'tmux new -s RSYNC -c ~/'
+bind \ce -M insert 'source ~/.myenv/bin/activate.fish' 
+bind \ee -M insert 'deactivate'
+bind \co -M insert 'lf'
+bind \cf -M insert 'tmux-sessionizer'
+bind \ch -M insert 'tmux-sessionizer ~/'
+bind \cl -M insert 'tmux-configs'
+bind \cu -M insert 'ncdu'
+bind \cz -M insert 'zi'

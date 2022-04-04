@@ -1,12 +1,12 @@
-#! /usr/bin/zsh
+#!/bin/sh
 
 d=0  # delete
-if [[ "$@" =~ (^|[[:space:]])"-d"($|[[:space:]]) ]] ; then
+if [ "$@" =~ (^|[:space:])"-d"($|[:space:]) ] ; then
     d=1
 fi
 
 n=0  # do nothing 
-if [[ "$@" =~ (^|[[:space:]])"-n"($|[[:space:]]) ]] ; then
+if [ "$@" =~ (^|[:space:])"-n"($|[:space:]) ] ; then
     n=1
 fi
 
@@ -19,7 +19,7 @@ if [ $d -eq 1 ]; then
 fi
 
 for f in "$@"; do
-  if [[ ( $f != "-d" ) && ( $f != "-n" ) ]]; then
+  if [ ( $f != "-d" ) && ( $f != "-n" ) ]; then
     echo "compressing "$f
     if [ $n -eq 0 ]; then
        tar -cvf $f.tar $f

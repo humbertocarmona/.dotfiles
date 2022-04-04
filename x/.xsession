@@ -95,4 +95,4 @@ xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1
 dwmblocks &
 set r rate 240 50
 
-exec dwm 
+#exec dwm 

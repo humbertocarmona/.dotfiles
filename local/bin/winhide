@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 hidden=$(bspc query -N -n .hidden -d focused)
 

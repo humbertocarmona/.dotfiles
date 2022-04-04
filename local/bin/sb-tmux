@@ -1,4 +1,4 @@
-#! /usr/bin/sh
+#!/bin/sh
 #" "
 
 current_sessions=$(tmux ls | awk -F'windows' '{
