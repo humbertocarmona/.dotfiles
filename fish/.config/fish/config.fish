@@ -22,7 +22,6 @@ end
 
 set -g fish_key_bindings fish_vi_key_bindings
 bind \cc -M insert kill-while-line repaint
-
 bind \ce -M insert 'source ~/.myenv/bin/activate.fish' 
 bind \ee -M insert 'deactivate'
 bind \co -M insert 'lf'
@@ -31,3 +30,13 @@ bind \ch -M insert 'tmux-sessionizer ~/'
 bind \cl -M insert 'tmux-configs'
 bind \cu -M insert 'ncdu'
 bind \cz -M insert 'zi'
+
+abbr -a -U l exa
+abbr -a -U ll exa -lh
+abbr -a -U lll exa -lha
+abbr -a -U lt tmux ls
+
+abbr -a -U x startx
+abbr -a -U q exit
+abbr -a -U g lazygit
+
