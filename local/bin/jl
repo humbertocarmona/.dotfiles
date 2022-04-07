@@ -1,2 +1,0 @@
-#!/bin/sh
-screen -p 0 -mS ss julia --project=.

@@ -1,0 +1,42 @@
+#!/bin/sh
+
+if [ $# -eq 1 ]; then
+    selected=$1
+else
+    selected=$(find -L  ~/.config ~/.local -maxdepth 2 -type d \
+        \( -regex ".+include.+" -o \
+        -regex ".+share.+" -o \
+        -regex ".+lib.+" -o \
+        -regex ".+include.+" -o \
+        -regex ".+.git" -o \
+        -regex ".+Cache.+" -o \
+        -regex ".+LICENSE.+" -o \
+        -regex ".+log.+" \) -prune -o -print | fzf)
+fi
+
+if [ -z $selected ]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux:)
+
+if [ -z $TMUX ] && [ -z $tmux_running ]; then
+    # initiate new session $selected_name  and cd to $selected
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+tmux has-session -t $selected_name 2> /dev/null
+if [ "$?" -eq 0 ]; then 
+    # last command was sucess
+    if [ -z $TMUX ]; then
+        tmux attach-session -t $selected_name
+    else
+        tmux switch-client -t $selected_name 
+    fi
+else
+    # initiate new session $selected_name  and cd to $selected
+    tmux new-session -d -s $selected_name -c $selected
+    tmux switch-client -t $selected_name
+fi

@@ -17,7 +17,7 @@ local options = {
     number = true,                           -- set numbered lines
     numberwidth = 2,
     pumheight = 10,                          -- pop up menu height
-    relativenumber = true,                   -- set relative numbered lines
+    relativenumber = false,                   -- set relative numbered lines
     scrolloff = 8,                           -- is one of my fav
     sidescrolloff = 8,
     signcolumn = "yes",                      -- ?
@@ -50,4 +50,6 @@ vim.cmd [[ set colorcolumn=82 ]]
 -- vim.cmd [[set iskeyword+=-]]
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[ syntax on ]]
-vim.cmd [[ filetype plugin indent on ]]
+vim.cmd [[ :filetype plugin indent on ]]
+vim.cmd [[ :filetype plugin on ]]
+

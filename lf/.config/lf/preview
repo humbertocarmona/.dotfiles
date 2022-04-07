@@ -44,9 +44,8 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 		exiftool "$1"
 		;;
     *.svg)
-	    [ ! -f "${CACHE}.png" ] && \
-			convert -density 75 "$1" "${CACHE}.png"
-		image "${CACHE}.png" "$2" "$3" "$4" "$5"
+        [ ! -f "${CACHE}.png" ] && svg2png "$1" -o "${CACHE}.png"
+        image "${CACHE}.png" "$2" "$3" "$4" "$5"
 		;;
     *.pdf)
 		[ ! -f "${CACHE}.jpg" ] && \
@@ -79,7 +78,11 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.ino)
 		batorcat --language=cpp "$1"
 		;;
-	*)
+    *.geojson)
+        [ ! -f "${CACHE}.json" ] && \
+            cp $1 "${CACHE}.json"
+        batorcat "${CACHE}.json";; 
+    *)
 		batorcat "$1"
 		;;
 esac

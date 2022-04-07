@@ -20,22 +20,31 @@ if status is-interactive
 end
 
 
-set -g fish_key_bindings fish_vi_key_bindings
-bind \cc -M insert kill-while-line repaint
-bind \ce -M insert 'source ~/.myenv/bin/activate.fish' 
-bind \ee -M insert 'deactivate'
-bind \co -M insert 'lf'
-bind \cf -M insert 'tmux-sessionizer'
-bind \ch -M insert 'tmux-sessionizer ~/'
-bind \cl -M insert 'tmux-configs'
-bind \cu -M insert 'ncdu'
-bind \cz -M insert 'zi'
+#set -g fish_key_bindings fish_vi_key_bindings
+#bind \cc -M insert kill-while-line repaint
 
-abbr -a -U l exa
-abbr -a -U ll exa -lh
-abbr -a -U lll exa -lha
-abbr -a -U lt tmux ls
+bind \ce 'source ~/.myenv/bin/activate.fish' 
+bind \ee 'deactivate'
+bind \co 'lf'
+bind \cf 'tmux-sessionizer'
+bind \ch 'tmux-sessionizer ~/'
+bind \cl 'tmux-configs'
+bind \cu 'ncdu'
+bind \cz 'zi'
+bind \ei 'setxkbmap -layout us -variant intl -option ctrl:swapcaps -model logitech_base'
+bind \en 'setxkbmap -layout us -option ctrl:swapcaps -model logitech_base'
 
+
+abbr -a -U ls exa
+abbr -a -U l exa -lh
+abbr -a -U ll exa -lha
+
+abbr -a -U tl tmux ls
+abbr -a -U tsw tmux switchc -t
+abbr -a -U tks tmux kill-session -t
+abbr -a -U tka tmux kill-server
+abbr -a -U ta tmux attach-session -t
+abbr -a -U c clear
 abbr -a -U x startx
 abbr -a -U q exit
 abbr -a -U g lazygit
