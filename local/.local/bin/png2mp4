@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+o_patt=(-p "img%03d.png")
+o_out=(-o "out.mp4")
+o_rate=(-r 24)
+o_help=("")
+
+zparseopts -K -F -- p:=o_patt n:=o_out r:=o_rate o:=o_out h=o_help
+if [ $? != 0 || "$o_help" != "" ]; then
+    echo "help"
+else
+    r=$o_rate[2]
+    patt=$o_patt[2]
+    fout=$o_out[2]
+    ffmpeg -r $r -i $patt \
+        -c:v libx264 \
+        -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2,fps=25,format=yuv420p" $fout
+fi
