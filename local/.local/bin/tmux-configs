@@ -3,7 +3,7 @@
 if [ $# -eq 1 ]; then
     selected=$1
 else
-    selected=$(find -L  ~/.config ~/.local -maxdepth 2 -type d \
+    selected=$(find -L ~/suckless ~/.config ~/.local -maxdepth 2 -type d \
         \( -regex ".+include.+" -o \
         -regex ".+share.+" -o \
         -regex ".+lib.+" -o \

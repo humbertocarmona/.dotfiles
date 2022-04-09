@@ -42,7 +42,7 @@ PROMPT="%{$fg[blue]%}[\
 %{$fg[red]%}@\
 %{$fg[white]%}%m\
 %{$fg[blue]%}]\
-%{$fg[white]%}➜ \
+%{$fg[white]%} \
 %{$fg[cyan]%}%2~%{$reset_color%} %# "
 
 RPROMPT="\$vcs_info_msg_0_ "

@@ -1,9 +1,4 @@
-#!/bin/sh
 
-export ZDOTDIR=$HOME/.config/zsh
-#if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-#     exec startx -- -keeptty
-#fi
 
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -55,6 +50,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
+bindkey -s '^e' 'source ~/.myenv/bin/activate^M'
 bindkey -s '^o' 'lf^M'
 bindkey -s '^f' 'tmux-sessionizer^M'
 bindkey -s '^h' 'tmux-sessionizer ~/^M'
@@ -69,12 +65,6 @@ bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
-# archey3
 
 source $HOME/.local/share/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
-# eval "$(tmux-sessionizer ~/)"
-# source $HOME/.myenv/bin/activate
