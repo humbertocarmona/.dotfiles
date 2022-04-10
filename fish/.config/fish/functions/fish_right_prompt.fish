@@ -1,1 +1,1 @@
-my_fish_right_prompt.fish
+prompts/fish_prompt-01R.fish

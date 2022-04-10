@@ -39,7 +39,11 @@ mkdir -p "$HOME"/.local/share/keyrings
 
 # xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
 xrandr --output HDMI1 --dpi 96
+
+# now using pywal
 nitrogen --restore &
+# wal -R &
+
 # auto backup
 start_backintime &
 # Network Manager Applet

@@ -4,5 +4,5 @@
 *.fontalt0:JuliaMono:pixelsize=11:antialias=true:autohint=true;
 *.fontalt1:Terminus:pixelsize=11:antialias=true:autohint=true; 
 
-#include "/home/humberto/.config/x11/xstyles/color-ayu-dark"
+#include "/home/humberto/.config/x11/xstyles/current"
 st.cursorColor: #f29718

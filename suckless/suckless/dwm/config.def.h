@@ -181,6 +181,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_u,               setlayout,  {.v = &layouts[5]} }, /* monocle */
     { MODKEY,               XK_i,               setlayout,  {.v = &layouts[6]} }, /* centeredmaster */
     { MODKEY|ShiftMask,     XK_i,               setlayout,  {.v = &layouts[7]} }, /* centeredfloatingmaster */
+    { MODKEY,               XK_o,               setlayout,  {.v = &layouts[8]} }, /* floating layout */
     { MODKEY,               XK_a,               togglegaps, {0} },
     { MODKEY,               XK_backslash,       view,       {0} },
     { MODKEY|ShiftMask,     XK_a,               defaultgaps,{0} },
@@ -190,9 +191,9 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_c,               togglescratch,  {.ui = 1} },
     { MODKEY|ShiftMask,     XK_r,               incnmaster,     {.i = -1 } },
     { MODKEY,               XK_r,               incnmaster,     {.i = +1 } },
-    { MODKEY,               XK_o,               spawn,      SHCMD("rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -show-icons") },
     { MODKEY,               XK_p,               spawn,      SHCMD("dmenu_run -fn 'Hack NF:size=10'") },
-    { MODKEY|ShiftMask,     XK_p,               spawn,      SHCMD("passmenu -fn 'Hack NF:size=10'") },
+    { MODKEY|ShiftMas,      XK_p,               spawn,      SHCMD("rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -show-icons") },
+    { MODKEY|ControlMask,   XK_p,               spawn,      SHCMD("passmenu -fn 'Hack NF:size=10'") },
     { MODKEY,               XK_s,               togglesticky,{0} },
     { MODKEY|ShiftMask,     XK_f,               setlayout,  {.v = &layouts[8]} },
     { MODKEY,               XK_g,               shiftview,  { .i = -1 } },

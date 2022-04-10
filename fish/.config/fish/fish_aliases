@@ -38,3 +38,4 @@
 # alias --save rmusb='udiskie-umount -d /dev/sda1'
 # alias --save q='exit'
 # alias --save ff="lfcd"
+

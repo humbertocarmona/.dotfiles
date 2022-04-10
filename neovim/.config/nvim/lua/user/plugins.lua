@@ -48,10 +48,10 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-tree.lua")
-	use("akinsho/bufferline.nvim")
+	-- use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
     use("nvim-lualine/lualine.nvim")
-	use("akinsho/toggleterm.nvim")
+	-- use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -82,6 +82,10 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 
+    -- pywal is great! generated color paletes
+    use("dylanaraps/wal.vim")
+
+    
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use

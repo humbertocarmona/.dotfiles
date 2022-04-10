@@ -1,23 +1,22 @@
-# Start X at login
 set fish_greeting "fishing with $TERM .."
+
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        #exec startx -- -keeptty
+        exec startx -- -keeptty
     end
 end
 
-if status is-interactive
-    fish_add_path -g $HOME/.local/bin
-    source $HOME/.config/fish/scripts/zoxide.fish
-    source $HOME/.config/fish/scripts/spot.fish
-    source $HOME/.config/ranger/scripts/ranger_cd.fish
-    source $HOME/.config/lf/icons
-    source $HOME/.config/fish/scripts/gitaddrem.fish
-    source $HOME/.config/fish/scripts/br.fish
-    export CCHEFE="$HOME/Projetos/Cientista-Chefe/"
-    export ANALISE="$HOME/Projetos/Cientista-Chefe/COVID/analysis/"
-    export PREPRO="$HOME/Projetos/Cientista-Chefe/COVID/preprocessaISUS/"
-end
+fish_add_path -p $HOME/.local/bin
+
+source $HOME/.config/fish/scripts/zoxide.fish
+source $HOME/.config/fish/scripts/spot.fish
+source $HOME/.config/ranger/scripts/ranger_cd.fish
+source $HOME/.config/lf/icons
+source $HOME/.config/fish/scripts/gitaddrem.fish
+source $HOME/.config/fish/scripts/br.fish
+export CCHEFE="$HOME/Projetos/Cientista-Chefe/"
+export ANALISE="$HOME/Projetos/Cientista-Chefe/COVID/analysis/"
+export PREPRO="$HOME/Projetos/Cientista-Chefe/COVID/preprocessaISUS/"
 
 
 #set -g fish_key_bindings fish_vi_key_bindings
@@ -49,3 +48,14 @@ abbr -a -U x startx
 abbr -a -U q exit
 abbr -a -U g lazygit
 
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+# (cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+# cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+# source ~/.cache/wal/colors-tty.sh
