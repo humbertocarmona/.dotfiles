@@ -47,7 +47,6 @@ abbr -a -U c clear
 abbr -a -U x startx
 abbr -a -U q exit
 abbr -a -U g lazygit
-
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
