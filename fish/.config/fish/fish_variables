@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr__40_ease:ssh\x2010\x2e2\x2e21\x2e222
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_g:lazygit
 SETUVAR _fish_abbr_l:exa\x20\x2dlh

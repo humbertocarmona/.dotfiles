@@ -42,13 +42,14 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use("kyazdani42/nvim-web-devicons")
+	use("Pocco81/AutoSave.nvim")
+    use("kyazdani42/nvim-web-devicons")
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-tree.lua")
-	-- use("akinsho/bufferline.nvim")
+	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
     use("nvim-lualine/lualine.nvim")
 	-- use("akinsho/toggleterm.nvim")
@@ -61,13 +62,18 @@ return packer.startup(function(use)
     use("jpalardy/vim-slime")
     use("klafyvel/vim-slime-cells")
     use("folke/zen-mode.nvim")
-    --use("norcalli/nvim-colorizer.lua")
+    use("norcalli/nvim-colorizer.lua")
     use("chrisbra/csv.vim")
     use("p00f/nvim-ts-rainbow")
 	use("JuliaEditorSupport/julia-vim")
     use("lervag/vimtex")
     use("ap/vim-css-color")
 	use("nathom/filetype.nvim")
+    use("preservim/vim-markdown")
+    use("iamcco/markdown-preview.nvim")
+    use("junegunn/limelight.vim")
+
+
     -- Colorschemes
 	use("lunarvim/darkplus.nvim")
 	use("Shatur/neovim-ayu")
@@ -108,7 +114,7 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-
+    use("kdheepak/lazygit.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
