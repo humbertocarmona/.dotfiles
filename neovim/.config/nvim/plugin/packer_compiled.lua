@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["Sakura.nvim"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/Sakura.nvim",
+    url = "https://github.com/numToStr/Sakura.nvim"
+  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/alpha-nvim",
@@ -124,15 +129,10 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["csv.vim"] = {
+  ["csv-tools.lua"] = {
     loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/csv.vim",
-    url = "https://github.com/chrisbra/csv.vim"
-  },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/csv-tools.lua",
+    url = "https://github.com/chen244/csv-tools.lua"
   },
   ["filetype.nvim"] = {
     loaded = true,
@@ -159,10 +159,10 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["jellybeans.vim"] = {
+  ["jellybeans-nvim"] = {
     loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/jellybeans.vim",
-    url = "https://github.com/nanotech/jellybeans.vim"
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/jellybeans-nvim",
+    url = "https://github.com/metalelf0/jellybeans-nvim"
   },
   ["julia-vim"] = {
     loaded = true,
@@ -183,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -228,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -279,11 +289,6 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-bbye",
@@ -294,11 +299,6 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
   },
-  ["vim-github-dark"] = {
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-github-dark",
-    url = "https://github.com/wojciechkepka/vim-github-dark"
-  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-markdown",
@@ -308,11 +308,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-slime",
     url = "https://github.com/jpalardy/vim-slime"
-  },
-  ["vim-slime-cells"] = {
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-slime-cells",
-    url = "https://github.com/klafyvel/vim-slime-cells"
   },
   vimtex = {
     loaded = true,

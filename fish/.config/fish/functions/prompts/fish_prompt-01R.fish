@@ -21,11 +21,6 @@ function fish_right_prompt
         set duration
     end
 
-    set -q VIRTUAL_ENV_DISABLE_PROMPT
-    or set -g VIRTUAL_ENV_DISABLE_PROMPT true
-    set -q VIRTUAL_ENV
-    and set -l venv (string replace -r '.*/' '' -- "$VIRTUAL_ENV")
-
     set_color reset
-    string join " " -- $venv $duration $vcs  $d
+    string join " " -- $duration $vcs  $d
 end

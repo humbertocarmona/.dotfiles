@@ -60,10 +60,12 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
     use("jpalardy/vim-slime")
-    use("klafyvel/vim-slime-cells")
+    -- use("klafyvel/vim-slime-cells")
+    -- use('chadvoegele/nvim-slime')
     use("folke/zen-mode.nvim")
     use("norcalli/nvim-colorizer.lua")
-    use("chrisbra/csv.vim")
+    --use("chrisbra/csv.vim")
+    use("chen244/csv-tools.lua")
     use("p00f/nvim-ts-rainbow")
 	use("JuliaEditorSupport/julia-vim")
     use("lervag/vimtex")
@@ -75,11 +77,16 @@ return packer.startup(function(use)
 
 
     -- Colorschemes
-	use("lunarvim/darkplus.nvim")
+	use('xiyaowong/nvim-transparent')
+    -- use("lunarvim/darkplus.nvim")
 	use("Shatur/neovim-ayu")
-    use("folke/tokyonight.nvim")
-    use("wojciechkepka/vim-github-dark")
-    use("nanotech/jellybeans.vim")
+    -- use("folke/tokyonight.nvim")
+    -- use("wojciechkepka/vim-github-dark")
+    -- use("nanotech/jellybeans.vim")
+    use { 'rktjmp/lush.nvim'}
+    use { 'metalelf0/jellybeans-nvim' }
+    use { 'numToStr/Sakura.nvim' }   
+
     -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions

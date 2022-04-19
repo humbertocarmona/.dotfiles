@@ -18,10 +18,20 @@ vim.g.maplocalleader = ";"
 --   command_mode = "c",
 
 -- Normal ---------------------------
+-- used by lsp
+-- gD buffer declarations
+-- gd buffer definitions
+-- gi buffer implementation
+-- gr buffer references
+-- K buffer hover
+-- <C-k> signature help
+-- <leader>rn buffer rename variable
+-- [d  and ]d go next prev
 
+keymap("n", "ga", "ggVG", opts)
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 -- Resize with arrows
@@ -29,15 +39,19 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>", opts)
+
 -- clear last seach
-keymap("n","<C-l>",":let @/ = ''<CR>",opts)
+keymap("n","<A-l>",":let @/ = ''<CR>",opts)
 -- toggle zen mode
 keymap("n","<F2>","<ESC>:ZenMode<CR>",opts)
 -- write and quit
@@ -49,6 +63,8 @@ keymap("n","<F3>","<ESC>:wq<CR>",opts)
 keymap("i", "jk", "<ESC>", opts)
 -- write and quit in insert mode
 keymap("i","<F3>","<ESC>:wq<CR>",opts)
+
+
 -- Visual -------------------------------
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -57,7 +73,10 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+
 keymap("v", "p", '"_dP', opts)
+
+keymap("v", "s", ":SlimeSend", opts)
 
 -- Visual Block --
 -- Move text up and down ------------------------

@@ -64,7 +64,7 @@ local location ={
 
 lualine.setup({
 	options = {
-		theme = bubbles_theme,
+		theme = 'ayu',
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },

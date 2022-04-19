@@ -1,8 +1,8 @@
 function fish_prompt
     set -l stcolor red
     test $status = 0; and set stcolor $fish_color_cwd
-    set -l color1 blue
-    set -l color2 blue 
+    set -l color1 green
+    set -l color2 '#004400' 
 
     #set -q __fish_git_prompt_showupstream
     #or set -g __fish_git_prompt_showupstream auto

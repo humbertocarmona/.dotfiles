@@ -30,12 +30,12 @@ local options = {
     splitright = true,
     swapfile = false,
     tabstop = 4,
-    --termguicolors = true,
+    termguicolors = true,
     timeoutlen = 100,
     undofile = true,
     updatetime = 300,
     writebackup = false,
-    --textwidth = 82,
+    textwidth = 82,
 }
 
 vim.opt.shortmess:append "c"

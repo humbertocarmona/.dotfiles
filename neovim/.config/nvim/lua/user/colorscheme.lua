@@ -1,8 +1,3 @@
-vim.cmd [[
-try
-  colorscheme ayu-dark
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
+-- vim.cmd('colorscheme jellybeans-nvim')
+-- vim.cmd('colorscheme sakura')
+vim.cmd('colorscheme ayu-dark')
