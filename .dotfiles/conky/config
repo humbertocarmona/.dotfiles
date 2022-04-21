@@ -1,0 +1,63 @@
+conky.config = {
+	use_xft                = true,
+	xftalpha               = 1,
+	update_interval        = 1,
+	total_run_times        = 0,
+
+	background             = true,
+    out_to_console         = false,
+    out_to_stderr          = false,
+
+	own_window             = true,
+    own_window_class       = 'Conky',
+	own_window_type        = 'override',
+	own_window_argb_visual = true,
+    own_window_transparent = true,
+
+	double_buffer          = true,
+
+	minimum_width          = 1135,
+	maximum_width          = 1135,
+
+	minimum_height         = 50,
+
+	draw_shades            = false,
+	draw_outline           = false,
+	draw_borders           = false,
+	draw_graph_borders     = true,
+
+	default_color          = 'd8dee9',
+	default_shade_color    = '333333',
+	default_outline_color  = 'black',
+	color1                 = '586E75',
+	color3                 = '586E75',
+
+	alignment              = 'top_left',
+	gap_x                  = 230,
+	gap_y                  = 8,
+	no_buffers             = true,
+	text_buffer_size       = 2048,
+	uppercase              = false,
+	cpu_avg_samples        = 4,
+	net_avg_samples        = 2,
+	override_utf8_locale   = true,
+
+	font                   = 'DejaVu Sans:style=medium:size=10'
+}
+
+conky.text = [[
+${voffset 20}${GOTO 60}${font Ubuntu:bold:size=10}System${GOTO 320}${font Ubuntu:bold:size=10}Resources${GOTO 620}${font Ubuntu:bold:size=10}File System${GOTO 920}${font Ubuntu:bold:size=10}Network${GOTO 1200}${font Ubuntu:bold:size=10}Units${font}
+${GOTO 60}${font Ubuntu:bold:size=9}Computer${font}${GOTO 130}:${GOTO 140}${nodename}${GOTO 320}${font Ubuntu:bold:size=9}RAM${font}${GOTO 380}:   ${mem}   |   ${memmax}${GOTO 620}${font Ubuntu:bold:size=9}Dir. ${GOTO 665}| ${GOTO 685}Total${GOTO 730}|${GOTO 750}Used${GOTO 795}|${GOTO 815}Free${font}${GOTO 920}${font Ubuntu:bold:size=9}Public IP${font}${GOTO 1020}:${GOTO 1040} ${execi 1800 ~/.conkyrc/scripts/ip.sh} ${GOTO 1200}${font Ubuntu:bold:size=9}Battery${font}${GOTO 1270}:  ${battery_percent} %   -   ${acpiacadapter}
+${GOTO 60}${font Ubuntu:bold:size=9}System${font}${GOTO 120}:${GOTO 140}${sysname}   ${kernel}${GOTO 380}    ${membar 5,120}   -   ${memperc} %${GOTO 620}_________________________________${GOTO 920}${font Ubuntu:bold:size=9}Local IP${font}${GOTO 1020}:${GOTO 1040} ${addr enp6s0}
+${GOTO 60}${font Ubuntu:bold:size=9}Machine${font}${GOTO 120}:${GOTO 140}$machine${GOTO 320}${font Ubuntu:bold:size=9}CPU 1${font}${GOTO 380}:   ${cpubar cpu1 5,120}   -   ${cpu cpu1} %${GOTO 1200}${font Ubuntu:bold:size=9}HDD${font}${GOTO 1270}:  ${execi 4 sensors | grep -A 0 'temp1' | cut -c15-18} °C
+${GOTO 60}${font Ubuntu:bold:size=9}Uptime${font}${GOTO 120}:${GOTO 140}${uptime} ${GOTO 320}${font Ubuntu:bold:size=9}CPU 2${font}${GOTO 380}:   ${cpubar cpu2 5,120}   -   ${cpu cpu2} %${GOTO 620}${font Ubuntu:bold:size=9}root${font}${GOTO 680}${fs_size /}${GOTO 745}${fs_used /}${GOTO 810}${fs_free /}${GOTO 920}${font Ubuntu:bold:size=9}Receiving${font}${GOTO 1020}:${GOTO 1040}${downspeedf enp6s0} /s
+${GOTO 320}${font Ubuntu:bold:size=9}SWAP${font}${GOTO 380}:   ${swapbar 5,120}   -   ${swapperc} % ${GOTO 620}${font Ubuntu:bold:size=9}home${font}${GOTO 680}${fs_size /home/}${GOTO 745}${fs_used /home/}${GOTO 810}${fs_free /home/}${GOTO 920}${font Ubuntu:bold:size=9}Total Received${font}${GOTO 1020}:${GOTO 1040}${totaldown enp6s0}${GOTO 1200}${font Ubuntu:bold:size=9}Processor${font}${GOTO 1270}:  ${acpitemp} °C
+${GOTO 60}${font Ubuntu:bold:size=9}Date${font}${GOTO 120}:${GOTO 140}${time %A, %d %b %Y}${GOTO 320}${font Ubuntu:bold:size=9}Load${font}${GOTO 380}:   $loadavg ${GOTO 920}${font Ubuntu:bold:size=9}Sending${font}${GOTO 1020}:${GOTO 1040}${upspeedf enp6s0} /s${GOTO 620}${font Ubuntu:bold:size=9}Windows${font}${GOTO 680}${fs_size /media/Windows}${GOTO 745}${fs_used /media/Windows}${GOTO 810}${fs_free /media/Windows}
+${GOTO 60}${font Ubuntu:bold:size=9}Time${font}${GOTO 120}:${GOTO 140}${time %H:%M %p}${GOTO 320}${font Ubuntu:bold:size=9}Processes${font}${GOTO 390}:   $processes ${GOTO 620}${font Ubuntu:bold:size=9}Data${font}${GOTO 680}${fs_size /media/Data}${GOTO 745}${fs_used /media/Data}${GOTO 810}${fs_free /media/Data}${GOTO 920}${font Ubuntu:bold:size=9}Total Sent${font}${GOTO 1020}:${GOTO 1040}${totalup enp6s0} ${GOTO 1200}${font Ubuntu:bold:size=9}Frequency${font}${GOTO 1270}:  ${freq_g} Ghz
+${image ~/.conky/pix/background2.png -p 0,-1 -s 1366x200}
+${image ~/.conky/pix/system.png -p 5,20 -s 45x45}
+${image ~/.conky/pix/resources.png -p 260,20 -s 45x45}
+${image ~/.conky/pix/file-system.png -p 560,20 -s 45x45}
+${image ~/.conky/pix/wireless.png -p  860,20 -s 45x45}
+${image ~/.conky/pix/units.png -p 1140,20 -s 45x45}
+]]

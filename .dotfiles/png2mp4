@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+o_patt=(-p img%03d.png)
+o_out=(-o out.mp4)
+
+zparseopts -K -F -- p:=o_patt n:=o_dens r:=o_root d=o_del h=o_help
+
+
+ffmpeg -r 1/5 -i ce_%03d.png -c:v libx264 -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2,fps=25,format=yuv420p" out.mp4
+

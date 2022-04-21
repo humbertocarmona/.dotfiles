@@ -37,7 +37,6 @@ packer.init({
 		end,
 	},
 })
-
 -- Install your plugins here
 return packer.startup(function(use)
 	-- My plugins here
@@ -60,11 +59,8 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
     use("jpalardy/vim-slime")
-    -- use("klafyvel/vim-slime-cells")
-    -- use('chadvoegele/nvim-slime')
     use("folke/zen-mode.nvim")
     use("norcalli/nvim-colorizer.lua")
-    --use("chrisbra/csv.vim")
     use("chen244/csv-tools.lua")
     use("p00f/nvim-ts-rainbow")
 	use("JuliaEditorSupport/julia-vim")
@@ -83,41 +79,48 @@ return packer.startup(function(use)
     -- use("folke/tokyonight.nvim")
     -- use("wojciechkepka/vim-github-dark")
     -- use("nanotech/jellybeans.vim")
-    use { 'rktjmp/lush.nvim'}
-    use { 'metalelf0/jellybeans-nvim' }
-    use { 'numToStr/Sakura.nvim' }   
+    use{'rktjmp/lush.nvim'}
+    use{'metalelf0/jellybeans-nvim'}
+    use{'numToStr/Sakura.nvim'}
 
-    -- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- cmdline completions
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
-	use("hrsh7th/cmp-nvim-lsp")
 
     -- pywal is great! generated color paletes
     use("dylanaraps/wal.vim")
 
-    
-	-- snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
-	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 
-	-- Treesitter
+
+	-- LSP using nvim-cmp and luasnip
+	use("neovim/nvim-lspconfig") -- enable native LSP
+    use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/cmp-nvim-lsp")  -- LSP source for bvim-cmp
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("L3MON4D3/LuaSnip") --snippet engine
+	use("rafamadriz/friendly-snippets") -- some snippets for LuaSnip
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
+
+    -- LSP with CoC
+	-- use("neovim/nvim-lspconfig") -- enable native LSP
+    -- use('ms-jpq/coq_nvim')
+    -- use('ms-jpq/coq.artifacts')
+    -- use('ms-jpq/coq.thirdparty')
+
+    use("williamboman/nvim-lsp-installer") -- language server installer
+    use("jose-elias-alvarez/null-ls.nvim") -- formatters and linters
+	-- use("tamago324/nlsp-settings.nvim") -- lang server settings defined in json
+
+    -- Treesitter based highlighting
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")

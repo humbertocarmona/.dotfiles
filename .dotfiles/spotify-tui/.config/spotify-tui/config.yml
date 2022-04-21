@@ -1,0 +1,24 @@
+theme:
+  active: Gray
+  banner: LightGreen
+  error_border: Red
+  error_text: LightRed
+  hint: LightGreen
+  inactive: Gray
+  playbar_background: Black
+  playbar_progress: "29, 185, 84"
+  playbar_text: White
+  selected: "29, 185, 84"
+  text: White
+
+keybindings:
+  increase_volume: "="
+
+behavior:
+  seek_milliseconds: 5000
+  #  volume_increment: 5
+  tick_rate_milliseconds: 50
+  playing_icon: ▶
+  paused_icon: ⏸ 
+  seek_backwards: "<"
+  seek_forwards: ">"
