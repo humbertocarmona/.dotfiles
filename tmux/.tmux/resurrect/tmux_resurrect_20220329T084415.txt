@@ -1,3 +1,0 @@
-pane	humberto	1	1	:*	0	:/home/humberto	1	fish	:
-window	humberto	1	:fish	1	:*	bbdd,231x63,0,0,0	:
-state	humberto	

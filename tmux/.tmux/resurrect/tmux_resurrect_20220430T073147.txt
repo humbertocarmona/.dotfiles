@@ -1,0 +1,6 @@
+pane	paper-cesar	1	0	:-	0	:/home/humberto/Projetos/Cientista-Chefe/IPECE/NFe/paper-cesar	1	nvim	:nvim ceara_mapa.py
+pane	paper-cesar	1	0	:-	1	:/home/humberto/Projetos/Cientista-Chefe/IPECE/NFe/paper-cesar	0	python	:/home/humberto/.virtualenvs/py3_env/bin/python /home/humberto/.virtualenvs/py3_env/bin/ipython
+pane	paper-cesar	2	1	:*	0	:/home/humberto/Projetos/Cientista-Chefe/IPECE/NFe/paper-cesar	1	fish	:
+window	paper-cesar	1	:nvim	0	:-	4759,234x57,0,0{117x57,0,0,0,116x57,118,0,4}	:
+window	paper-cesar	2	:fish	1	:*	cb64,234x57,0,0,7	:
+state	paper-cesar	

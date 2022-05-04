@@ -7,6 +7,8 @@ if status is-login
 end
 
 fish_add_path -p $HOME/packages/basilisk/src
+export BASILISK=$HOME/packages/basilisk/src
+
 fish_add_path -p $HOME/.local/bin
 
 source $HOME/.config/fish/scripts/zoxide.fish
@@ -15,40 +17,37 @@ source $HOME/.config/ranger/scripts/ranger_cd.fish
 source $HOME/.config/lf/icons
 source $HOME/.config/fish/scripts/gitaddrem.fish
 source $HOME/.config/fish/scripts/br.fish
-export CCHEFE="$HOME/Projetos/Cientista-Chefe/"
-export ANALISE="$HOME/Projetos/Cientista-Chefe/COVID/analysis/"
-export PREPRO="$HOME/Projetos/Cientista-Chefe/COVID/preprocessaISUS/"
 
+set -g EDITOR (type -p vim)
 
 #set -g fish_key_bindings fish_vi_key_bindings
-#bind \cc -M insert kill-while-line repaint
 
-bind \ce 'source ~/.myenv/bin/activate.fish' 
-bind \ee 'deactivate'
+bind \co -M insert 'lf'
+bind \cl -M insert 'tmux-configs'
+bind \ck -M insert 'tmux-projects'
+bind \cz -M insert 'zi'
+
 bind \co 'lf'
-bind \cf 'tmux-sessionizer'
-bind \ch 'tmux-sessionizer ~/'
 bind \cl 'tmux-configs'
-bind \cu 'ncdu'
+bind \ck 'tmux-projects'
 bind \cz 'zi'
-bind \ei 'setxkbmap -layout us -variant intl -option ctrl:swapcaps -model logitech_base'
-bind \en 'setxkbmap -layout us -option ctrl:swapcaps -model logitech_base'
 
 
 abbr -a -U ls exa
 abbr -a -U l exa -lh
 abbr -a -U ll exa -lha
-
+abbr -a -U cat bat
 abbr -a -U tl tmux ls
-abbr -a -U tsw tmux switchc -t
-abbr -a -U tks tmux kill-session -t
-abbr -a -U tka tmux kill-server
+abbr -a -U tw tmux switch -t
+abbr -a -U tk tmux kill-session -t
+abbr -a -U tks tmux kill-server
 abbr -a -U ta tmux attach-session -t
+abbr -a -U td tmux detach
 abbr -a -U c clear
-abbr -a -U x startx
 abbr -a -U q exit
 abbr -a -U g lazygit
 abbr -a -U rm rm -i
+abbr -a -U @ease ssh 10.2.21.222
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-backintime pw-cache start 2>&1 >/dev/null

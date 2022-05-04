@@ -1,8 +1,0 @@
-*.selectToClipboard: true
-*.disallowedWindowOps: 20,21,SetXProp
-*.font:hack nerd font:style=regular:pixelsize=14:antialias=true:autohint=true;
-*.fontalt0:JuliaMono:pixelsize=11:antialias=true:autohint=true;
-*.fontalt1:Terminus:pixelsize=11:antialias=true:autohint=true; 
-
-#include "/home/humberto/.config/x11/xstyles/current"
-st.cursorColor: #f29718

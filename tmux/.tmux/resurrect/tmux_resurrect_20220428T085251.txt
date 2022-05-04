@@ -1,0 +1,11 @@
+pane	Min	1	1	:*	0	:/home/humberto/.config/Min	1	fish	:
+pane	_config	1	1	:*	0	:/home/humberto	1	nvim	:nvim -O .local/bin/tmux-session .local/bin/tmux-configs
+pane	_local	1	1	:*	0	:/home/humberto/.dotfiles/local/.local/bin	1	fish	:
+pane	mutt	1	1	:*	0	:/home/humberto/.config/mutt	1	fish	:
+pane	yeds	1	1	:*	0	:/home/humberto	1	fish	:
+window	Min	1	:fish	1	:*	c3e0,273x74,0,0,3	:
+window	_config	1	:nvim	1	:*	c7dd,273x75,0,0,0	:
+window	_local	1	:fish	1	:*	c7e1,273x75,0,0,4	:
+window	mutt	1	:fish	1	:*	c7df,273x75,0,0,2	:
+window	yeds	1	:fish	1	:*	c7de,273x75,0,0,1	:
+state	_local	

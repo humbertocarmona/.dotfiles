@@ -1,0 +1,3 @@
+pane	fish	1	1	:*	0	:/home/humberto/.dotfiles/fish/.config/fish	1	nvim	:nvim fish_variables
+window	fish	1	:nvim	1	:*	c7dd,273x75,0,0,0	:
+state	fish	

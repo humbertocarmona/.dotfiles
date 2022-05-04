@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# modified here
+
+devsession=1
+dirnames=("$HOME/Projetos/")
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -d | --nodev ) devsession=0; shift ;;
+        *) dirnames+=( $1 ); shift ;;
+    esac
+done
+
+echo $devsession' dirnames = '${dirnames[@]}
+if [ dirnames[@] == "" ]; then
+    echo "no dir names passed"
+fi
+full_path=$(find -L ${dirnames[@]}  \
+    -maxdepth 10 \
+    \( -regex ".+include.+" -o \
+    -regex ".+share.+" -o \
+    -regex ".+lib.+" -o \
+    -regex ".+include.+" -o \
+    -regex ".+.git" -o \
+    -regex ".+Cache.+" -o \
+    -regex ".+LICENSE.+" -o \
+    -regex ".+log.+" \) -prune -o -type d -print | fzf)
+
+echo $full_path
+
+if [ -z $full_path ]; then
+     exit 0
+ fi
+
+
+session_name=$(basename "$full_path" | tr . _)
+
+if [ -z $TMUX ]; then
+    if ! tmux has-session -t $session_name; then
+        tmux new-session -s $session_name -d -c $full_path
+        if [ $devsession -eq 1 ]; then
+            tmux split-window -t $session_name:1 -h
+            tmux send-keys -t $session_name:1.0 nvim Enter
+            tmux send-keys -t $session_name:1.1 $full_path Enter
+        fi
+    fi
+    tmux attach -t $session_name:1.0
+fi

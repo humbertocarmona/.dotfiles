@@ -51,7 +51,7 @@ function rrsync -d "special rsync using .gitignore"
             echo "      $_flag_to$_flag_project \ "
             echo "      --include='**.gitignore' \ " 
             echo "      --exclude='/.git' --filter=':- .gitignore'"
-            rsync -nvhra \
+            rsync -nvazz \
                 $_flag_from$_flag_project \
                 $_flag_to$_flag_project \
                 --include='**.gitignore' \
@@ -61,7 +61,7 @@ function rrsync -d "special rsync using .gitignore"
             read -l -P 'agora pra valer, tem certeza? [y/n]' reply
             switch $reply
                 case Y y
-                    rsync -vhra $_flag_from$_flag_project \
+                    rsync -vazz $_flag_from$_flag_project \
                         $_flag_to$_flag_project \
                         --include='**.gitignore' \
                         --exclude='.git' \
@@ -74,7 +74,7 @@ function rrsync -d "special rsync using .gitignore"
         end
     else
         echo 'dry run ----------------------------------------------'
-        rsync -nvhra  \
+        rsync -nvazz  \
             $_flag_from$_flag_project \
             $_flag_to$_flag_project \
             --include='**.gitignore' \

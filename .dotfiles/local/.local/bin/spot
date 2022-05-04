@@ -1,5 +1,0 @@
-#!/bin/sh
-
-killall spotifyd
-spotifyd
-spt

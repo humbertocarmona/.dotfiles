@@ -1,1 +1,0 @@
-prompts/fish_prompt-02L.fish
