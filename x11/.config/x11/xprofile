@@ -4,7 +4,7 @@
 export EDITOR="nvim"
 export TERMINAL="st"
 export READER="zathura"
-export BROWSER="brave"
+export BROWSER="min"
 export VIDEO="vlc"
 export IMAGE="sxiv"
 export COLORTERM="truecolor"

@@ -12,9 +12,6 @@ function fish_prompt
     #set -q __fish_git_prompt_showupstream
     #or set -g __fish_git_prompt_showupstream auto
 
-
-
-         
     # echo -n -s (prompt_login)
     # virtual environment
     if set -q VIRTUAL_ENV

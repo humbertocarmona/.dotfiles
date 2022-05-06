@@ -102,6 +102,11 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
   ["bufferline.nvim"] = {
     config = { "require'plugins.bufferline'" },
     loaded = true,
@@ -198,6 +203,11 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["magma-nvim"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/magma-nvim",
+    url = "https://github.com/dccsillag/magma-nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -212,12 +222,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
-  ["nvim-autopairs"] = {
-    config = { "require'plugins.autopairs'" },
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -339,12 +343,6 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
   },
-  ["vim-ipython-cell"] = {
-    config = { "require'plugins.slime'" },
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-ipython-cell",
-    url = "https://github.com/hanschen/vim-ipython-cell"
-  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-markdown",
@@ -355,10 +353,10 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
-  ["vim-slime"] = {
+  ["vim-surround"] = {
     loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-slime",
-    url = "https://github.com/jpalardy/vim-slime"
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   vimtex = {
     loaded = true,
@@ -380,26 +378,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require'plugins.comment'
-time([[Config for Comment.nvim]], false)
--- Config for: vim-ipython-cell
-time([[Config for vim-ipython-cell]], true)
-require'plugins.slime'
-time([[Config for vim-ipython-cell]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require'plugins.colorizer'
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: lightspeed.nvim
-time([[Config for lightspeed.nvim]], true)
-require'plugins.lightspeed'
-time([[Config for lightspeed.nvim]], false)
 -- Config for: nvim-transparent
 time([[Config for nvim-transparent]], true)
 require'plugins.transparent'
 time([[Config for nvim-transparent]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require'plugins.colorizer'
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require'plugins.alpha'
@@ -412,22 +398,42 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for bufferline.nvim]], true)
 require'plugins.bufferline'
 time([[Config for bufferline.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require'plugins.lualine'
-time([[Config for lualine.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require'plugins.treesitter'
 time([[Config for nvim-treesitter]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require'plugins.impatient'
+time([[Config for impatient.nvim]], false)
+-- Config for: AutoSave.nvim
+time([[Config for AutoSave.nvim]], true)
+require'plugins.autosave'
+time([[Config for AutoSave.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require'plugins.telescope'
 time([[Config for telescope.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require'plugins.whichkey'
+time([[Config for which-key.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require'plugins.comment'
+time([[Config for Comment.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require'plugins.lualine'
+time([[Config for lualine.nvim]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
 require'plugins.zen-mode'
 time([[Config for zen-mode.nvim]], false)
+-- Config for: lightspeed.nvim
+time([[Config for lightspeed.nvim]], true)
+require'plugins.lightspeed'
+time([[Config for lightspeed.nvim]], false)
 -- Config for: csv.vim
 time([[Config for csv.vim]], true)
 require'plugins.csv'
@@ -436,22 +442,6 @@ time([[Config for csv.vim]], false)
 time([[Config for gitsigns.nvim]], true)
 require'plugins.gitsigns'
 time([[Config for gitsigns.nvim]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require'plugins.impatient'
-time([[Config for impatient.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require'plugins.autopairs'
-time([[Config for nvim-autopairs]], false)
--- Config for: AutoSave.nvim
-time([[Config for AutoSave.nvim]], true)
-require'plugins.autosave'
-time([[Config for AutoSave.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require'plugins.whichkey'
-time([[Config for which-key.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

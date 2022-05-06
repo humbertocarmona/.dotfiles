@@ -66,8 +66,9 @@ return packer.startup(
 
 
                 -- autopairs
-                { 'windwp/nvim-autopairs', config = lua_path"autopairs" },
-
+                -- { 'windwp/nvim-autopairs', config = lua_path"autopairs" },
+                { 'jiangmiao/auto-pairs'},
+                { 'tpope/vim-surround' },
                 -- other
                 { 'jose-elias-alvarez/null-ls.nvim' }, -- formatters and linters
                 { 'onsails/lspkind-nvim' },
@@ -125,7 +126,7 @@ return packer.startup(
 
         -- Colorschemes
         use { 'numToStr/Sakura.nvim' }
-        use ("humbertocarmona/kanagawa-mod.nvim")
+        use { 'humbertocarmona/kanagawa-mod.nvim' }
         use { 'xiyaowong/nvim-transparent', config = lua_path"transparent" }
         -- use { 'Shatur/neovim-ayu' }
         -- use { 'wojciechkepka/vim-github-dark' }
@@ -138,8 +139,18 @@ return packer.startup(
         -- ide
         use { 'goolord/alpha-nvim', config = lua_path"alpha"}
         use { 'folke/which-key.nvim', config = lua_path"whichkey" }
-        use { 'hanschen/vim-ipython-cell', requires = {'jpalardy/vim-slime'},
-            config = lua_path"slime"}
+        -- use { 'hanschen/vim-ipython-cell', requires = {'jpalardy/vim-slime'},
+        --      config = lua_path"slime"}
+        use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+
+        -- neovim jupyter qtconsole
+        -- use { 'untitled-ai/jupyter_ascending.vim' }
+        -- use { 'bfredl/nvim-ipy', config=lua_path"nvim-ipy" }
+        -- use { 'hkupty/iron.nvim', config = lua_path"iron" }
+        -- use { 'GCBallesteros/jupytext.vim' }
+        -- use { 'kana/vim-textobj-line' }
+        -- use { 'kana/vim-textobj-user' }
+        -- use { 'GCBallesteros/vim-textobj-hydrogen' } 
 
         -- My plugins here
         use { 'Pocco81/AutoSave.nvim', config = lua_path"autosave" }
@@ -153,7 +164,6 @@ return packer.startup(
             config = lua_path"zen-mode" }
         use { 'antoinemadec/FixCursorHold.nvim' } -- This is needed to fix lsp doc highlight
         use { 'tversteeg/registers.nvim'}
-
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
