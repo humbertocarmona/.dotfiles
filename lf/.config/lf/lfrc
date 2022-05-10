@@ -12,15 +12,15 @@ set ifs "\n"
 
 # set internal field separator (IFS) to "\n" for shell commands This is useful to
 # automatically split file names in $fs and $fx properly since default file
-# separator used in these variables (i.e. 'filesep' option) is newline. You need
+# separator used in these variables (i.e. 'file separator' option) is newline. You need
 # to consider the values of these options and create your commands accordingly.
 # set ifs "\n" set shell zsh set '-eu' options for shell commands These options
 # are used to have safer shell commands. Option '-e' is used to exit on error and
 # option '-u' is used to give error for unset variables. Option '-f' disables
-# pathname expansion which can be useful when $f, $fs, and $fx variables contain
+# path name expansion which can be useful when $f, $fs, and $fx variables contain
 # names with '*' or '?' characters. However, this option is used selectively
 # within individual commands as it can be limiting at times.
-# set shellopts '-eu'
+# set shell options '-eu'
 
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
@@ -36,7 +36,7 @@ cmd open ${{
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-#cmd trash-put %set -f; mv $fx ~/.local/share/Trash/files
+# cmd trash-put %set -f; mv $fx ~/.local/share/Trash/files
 
 
 # Trash cli bindings
@@ -189,9 +189,9 @@ map ax extract
 map bg setwallpaper
 map bj broot_jump
 
-
-map c clear
-map C clear
+map c
+map cc clear
+map cC clear
 map ch chMod
 
 map d
@@ -236,9 +236,8 @@ map gus cd /usr/share
 map gum cd /run/media/humberto
 map gv cd ~/Videos
 
-map k down
-
-map l up
+# map k down
+# map l up
 
 map m
 map mf mkFile

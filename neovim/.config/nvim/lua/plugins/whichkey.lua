@@ -159,22 +159,11 @@ local mappings = {
     },
 
     -- hanschen/vim-ipython-cell
-    r = {
-        r = {'<cmd>IPythonCellExecuteCellJump<CR>', 'Execute the current code cell in IPython, and jump to the next cell'},
-        e = {'<cmd>IPythonCellExecuteCell<CR>', 'Execute the current code cell in IPython'},
-        v = {'<cmd>IPythonCellExecuteCellVerboseJump<CR>', 'Print and execute the current code cell in IPython, and jump to the next cell'},
-        V = {'<cmd>IPythonCellExecuteCellVerbose<CR>', 'Print and execute the current code cell in IPython'},
-        a = {'<cmd>IPythonCellRun<CR>', 'Run the whole script in IPython'},
-        t = {'<cmd>IPythonCellRunTime<CR>', 'Run the whole script in IPython and time the execution'},
-        c = {'<cmd>IPythonCellClear<CR>', 'Clear IPython screen'},
-        f = {'<cmd>IPythonCellClose<CR>', 'Close all figure windows'},
-        y = {'<cmd>IPythonCellPrevCell<CR>', 'Jump to the previous cell header'},
-        u = {'<cmd>IPythonCellNextCell<CR>', 'Jump to the next cell header'},
-        -- a = {'<cmd>IPythonCellPrevCommand<CR>', 'Run previous command'},
-        -- a = {'<cmd>IPythonCellRestart<CR>', 'Restart IPython'},
-        -- a = {'<cmd>IPythonCellInsertAbove<CR>', 'Insert a cell header tag above the current cell'},
-        -- a = {'<cmd>IPythonCellInsertBelow<CR>', 'Insert a cell header tag below the current cell'},
-        -- a = {'<cmd>IPythonCellToMarkdown<CR>', 'Convert current code cell into a markdown cell'},
+    j = {
+        qt = { ":RunQtConsole<CR>", "open qt console" },
+        k = { ":IPython --existing --no-window<CR>", "connect to qtconsole kernel" },
+        c = { "<Plug>(IPy-RunCell)", "run cell" },
+        a = { "<Plug>(IPy-RunAll)", "run all cells" },
     },
 }
 

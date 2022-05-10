@@ -50,6 +50,7 @@ abbr -a -U q exit
 abbr -a -U g lazygit
 abbr -a -U rm rm -i
 abbr -a -U @ease ssh 192.168.15.11
+abbr -a -U lf lfub
 # abbr -a -U @ease ssh 10.2.21.222
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.

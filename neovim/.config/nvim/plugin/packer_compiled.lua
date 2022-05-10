@@ -203,11 +203,6 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["magma-nvim"] = {
-    loaded = true,
-    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/magma-nvim",
-    url = "https://github.com/dccsillag/magma-nvim"
-  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -233,6 +228,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/crivotz/nvim-colorizer.lua"
+  },
+  ["nvim-ipy"] = {
+    config = { "require'plugins.nvim-ipy'" },
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-ipy",
+    url = "https://github.com/bfredl/nvim-ipy"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -343,6 +344,11 @@ _G.packer_plugins = {
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
   },
+  ["vim-github-dark"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-github-dark",
+    url = "https://github.com/wojciechkepka/vim-github-dark"
+  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/vim-markdown",
@@ -378,54 +384,46 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-transparent
-time([[Config for nvim-transparent]], true)
-require'plugins.transparent'
-time([[Config for nvim-transparent]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require'plugins.colorizer'
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-require'plugins.alpha'
-time([[Config for alpha-nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require'plugins.nvim-tree'
-time([[Config for nvim-tree.lua]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require'plugins.bufferline'
-time([[Config for bufferline.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require'plugins.treesitter'
-time([[Config for nvim-treesitter]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require'plugins.impatient'
-time([[Config for impatient.nvim]], false)
--- Config for: AutoSave.nvim
-time([[Config for AutoSave.nvim]], true)
-require'plugins.autosave'
-time([[Config for AutoSave.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require'plugins.telescope'
-time([[Config for telescope.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require'plugins.whichkey'
-time([[Config for which-key.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require'plugins.comment'
-time([[Config for Comment.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require'plugins.lualine'
 time([[Config for lualine.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+require'plugins.alpha'
+time([[Config for alpha-nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require'plugins.gitsigns'
+time([[Config for gitsigns.nvim]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require'plugins.impatient'
+time([[Config for impatient.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require'plugins.bufferline'
+time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require'plugins.colorizer'
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-ipy
+time([[Config for nvim-ipy]], true)
+require'plugins.nvim-ipy'
+time([[Config for nvim-ipy]], false)
+-- Config for: AutoSave.nvim
+time([[Config for AutoSave.nvim]], true)
+require'plugins.autosave'
+time([[Config for AutoSave.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require'plugins.comment'
+time([[Config for Comment.nvim]], false)
+-- Config for: nvim-transparent
+time([[Config for nvim-transparent]], true)
+require'plugins.transparent'
+time([[Config for nvim-transparent]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
 require'plugins.zen-mode'
@@ -434,14 +432,26 @@ time([[Config for zen-mode.nvim]], false)
 time([[Config for lightspeed.nvim]], true)
 require'plugins.lightspeed'
 time([[Config for lightspeed.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require'plugins.nvim-tree'
+time([[Config for nvim-tree.lua]], false)
 -- Config for: csv.vim
 time([[Config for csv.vim]], true)
 require'plugins.csv'
 time([[Config for csv.vim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require'plugins.gitsigns'
-time([[Config for gitsigns.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require'plugins.telescope'
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require'plugins.treesitter'
+time([[Config for nvim-treesitter]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require'plugins.whichkey'
+time([[Config for which-key.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

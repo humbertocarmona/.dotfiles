@@ -1,31 +1,67 @@
 # Note I am using alacritty-ligatures until ligatures make it upstream
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#001E26'
+#     foreground: '#B3B1AD'
+#
+#   # Normal colors
+#   normal:
+#     black: '#01060E'
+#     red: '#EA6C73'
+#     green: '#91B362'
+#     yellow: '#F9AF4F'
+#     blue: '#53BDFA'
+#     magenta: '#FAE994'
+#     cyan: '#90E1C6'
+#     white: '#C7C7C7'
+#
+#   # Bright colors
+#   bright:
+#     black: '#686868'
+#     red: '#F07178'
+#     green: '#C2D94C'
+#     yellow: '#FFB454'
+#     blue: '#59C2FF'
+#     magenta: '#FFEE99'
+#     cyan: '#95E6CB'
+#     white: '#FFFFFF'
+
+# Kanagawa Alacritty Colors
 colors:
-  # Default colors
   primary:
-    background: '#001E26'
-    foreground: '#B3B1AD'
+    # background: '0x1f1f28'
+    # foreground: '0xdcd7ba'
+    background: '#16161d'
+    foreground: '#dcd7ba'
 
-  # Normal colors
   normal:
-    black: '#01060E'
-    red: '#EA6C73'
-    green: '#91B362'
-    yellow: '#F9AF4F'
-    blue: '#53BDFA'
-    magenta: '#FAE994'
-    cyan: '#90E1C6'
-    white: '#C7C7C7'
+    black:   '0x090618'
+    red:     '0xc34043'
+    green:   '0x76946a'
+    yellow:  '0xc0a36e'
+    blue:    '0x7e9cd8'
+    magenta: '0x957fb8'
+    cyan:    '0x6a9589'
+    white:   '0xc8c093'
 
-  # Bright colors
   bright:
-    black: '#686868'
-    red: '#F07178'
-    green: '#C2D94C'
-    yellow: '#FFB454'
-    blue: '#59C2FF'
-    magenta: '#FFEE99'
-    cyan: '#95E6CB'
-    white: '#FFFFFF'
+    black:   '0x727169'
+    red:     '0xe82424'
+    green:   '0x98bb6c'
+    yellow:  '0xe6c384'
+    blue:    '0x7fb4ca'
+    magenta: '0x938aa9'
+    cyan:    '0x7aa89f'
+    white:   '0xdcd7ba'
+
+  selection:
+    background: '0x2d4f67'
+    foreground: '0xc8c093'
+
+  indexed_colors:
+    - { index: 16, color: '0xffa066' }
+    - { index: 17, color: '0xff5d62' }
 
 cursor:
   text: CellBackground
@@ -67,6 +103,8 @@ window:
   padding:
     x: 5
     y: 5
+
+  opacity: 0.95
   # scrolling:
   #   # Maximum number of lines in the scrollback buffer.
   #   # Specifying '0' will disable scrolling.
@@ -94,4 +132,4 @@ key_bindings:
   # - { key: Add, mods: Control, action: IncreaseFontSize }
   # - { key: Subtract, mods: Control, action: DecreaseFontSize }
   # - { key: N, mods: Control, action: SpawnNewInstance }
-theme: Ayu-Dark
+  # theme: Ayu-Dark

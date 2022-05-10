@@ -104,7 +104,7 @@ return packer.startup(
         use { 'akinsho/bufferline.nvim', config = lua_path"bufferline" }
         use { 'nvim-lualine/lualine.nvim', config = lua_path"lualine" }
 
-        -- Telesc
+        -- Telescope
         use { 'nvim-lua/popup.nvim' }
         use { 'nvim-lua/plenary.nvim' }
         use { 'nvim-telescope/telescope.nvim', config= lua_path"telescope" }
@@ -129,7 +129,7 @@ return packer.startup(
         use { 'humbertocarmona/kanagawa-mod.nvim' }
         use { 'xiyaowong/nvim-transparent', config = lua_path"transparent" }
         -- use { 'Shatur/neovim-ayu' }
-        -- use { 'wojciechkepka/vim-github-dark' }
+        use { 'wojciechkepka/vim-github-dark' }
         -- use { 'metalelf0/jellybeans-nvim' }
         -- use { 'rebelot/kanagawa.nvim' }
         -- use { 'rktjmp/lush.nvim' }
@@ -141,16 +141,7 @@ return packer.startup(
         use { 'folke/which-key.nvim', config = lua_path"whichkey" }
         -- use { 'hanschen/vim-ipython-cell', requires = {'jpalardy/vim-slime'},
         --      config = lua_path"slime"}
-        use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
-
-        -- neovim jupyter qtconsole
-        -- use { 'untitled-ai/jupyter_ascending.vim' }
-        -- use { 'bfredl/nvim-ipy', config=lua_path"nvim-ipy" }
-        -- use { 'hkupty/iron.nvim', config = lua_path"iron" }
-        -- use { 'GCBallesteros/jupytext.vim' }
-        -- use { 'kana/vim-textobj-line' }
-        -- use { 'kana/vim-textobj-user' }
-        -- use { 'GCBallesteros/vim-textobj-hydrogen' } 
+        use { 'bfredl/nvim-ipy', config = lua_path"nvim-ipy" }
 
         -- My plugins here
         use { 'Pocco81/AutoSave.nvim', config = lua_path"autosave" }
