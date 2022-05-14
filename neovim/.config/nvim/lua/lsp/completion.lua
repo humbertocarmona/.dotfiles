@@ -62,7 +62,7 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'luasnip' },
-        { name = 'spell' },
+        -- { name = 'spell' },
     }, {
         { name = 'buffer', keyword_length = 2 },
     }),

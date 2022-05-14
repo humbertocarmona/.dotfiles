@@ -48,7 +48,7 @@ return packer.startup(
 
         use { 'neovim/nvim-lspconfig' ,
             requires = {
-                { 'williamboman/nvim-lsp-installer' }, -- language server installer
+                -- { 'williamboman/nvim-lsp-installer' }, -- language server installer
 
                 -- code completion
                 { 'hrsh7th/nvim-cmp' }, -- The completion plugin

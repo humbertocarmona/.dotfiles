@@ -4,7 +4,7 @@
 export EDITOR="nvim"
 export TERMINAL="st"
 export READER="zathura"
-export BROWSER="min"
+export BROWSER="brave"
 export VIDEO="vlc"
 export IMAGE="sxiv"
 export COLORTERM="truecolor"
@@ -12,13 +12,12 @@ export OPENER="xdg-open"
 export PAGER="bat"
 export WM="dwm"
 
-
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR=$HOME/.config/zsh/
-export FZF_DEFAULT_COMMAND='find .'
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git --exclude .cache'
 
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
@@ -27,6 +26,3 @@ export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 export QT_SCREEN_SCALE_FACTORS="1;1;1"
-
-
-echo "sourced xprofile ... somehow..."

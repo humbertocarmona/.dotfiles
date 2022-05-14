@@ -6,7 +6,7 @@ SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_g:lazygit
 SETUVAR _fish_abbr_l:exa\x20\x2dlh
-SETUVAR _fish_abbr_lf:lfub
+SETUVAR _fish_abbr_lf:lfcd
 SETUVAR _fish_abbr_ll:exa\x20\x2dlha
 SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_q:exit

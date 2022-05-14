@@ -96,6 +96,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+/* #define MODKEY Mod1Mask */
 #define TAGKEYS(KEY,TAG) \
     { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -104,7 +105,7 @@ static const Layout layouts[] = {
 #define STACKKEYS(MOD,ACTION) \
     { MOD,  XK_j,   ACTION##stack,  {.i = INC(+1) } }, \
     { MOD,  XK_k,   ACTION##stack,  {.i = INC(-1) } }, \
-    { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
+    { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, 
     /* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
     /* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
     /* { MOD, XK_z,     ACTION##stack, {.i = 2 } }, \ */
@@ -165,9 +166,9 @@ static Key keys[] = {
     { MODKEY,               XK_0,               view,       {.ui = ~0 } },
     { MODKEY|ShiftMask,     XK_0,               tag,        {.ui = ~0 } },
     { MODKEY,               XK_minus,           spawn,      SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
-    { MODKEY|ShiftMask,     XK_minus,           spawn,      SHCMD("pamixer --allow-boost -d 15; kill -44 $(pidof dwmblocks)") },
     { MODKEY,               XK_equal,           spawn,      SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-    { MODKEY|ShiftMask,     XK_equal,           spawn,      SHCMD("pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)") },
+    { MODKEY|ShiftMask,     XK_minus,           spawn,      SHCMD("pamixer --allow-boost -d 10; kill -44 $(pidof dwmblocks)") },
+    { MODKEY|ShiftMask,     XK_equal,           spawn,      SHCMD("pamixer --allow-boost -i 10; kill -44 $(pidof dwmblocks)") },
     { MODKEY,               XK_Tab,             view,       {0} },
     /* { MODKEY|ShiftMask,  XK_Tab,             spawn,      SHCMD("") }, */
     { MODKEY,               XK_e,               spawn,      SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
@@ -201,15 +202,15 @@ static Key keys[] = {
     { MODKEY,               XK_h,               setmfact,   {.f = -0.05} },
     /* J and K are automatically bound above in STACKEYS */
     { MODKEY,               XK_l,               setmfact,       {.f = +0.05} },
-    /* { MODKEY,               XK_semicolon,       shiftview,  { .i = 1 } }, */
-    /* { MODKEY|ShiftMask,     XK_semicolon,       shifttag,   { .i = 1 } }, */
+    // { MODKEY,               XK_semicolon,       shiftview,  { .i = 1 } },
+    // { MODKEY|ShiftMask,     XK_semicolon,       shifttag,   { .i = 1 } },
     { MODKEY|ShiftMask,     XK_apostrophe,      togglesmartgaps,    {0} },
     { MODKEY|ControlMask,   XK_Return,          spawn,      {.v = termcmd} },
     { MODKEY,               XK_Return,          spawn,      {.v = alacrittycmd} },
     { MODKEY|ShiftMask,     XK_Return,          spawn,      {.v = kittycmd} },
     { MODKEY,               XK_w,               killclient, {0} },
     { MODKEY|ControlMask,   XK_q,               spawn,      SHCMD("sysact") },
-    /*{ MODKEY|ShiftMask,   XK_x,               spawn,      SHCMD(TERMINAL " -e sudo nmtui") },*/
+    // { MODKEY|ShiftMask,   XK_x,               spawn,      SHCMD(TERMINAL " -e sudo nmtui") },
     { MODKEY,               XK_x,               incrgaps,   {.i = -3 } },
     { MODKEY,               XK_z,               incrgaps,   {.i = +3 } },
     { MODKEY,               XK_m,               spawn,      SHCMD(TERMINAL " -e ncmpcpp") },
@@ -226,13 +227,14 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_Page_Down,       shifttag,   { .i = +1 } },
     { MODKEY,               XK_space,           zoom,       {0} },
     { MODKEY|ShiftMask,     XK_space,           togglefloating, {0} },
+    { 0,                    XK_Print,           spawn,      SHCMD("flameshot gui") },
+
     /* { MODKEY,               XK_Insert,          spawn,      SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") }, */
     /* { MODKEY,               XK_F1,              spawn,      SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") }, */
     /* { MODKEY,               XK_F2,              spawn,      SHCMD("tutorialvids") }, */
     /* { MODKEY,               XK_F3,              spawn,      SHCMD("displayselect") }, */
-    // { MODKEY,               XK_F4,              spawn,      SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+    /* { MODKEY,               XK_F4,              spawn,      SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") }, */
     /* { MODKEY,               XK_F5,              xrdb,       {.v = NULL } }, */
-    // { MODKEY,               XK_F6,              spawn,      SHCMD("flameshot gui") },
     // { MODKEY,               XK_F7,              spawn,      SHCMD("td-toggle") },
     // { MODKEY,               XK_F8,              spawn,      SHCMD("mw -Y") },
     // { MODKEY,               XK_F9,              spawn,      SHCMD("dmenumount") },

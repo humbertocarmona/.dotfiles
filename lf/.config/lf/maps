@@ -1,51 +1,29 @@
 # bindings
 # First remove some defaults
-
-
-# File Openers
-map ee $$editor "$f"
-map u $view "$f"
-map V push :!nvim<space>
-
-# archive mappings
+map "'"
+map '"'
+map a
 map az zip
 map at tar
 map ag targz
-map ab targz
+map ab tarbz2
 map au unarchiv
+map ax extract
 
+map bg setwallpaper
+map bj broot_jump
 
-# use enter for shell commands
-# trash mappings
+map c
+map cc clear
+map cC clear
+map ch chMod
+
+map d
 map dd cut
 map dD delete
-map <delete> trash
-map tt trash
-map tc clear_trash
-map tr restore_trash
-
-# dedicated keys for file opener actions
-map x &xdg-open $f
-map X $mimeopen --ask $f
-
-# basic functions
-map . set hidden!
-map p paste
-map y copy
-map mf mkFile
-map md mkDir
-map ch chMod
-map bg setwallpaper
-map o open_config
-map br $ed
-map r rename
-map h top
-map l bottom
-map R reload
-map C clear
-map u unselect
-
-# Dragon Mapping
+map dt. trash
+map dtc clear_trash
+map dtr restore_trash
 map dr dragon
 map ds dragon-stay
 map di dragon-individual
@@ -53,33 +31,59 @@ map dm mvdragon
 map dc cpdragon
 map dl dlfile
 
-# movement
-map gtr cd ~/.local/share/Trash/files
+map e
+map ee $$editor "$f"
+map eu $view "$f"
 
-map gm cd ~/Music
-map gv cd ~/Videos
-map gp cd ~/Pictures
-map gw cd ~/Pictures/Wallpapers
+map f
 
-map gD cd ~/Documents
-map gd cd ~/Downloads
-map ge cd ~/Desktop
-
+map g
 map gc.  cd ~/.config
 map gcl cd ~/.config/lf
 map gcp cd ~/.config/polybar
-map gcb cd ~/.config/bspwm
+map gcb cd ~/.config/dwmblocks
 map gcu cd ~/.config/pulse
 map gcd cd ~/.dotfiles
-
-map gl cd ~/.local
+map gcw cd ~/.config/dwm-hac
+map gdD cd ~/Documents
+map gdd cd ~/Downloads
+map gde cd ~/Desktop
 map ge cd /etc
+map gg lazy_git
+map glb cd ~/.local/bin
+map gm cd ~/Music
+map gp. cd ~/Pictures
+map gpw cd ~/Pictures/Wallpapers
+map gtr cd ~/.local/share/Trash/files
 map gu. cd /usr
 map gus cd /usr/share
 map gum cd /run/media/humberto
+map gv cd ~/Videos
 
-map j broot_jump
+# map k down
+# map l up
 
+map m
+map mf mkFile
+map md mkDir
 
+map n
+map o open_config
+map p paste
+
+map s
 map s? show_help
+map r rename
+map R reload
+map u unselect
+
+map x &xdg-open $f
+map X $mimeopen --ask $f
+map y copy
+
+map <delete> trash
+map . set hidden!
+
+
+
 

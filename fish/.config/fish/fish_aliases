@@ -1,6 +1,6 @@
 # alias --save g='lazygit'
 
-# alias --save lf='~/.local/bin/lfrun'
+alias --save lf='~/.local/bin/lfrun'
 # alias --save fgrep='fgrep --color=auto'
 # alias --save rev="xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1"
 # alias --save zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
@@ -17,10 +17,10 @@
 
 
 # confirm before overwriting something
-# alias --save mv='mv -i'
-# alias --save rm='rm -i'
+alias --save mv='mv -i'
+alias --save rm='rm -i'
 # easier to read disk
-# alias --save df='df -h'     # human-readable sizes
+alias --save df='df -h'     # human-readable sizes
 # alias --save free='free -m' # show sizes in MB
 # get top process eating memory
 # alias --save psmem='ps auxf | sort -nr -k 4 | head -5'
@@ -30,12 +30,11 @@
 
 # For when keys break
 # alias --save archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
-# alias --save ls='exa'
-# alias --save l='exa -lh'
-# alias --save ll='exa -lha'
+ alias --save ls='exa'
+ alias --save l='exa -lh'
+ alias --save ll='exa -lha'
 # alias --save x='startx'
-# alias --save fvim="nvim (fzf --height=40% --reverse)"
+ alias --save fvim="nvim (fzf --height=40% --reverse)"
 # alias --save rmusb='udiskie-umount -d /dev/sda1'
 # alias --save q='exit'
 # alias --save ff="lfcd"
-

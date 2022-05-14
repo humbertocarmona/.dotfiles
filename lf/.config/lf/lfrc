@@ -248,7 +248,7 @@ map o open_config
 map p paste
 
 map s
-map s? show_helpBindings
+map s? show_help
 map r rename
 map R reload
 map u unselect
