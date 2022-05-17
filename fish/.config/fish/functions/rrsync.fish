@@ -9,6 +9,7 @@ function rrsync -d "special rsync using .gitignore"
     set options $options (fish_opt --short=p --long=project --required-val)
     set options $options (fish_opt --short=f --long=from --required-val --long-only)
     set options $options (fish_opt --short=t --long=to --required-val --long-only)
+    set options $options (fish_opt --short=l --long=flags --required-val)
     
     argparse $options -- $argv
     or return
@@ -37,21 +38,27 @@ function rrsync -d "special rsync using .gitignore"
         USAGE
         return
     end
+    if set -q _flag_flags
+        echo "flags = "$_flag_flags
+    else
+        set _flag_flags "roltDv"
+        echo "flags = "$_flag_flags
+    end
 
-
+    
     if set -q _flag_h
         USAGE
         return
     end
-
+    
     if set -q _flag_r
         while true
-            echo "    rsync -vhra \ "
+            echo "    rsync -$_flag_flags \ "
             echo "      $_flag_from$_flag_project \ "
             echo "      $_flag_to$_flag_project \ "
             echo "      --include='**.gitignore' \ " 
             echo "      --exclude='/.git' --filter=':- .gitignore'"
-            rsync -nvazz \
+            rsync -n$_flag_flags \
                 $_flag_from$_flag_project \
                 $_flag_to$_flag_project \
                 --include='**.gitignore' \
@@ -61,7 +68,7 @@ function rrsync -d "special rsync using .gitignore"
             read -l -P 'agora pra valer, tem certeza? [y/n]' reply
             switch $reply
                 case Y y
-                    rsync -vazz $_flag_from$_flag_project \
+                    rsync -$_flag_flags $_flag_from$_flag_project \
                         $_flag_to$_flag_project \
                         --include='**.gitignore' \
                         --exclude='.git' \
@@ -74,7 +81,14 @@ function rrsync -d "special rsync using .gitignore"
         end
     else
         echo 'dry run ----------------------------------------------'
-        rsync -nvazz  \
+        echo "rsync -n"$_flag_flags  \
+            $_flag_from$_flag_project \
+            $_flag_to$_flag_project \
+            "--include='**.gitignore'" \
+            "--exclude='.git'" \
+            "--filter=':- .gitignore'"
+        
+        rsync -n$_flag_flags  \
             $_flag_from$_flag_project \
             $_flag_to$_flag_project \
             --include='**.gitignore' \

@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 # This script is called on startup to remap keys.
 # Increase key speed via a rate change
 xset r rate 300 50
 # Map the caps lock key to super...
 # setxkbmap -layout br -variant abnt2 -option caps:super
-setxkbmap -layout us -variant intl -model pc101 ctrl:nocaps
+setxkbmap -layout us -variant intl -model pc101
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 

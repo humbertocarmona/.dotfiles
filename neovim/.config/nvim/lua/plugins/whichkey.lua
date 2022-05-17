@@ -80,23 +80,39 @@ local opts = {
 
 local mappings = {
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["w"] = { "<cmd>w!<cr>", "Write :w!"},
-    ["q"] = { "<cmd>q!<cr>", "Quit :q!"},
-    ["Q"] = { "<cmd>wqa<cr>", "Write quit all :wqa"},
-    ["Z"] = { "<cmd>ZenMode<cr>", "Zen mode"},
-    ["h"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
-    ["s"] = { "<cmd>:ASToggle<CR>", 'Autosave toggle' },
-    -- "todo: put vim.g.autosave_state in the lualine" 
-    p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
+    b = {
+        name = "Buffer",
+        d = {"<cmd>bd<cr>", "delete buffer"}
     },
-
+    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    
+    g = {
+        name = "Git",
+        g = { "<cmd>LazyGit<CR>", "LazyGit" },
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff"},
+        j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+        k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+        u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
+    },
+    
+    ["h"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
+    
+    -- hanschen/vim-ipython-cell
+    j = {
+        qt = { ":RunQtConsole<CR>", "open qt console" },
+        k = { ":IPython --existing --no-window<CR>", "connect to qtconsole kernel" },
+        c = { "<Plug>(IPy-RunCell)", "run cell" },
+        a = { "<Plug>(IPy-RunAll)", "run all cells" },
+    },
+    
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -124,6 +140,21 @@ local mappings = {
             "Workspace Symbols",
         },
     },
+    
+    p = {
+        name = "Packer",
+        c = { "<cmd>PackerCompile<cr>", "Compile" },
+        i = { "<cmd>PackerInstall<cr>", "Install" },
+        s = { "<cmd>PackerSync<cr>", "Sync" },
+        S = { "<cmd>PackerStatus<cr>", "Status" },
+        u = { "<cmd>PackerUpdate<cr>", "Update" },
+    },
+    
+    ["Q"] = { "<cmd>q!<cr>", "Quit :q!"},
+    -- ["Q"] = { "<cmd>wqa<cr>", "Write quit all :wqa"},
+    ["r"] = { "<Plug>(IPy-RunCell)", "run qtconsole cell" },
+    ["s"] = { "<cmd>:ASToggle<CR>", 'Autosave toggle' },
+    
     t = {
         name = "Telescope",
         b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
@@ -139,32 +170,10 @@ local mappings = {
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
     },
-
-
-    g = {
-    	name = "Git",
-    	g = { "<cmd>LazyGit<CR>", "LazyGit" },
-    	b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    	c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    	d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff"},
-    	j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    	k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    	l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    	o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    	p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    	r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    	s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    	u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
-    },
-
-    -- hanschen/vim-ipython-cell
-    j = {
-        qt = { ":RunQtConsole<CR>", "open qt console" },
-        k = { ":IPython --existing --no-window<CR>", "connect to qtconsole kernel" },
-        c = { "<Plug>(IPy-RunCell)", "run cell" },
-        a = { "<Plug>(IPy-RunAll)", "run all cells" },
-    },
+    
+    ["w"] = { "<cmd>w!<cr>", "Write :w!"},
+    ["Z"] = { "<cmd>ZenMode<cr>", "Zen mode"},
+    ["?"] = { "<cmd>WhichKey<cr>", "WhichKey" },
 }
 
 
