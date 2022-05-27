@@ -22,17 +22,20 @@ source $HOME/.config/fish/scripts/br.fish
 
 set -g EDITOR (type -p vim)
 
-#set -g fish_key_bindings fish_vi_key_bindings
+set -g fish_key_bindings fish_vi_key_bindings
 
-bind \co -M insert 'lfcd'
+bind \co -M insert 'lfrun'
 bind \cl -M insert 'tmux-configs'
 bind \ck -M insert 'tmux-projects'
-bind \cz -M insert 'zi'
-
-bind \co 'lfcd'
-bind \cl 'tmux-configs'
-bind \ck 'tmux-projects'
-bind \cz 'zi'
+# bind \cz -M insert 'zi'
+# bind \cu -M insert 'docker-compose up'
+# bind \cd -M insert 'docker-compose down'
+# bind \co 'lfcd'
+# bind \cl 'tmux-configs'
+# bind \ck 'tmux-projects'
+# bind \cz 'zi'
+# bind \cu 'docker-compose up'
+# bind \cd 'docker-compose down'
 
 
 # abbr -a -U ls exa
@@ -47,8 +50,11 @@ abbr -a -U ta tmux attach-session -t
 abbr -a -U td tmux detach
 abbr -a -U c clear
 abbr -a -U q exit
+abbr -a -U :q exit
+
 abbr -a -U g lazygit
-abbr -a -U lf lfcd
+abbr -a -U lf lfrun
+abbr -a -U x z
 # abbr -a -U rm rm -i
 # abbr -a -U @ease ssh 192.168.15.11
 # abbr -a -U @ease ssh 10.2.21.222

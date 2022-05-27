@@ -107,10 +107,12 @@ local mappings = {
     
     -- hanschen/vim-ipython-cell
     j = {
-        qt = { ":RunQtConsole<CR>", "open qt console" },
+        name = "Jupyter",
         k = { ":IPython --existing --no-window<CR>", "connect to qtconsole kernel" },
         c = { "<Plug>(IPy-RunCell)", "run cell" },
         a = { "<Plug>(IPy-RunAll)", "run all cells" },
+        j = { ":RunJuliaQtConsole<CR>", "open Julia console" },
+        q = { ":RunPythonQtConsole<CR>", "open Python console" },
     },
     
     l = {
@@ -150,8 +152,8 @@ local mappings = {
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
     
-    ["Q"] = { "<cmd>q!<cr>", "Quit :q!"},
-    -- ["Q"] = { "<cmd>wqa<cr>", "Write quit all :wqa"},
+    ["q"] = { "<cmd>q!<cr>", "Quit :q!"},
+    ["Q"] = { "<cmd>wqa<cr>", "Write quit all :wqa"},
     ["r"] = { "<Plug>(IPy-RunCell)", "run qtconsole cell" },
     ["s"] = { "<cmd>:ASToggle<CR>", 'Autosave toggle' },
     
@@ -174,6 +176,8 @@ local mappings = {
     ["w"] = { "<cmd>w!<cr>", "Write :w!"},
     ["Z"] = { "<cmd>ZenMode<cr>", "Zen mode"},
     ["?"] = { "<cmd>WhichKey<cr>", "WhichKey" },
+    
+    ["]r"] = { "<Plug>(IPy-RunCell)", "run cell" },
 }
 
 

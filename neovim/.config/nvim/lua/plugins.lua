@@ -61,8 +61,8 @@ return packer.startup(
                 { 'f3fora/cmp-spell' },
 
                 -- Snippets
-                { 'L3MON4D3/LuaSnip' }, --snippet engine
-                -- { 'rafamadriz/friendly-snippets' }, -- some snippets for LuaSnip
+                { 'L3MON4D3/LuaSnip'}, --snippet engine
+                { 'rafamadriz/friendly-snippets' }, -- some snippets for LuaSnip
 
 
                 -- autopairs
@@ -103,7 +103,7 @@ return packer.startup(
         -- status and buffer lines
         use { 'akinsho/bufferline.nvim', config = lua_path"bufferline" }
         use { 'nvim-lualine/lualine.nvim', config = lua_path"lualine" }
-
+        use { 'famiu/bufdelete.nvim' }
         -- Telescope
         use { 'nvim-lua/popup.nvim' }
         use { 'nvim-lua/plenary.nvim' }
@@ -142,7 +142,9 @@ return packer.startup(
         -- use { 'hanschen/vim-ipython-cell', requires = {'jpalardy/vim-slime'},
         --      config = lua_path"slime"}
         use { 'bfredl/nvim-ipy', config = lua_path"nvim-ipy" }
-
+        use 'kana/vim-textobj-user'
+        -- use 'kana/vim-textobj-line'
+        use 'GCBallesteros/vim-textobj-hydrogen'
         -- My plugins here
         use { 'Pocco81/AutoSave.nvim', config = lua_path"autosave" }
         use { 'ggandor/lightspeed.nvim',

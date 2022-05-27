@@ -15,14 +15,14 @@ fi
 
 # merge in defaults and keymaps
 
-# if [ -f $sysmodmap ]; then
-#     xmodmap $sysmodmap
-# fi
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
 
 setxkbmap -layout us -variant intl
 
 if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
+     xmodmap "$usermodmap"
 fi
 
 # start some nice programs
@@ -40,7 +40,8 @@ export SSH_AUTH_SOCK
 mkdir -p "$HOME"/.local/share/keyrings
 
 # xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
-xrandr --output HDMI1 --dpi 96
+# xrandr --output HDMI1 --mode 2560x1440 --rate 60
+xrandr --output HDMI1 --dpi 96 --rate 59.95
 
 # now using pywal
 nitrogen --restore &

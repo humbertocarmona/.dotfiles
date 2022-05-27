@@ -7,7 +7,7 @@ case "$(readlink -f /sbin/init)" in
 	*) ctl='loginctl' ;;
 esac
 ctl='systemctl'
-case "$(printf " leave dwm\n renew dwm\n鈴 hibernate\n鈴 sleep\n勒 reboot\n shutdown\n display off\n lock" | dmenu -fn 'Hack Nerd Font-9' -i -p 'Action: ')" in
+case "$(printf " leave dwm\n renew dwm\n鈴 hibernate\n鈴 sleep\n勒 reboot\n shutdown\n display off\n lock" | dmenu -fn 'Hack Nerd Font-10' -i -p 'what?: ')" in
 	' lock') slock ;;
 	' leave dwm') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
 	' renew dwm') kill -HUP "$(pgrep -u "$USER" "\bdwm$")";;

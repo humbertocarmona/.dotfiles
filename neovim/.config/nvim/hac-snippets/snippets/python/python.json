@@ -1,0 +1,7 @@
+{
+    "jcell":{
+        "prefix": "jcell",
+        "body": ["# %% ---------------------------------------------------------------------------"],
+        "description": "Snippet to add cell division in python files"
+    }
+}

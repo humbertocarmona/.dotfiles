@@ -99,14 +99,7 @@ cmp.setup.cmdline(':', {
 --- luasnip -------------------------------------------------------
 
 
--- Vscode-like: To use existing vs-code style snippets from a plugin
---   (eg. rafamadriz/friendly-snippets) simply install the plugin
---   and then add
-
--- require("luasnip.loaders.from_vscode").lazy_load()
-
--- else load snippets from path/of/your/nvim/config/
-
--- require("luasnip.loaders.from_vscode").lazy_load({
---    paths = { "~/.dotfiles/neovim/.config/nvim/snippets/" }
--- })
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({
+   paths = { "./hac-snippets" }
+})

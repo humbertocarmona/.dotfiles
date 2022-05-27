@@ -46,12 +46,7 @@ cmd trash ${{
     # extract the substring from start of string up to delimiter.
     # this is the first "element" of the string.
     file=${files%%;*}
-
-    #mv $(basename "$file") ~/.local/share/Trash/files
     trash-put "$(basename "$file")"
-    # if there's only one element left, set `files` to an empty string.
-    # this causes us to exit this `while` loop.
-    # else, we delete the first "element" of the string from files, and move onto
     # the next.
     if [ "$files" = "$file" ]; then
       files=''
@@ -60,6 +55,8 @@ cmd trash ${{
     fi
   done
 }}
+
+
 
 cmd clear_trash %trash-empty
 
@@ -127,6 +124,19 @@ cmd fzf_jump ${{
   lf -remote "send $id $cmd \"$res\""
 }}
 
+cmd fzf_search ${{
+    res="$( \
+        RG_PREFIX="rg --column --line-number --no-heading --color=always \
+            --smart-case "
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1
+    )"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
+
+
 # all relative to drag and drop
 cmd dragon %dragon-drag-and-drop -a -x $fx
 cmd dragon-stay %dragon-drag-and-drop -a $fx
@@ -174,6 +184,17 @@ cmd on-cd &{{
     lf -remote "send $id set promptfmt \"$fmt\""
 }}
 
+cmd zz %{{
+    result="$(zoxide query --exclude "${PWD}" -- "$1")"
+    lf -remote "send ${id} cd '${result}'"
+}}
+
+cmd zi ${{
+    result="$(zoxide query -i -- "$1")"
+    lf -remote "send ${id} cd '${result}'"
+}}
+
+
 # bindings
 # First remove some defaults
 map "'"
@@ -212,6 +233,9 @@ map ee $$editor "$f"
 map eu $view "$f"
 
 map f
+map fj :fzf_jump
+map fs :fzf_search
+map <c-f> $vi $(fzf)
 
 map g
 map gc.  cd ~/.config
@@ -237,6 +261,7 @@ map gum cd /run/media/humberto
 map gv cd ~/Videos
 
 # map k down
+
 # map l up
 
 map m
@@ -248,7 +273,7 @@ map o open_config
 map p paste
 
 map s
-map s? show_help
+map s? show_helpBindings
 map r rename
 map R reload
 map u unselect
@@ -256,6 +281,10 @@ map u unselect
 map x &xdg-open $f
 map X $mimeopen --ask $f
 map y copy
+
+map <c-a> :zz
+map <c-z> :zi
+
 
 map <delete> trash
 map . set hidden!
