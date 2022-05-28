@@ -7,7 +7,12 @@ clear mod4
 keycode 66 = Control_L
 
 ! control_R to Super_L (for ibm keyboard)
-keycode 105 = Super_L
+! keycode 105 = Super_L
+
+keycode 105 = Control_R
+
+! right menu key is Super_L
+keycode 135 = Super_L
 
 ! fn-caps/scroll Lock to  to caps
 keycode 78 = Caps_Lock
