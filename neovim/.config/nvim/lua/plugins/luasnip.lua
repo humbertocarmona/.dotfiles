@@ -22,10 +22,13 @@ local conds = require("luasnip.extras.expand_conditions")
 
 ls.snippets = {
     all = {
-        s("###",{
+        s("jcell",{
             t("# %% ---------------------------------------------------------------------------")
         }),
     }
 }
 
-
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load({
+   paths = { "./hac-snippets" }
+})

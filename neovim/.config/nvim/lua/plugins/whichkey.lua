@@ -85,7 +85,7 @@ local mappings = {
         d = {"<cmd>bd<cr>", "delete buffer"}
     },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    
+
     g = {
         name = "Git",
         g = { "<cmd>LazyGit<CR>", "LazyGit" },
@@ -102,9 +102,9 @@ local mappings = {
         s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
     },
-    
+
     ["h"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
-    
+
     -- hanschen/vim-ipython-cell
     j = {
         name = "Jupyter",
@@ -114,7 +114,7 @@ local mappings = {
         j = { ":RunJuliaQtConsole<CR>", "open Julia console" },
         q = { ":RunPythonQtConsole<CR>", "open Python console" },
     },
-    
+
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -142,7 +142,7 @@ local mappings = {
             "Workspace Symbols",
         },
     },
-    
+
     p = {
         name = "Packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -151,12 +151,12 @@ local mappings = {
         S = { "<cmd>PackerStatus<cr>", "Status" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
-    
+
     ["q"] = { "<cmd>q!<cr>", "Quit :q!"},
     ["Q"] = { "<cmd>wqa<cr>", "Write quit all :wqa"},
     ["r"] = { "<Plug>(IPy-RunCell)", "run qtconsole cell" },
     ["s"] = { "<cmd>:ASToggle<CR>", 'Autosave toggle' },
-    
+
     t = {
         name = "Telescope",
         b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
@@ -172,11 +172,11 @@ local mappings = {
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
     },
-    
+
     ["w"] = { "<cmd>w!<cr>", "Write :w!"},
     ["Z"] = { "<cmd>ZenMode<cr>", "Zen mode"},
     ["?"] = { "<cmd>WhichKey<cr>", "WhichKey" },
-    
+
     ["]r"] = { "<Plug>(IPy-RunCell)", "run cell" },
 }
 

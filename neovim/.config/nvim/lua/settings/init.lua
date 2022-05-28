@@ -48,8 +48,8 @@ vim.cmd (':filetype plugin on')
 -- vim.cmd ('colorscheme jellybeans-nvim')
 -- vim.cmd ('colorscheme sakura')
 -- vim.cmd ('colorscheme ayu-dark' )
-vim.cmd ('colorscheme kanagawa' )
--- vim.cmd ('colorscheme ghdark')
+-- vim.cmd ('colorscheme kanagawa' )
+vim.cmd ('colorscheme ghdark')
 --
 vim.api.nvim_create_autocmd("BufEnter",{
     pattern="*",

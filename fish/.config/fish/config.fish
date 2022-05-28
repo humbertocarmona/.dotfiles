@@ -7,6 +7,7 @@ if status is-login
 end
 
 fish_add_path -p $HOME/packages/basilisk/src
+fish_add_path -p /var/snap/snapd/bin
 export BASILISK=$HOME/packages/basilisk/src
 export DISPLAY=":0"
 export PIPENV_VERBOSITY=-1
@@ -43,6 +44,7 @@ bind \ck -M insert 'tmux-projects'
 # abbr -a -U ll exa -lha
 # abbr -a -U cat bat
 # abbr -a -U tl tmux ls
+
 abbr -a -U tw tmux switch -t
 abbr -a -U tk tmux kill-session -t
 abbr -a -U tks tmux kill-server
@@ -55,6 +57,8 @@ abbr -a -U :q exit
 abbr -a -U g lazygit
 abbr -a -U lf lfrun
 abbr -a -U x z
+
+
 # abbr -a -U rm rm -i
 # abbr -a -U @ease ssh 192.168.15.11
 # abbr -a -U @ease ssh 10.2.21.222

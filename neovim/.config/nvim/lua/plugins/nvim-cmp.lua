@@ -1,9 +1,6 @@
 local cmp = require('cmp')
-
 local luasnip = require('luasnip')
-
 local lspkind = require('lspkind')
-
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -62,7 +59,6 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'luasnip' },
-        -- { name = 'spell' },
     }, {
         { name = 'buffer', keyword_length = 2 },
     }),
@@ -95,11 +91,3 @@ cmp.setup.cmdline(':', {
     }),
 })
 
-
---- luasnip -------------------------------------------------------
-
-
-require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").lazy_load({
-   paths = { "./hac-snippets" }
-})

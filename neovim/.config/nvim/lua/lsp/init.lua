@@ -29,16 +29,16 @@ lspconfig.julials.setup{
 --     capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- }
 --
-lspconfig.jsonls.setup{
-    commands = {
-        Format = {
-            function()
-                vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-            end
-        }
-    },
-    capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+-- lspconfig.jsonls.setup{
+--     commands = {
+--         Format = {
+--             function()
+--                 vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+--             end
+--         }
+--     },
+--     capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- }
 
 require("lsp.handlers").setup()
 require "lsp.lsp-installer"

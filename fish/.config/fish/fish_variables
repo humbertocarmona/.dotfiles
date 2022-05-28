@@ -2,21 +2,14 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr__3A_q:exit
-SETUVAR _fish_abbr__40_ease:ssh\x20192\x2e168\x2e15\x2e11
 SETUVAR _fish_abbr_c:clear
-SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_g:lazygit
-SETUVAR _fish_abbr_l:exa\x20\x2dlh
 SETUVAR _fish_abbr_lf:lfrun
-SETUVAR _fish_abbr_ll:exa\x20\x2dlha
-SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_q:exit
-SETUVAR _fish_abbr_rm:rm\x20\x2di
 SETUVAR _fish_abbr_ta:tmux\x20attach\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tk:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tks:tmux\x20kill\x2dserver
-SETUVAR _fish_abbr_tl:tmux\x20ls
 SETUVAR _fish_abbr_tw:tmux\x20switch\x20\x2dt
 SETUVAR _fish_abbr_x:z
 SETUVAR fish_color_cancel:\x2dr
@@ -28,6 +21,5 @@ SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/humberto/\x2elocal/bin\x1e/home/humberto/packages/basilisk/src

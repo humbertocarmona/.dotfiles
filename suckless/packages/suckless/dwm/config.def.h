@@ -32,8 +32,8 @@ typedef struct {
     const char *name;
     const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-f", "Hack Nerd Font:size=8", "-g", "120x34", NULL };
-const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "Hack Nerd Font:size=8", "-g", "30x10", "-e", "bc", "-lq", NULL };
+const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-f", "Hack Nerd Font:size=10", "-g", "120x34", NULL };
+const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "Hack Nerd Font:size=10", "-g", "30x10", "-e", "bc", "-lq", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
     {"spterm",      spcmd1},
@@ -127,13 +127,13 @@ static const char *alacrittycmd[]  = { "alacritty", NULL };
 ResourcePref resources[] = {
         /* border  black */
         { "background",     STRING,  &normbordercolor },
-        { "color2",         STRING,  &selbordercolor },
+        { "color13",        STRING,  &selbordercolor },
         /* normal window */    
         { "background",     STRING,  &normbgcolor },
-        { "color6",         STRING,  &normfgcolor },
+        { "foreground",     STRING,  &normfgcolor },
         /* selected window */
         { "background",     STRING,  &selbgcolor },
-        { "color14",        STRING,  &selfgcolor },
+        { "foreground",     STRING,  &selfgcolor },
         /* bellow are not usually defined....  */
         { "borderpx",       INTEGER, &borderpx },
         { "snap",           INTEGER, &snap },
@@ -198,10 +198,11 @@ static Key keys[] = {
     /*-----------------------------------------------------------------------*/
     { MODKEY,               XK_m,          spawn,           SHCMD(TERMINAL " -e ncmpcpp") },
     { MODKEY|ShiftMask,     XK_m,          spawn,           SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-    { MODKEY,               XK_p,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=8'") },
+    { MODKEY,               XK_p,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=10'") },
     { MODKEY|ShiftMask,     XK_p,          spawn,           SHCMD("rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -show-icons") },
-    { MODKEY|ControlMask,   XK_p,          spawn,           SHCMD("passmenu -fn 'Hack Nerd Font:size=8'") },
-    { MODKEY,               XK_q,          spawn,           SHCMD("sysact") },
+    { MODKEY|ControlMask,   XK_p,          spawn,           SHCMD("passmenu -fn 'Hack Nerd Font:size=10'") },
+    { MODKEY,               XK_q,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=10'") },
+    { MODKEY|ShiftMask,     XK_q,          spawn,           SHCMD("sysact") },
     /* { MODKEY|ShiftMask,     XK_r,          incnmaster,      {.i = -1 } }, */
     /* { MODKEY,               XK_r,          incnmaster,      {.i = +1 } }, */
     { MODKEY,               XK_s,          togglesticky,    {0} },

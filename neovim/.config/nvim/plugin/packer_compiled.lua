@@ -87,6 +87,7 @@ _G.packer_plugins = {
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
   LuaSnip = {
+    config = { "require'plugins.luasnip'" },
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
@@ -229,9 +230,18 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
+    config = { "require'plugins.nvim-cmp'" },
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-code-action-menu"] = {
+    commands = { "CodeActionMenu" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
+    url = "https://github.com/weilbith/nvim-code-action-menu"
   },
   ["nvim-colorizer.lua"] = {
     config = { "require'plugins.colorizer'" },
@@ -244,6 +254,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-ipy",
     url = "https://github.com/bfredl/nvim-ipy"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/humberto/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -399,66 +414,34 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require'plugins.whichkey'
-time([[Config for which-key.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require'plugins.gitsigns'
-time([[Config for gitsigns.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require'plugins.bufferline'
-time([[Config for bufferline.nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require'plugins.colorizer'
 time([[Config for nvim-colorizer.lua]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require'plugins.impatient'
-time([[Config for impatient.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require'plugins.zen-mode'
-time([[Config for zen-mode.nvim]], false)
--- Config for: nvim-transparent
-time([[Config for nvim-transparent]], true)
-require'plugins.transparent'
-time([[Config for nvim-transparent]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 require'plugins.comment'
 time([[Config for Comment.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require'plugins.nvim-tree'
-time([[Config for nvim-tree.lua]], false)
--- Config for: AutoSave.nvim
-time([[Config for AutoSave.nvim]], true)
-require'plugins.autosave'
-time([[Config for AutoSave.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require'plugins.treesitter'
-time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-ipy
 time([[Config for nvim-ipy]], true)
 require'plugins.nvim-ipy'
 time([[Config for nvim-ipy]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require'plugins.lualine'
-time([[Config for lualine.nvim]], false)
 -- Config for: lightspeed.nvim
 time([[Config for lightspeed.nvim]], true)
 require'plugins.lightspeed'
 time([[Config for lightspeed.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require'plugins.telescope'
-time([[Config for telescope.nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+require'plugins.luasnip'
+time([[Config for LuaSnip]], false)
+-- Config for: nvim-transparent
+time([[Config for nvim-transparent]], true)
+require'plugins.transparent'
+time([[Config for nvim-transparent]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require'plugins.lualine'
+time([[Config for lualine.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require'plugins.alpha'
@@ -467,6 +450,52 @@ time([[Config for alpha-nvim]], false)
 time([[Config for csv.vim]], true)
 require'plugins.csv'
 time([[Config for csv.vim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require'plugins.treesitter'
+time([[Config for nvim-treesitter]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require'plugins.telescope'
+time([[Config for telescope.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require'plugins.gitsigns'
+time([[Config for gitsigns.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require'plugins.whichkey'
+time([[Config for which-key.nvim]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require'plugins.impatient'
+time([[Config for impatient.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require'plugins.zen-mode'
+time([[Config for zen-mode.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require'plugins.nvim-cmp'
+time([[Config for nvim-cmp]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require'plugins.bufferline'
+time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require'plugins.nvim-tree'
+time([[Config for nvim-tree.lua]], false)
+-- Config for: AutoSave.nvim
+time([[Config for AutoSave.nvim]], true)
+require'plugins.autosave'
+time([[Config for AutoSave.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CodeActionMenu lua require("packer.load")({'nvim-code-action-menu'}, { cmd = "CodeActionMenu", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)

@@ -45,13 +45,12 @@ return packer.startup(
         end
 
         use { 'wbthomason/packer.nvim' } -- Have packer manage itself
-
-        use { 'neovim/nvim-lspconfig' ,
+        -- Snippets
+        use { 'rafamadriz/friendly-snippets' }  -- some snippets for LuaSnip
+        use { 'L3MON4D3/LuaSnip', config=lua_path"luasnip"}  --snippet engine
+        -- code completion
+        use { 'hrsh7th/nvim-cmp',
             requires = {
-                -- { 'williamboman/nvim-lsp-installer' }, -- language server installer
-
-                -- code completion
-                { 'hrsh7th/nvim-cmp' }, -- The completion plugin
                 { 'hrsh7th/cmp-buffer' },
                 { 'hrsh7th/cmp-path' },
                 { 'hrsh7th/cmp-cmdline' },
@@ -59,12 +58,13 @@ return packer.startup(
                 { 'hrsh7th/cmp-nvim-lua' },
                 { 'saadparwaiz1/cmp_luasnip' },
                 { 'f3fora/cmp-spell' },
+            },
+            config = lua_path"nvim-cmp"
+        }
 
-                -- Snippets
-                { 'L3MON4D3/LuaSnip'}, --snippet engine
-                { 'rafamadriz/friendly-snippets' }, -- some snippets for LuaSnip
-
-
+        use { 'neovim/nvim-lspconfig' ,
+            requires = {
+                { 'williamboman/nvim-lsp-installer' }, -- language server installer
                 -- autopairs
                 -- { 'windwp/nvim-autopairs', config = lua_path"autopairs" },
                 { 'jiangmiao/auto-pairs'},
@@ -72,7 +72,7 @@ return packer.startup(
                 -- other
                 { 'jose-elias-alvarez/null-ls.nvim' }, -- formatters and linters
                 { 'onsails/lspkind-nvim' },
-                -- { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' },
+                { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' },
 
             }
         }

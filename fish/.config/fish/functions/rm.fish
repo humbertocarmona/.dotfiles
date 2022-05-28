@@ -1,3 +1,3 @@
-function rm --description 'alias rm=rm -i'
+function rm --description 'rm'
  command rm -i $argv; 
 end
