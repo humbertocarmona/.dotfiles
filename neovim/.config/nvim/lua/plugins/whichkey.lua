@@ -103,7 +103,7 @@ local mappings = {
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
     },
 
-    ["h"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
+    ["c"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
 
     -- hanschen/vim-ipython-cell
     j = {
@@ -176,8 +176,6 @@ local mappings = {
     ["w"] = { "<cmd>w!<cr>", "Write :w!"},
     ["Z"] = { "<cmd>ZenMode<cr>", "Zen mode"},
     ["?"] = { "<cmd>WhichKey<cr>", "WhichKey" },
-
-    ["]r"] = { "<Plug>(IPy-RunCell)", "run cell" },
 }
 
 

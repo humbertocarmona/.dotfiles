@@ -5,17 +5,17 @@
 #define TERMINAL "st"
 
 /* appearance */
-static unsigned int borderpx  = 1;        /* border pixel of windows */
+static unsigned int borderpx  = 2;        /* border pixel of windows */
 static unsigned int snap      = 12;       /* snap pixel */
-static unsigned int gappih    = 5;        /* horiz inner gap between windows */
-static unsigned int gappiv    = 5;        /* vert inner gap between windows */
-static unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
-static unsigned int gappov    = 5;       /* vert outer gap between windows and screen edge */
+static unsigned int gappih    = 8;        /* horiz inner gap between windows */
+static unsigned int gappiv    = 8;        /* vert inner gap between windows */
+static unsigned int gappoh    = 8;       /* horiz outer gap between windows and screen edge */
+static unsigned int gappov    = 8;       /* vert outer gap between windows and screen edge */
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "Hack Nerd Font:size=10", "JuliaMono:pixelsize=10:antialias=true:autohint=true"  };
+static char *fonts[]          = { "Hack Nerd Font:size=12", "JuliaMono:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -32,8 +32,8 @@ typedef struct {
     const char *name;
     const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-f", "Hack Nerd Font:size=10", "-g", "120x34", NULL };
-const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "Hack Nerd Font:size=10", "-g", "30x10", "-e", "bc", "-lq", NULL };
+const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-f", "Hack Nerd Font:size=12", "-g", "120x34", NULL };
+const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "Hack Nerd Font:size=12", "-g", "30x10", "-e", "bc", "-lq", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
     {"spterm",      spcmd1},
@@ -198,10 +198,10 @@ static Key keys[] = {
     /*-----------------------------------------------------------------------*/
     { MODKEY,               XK_m,          spawn,           SHCMD(TERMINAL " -e ncmpcpp") },
     { MODKEY|ShiftMask,     XK_m,          spawn,           SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-    { MODKEY,               XK_p,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=10'") },
+    { MODKEY,               XK_p,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
     { MODKEY|ShiftMask,     XK_p,          spawn,           SHCMD("rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -show-icons") },
-    { MODKEY|ControlMask,   XK_p,          spawn,           SHCMD("passmenu -fn 'Hack Nerd Font:size=10'") },
-    { MODKEY,               XK_q,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=10'") },
+    { MODKEY|ControlMask,   XK_p,          spawn,           SHCMD("passmenu -fn 'Hack Nerd Font:size=12'") },
+    { MODKEY,               XK_q,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
     { MODKEY|ShiftMask,     XK_q,          spawn,           SHCMD("sysact") },
     /* { MODKEY|ShiftMask,     XK_r,          incnmaster,      {.i = -1 } }, */
     /* { MODKEY,               XK_r,          incnmaster,      {.i = +1 } }, */

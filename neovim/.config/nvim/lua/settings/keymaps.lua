@@ -42,3 +42,4 @@ vim.keymap.set('v', '<A-l>', ":MoveHBlock(1)<CR>")
 vim.keymap.set('v', '<A-h>', ":MoveHBlock(-1)<CR>")
 -- vim.keymap.set('n', '<Leader>?', ":WhichKey<CR>")
 -- vim.keymap.set("n", '<Space>',":")
+
