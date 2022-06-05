@@ -3,6 +3,7 @@
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr__3A_q:exit
 SETUVAR _fish_abbr_c:clear
+SETUVAR _fish_abbr_co:code\x20\x2e
 SETUVAR _fish_abbr_g:lazygit
 SETUVAR _fish_abbr_lf:lfrun
 SETUVAR _fish_abbr_q:exit
@@ -11,6 +12,7 @@ SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tk:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tks:tmux\x20kill\x2dserver
 SETUVAR _fish_abbr_tw:tmux\x20switch\x20\x2dt
+SETUVAR _fish_abbr_v:nvim
 SETUVAR _fish_abbr_x:z
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_cwd:green
@@ -22,4 +24,4 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/humberto/\x2elocal/bin\x1e/home/humberto/packages/basilisk/src
+SETUVAR fish_user_paths:/opt/VSCode\x2dlinux\x2dx64/bin\x1e/home/humberto/\x2elocal/bin\x1e/home/humberto/packages/basilisk/src

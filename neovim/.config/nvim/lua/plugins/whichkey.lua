@@ -84,6 +84,8 @@ local mappings = {
         name = "Buffer",
         d = {"<cmd>bd<cr>", "delete buffer"}
     },
+    ["c"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
+
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 
     g = {
@@ -102,8 +104,6 @@ local mappings = {
         s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
     },
-
-    ["c"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
 
     -- hanschen/vim-ipython-cell
     j = {

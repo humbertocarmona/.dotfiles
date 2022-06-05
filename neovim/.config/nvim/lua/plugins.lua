@@ -90,7 +90,6 @@ return packer.startup(function(use)
 	use({ "JuliaEditorSupport/julia-vim" })
 	use({ "ap/vim-css-color" })
 	use({ "lervag/vimtex" })
-	use({ "preservim/vim-markdown" })
 	use({ "iamcco/markdown-preview.nvim" })
 	use({ "chrisbra/csv.vim", config = lua_path("csv") })
 	-- use { 'nathom/filetype.nvim' }
@@ -137,10 +136,10 @@ return packer.startup(function(use)
 	-- ide
 	use({ "goolord/alpha-nvim", config = lua_path("alpha") })
 	use({ "folke/which-key.nvim", config = lua_path("whichkey") })
-	-- use { 'hanschen/vim-ipython-cell', requires = {'jpalardy/vim-slime'},
-	--      config = lua_path"slime"}
-	use({ "bfredl/nvim-ipy", config = lua_path("nvim-ipy") })
-	use("kana/vim-textobj-user")
+
+    use({ "bfredl/nvim-ipy", config = lua_path("nvim-ipy") })
+    -- move to '# %%' cells
+    use("kana/vim-textobj-user")
 	-- use 'kana/vim-textobj-line'
 	use("GCBallesteros/vim-textobj-hydrogen")
 	-- My plugins here
@@ -159,7 +158,6 @@ return packer.startup(function(use)
 	})
 	use({ "antoinemadec/FixCursorHold.nvim" }) -- This is needed to fix lsp doc highlight
 	use({ "tversteeg/registers.nvim" })
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

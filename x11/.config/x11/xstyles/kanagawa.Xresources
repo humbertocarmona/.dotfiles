@@ -1,5 +1,6 @@
 ! kanagawa .Xresources file
 
+
 *.background: #1F1F28
 *.foreground: #DCD7BA
 *.cursorColor: #f29718
@@ -28,6 +29,8 @@
 !Magenta
 *.color5: #957FB8
 *.color13: #938AA9
+
+
 
 !cyan
 *.color6: #6A9589

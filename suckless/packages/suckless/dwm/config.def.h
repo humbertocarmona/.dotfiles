@@ -57,7 +57,8 @@ static const Rule rules[] = {
     { "Alacritty",              NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "kitty",                  NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "St",                     NULL,           NULL,             0,            0,           1,          0,        -1 },
-    { "Code - Insiders",        NULL,           NULL,             0,            0,           0,          0,        -1 },
+    { "Code - Insiders",        NULL,           NULL,             1 << 5,       0,           0,          0,        -1 },
+    { "Code",                   NULL,           NULL,             1 << 5,       0,           0,          0,        -1 },
     { NULL,                     "spterm",       NULL,             SPTAG(0),     1,           1,          0,        -1 },
     { NULL,                     "spcalc",       NULL,             SPTAG(1),     1,           1,          0,        -1 },
     //
@@ -126,8 +127,10 @@ static const char *alacrittycmd[]  = { "alacritty", NULL };
 
 ResourcePref resources[] = {
         /* border  black */
-        { "background",     STRING,  &normbordercolor },
-        { "color13",        STRING,  &selbordercolor },
+        { "normalborder",     STRING,  &normbordercolor },
+        { "selectborder",     STRING,  &selbordercolor },
+        /* { "background",     STRING,  &normbordercolor }, */
+        /* { "color13",        STRING,  &selbordercolor }, */
         /* normal window */    
         { "background",     STRING,  &normbgcolor },
         { "foreground",     STRING,  &normfgcolor },
@@ -175,9 +178,9 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_1,          incrgaps,       {.i = -1 } },    
     { MODKEY,               XK_a,          togglegaps,      {0 } },
     { MODKEY|ShiftMask,     XK_a,          defaultgaps,     {0} },
-    { MODKEY,               XK_b,          togglebar,       {0} },
+    { MODKEY,               XK_b,          spawn,           SHCMD("min") },
     { MODKEY|ShiftMask,     XK_b,          spawn,           SHCMD("$BROWSER") },
-    { MODKEY|ControlMask,   XK_b,          spawn,           SHCMD("min") },
+    { MODKEY|ControlMask,   XK_b,          togglebar,       {0} },
     { MODKEY,               XK_c,          killclient,      {0} },
     { MODKEY|ShiftMask,     XK_c,          togglescratch,   {.ui = 0} },
     { MODKEY,               XK_e,          spawn,           SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
@@ -201,11 +204,11 @@ static Key keys[] = {
     { MODKEY,               XK_p,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
     { MODKEY|ShiftMask,     XK_p,          spawn,           SHCMD("rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -show-icons") },
     { MODKEY|ControlMask,   XK_p,          spawn,           SHCMD("passmenu -fn 'Hack Nerd Font:size=12'") },
-    { MODKEY,               XK_q,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
-    { MODKEY|ShiftMask,     XK_q,          spawn,           SHCMD("sysact") },
+    { MODKEY,               XK_q,          spawn,           SHCMD("sysact") },
     /* { MODKEY|ShiftMask,     XK_r,          incnmaster,      {.i = -1 } }, */
     /* { MODKEY,               XK_r,          incnmaster,      {.i = +1 } }, */
     { MODKEY,               XK_s,          togglesticky,    {0} },
+    { MODKEY,               XK_w,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
     { MODKEY,               XK_x,          incrgaps,        {.i = -3 } },
     { MODKEY|ShiftMask,     XK_x,          incrgaps,        {.i = +3 } },
     /*-----------------------------------------------------------------------*/

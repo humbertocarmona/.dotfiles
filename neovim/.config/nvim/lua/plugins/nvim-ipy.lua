@@ -9,14 +9,5 @@ vim.api.nvim_create_user_command("RunJuliaQtConsole",
      "call jobstart('jupyter qtconsole --kernel julia-1.7 --JupyterWidget.include_other_output=True')",
     {})
 
--- vim.cmd [[map <leader>rr <Plug>(IPy-Run)]]
--- vim.cmd [[map <leader>rc <Plug>(IPy-RunCell)]]
 
--- vim.keymap.set("n","<leader>jq", ":RunQtConsole")
--- vim.keymap.set("n","<leader>jk", ":IPython --existing --no-window")
--- vim.keymap.set("n", "<leader>jc", "<Plug>(IPy-RunCell)")
--- vim.keymap.set("n", "<leader>ja", "<Plug>(IPy-RunAll)")
--- vim.keymap.set("n", "<leader>jr", function ()
---     vim.cmd("RunQtConsole")
---     vim.cmd("IPython --existing --no-window")
--- end)
+vim.keymap.set("n", "]r", "<Plug>(IPy-RunCell)")

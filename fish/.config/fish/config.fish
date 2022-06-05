@@ -8,9 +8,13 @@ end
 
 fish_add_path -p $HOME/packages/basilisk/src
 fish_add_path -p /var/snap/snapd/bin
+fish_add_path -p /opt/VSCode-linux-x64/bin
+
+
 export BASILISK=$HOME/packages/basilisk/src
 export DISPLAY=":0"
 export PIPENV_VERBOSITY=-1
+export JUPYTER_TOKEN="hi"
 
 fish_add_path -p $HOME/.local/bin
 
@@ -57,7 +61,7 @@ abbr -a -U :q exit
 abbr -a -U g lazygit
 abbr -a -U lf lfrun
 abbr -a -U x z
-
+abbr -a -U co 'code .'
 
 # abbr -a -U rm rm -i
 # abbr -a -U @ease ssh 192.168.15.11
@@ -69,3 +73,5 @@ abbr -a -U x z
 
 # To add support for TTYs this line can be optionally added.
 # source ~/.cache/wal/colors-tty.sh
+
+rev

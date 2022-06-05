@@ -8,10 +8,10 @@ vim.opt.cursorcolumn = false
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.fileencoding = "utf-8"
-vim.opt.foldclose = "all"
-vim.opt.foldlevel = 500
+vim.opt.foldclose = ""
+vim.opt.foldlevel = 99
 vim.opt.foldmethod = "indent"
-vim.opt.guifont = "Hack Nerd Font:h10"
+vim.opt.guifont = "Hack Nerd Font:h9"
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.mouse = "a"
@@ -46,10 +46,10 @@ vim.cmd (':filetype plugin indent on')
 vim.cmd (':filetype plugin on')
 
 -- vim.cmd ('colorscheme jellybeans-nvim')
--- vim.cmd ('colorscheme sakura')
+vim.cmd ('colorscheme sakura')
 -- vim.cmd ('colorscheme ayu-dark' )
 -- vim.cmd ('colorscheme kanagawa' )
-vim.cmd ('colorscheme ghdark')
+-- vim.cmd ('colorscheme ghdark')
 --
 vim.api.nvim_create_autocmd("BufEnter",{
     pattern="*",

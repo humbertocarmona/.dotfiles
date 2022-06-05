@@ -1,7 +1,32 @@
 {
-    "add/new/jcell":{
-        "prefix": "add/new/jcell",
-        "body": "# %% ---------------------------------------------------------------------------",
+    "add/jcell":{
+        "prefix": "add/jcell",
+        "body": "# %% --------------------------------------------------------------------------",
         "description": "Snippet to add cell division in python files"
+    },
+    "import/numpy":{
+        "prefix": "inumpy",
+        "body": "import numpy as np",
+        "description": "import numpy"
+    },
+    "import/pandas":{
+        "prefix": "ipandas",
+        "body": "import pandas as pd",
+        "description": "import pandas"
+    },
+    "import/geopandas":{
+        "prefix": "igeopandas",
+        "body": "import geopandas as gpd",
+        "description": "import geopandas"
+    },
+    "import/matplotlib/pyplot":{
+        "prefix": "ipyplot",
+        "body": "import matplotlib.pyplot as plt",
+        "description": "import pyplot"
+    },
+    "import/numba/jit":{
+        "prefix": "ijit",
+        "body": "from numba import jit",
+        "description": "import numba"
     }
 }

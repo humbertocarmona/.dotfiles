@@ -3,16 +3,16 @@ clear control
 clear lock
 clear mod4
 
-! ibm crtl-l to Super_L
+! ibm crtl-l
 keycode 37 = Super_L
 
-! caps_loc to Control_R
+! caps_loc
 keycode 66 = Control_L
 
 ! ibm ctrl-r to Super_L
 keycode 105 = Super_L
 
-! right menu key is Super_L
+! right menu
 ! keycode 135 = Super_L
 
 ! fn-caps/scroll Lock to  to caps
