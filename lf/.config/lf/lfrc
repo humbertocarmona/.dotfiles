@@ -8,7 +8,7 @@ set nohidden true
 set nodrawbox true
 set icons true
 set ignorecase true
-set ifs "\n"
+set ifs " "
 
 # set internal field separator (IFS) to "\n" for shell commands This is useful to
 # automatically split file names in $fs and $fx properly since default file
@@ -74,7 +74,7 @@ cmd delete ${{
      [ $ans = "y" ] && rm -rf $fx
 }}
 
-cmd mkDir ${{
+cmd mkDir %{{
   printf "Directory Name: "
   read ans
   mkdir -p  $ans
@@ -86,15 +86,36 @@ cmd show_help ${{
         read ans
     }}
 
-cmd mkFile ${{
+
+# this send to lf screen 
+cmd mkFile %{{
   printf "File Name: "
   read ans
-  $EDITOR $ans
+  touch $ans
+}}
+
+
+
+cmd chMod %{{
+    printf "Mod:"
+    read ans
+    
+    files=$(printf "$fx" | tr '\n' ';')
+    while [ "$files" ]; do
+        file=${files%%;*}
+        chmod $ans "$(basename "$file")"
+        if [ "$files" = "$file" ]; then
+            files=''
+        else
+            files="${files#*;}"
+        fi
+    done
 }}
 
 # set wallpaper with feh
-cmd setwallpaper %cp "$f" ~/.config/wall.png && feh -bg-fill ~/.config/wall.png 
-cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
+cmd setwallpaper %nitrogen --set-auto "$f" 
+
+# cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
 
 # use broot to jump to a folder
 cmd broot_jump ${{
@@ -164,10 +185,20 @@ cmd extract ${{
     esac
 }}
 
+
+
+# $f is the full path
+# todo: 
+# use $fx (current of selected in full paths)
+# make a loop
+# remove $PWD from $f then zip  
 cmd zip %zip -r "$f" "$f"
 cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+cmd bz2 %bzip2 -c "$f"
+cmd gz %gzip "$f"
+
 
 
 
@@ -202,8 +233,8 @@ map '"'
 map a
 map az zip
 map at tar
-map ag targz
-map ab tarbz2
+map ag gz
+map ab bz2
 map au unarchiv
 map ax extract
 

@@ -71,7 +71,7 @@ return packer.startup(function(use)
 			{ "tpope/vim-surround" },
 			-- other
 			{ "jose-elias-alvarez/null-ls.nvim" }, -- formatters and linters
-			{ "onsails/lspkind-nvim" },
+			{ "onsails/lspkind-nvim" }, -- just nice pictograms
 			{ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" },
 		},
 	})
