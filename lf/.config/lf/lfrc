@@ -97,7 +97,7 @@ cmd mkFile %{{
 
 
 cmd chMod %{{
-    printf "Mod:"
+    printf ":"
     read ans
     
     files=$(printf "$fx" | tr '\n' ';')

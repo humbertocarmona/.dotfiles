@@ -55,6 +55,7 @@ static const Rule rules[] = {
     { "Gimp",                   NULL,           NULL,             1 << 8,       0,           0,          0,        -1 },
     //
     { "Alacritty",              NULL,           NULL,             0,            0,           1,          0,        -1 },
+    { "Terminator",             NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "kitty",                  NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "St",                     NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "Code - Insiders",        NULL,           NULL,             1 << 5,       0,           0,          0,        -1 },
@@ -121,6 +122,7 @@ static const Layout layouts[] = {
 static const char *termcmd[]  = { TERMINAL, NULL };
 static const char *kittycmd[]  = { "kitty", NULL };
 static const char *alacrittycmd[]  = { "alacritty", NULL };
+static const char *terminatorcmd[]  = { "terminator", NULL };
 
 #include "shiftview.c"
 
@@ -178,11 +180,11 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_1,          incrgaps,       {.i = -1 } },    
     { MODKEY,               XK_a,          togglegaps,      {0 } },
     { MODKEY|ShiftMask,     XK_a,          defaultgaps,     {0} },
-    { MODKEY,               XK_b,          spawn,           SHCMD("min") },
-    { MODKEY|ShiftMask,     XK_b,          spawn,           SHCMD("$BROWSER") },
+    { MODKEY,               XK_b,          spawn,           SHCMD("$BROWSER") },
+    { MODKEY|ShiftMask,     XK_b,          spawn,           SHCMD("google-chrome") },
     { MODKEY|ControlMask,   XK_b,          togglebar,       {0} },
-    { MODKEY,               XK_c,          killclient,      {0} },
-    { MODKEY|ShiftMask,     XK_c,          togglescratch,   {.ui = 0} },
+    { MODKEY,               XK_c,          togglescratch,   {.ui = 0} },
+    { MODKEY,               XK_d,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
     { MODKEY,               XK_e,          spawn,           SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
     { MODKEY|ShiftMask,     XK_e,          spawn,           SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
     { MODKEY,               XK_f,          togglefullscr,   {0} },
@@ -208,7 +210,7 @@ static Key keys[] = {
     /* { MODKEY|ShiftMask,     XK_r,          incnmaster,      {.i = -1 } }, */
     /* { MODKEY,               XK_r,          incnmaster,      {.i = +1 } }, */
     { MODKEY,               XK_s,          togglesticky,    {0} },
-    { MODKEY,               XK_w,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
+    { MODKEY,               XK_w,          killclient,      {0} },
     { MODKEY,               XK_x,          incrgaps,        {.i = -3 } },
     { MODKEY|ShiftMask,     XK_x,          incrgaps,        {.i = +3 } },
     /*-----------------------------------------------------------------------*/
@@ -220,7 +222,7 @@ static Key keys[] = {
     { MODKEY,               XK_backslash,  view,            {0} },
     { MODKEY,               XK_Return,     spawn,           {.v = alacrittycmd} },
     { MODKEY|ShiftMask,     XK_Return,     spawn,           {.v = kittycmd} },
-    { MODKEY|ControlMask,   XK_Return,     spawn,           {.v = termcmd} },
+    { MODKEY|ControlMask,   XK_Return,     spawn,           {.v = terminatorcmd} },
     { MODKEY,               XK_semicolon,  shiftview,       { .i = 1 } },
     { MODKEY|ShiftMask,     XK_semicolon,  shifttag,        { .i = 1 } }, 
     { MODKEY,               XK_space,      zoom,            {0} },

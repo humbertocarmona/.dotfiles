@@ -56,7 +56,7 @@ return packer.startup(function(use)
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
 			{ "saadparwaiz1/cmp_luasnip" },
-			{ "f3fora/cmp-spell" },
+			--{ "f3fora/cmp-spell" },
 		},
 		config = lua_path("nvim-cmp"),
 	})
@@ -66,8 +66,8 @@ return packer.startup(function(use)
 		requires = {
 			{ "williamboman/nvim-lsp-installer" }, -- language server installer
 			-- autopairs
-			-- { 'windwp/nvim-autopairs', config = lua_path"autopairs" },
-			{ "jiangmiao/auto-pairs" },
+			{ 'windwp/nvim-autopairs', config = lua_path"autopairs" },
+			--{ "jiangmiao/auto-pairs" },
 			{ "tpope/vim-surround" },
 			-- other
 			{ "jose-elias-alvarez/null-ls.nvim" }, -- formatters and linters
@@ -108,7 +108,7 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", config = lua_path("telescope") })
 	use({ "nvim-telescope/telescope-fzy-native.nvim" })
 	use({ "nvim-telescope/telescope-project.nvim" })
-	use({ "nvim-telescope/telescope-dap.nvim" })
+	-- use({ "nvim-telescope/telescope-dap.nvim" })
 	-- use { 'sudormrfbin/cheatsheet.nvim' }
 	-- explorer
 	use({ "kyazdani42/nvim-tree.lua", config = lua_path("nvim-tree") })
@@ -144,7 +144,8 @@ return packer.startup(function(use)
 	use("GCBallesteros/vim-textobj-hydrogen")
 	-- My plugins here
 	use({ "Pocco81/AutoSave.nvim", config = lua_path("autosave") })
-	use({
+    -- use({ 'phaazon/hop.nvim' })
+    use({
 		"ggandor/lightspeed.nvim",
 		requires = { "tpope/vim-repeat" },
 		config = lua_path("lightspeed"),

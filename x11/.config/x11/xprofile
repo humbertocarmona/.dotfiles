@@ -2,9 +2,9 @@
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="terminator"
 export READER="zathura"
-export BROWSER="firefox"
+export BROWSER="brave"
 export VIDEO="vlc"
 export IMAGE="sxiv"
 export COLORTERM="truecolor"

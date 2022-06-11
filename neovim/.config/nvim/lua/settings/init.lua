@@ -1,3 +1,13 @@
+local function GetLocalSpell()
+    local name1 = "./en.utf-8.add"
+    local home = os.getenv("HOME")
+    local name2 = home .. "/.config/nvim/spell/en.utf-8.add"
+    if os.rename(name1,name1) then
+        return name1
+    end
+    return name2
+end
+
 -- Global options
 vim.opt.backup = false                  -- creates a backup file
 vim.opt.clipboard = "unnamedplus"       -- neovim access the system clipboard
@@ -40,7 +50,7 @@ vim.opt.updatetime = 300
 vim.opt.writebackup = false
 vim.opt.spell = true
 vim.opt.spelllang = {'en_us', 'pt_br' }
-
+vim.opt.spellfile=GetLocalSpell()
 vim.cmd ('set nowrap')
 vim.cmd (':filetype plugin indent on')
 vim.cmd (':filetype plugin on')
