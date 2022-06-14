@@ -133,3 +133,9 @@ ylim
 yticklabels
 yticks
 zoxide.fish
+rrsync
+required-val
+rsync
+gitignore
+rsync-filter
+return

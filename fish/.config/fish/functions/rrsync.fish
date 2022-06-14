@@ -56,8 +56,7 @@ function rrsync -d "special rsync using .rsync-filter"
             echo "    rsync -$_flag_flags \ "
             echo "      $_flag_from$_flag_project \ "
             echo "      $_flag_to$_flag_project \ "
-            echo "      --include='**.gitignore' \ " 
-            echo "      --exclude='/.git' --filter=':- .rsync-filter'"
+            echo "      --filter=':- .rsync-filter'"
             rsync -n$_flag_flags \
                 $_flag_from$_flag_project \
                 $_flag_to$_flag_project \
@@ -66,7 +65,8 @@ function rrsync -d "special rsync using .rsync-filter"
             read -l -P 'agora pra valer, tem certeza? [y/n]' reply
             switch $reply
                 case Y y
-                    rsync -$_flag_flags $_flag_from$_flag_project \
+                    rsync -$_flag_flags \
+                        $_flag_from$_flag_project \
                         $_flag_to$_flag_project \
                         --filter=':- .rsync-filter'
                     
