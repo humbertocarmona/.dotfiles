@@ -1,0 +1,27 @@
+! clear all that is going to be changed
+clear control
+clear lock
+! clear mod4
+
+! ibm crtl-l
+! keycode 37 = Super_L
+
+! caps_loc
+keycode 66 = Control_R
+
+! ibm ctrl-r to Super_L
+! keycode 105 = Super_L
+
+! right menu
+! keycode 135 = Super_L
+
+! fn-caps/scroll Lock to  to caps
+! keycode 78 = Caps_Lock
+
+! F12
+keycode 96 = Caps_Lock
+
+! now add the proper functions
+add control = Control_L Control_R 
+add lock = Caps_Lock
+! add mod4 = Super_L

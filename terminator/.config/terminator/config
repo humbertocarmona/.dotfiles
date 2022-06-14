@@ -15,7 +15,7 @@
     cursor_shape = underline
     cursor_color = "#d79921"
     cursor_color_fg = False
-    font = Hack NF 10
+    font = Hack Nerd Font 10
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden

@@ -24,5 +24,9 @@ function fish_prompt
     
 
     set_color $stcolor
-    echo '$ '
+    if [ $USER = "root" ]
+        echo '# '
+    else
+        echo '$ '
+    end
 end

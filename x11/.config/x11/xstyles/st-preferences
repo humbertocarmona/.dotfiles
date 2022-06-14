@@ -4,7 +4,7 @@ st.termname:     st
 st.shell:        /usr/bin/fish
 
 ! The following options options can be reloaded via USR1 signal.
-st.font:              hack nerd font:style=regular:pixelsize=14:antialias=true:autohint=true;
+st.font:              Hack Nerd Font:style=regular:pixelsize=18:antialias=true:autohint=true;
 st.borderpx:          5
 
 

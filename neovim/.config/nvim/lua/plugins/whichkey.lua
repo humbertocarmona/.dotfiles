@@ -109,6 +109,7 @@ local mappings = {
     j = {
         name = "Jupyter",
         k = { ":IPython --existing --no-window<CR>", "connect to qtconsole kernel" },
+        l = { ":IJulia --existing --no-window<CR>", "connect to qtconsole kernel" },
         r = { "<Plug>(IPy-RunCell)", "run cell" },
         a = { "<Plug>(IPy-RunAll)", "run all cells" },
         j = { ":RunJuliaQtConsole<CR>", "open Julia console" },

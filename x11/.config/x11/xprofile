@@ -46,10 +46,10 @@ if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
-setxkbmap -layout us -variant intl
+setxkbmap -layout br -variant abnt2
 
 if [ -f "$usermodmap" ]; then
-     xmodmap "$usermodmap"
+    xmodmap "$usermodmap"
 fi
 
 # start some nice programs
@@ -68,14 +68,15 @@ mkdir -p "$HOME"/.local/share/keyrings
 
 # xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
 # xrandr --output HDMI1 --mode 2560x1440 --rate 60
-xrandr --output HDMI1 --dpi 96 --rate 59.95
+# xrandr --output eDP-1 --mode 1920x1200  
+xrandr --output eDP-1 --mode 1280x800  
 
 # now using pywal
 nitrogen --restore &
 # wal -R &
 
 # auto backup
-start_backintime &
+# start_backintime &
 # Network Manager Applet
 nm-applet --indicator &
 

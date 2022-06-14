@@ -1,5 +1,5 @@
 #!/bin/sh
 
-[ -f ~/.xprofile ] && . ~/.xprofile
+[ -f ~/.xprofile ] && source ~/.xprofile
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
 exec dwm 

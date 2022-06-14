@@ -6,6 +6,7 @@ if status is-login
     end
 end
 
+
 fish_add_path -p $HOME/packages/basilisk/src
 fish_add_path -p /var/snap/snapd/bin
 fish_add_path -p /opt/VSCode-linux-x64/bin
@@ -20,7 +21,7 @@ fish_add_path -p $HOME/.local/bin
 
 source $HOME/.config/fish/scripts/zoxide.fish
 source $HOME/.config/fish/scripts/spot.fish
-# source $HOME/.config/ranger/scripts/ranger_cd.fish
+source $HOME/.config/ranger/scripts/ranger_cd.fish
 source $HOME/.config/lf/icons
 source $HOME/.config/fish/scripts/gitaddrem.fish
 source $HOME/.config/fish/scripts/br.fish
@@ -62,7 +63,7 @@ abbr -a -U g lazygit
 abbr -a -U lf lfrun
 abbr -a -U x z
 abbr -a -U co 'code .'
-
+abbr -a -U v nvim 
 # abbr -a -U rm rm -i
 # abbr -a -U @ease ssh 192.168.15.11
 # abbr -a -U @ease ssh 10.2.21.222
@@ -75,3 +76,4 @@ abbr -a -U co 'code .'
 # source ~/.cache/wal/colors-tty.sh
 
 # rev
+

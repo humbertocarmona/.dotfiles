@@ -2,3 +2,5 @@
 
 xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1; 
 xinput set-prop 'ASUS ROG SICA' 'libinput Natural Scrolling Enabled' 1;
+xinput set-prop 'DLL0945:00 06CB:CDE6 Touchpad' 'libinput Natural Scrolling Enabled' 1;
+
