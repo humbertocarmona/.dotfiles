@@ -26,3 +26,67 @@ export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 export QT_SCREEN_SCALE_FACTORS="1;1;1"
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+# merge in defaults and keymaps
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+setxkbmap -layout us -variant intl
+
+if [ -f "$usermodmap" ]; then
+     xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
+# start gnome keyrings daemon
+eval $(/usr/bin/gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+mkdir -p "$HOME"/.local/share/keyrings
+
+# xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
+# xrandr --output HDMI1 --mode 2560x1440 --rate 60
+xrandr --output HDMI1 --dpi 96 --rate 59.95
+
+# now using pywal
+nitrogen --restore &
+# wal -R &
+
+# auto backup
+start_backintime &
+# Network Manager Applet
+nm-applet --indicator &
+
+
+autostart="mpd picom dunst uncluter flameshot udiskie dwmblocks"
+for program in $autostart; do
+	pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
+
+set r rate 300 50
+
+sh $HOME/.local/bin/rev
+
+

@@ -4,7 +4,7 @@ clear lock
 clear mod4
 
 ! ibm crtl-l
-! keycode 37 = Super_L
+keycode 37 = Super_L
 
 ! caps_loc
 keycode 66 = Control_L

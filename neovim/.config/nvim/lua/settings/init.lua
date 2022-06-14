@@ -28,7 +28,7 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.pumheight = 10                  -- pop up menu height
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.shiftwidth = 4
 vim.opt.shortmess:append {c=true, S=true}

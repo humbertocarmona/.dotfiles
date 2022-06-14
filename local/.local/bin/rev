@@ -1,0 +1,4 @@
+#! /bin/sh
+
+xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1; 
+xinput set-prop 'ASUS ROG SICA' 'libinput Natural Scrolling Enabled' 1;
