@@ -2,7 +2,7 @@
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="terminator"
+export TERMINAL="kitty"
 export READER="zathura"
 export BROWSER="brave"
 export VIDEO="vlc"
@@ -46,7 +46,8 @@ if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
-setxkbmap -layout br -variant abnt2
+# setxkbmap -layout br -variant abnt2
+setxkbmap -layout us
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
@@ -68,11 +69,10 @@ mkdir -p "$HOME"/.local/share/keyrings
 
 # xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
 # xrandr --output HDMI1 --mode 2560x1440 --rate 60
-# xrandr --output eDP-1 --mode 1920x1200  
 xrandr --output eDP-1 --mode 1280x800  
 
-# now using pywal
 nitrogen --restore &
+# now using pywal
 # wal -R &
 
 # auto backup
@@ -88,6 +88,6 @@ done >/dev/null 2>&1
 
 set r rate 300 50
 
-sh $HOME/.local/bin/rev
+ . ~/.local/bin/rev
 
 

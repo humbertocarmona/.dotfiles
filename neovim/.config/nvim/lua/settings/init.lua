@@ -10,7 +10,7 @@ end
 
 -- Global options
 vim.opt.backup = false                  -- creates a backup file
-vim.opt.clipboard = "unnamedplus"       -- neovim access the system clipboard
+vim.opt.clipboard:append {"unnamedplus"}       -- neovim access the system clipboard
 vim.opt.cmdheight = 1
 vim.opt.colorcolumn = {80}
 vim.opt.conceallevel = 0                -- `` is visible in markdown files
@@ -48,7 +48,7 @@ vim.opt.timeoutlen = 100
 vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.writebackup = false
-vim.opt.spell = true
+vim.opt.spell = false 
 vim.opt.spelllang = {'en_us', 'pt_br' }
 vim.opt.spellfile=GetLocalSpell()
 vim.cmd ('set nowrap')

@@ -14,6 +14,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -84,6 +86,7 @@ awful.layout.layouts = {
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
+   { "kitty", function() awful.spawn("kitty") end },
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
    { "edit config", Editor_cmd .. " " .. awesome.conffile },
@@ -107,7 +110,11 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
-
+mykeyboardlayout:buttons(
+    awful.util.table.join(awful.button({},1,function ()
+        awful.spawn.with_shell('toogle_kbd')
+    end))
+)
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
@@ -212,14 +219,14 @@ awful.screen.connect_for_each_screen(function(s)
         },
         {
             layout = wibox.layout.fixed.horizontal,
-            PraiseWidget, -- This line is new
+            -- PraiseWidget, -- This line is new
         },
         --s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+            mykeyboardlayout,
             s.mylayoutbox,
         },
     }
@@ -318,8 +325,8 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-    --           {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+              {description = "run prompt", group = "launcher"}),
     
     -- THIS ARE MINE!!!-------------------------------------------------------
 
@@ -367,7 +374,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "r", function() menubar.show() end,
+    awful.key({ modkey, "Shift" }, "r", function() menubar.show() end,
               {description = "show the menubar", group = "awesome"})
 )
 
@@ -622,7 +629,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 -- gaps
-beautiful.useless_gap = 5
+beautiful.useless_gap = 3
 
 -- autostart
 -- awful.spawn.with_shell("source ~/.xprofile")

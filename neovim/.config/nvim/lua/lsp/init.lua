@@ -12,8 +12,9 @@ lspconfig.pylsp.setup{
     on_attach = function ()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-        vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
+        vim.keymap.set("n", "gf", vim.lsp.buf.type_definition, {buffer=0})
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
+        vim.keymap.set("n", "gr", vim.lsp.buf.rename, {buffer=0})
         vim.keymap.set("n", "gn", vim.diagnostic.goto_next, {buffer=0})
         vim.keymap.set("n", "gt", "<cmd>Telescope diagnostics<cr>", {buffer=0})
     end
@@ -24,18 +25,15 @@ lspconfig.julials.setup{
     on_attach = function ()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-        vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
+        vim.keymap.set("n", "gf", vim.lsp.buf.type_definition, {buffer=0})
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
+        vim.keymap.set("n", "gr", vim.lsp.buf.rename, {buffer=0})
         vim.keymap.set("n", "gn", vim.diagnostic.goto_next, {buffer=0})
         vim.keymap.set("n", "gt", "<cmd>Telescope diagnostics<cr>", {buffer=0})
     end
 }
 
--- lspconfig.pyright.setup{
---       capabilities = capabilities
--- }
 
 -- require("lsp.handlers").setup() -- these handle servers and keymaps...
 require'lsp.lsp-installer'
-require'lsp.null-ls'
 

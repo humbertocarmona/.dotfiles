@@ -159,12 +159,8 @@ cmd fzf_search ${{
 
 
 # all relative to drag and drop
-cmd dragon %dragon-drop -a -x $fx
-cmd dragon-stay %dragon-drop -a $fx
-cmd dragon-individual %dragon-drop $fx
-cmd cpdragon %cpdragon
-cmd mvdragon %mvdragon
-cmd dlfile %dlfil
+cmd dragon %dragon-drag-and-drop --all --and-exit $fx
+cmd dragon-stay %dragon-drop --all $fx
 
 cmd lazy_git ${{
         lazygit -p "$f" 
@@ -254,10 +250,6 @@ map dtc clear_trash
 map dtr restore_trash
 map dr dragon
 map ds dragon-stay
-map di dragon-individual
-map dm mvdragon
-map dc cpdragon
-map dl dlfile
 
 map e
 map ee $$editor "$f"

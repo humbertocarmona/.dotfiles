@@ -14,7 +14,7 @@ local setup = {
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-            operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+            operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
             motions = true, -- adds help for motions
             text_objects = true, -- help for text objects triggered after entering an operator
             windows = true, -- default bindings on <c-w>
@@ -56,7 +56,7 @@ local setup = {
         align = "left", -- align columns left, center or right
     },
     ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+    hidden = { "<silent>", "<cmd>", "<Cmd>", "<cr>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
     show_help = true, -- show help message on the command line when the popup is visible
     triggers = "auto", -- automatically setup triggers
     -- triggers = {"<leader>"} -- or specify a list manually
@@ -84,13 +84,13 @@ local mappings = {
         name = "Buffer",
         d = {"<cmd>bd<cr>", "delete buffer"}
     },
-    ["c"] = { "<cmd>:let @/=''<CR>", "Clear search register"},
+    ["c"] = { "<cmd>:let @/=''<cr>", "Clear search register"},
 
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 
     g = {
         name = "Git",
-        g = { "<cmd>LazyGit<CR>", "LazyGit" },
+        g = { "<cmd>LazyGit<cr>", "LazyGit" },
         -- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         -- c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
         -- d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff"},
@@ -108,55 +108,55 @@ local mappings = {
     -- hanschen/vim-ipython-cell
     j = {
         name = "Jupyter",
-        k = { ":IPython --existing --no-window<CR>", "connect to qtconsole kernel" },
-        l = { ":IJulia --existing --no-window<CR>", "connect to qtconsole kernel" },
+        k = { "<cmd>IPython --existing --no-window<cr>", "connect to qtconsole kernel" },
+        l = { "<cmd>IJulia --existing --no-window<cr>", "connect to qtconsole kernel" },
         r = { "<Plug>(IPy-RunCell)", "run cell" },
         a = { "<Plug>(IPy-RunAll)", "run all cells" },
-        j = { ":RunJuliaQtConsole<CR>", "open Julia console" },
-        q = { ":RunPythonQtConsole<CR>", "open Python console" },
+        j = { "<cmd>RunJuliaQtConsole<cr>", "open Julia console" },
+        q = { "<cmd>RunPythonQtConsole<cr>", "open Python console" },
     },
 
-    -- l = {
-    --     name = "LSP",
-    --     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    --     d = {
-    --         "<cmd>Telescope diagnostics<cr>",
-    --         "Document Diagnostics",
-    --     },
-    --     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-    --     i = { "<cmd>LspInfo<cr>", "Info" },
-    --     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    --     j = {
-    --         "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-    --         "Next Diagnostic",
-    --     },
-    --     k = {
-    --         "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-    --         "Prev Diagnostic",
-    --     },
-    --     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    --     q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-    --     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    --     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    --     S = {
-    --         "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-    --         "Workspace Symbols",
-    --     },
+    l = {
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = {
+            "<cmd>Telescope diagnostics<cr>",
+            "Telescope Diagnostics",
+        },
+        f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+        j = {
+            "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+            "Next Diagnostic",
+        },
+        k = {
+            "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+            "Prev Diagnostic",
+        },
+        l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+        q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = {
+            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+            "Workspace Symbols",
+        },
+    },
+
+    -- p = {
+    --     name = "Packer",
+    --     c = { "<cmd>PackerCompile<cr>", "Compile" },
+    --     i = { "<cmd>PackerInstall<cr>", "Install" },
+    --     s = { "<cmd>PackerSync<cr>", "Sync" },
+    --     S = { "<cmd>PackerStatus<cr>", "Status" },
+    --     u = { "<cmd>PackerUpdate<cr>", "Update" },
     -- },
-
-    p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
 
     ["q"] = { "<cmd>q!<cr>", "Quit :q!"},
     ["Q"] = { "<cmd>wqa<cr>", "Write quit all :wqa"},
     ["r"] = { "<Plug>(IPy-RunCell)", "run qtconsole cell" },
-    ["s"] = { "<cmd>:ASToggle<CR>", 'Autosave toggle' },
+    ["s"] = { "<cmd>:ASToggle<cr>", 'Autosave toggle' },
 
     t = {
         name = "Telescope",

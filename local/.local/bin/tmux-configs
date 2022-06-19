@@ -3,16 +3,20 @@
 if [ $# -gt 0 ]; then
     full_path=$1
 else
-    full_path=$(find -L ~/packages/julias ~/packages/suckless ~/.config ~/.local  \
-        -maxdepth 2 -type d \
-        \( -regex ".+include.+" -o \
-        -regex ".+share.+" -o \
-        -regex ".+lib.+" -o \
-        -regex ".+include.+" -o \
-        -regex ".+.git" -o \
-        -regex ".+Cache.+" -o \
-        -regex ".+LICENSE.+" -o \
-        -regex ".+log.+" \) -prune -o -print | fzf)
+    full_path=$(broot -ghi ~/)
+    # full_path=$(fd -t d -d 1 -L -H .+ ~/.config ~/.local | fzf --reverse --preview='exa -l {}' \
+    #     --color='hl:#719872,fg:#D9D9D9,header:#719872,fg+:#D9D9D9' \
+    #     --color='pointer:#E12672,marker:#E17899,prompt:#98BEDE,hl+:#98BC99')    
+    # pull_path=$(find -L ~/packages/suckless ~/.config ~/.local  \
+    #     -maxdepth 2 -type d \
+    #     \( -regex ".+include.+" -o \
+    #     -regex ".+share.+" -o \
+    #     -regex ".+lib.+" -o \
+    #     -regex ".+include.+" -o \
+    #     -regex ".+.git" -o \
+    #     -regex ".+Cache.+" -o \
+    #     -regex ".+LICENSE.+" -o \
+    #     -regex ".+log.+" \) -prune -o -print | fzf --reverse)
 fi
 
 if [ -z $full_path ]; then

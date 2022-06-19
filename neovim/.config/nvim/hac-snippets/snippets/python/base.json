@@ -1,5 +1,14 @@
-  "import": {
-    "prefix": "im",
-    "body": "import ${1:package/module}$0",
-    "description": "Import a package or module"
-  },
+{
+    "import module": {
+        "prefix": "im",
+        "body": "import ${1:package/module}$0",
+        "description": "Import a package or module"
+    },
+    "import numpy": {
+        "prefix": "inp",
+        "body": "import numpy as ${1:np}$0",
+        "description": "Import numpy"
+    },
+
+
+}

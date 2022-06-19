@@ -1,6 +1,6 @@
 # alias --save g='lazygit'
 
-alias --save lf='~/.local/bin/lfrun'
+# alias --save lf='~/.local/bin/lfrun'
 # alias --save fgrep='fgrep --color=auto'
 # alias --save rev="xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1"
 # alias --save zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
@@ -38,3 +38,4 @@ alias --save lf='~/.local/bin/lfrun'
 # alias --save rmusb='udiskie-umount -d /dev/sda1'
 # alias --save q='exit'
 # alias --save ff="lfcd"
+alias --save f='cd $(fd -t d | fzf)'

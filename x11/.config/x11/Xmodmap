@@ -1,18 +1,18 @@
-! clear all that is going to be changed
+! Clear all that is going to be changed
 clear control
 clear lock
-! clear mod4
+! Clear mod4
 
 ! ibm crtl-l
-! keycode 37 = Super_L
+keycode 37 = Super_L
 
-! caps_loc
+! Caps_lock
 keycode 66 = Control_R
 
 ! ibm ctrl-r to Super_L
-! keycode 105 = Super_L
+keycode 105 = Super_L
 
-! right menu
+! Right menu
 ! keycode 135 = Super_L
 
 ! fn-caps/scroll Lock to  to caps

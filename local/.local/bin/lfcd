@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Change working dir in shell to last dir in lf 
+# on exit (adapted from ranger).
+
+set -e
+cleanup(){
+    exec 3>&-
+    rm "$FIFO_UEBERZUG"
+}
+
+tmp="$(mktemp)"
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    lf -last-dir-path="$tmp" "$@"
+else
+    [ ! -d "$HOME/.cache/lf" ] && mkdir -p "$HOME/.cache/lf"
+    export FIFO_UEBERZUG="$HOME/.cache/lf/ueberzug-$$"
+    mkfifo "$FIFO_UEBERZUG"
+    ueberzug layer -s <"$FIFO_UEBERZUG" -p json &
+    exec 3>"$FIFO_UEBERZUG"
+    trap cleanup HUP INT QUIT TERM PWR EXIT
+    lf -last-dir-path="$tmp" "$@" 3>&-
+fi
+
+
+if [ -f "$tmp" ]; then
+    dir=$(cat "$tmp")
+    rm -f $tmp
+    if [ -d $dir ]; then
+        cd $dir
+    fi
+fi

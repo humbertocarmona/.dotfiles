@@ -14,6 +14,7 @@ static unsigned int gappov    = 8;       /* vert outer gap between windows and s
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
+static const Bool viewontag   = True;     /* Switch view on tag switch */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "Hack Nerd Font:size=10", "JuliaMono:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
@@ -58,14 +59,15 @@ static const Rule rules[] = {
     { "Terminator",             NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "kitty",                  NULL,           NULL,             0,            0,           1,          0,        -1 },
     { "St",                     NULL,           NULL,             0,            0,           1,          0,        -1 },
+    { NULL,                     "broot",        NULL,             0,            0,           1,          0,        -1 },
     { "Code - Insiders",        NULL,           NULL,             1 << 5,       0,           0,          0,        -1 },
     { "Code",        NULL,           NULL,             1 << 5,       0,           0,          0,        -1 },
     { NULL,                     "spterm",       NULL,             SPTAG(0),     1,           1,          0,        -1 },
     { NULL,                     "spcalc",       NULL,             SPTAG(1),     1,           1,          0,        -1 },
     //
-    { NULL,                     "pulsemixer",   NULL,             0,            1,           0,          1,        -1 },
+    { NULL,                     "pulsemixer",   "pulsemixer",     0,            1,           0,          1,        -1 },
+    { "jupyter-qtconsole",      NULL,           NULL,             0,            0,           0,          1,        -1 },
     { "Pavucontrol",            NULL,           NULL,             0,            1,           0,          1,        -1 },
-    { "Bluman-manager",         NULL,           NULL,             0,            1,           0,          1,        -1 },
     { "matplotlib",             NULL,           NULL,             0,            1,           0,          1,        -1 },
     { "vlc",                    NULL,           NULL,             0,            1,           0,          1,        -1 },
     { "Dragon-drag-and-drop",   NULL,           NULL,             0,            1,           0,          1,        -1 },
@@ -184,6 +186,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_b,          spawn,           SHCMD("google-chrome-stable") },
     { MODKEY|ControlMask,   XK_b,          togglebar,       {0} },
     { MODKEY,               XK_c,          togglescratch,   {.ui = 0} },
+    { MODKEY|ShiftMask,     XK_c,          togglescratch,   {.ui = 1} },
     { MODKEY,               XK_d,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
     { MODKEY,               XK_e,          spawn,           SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
     { MODKEY|ShiftMask,     XK_e,          spawn,           SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
@@ -204,7 +207,7 @@ static Key keys[] = {
     { MODKEY,               XK_m,          spawn,           SHCMD(TERMINAL " -e ncmpcpp") },
     { MODKEY|ShiftMask,     XK_m,          spawn,           SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
     { MODKEY,               XK_p,          spawn,           SHCMD("dmenu_run -fn 'Hack Nerd Font:size=12'") },
-    { MODKEY|ShiftMask,     XK_p,          spawn,           SHCMD("rofi -show combi -combi-modi 'window,drun,ssh' -modi combi -show-icons") },
+    { MODKEY|ShiftMask,     XK_p,          spawn,           SHCMD("rofi -modi drun -show drun -show-icons -font 'Hack Nerd Font 9'") },
     { MODKEY|ControlMask,   XK_p,          spawn,           SHCMD("passmenu -fn 'Hack Nerd Font:size=12'") },
     { MODKEY,               XK_q,          spawn,           SHCMD("sysact") },
     /* { MODKEY|ShiftMask,     XK_r,          incnmaster,      {.i = -1 } }, */
@@ -220,8 +223,8 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_equal,      spawn,           SHCMD("pamixer --allow-boost -i 10; kill -44 $(pidof dwmblocks)") },
     { MODKEY,               XK_Tab,        view,            {0} },
     { MODKEY,               XK_backslash,  view,            {0} },
-    { MODKEY,               XK_Return,     spawn,           {.v = alacrittycmd} },
-    { MODKEY|ShiftMask,     XK_Return,     spawn,           {.v = kittycmd} },
+    { MODKEY|ShiftMask,     XK_Return,     spawn,           {.v = alacrittycmd} },
+    { MODKEY,               XK_Return,     spawn,           {.v = kittycmd} },
     { MODKEY|ControlMask,   XK_Return,     spawn,           {.v = terminatorcmd} },
     { MODKEY,               XK_semicolon,  shiftview,       { .i = 1 } },
     { MODKEY|ShiftMask,     XK_semicolon,  shifttag,        { .i = 1 } }, 

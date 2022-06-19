@@ -1,0 +1,20 @@
+#!/bin/bash
+usermodmap=$HOME/.Xmodmap
+
+la=$(echo $(setxkbmap -query)| awk '{print $6$8}')
+lfinal=""
+if [ "$la" = "us" ]; then
+    setxkbmap -layout us -variant intl
+    lfinal="us intl"
+elif [ "$la" = "usintl" ]; then
+     setxkbmap -layout br -variant abnt2
+     lfinal="br abnt2"
+else
+    setxkbmap -layout us
+    lfinal='us'
+fi
+echo $la " ->" $lfinal
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
