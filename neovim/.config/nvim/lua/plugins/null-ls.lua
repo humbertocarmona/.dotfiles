@@ -17,9 +17,8 @@ null_ls.setup({
 		formatting.black,
 		formatting.stylua,
         formatting.latexindent,
-		diagnostics.flake8,
+        diagnostics.flake8,
         diagnostics.eslint,
         completion.spell,
-		--diagnostics.selene
 	},
 })
