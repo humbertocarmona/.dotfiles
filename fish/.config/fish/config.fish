@@ -16,6 +16,7 @@ export BASILISK=$HOME/packages/basilisk/src
 export DISPLAY=":0"
 export PIPENV_VERBOSITY=-1
 export JUPYTER_TOKEN="hi"
+export GPG_TTY=$(tty)
 
 fish_add_path -p $HOME/.local/bin
 
