@@ -5,11 +5,12 @@ function rrsync -d "special rsync using .rsync-filter"
     end
 
     set -l options (fish_opt -s h -l help)
-    set options $options (fish_opt --short=r --long=run)
     set options $options (fish_opt --short=p --long=project --required-val)
     set options $options (fish_opt --short=f --long=from --required-val)
     set options $options (fish_opt --short=t --long=to --required-val)
     set options $options (fish_opt --short=l --long=flags --required-val)
+    set options $options (fish_opt --short=r --long=run)
+    set options $options (fish_opt --short=d --long=delete) 
     
     argparse $options -- $argv
     or return
@@ -45,6 +46,12 @@ function rrsync -d "special rsync using .rsync-filter"
         echo "flags = "$_flag_flags
     end
 
+    if set -q _flag_delete
+        set fdel "--delete"
+    else
+        set fdel " "
+    end
+
     
     if set -q _flag_h
         USAGE
@@ -53,11 +60,11 @@ function rrsync -d "special rsync using .rsync-filter"
     
     if set -q _flag_r
         while true
-            echo "    rsync -$_flag_flags \ "
+            echo "    rsync -$_flag_flags $fdel \ "
             echo "      $_flag_from$_flag_project \ "
             echo "      $_flag_to$_flag_project \ "
             echo "      --filter=':- .rsync-filter'"
-            rsync -n$_flag_flags \
+            rsync -n$_flag_flags $fdel \
                 $_flag_from$_flag_project \
                 $_flag_to$_flag_project \
                 --filter=':- .rsync-filter'
@@ -65,7 +72,7 @@ function rrsync -d "special rsync using .rsync-filter"
             read -l -P 'agora pra valer, tem certeza? [y/n]' reply
             switch $reply
                 case Y y
-                    rsync -$_flag_flags \
+                    rsync -$_flag_flags $fdel \
                         $_flag_from$_flag_project \
                         $_flag_to$_flag_project \
                         --filter=':- .rsync-filter'
@@ -77,18 +84,17 @@ function rrsync -d "special rsync using .rsync-filter"
         end
     else
         echo 'dry run ----------------------------------------------'
-        echo "rsync -n"$_flag_flags  \
+        echo "rsync -n"$_flag_flags $fdel \
             $_flag_from$_flag_project \
             $_flag_to$_flag_project \
             "--filter=':- .rsync-filter'"
         
-        rsync -n$_flag_flags  \
+        rsync -n$_flag_flags $fdel \
             $_flag_from$_flag_project \
             $_flag_to$_flag_project \
             --filter=':- .rsync-filter'
     end
 end
-
 
 # --include='**.gitignore' \
 # --exclude='.git' \
