@@ -9,7 +9,6 @@ function rrsync -d "special rsync using .rsync-filter"
     set options $options (fish_opt --short=f --long=from --required-val)
     set options $options (fish_opt --short=t --long=to --required-val)
     set options $options (fish_opt --short=l --long=flags --required-val)
-    set options $options (fish_opt --short=r --long=run)
     set options $options (fish_opt --short=d --long=delete) 
     
     argparse $options -- $argv
@@ -23,6 +22,7 @@ function rrsync -d "special rsync using .rsync-filter"
         USAGE
         return
     end
+    
     if set -q _flag_from
         echo "from = " $_flag_from
     else
@@ -31,6 +31,7 @@ function rrsync -d "special rsync using .rsync-filter"
         USAGE
         return
     end
+    
     if set -q _flag_to
         echo "to = " $_flag_to
     else
@@ -39,60 +40,39 @@ function rrsync -d "special rsync using .rsync-filter"
         USAGE
         return
     end
+    
     if set -q _flag_flags
         echo "flags = "$_flag_flags
     else
         set _flag_flags "roltDv"
         echo "flags = "$_flag_flags
     end
-
-    if set -q _flag_delete
-        set fdel "--delete"
-    else
-        set fdel " "
-    end
-
     
     if set -q _flag_h
         USAGE
         return
     end
-    
-    if set -q _flag_r
-        while true
-            echo "    rsync -$_flag_flags $fdel \ "
-            echo "      $_flag_from$_flag_project \ "
-            echo "      $_flag_to$_flag_project \ "
-            echo "      --filter=':- .rsync-filter'"
-            rsync -n$_flag_flags $fdel \
-                $_flag_from$_flag_project \
-                $_flag_to$_flag_project \
-                --filter=':- .rsync-filter'
-            echo ""
-            read -l -P 'agora pra valer, tem certeza? [y/n]' reply
-            switch $reply
-                case Y y
-                    rsync -$_flag_flags $fdel \
-                        $_flag_from$_flag_project \
-                        $_flag_to$_flag_project \
-                        --filter=':- .rsync-filter'
-                    
+   
+    set cmd1 rsync $(echo --filter=\':- .rsync-filter\')
+    set cmd2 '-'$_flag_flags $_flag_from$_flag_project 
+    set cmd3 $_flag_to$_flag_project 
+    set cmd  $cmd1 $cmd2 $cmd3
+    if set -q _flag_delete
+        set -a cmd $(echo --delete)
+    end
+    set cmdn $cmd '-n'
+    echo ""
+    echo $cmdn
+    while true  # keep asking
+        eval $cmdn
+        read -l -P 'agora pra valer, tem certeza? [y/n]' reply
+        switch $reply
+            case Y y
+                eval $cmd
                 return 0
-                case '' N n
-                    return 1
-            end
+            case '' N n
+                return 1
         end
-    else
-        echo 'dry run ----------------------------------------------'
-        echo "rsync -n"$_flag_flags $fdel \
-            $_flag_from$_flag_project \
-            $_flag_to$_flag_project \
-            "--filter=':- .rsync-filter'"
-        
-        rsync -n$_flag_flags $fdel \
-            $_flag_from$_flag_project \
-            $_flag_to$_flag_project \
-            --filter=':- .rsync-filter'
     end
 end
 

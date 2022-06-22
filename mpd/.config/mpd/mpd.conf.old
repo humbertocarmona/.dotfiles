@@ -1,0 +1,43 @@
+# An example configuration file for MPD.
+# Read the user manual for documentation: http://www.musicpd.org/doc/user/
+
+# db_file "~/.local/share/mpd/db"
+log_file            "syslog"
+
+music_directory     "~/music"
+
+playlist_directory  "~/.local/share/mpd/playlists"
+
+# This setting sets the location of the file which contains information about
+# most variables to get MPD back into the same general shape it was in before
+# it was brought down. This setting is disabled by default and the server
+# state will be reset on server start up.
+#
+state_file          "~/.local/share/mpd/state"
+pid_file            "~/.local/share/mpd/pid"
+sticker_file        "~/.local/share/mpd/sticker.sql"
+
+auto_update         "yes"
+auto_update_depth   "0"
+restore_paused      "yes"
+
+
+database {
+       plugin "simple"
+       path "~/.local/share/mpd/db"
+       cache_directory "~/.local/share/mpd/cache"
+}
+
+port "6600"
+audio_output {
+    type        "pulse"
+    name        "pulse audio"
+}
+
+audio_output {
+    type        "fifo"
+    name        "ncmpcpp visualizer"
+    path        "/tmp/mpd.fifo"
+    format      "44100:16:1" 
+}
+

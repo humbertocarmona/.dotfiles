@@ -1,13 +1,13 @@
 ! Clear all that is going to be changed
 clear control
 clear lock
-! Clear mod4
+clear mod4
 
 ! ibm crtl-l
-keycode 37 = Super_L
+! keycode 37 = Super_L
 
 ! Caps_lock
-keycode 66 = Control_R
+keycode 66 = Super_L
 
 ! ibm ctrl-r to Super_L
 keycode 105 = Super_L
@@ -24,4 +24,4 @@ keycode 96 = Caps_Lock
 ! now add the proper functions
 add control = Control_L Control_R 
 add lock = Caps_Lock
-! add mod4 = Super_L
+add mod4 = Super_L

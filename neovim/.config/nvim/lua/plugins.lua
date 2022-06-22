@@ -98,6 +98,7 @@ return packer.startup(function(use)
 
     -- status and buffer lines
     use({ "akinsho/bufferline.nvim", config = lua_path("bufferline") })
+    use({ "akinsho/toggleterm.nvim", tag='v1.*', config = lua_path("toggleterm")})
     use({ "nvim-lualine/lualine.nvim", config = lua_path("lualine") })
     use({ "famiu/bufdelete.nvim" })
     -- Telescope

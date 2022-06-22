@@ -29,13 +29,11 @@ source $HOME/.config/fish/scripts/br.fish
 
 set -g fish_key_bindings fish_vi_key_bindings
 
-bind \co --mode insert 'lfrun'
-bind \cp --mode insert 'lfcd'
+bind \co --mode insert 'nvim (fzf)'
 bind \ck --mode insert 'tmux-configs'
 bind \cl --mode insert 'tmux-projects'
 bind \cz --mode insert 'zi'
-bind \co --mode normal 'lfrun'
-bind \cp --mode normal 'lfcd'
+bind \co --mode normal 'nvim (fzf)'
 bind \ck --mode normal 'tmux-configs'
 bind \cl --mode normal 'tmux-projects'
 bind \cz --mode normal 'zi'
@@ -43,7 +41,7 @@ bind \cu --mode normal "rofi -modi drun -font 'Hack Nerd Font 9' -show drun -sho
 abbr -a -U br   br -g
 abbr -a -U cl   clear
 abbr -a -U cat  bat
-abbr -a -U co   'code .'
+abbr -a -U co   'code . && exit'
 abbr -a -U g    lazygit
 abbr -a -U q    exit
 abbr -a -U ta   tmux attach-session -t
@@ -54,6 +52,10 @@ abbr -a -U tl   tmux list-sessions
 abbr -a -U tw   tmux switch -t
 abbr -a -U v    nvim 
 abbr -a -U x    z
+abbr -a -U l    exa 
+abbr -a -U ll   exa -l --icons
+abbr -a -U la   exa -la --icons
+abbr -a -U lf   lfrun
 
 # Import colorscheme from 'wal' asynchronously
 # Alternative (blocks terminal for 0-3ms)

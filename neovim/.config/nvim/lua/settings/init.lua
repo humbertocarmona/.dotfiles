@@ -48,7 +48,7 @@ vim.opt.timeoutlen = 100
 vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.writebackup = false
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = {'en_us', 'pt_br' }
 vim.opt.spellfile=GetLocalSpell()
 vim.cmd ('set nowrap')

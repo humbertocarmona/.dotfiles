@@ -1,19 +1,19 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
-SETUVAR _fish_abbr__3A_q:exit
 SETUVAR _fish_abbr_br:br\x20\x2dg
-SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_cl:clear
-SETUVAR _fish_abbr_co:code\x20\x2e
+SETUVAR _fish_abbr_co:code\x20\x2e\x20\x26\x26\x20exit
 SETUVAR _fish_abbr_g:lazygit
+SETUVAR _fish_abbr_l:exa
+SETUVAR _fish_abbr_la:exa\x20\x2dla\x20\x2d\x2dicons
+SETUVAR _fish_abbr_lf:lfrun
+SETUVAR _fish_abbr_ll:exa\x20\x2dl\x20\x2d\x2dicons
 SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_ta:tmux\x20attach\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_td:tmux\x20detach
 SETUVAR _fish_abbr_tk:tmux\x20kill\x2dsession\x20\x2dt
-SETUVAR _fish_abbr_tk1:tmux\x20kill\x2dserver
-SETUVAR _fish_abbr_tka:tmux\x20kill\x2dserver
 SETUVAR _fish_abbr_tks:tmux\x20kill\x2dserver
 SETUVAR _fish_abbr_tl:tmux\x20list\x2dsessions
 SETUVAR _fish_abbr_tw:tmux\x20switch\x20\x2dt

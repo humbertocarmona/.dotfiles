@@ -115,28 +115,10 @@ cmd chMod %{{
 # set wallpaper with feh
 cmd setwallpaper %nitrogen --set-auto "$f" 
 
-# cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
 
-# use broot to jump to a folder
-cmd broot_jump ${{
-  f=$(mktemp)
-  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
-  rm -f "$f"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
-
-cmd open_config  ${{
-  $EDITOR $(bookmenu -b ~/.config/bookmenu/configs -f fzf -o)
-}}
-
-# you can use fzf
+# I prefer fzf
 cmd fzf_jump ${{
-  res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+  res="$(fd --follow | fzf --reverse --header='Jump to location')"
   if [ -f "$res" ]; then
     cmd="select"
   elif [ -d "$res" ]; then
@@ -211,16 +193,6 @@ cmd on-cd &{{
     lf -remote "send $id set promptfmt \"$fmt\""
 }}
 
-cmd zz %{{
-    result="$(zoxide query --exclude "${PWD}" -- "$1")"
-    lf -remote "send ${id} cd '${result}'"
-}}
-
-cmd zi ${{
-    result="$(zoxide query -i -- "$1")"
-    lf -remote "send ${id} cd '${result}'"
-}}
-
 
 # bindings
 # First remove some defaults
@@ -235,7 +207,6 @@ map au unarchiv
 map ax extract
 
 map bg setwallpaper
-map bj broot_jump
 
 map c
 map cc clear
@@ -304,10 +275,6 @@ map u unselect
 map x &xdg-open $f
 map X $mimeopen --ask $f
 map y copy
-
-map <c-a> :zz
-map <c-z> :zi
-
 
 map <delete> trash
 map . set hidden!
