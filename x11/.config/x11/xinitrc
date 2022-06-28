@@ -2,5 +2,5 @@
 
 [ -f ~/.xprofile ] && . ~/.xprofile
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
-exec dwm 
-# exec awesome
+# exec dwm 
+exec awesome

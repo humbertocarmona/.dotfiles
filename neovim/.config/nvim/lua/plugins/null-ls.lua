@@ -26,6 +26,11 @@ null_ls.setup({
         --     "--max-line-length=80"
         -- }}),
         diagnostics.eslint,
+        diagnostics.markdownlint,
+        diagnostics.fish,
+        diagnostics.cppcheck,
+        diagnostics.selene, 
         completion.spell,
+        completion.luasnip,
 	},
 })

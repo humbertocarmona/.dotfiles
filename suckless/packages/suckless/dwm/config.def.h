@@ -231,7 +231,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_space,      togglefloating,  {0} },
     { MODKEY,               XK_F4,         spawn,           SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
     { MODKEY,               XK_F10,        spawn,           SHCMD("kbbr") },
-    { MODKEY,               XK_F11,        spawn,           SHCMD("kbus") },
+    { MODKEY,               XK_F11,        spawn,           SHCMD("flameshot qui") },
     { MODKEY,               XK_F12,        spawn,           SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
     /*-----------------------------------------------------------------------*/
     { 0, XK_Print,                         spawn,           SHCMD("flameshot gui") },

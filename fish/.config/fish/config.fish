@@ -10,7 +10,7 @@ end
 fish_add_path -p $HOME/packages/basilisk/src
 fish_add_path -p /var/snap/snapd/bin
 fish_add_path -p /opt/VSCode-linux-x64/bin
-
+fish_add_path -p $HOME/.cargo/bin
 
 export BASILISK=$HOME/packages/basilisk/src
 export DISPLAY=":0"
@@ -37,7 +37,6 @@ bind \co --mode normal 'nvim (fzf)'
 bind \ck --mode normal 'tmux-configs'
 bind \cl --mode normal 'tmux-projects'
 bind \cz --mode normal 'zi'
-bind \cu --mode normal "rofi -modi drun -font 'Hack Nerd Font 9' -show drun -show-icon"
 abbr -a -U br   br -g
 abbr -a -U cl   clear
 abbr -a -U cat  bat

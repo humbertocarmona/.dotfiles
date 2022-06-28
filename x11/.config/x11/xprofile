@@ -47,7 +47,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 # setxkbmap -layout br -variant abnt2
-setxkbmap -layout us
+setxkbmap -layout us -model pc86
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
@@ -68,8 +68,8 @@ export SSH_AUTH_SOCK
 mkdir -p "$HOME"/.local/share/keyrings
 
 # xrandr --output DP-1 --mode 2560x1440 --rate 59.95 --left-of DP-1  
-# xrandr --output HDMI1 --mode 2560x1440 --rate 60
-xrandr --output eDP-1 --mode 1280x800  
+xrandr --output HDMI1 --mode 2560x1440 --rate 60
+# xrandr --output eDP-1 --mode 1280x800  
 
 nitrogen --restore &
 # now using pywal
@@ -81,7 +81,7 @@ nitrogen --restore &
 nm-applet --indicator &
 
 
-autostart="mpd picom dunst uncluter flameshot udiskie dwmblocks"
+autostart="mpd picom dunst uncluter flameshot udiskie" #    dwmblocks"
 for program in $autostart; do
 	pidof -s "$program" || setsid -f "$program"
 done >/dev/null 2>&1

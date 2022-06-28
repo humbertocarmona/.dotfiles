@@ -51,16 +51,16 @@ end
 beautiful.init("/home/humberto/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
-Editor = os.getenv("EDITOR") or "nano"
-Editor_cmd = terminal .. " -e " .. Editor
-Dmenu = "dmenu_run -fn 'Hack NF:size=10'"
+local terminal = "alacritty"
+local Editor = os.getenv("EDITOR") or "nano"
+local Editor_cmd = terminal .. " -e " .. Editor
+local Dmenu = "dmenu_run -fn 'Hack NF:size=10'"
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+local modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -85,23 +85,24 @@ awful.layout.layouts = {
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
-myawesomemenu = {
+local myawesomemenu = {
    { "kitty", function() awful.spawn("kitty") end },
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
    { "edit config", Editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
+   { "exit", function() awful.spawn(sysact)  end },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+local mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal }
                                   }
                         })
-PraiseWidget = wibox.widget.textbox()
+local PraiseWidget = wibox.widget.textbox()
 PraiseWidget.text = "  You are great!"
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -109,7 +110,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+local mykeyboardlayout = awful.widget.keyboardlayout()
 mykeyboardlayout:buttons(
     awful.util.table.join(awful.button({},1,function ()
         awful.spawn.with_shell('toogle_kbd')
@@ -117,7 +118,7 @@ mykeyboardlayout:buttons(
 )
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+local mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -295,9 +296,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey,           }, "]",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "[",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
@@ -330,11 +331,11 @@ globalkeys = gears.table.join(
     
     -- THIS ARE MINE!!!-------------------------------------------------------
 
-    awful.key({ modkey}, "p",
+    awful.key({ modkey, "Shift"}, "p",
         function () awful.spawn(Dmenu) end,
         {description = "open dmenu", group = "launcher"}),
     --
-    awful.key({modkey, "Shift"}, "p",
+    awful.key({modkey }, "p",
         function ()
             awful.spawn.with_shell("rofi -combi-modi window#drun -modi combi -font 'Hack Nerd Font 9' -show drun -show-icons ")
         end,
@@ -538,7 +539,8 @@ awful.rules.rules = {
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+           "mpv"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -630,7 +632,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- gaps
 beautiful.useless_gap = 3
-
+awful.tag.incmwfact( 0.07) 
 -- autostart
 -- awful.spawn.with_shell("source ~/.xprofile")
 -- awful.spawn.with_shell("picom")

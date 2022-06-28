@@ -39,3 +39,5 @@
 # alias --save q='exit'
 # alias --save ff="lfcd"
 alias --save f='cd $(fd -t d | fzf)'
+alias --save onedrive='rclone mount --vfs-cache-mode full onedrive:Documentos  /home/humberto/OneDrive &> /dev/null &; disown (pidof rclone)'
+alias --save uonedrive='fusermount -u /home/humberto/OneDrive'

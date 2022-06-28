@@ -6,23 +6,6 @@ capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
-lspconfig.pylsp.setup{
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        lsp_highlight_document(client)
-        lsp_keymaps(bufnr)
-    end
-}
-
-lspconfig.julials.setup{
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        lsp_highlight_document(client)
-        lsp_keymaps(bufnr)
-    end
-}
-
-
 function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
@@ -81,6 +64,33 @@ function lsp_keymaps(bufnr)
     -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
-require("lsp.handlers").setup() -- these handle servers and keymaps...
+
+
+lspconfig.pylsp.setup{
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_highlight_document(client)
+        lsp_keymaps(bufnr)
+    end
+}
+
+lspconfig.julials.setup{
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        lsp_highlight_document(client)
+        lsp_keymaps(bufnr)
+    end
+}
+
+-- lspconfig.selene.setup{
+--     capabilities = capabilities,
+--     on_attach = function(client, bufnr)
+--         lsp_highlight_document(client)
+--         lsp_keymaps(bufnr)
+--     end
+-- }
+
+
+-- require("lsp.handlers").setup() -- these handle servers and keymaps...
 require'lsp.lsp-installer'
 
