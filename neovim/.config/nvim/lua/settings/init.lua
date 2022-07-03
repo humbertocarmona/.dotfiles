@@ -24,6 +24,7 @@ vim.opt.foldmethod = "indent"
 vim.opt.guifont = "Hack Nerd Font:h9"
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
+vim.opt.listchars:append('space:·')
 vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.numberwidth = 2

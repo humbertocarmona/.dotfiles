@@ -13,20 +13,20 @@ o_help=("")
 
 zparseopts -K -F -- p:=o_patt n:=o_dens r:=o_root d=o_del h=o_help
 
-if [ $? != 0 || "$o_help" != "" ]; then
-    echo Usage: $(basename "$0") "[-p PATTERN] [-d DENSITY] [-r ROOT DIR]"
-else
+# if [ $? != 0 || "$o_help" != "" ]; then
+#     echo Usage: $(basename "$0") "[-p PATTERN] [-d DENSITY] [-r ROOT DIR]"
+# else
     loc=$o_root[2]
     patt=$o_patt[2]
     dens=$o_dens[2]
     for f in $(fd -tf $patt); 
     do 
       newfile=$(echo "$f" | sed -e s/svg/pdf/)
-      echo "converting $f  to  $newfile"; 
-      inkscape $f --export-area -o $newfile;
+      echo "inkscape $f  --export-area-drawing -o $newfile"; 
+      inkscape "$f" --export-area-drawing -o "$newfile";
       if [ "$o_del" != ""  ]; then
           rm "$f"
       fi
     done
-fi
+# fi
 

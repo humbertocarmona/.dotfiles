@@ -1,7 +1,10 @@
 set fish_greeting "fishing with $TERM .."
 
+
+# test -z returns 0 if the string length is 0
+# test (cond1) -a (cond2) combine expresions
 if status is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a $USER = "humberto"
         exec startx -- -keeptty
     end
 end

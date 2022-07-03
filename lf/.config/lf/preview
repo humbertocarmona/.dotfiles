@@ -44,7 +44,7 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 		exiftool "$1"
 		;;
     *.svg)
-        [ ! -f "${CACHE}.png" ] && svg2png -w 800 "$1" -o "${CACHE}.png"
+        [ ! -f "${CACHE}.png" ] && svg2png -w 800 "$1"  "${CACHE}.png"
         image "${CACHE}.png" "$2" "$3" "$4" "$5"
 		;;
     *.pdf)

@@ -8,14 +8,16 @@ case "$(readlink -f /sbin/init)" in
 esac
 ctl='systemctl'
 #case "$(printf " leave dwm\n renew dwm\n鈴 hibernate\n鈴 sleep\n勒 reboot\n shutdown\n display off\n lock" | dmenu -fn 'Hack Nerd Font-10' -i -p 'what?: ')" in
-case "$(printf " logout\n display off\n lock\n shutdown\n勒 reboot\n restart dwm" | dmenu -fn 'Hack Nerd Font-10' -i -p 'what?: ')" in
-	' lock') slock ;;
-	' logout') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
-	' restart dwm') kill -HUP "$(pgrep -u "$USER" "\bdwm$")";;
+case "$(printf " shutdown\n勒 reboot\n logout\n display off\n lock\n restart" | dmenu -fn 'Hack Nerd Font-10' -i -p 'what?: ')" in
+    ' shutdown') $ctl poweroff ;;
+    '勒 reboot') $ctl reboot ;;
+	' logout') kill -TERM "$(pgrep -u "$USER" "\bawesome\b")" ;;
+    ' display off') xset dpms force off ;;
+    ' lock') slock ;;
+	'  logout') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
+	' restart') lua require\"awesome\".restart;;
+    # ' restart dwm') kill -HUP "$(pgrep -u "$USER" "\bdwm$")";;
 	'鈴 hibernate') slock $ctl hibernate ;;
 	'鈴 sleep') slock $ctl suspend ;;
-	'勒 reboot') $ctl reboot ;;
-	' shutdown') $ctl poweroff ;;
-	' display off') xset dpms force off ;;
 	*) exit 1 ;;
 esac

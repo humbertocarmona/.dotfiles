@@ -194,3 +194,4 @@ stupid@lazybastard ~$ mkpkg -si
 # using task manager -> file -> browse -> this computer
 # > remove letter=x 
 # > exit
+yay -S brave-bin dragon-drop lf nerd-fonts-hack  onlyoffice-bin svg2png google-chrome qgis inkscape zathura okular dolfin
