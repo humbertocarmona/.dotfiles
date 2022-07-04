@@ -77,7 +77,7 @@ mkdir -p "$HOME"/.local/share/keyrings
 if [ $(uname -n) == "LapTop" ]; then
     xrandr --output eDP-1 --mode 1280x800
 else
-    xrandr --output HDMI-1
+    xrandr --output DP-1
 fi
 nitrogen --restore &
 # now using pywal

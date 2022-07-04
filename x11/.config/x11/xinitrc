@@ -3,4 +3,5 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
 # exec dwm 
+echo "i am here"
 exec awesome

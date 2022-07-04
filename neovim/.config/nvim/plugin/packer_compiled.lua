@@ -402,14 +402,58 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require'plugins.colorizer'
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: AutoSave.nvim
+time([[Config for AutoSave.nvim]], true)
+require'plugins.autosave'
+time([[Config for AutoSave.nvim]], false)
+-- Config for: nvim-ipy
+time([[Config for nvim-ipy]], true)
+require'plugins.nvim-ipy'
+time([[Config for nvim-ipy]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require'plugins.comment'
+time([[Config for Comment.nvim]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require'plugins.impatient'
+time([[Config for impatient.nvim]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+require'plugins.hop-nvim'
+time([[Config for hop.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require'plugins.lualine'
+time([[Config for lualine.nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+require'plugins.luasnip'
+time([[Config for LuaSnip]], false)
 -- Config for: csv.vim
 time([[Config for csv.vim]], true)
 require'plugins.csv'
 time([[Config for csv.vim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require'plugins.nvim-cmp'
-time([[Config for nvim-cmp]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require'plugins.telescope'
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require'plugins.nvim-tree'
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require'plugins.treesitter'
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-transparent
+time([[Config for nvim-transparent]], true)
+require'plugins.transparent'
+time([[Config for nvim-transparent]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require'plugins.alpha'
@@ -418,78 +462,34 @@ time([[Config for alpha-nvim]], false)
 time([[Config for gitsigns.nvim]], true)
 require'plugins.gitsigns'
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require'plugins.colorizer'
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require'plugins.bufferline'
-time([[Config for bufferline.nvim]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require'plugins.impatient'
-time([[Config for impatient.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require'plugins.telescope'
-time([[Config for telescope.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require'plugins.whichkey'
-time([[Config for which-key.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require'plugins.zen-mode'
-time([[Config for zen-mode.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require'plugins.toggleterm'
-time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require'plugins.nvim-tree'
-time([[Config for nvim-tree.lua]], false)
--- Config for: AutoSave.nvim
-time([[Config for AutoSave.nvim]], true)
-require'plugins.autosave'
-time([[Config for AutoSave.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require'plugins.lualine'
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require'plugins.treesitter'
-time([[Config for nvim-treesitter]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require'plugins.comment'
-time([[Config for Comment.nvim]], false)
--- Config for: nvim-transparent
-time([[Config for nvim-transparent]], true)
-require'plugins.transparent'
-time([[Config for nvim-transparent]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require'plugins.null-ls'
 time([[Config for null-ls.nvim]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-require'plugins.hop-nvim'
-time([[Config for hop.nvim]], false)
--- Config for: nvim-ipy
-time([[Config for nvim-ipy]], true)
-require'plugins.nvim-ipy'
-time([[Config for nvim-ipy]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require'plugins.toggleterm'
+time([[Config for toggleterm.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require'plugins.whichkey'
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require'plugins.autopairs'
 time([[Config for nvim-autopairs]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-require'plugins.luasnip'
-time([[Config for LuaSnip]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require'plugins.bufferline'
+time([[Config for bufferline.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require'plugins.zen-mode'
+time([[Config for zen-mode.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require'plugins.nvim-cmp'
+time([[Config for nvim-cmp]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
