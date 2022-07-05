@@ -66,5 +66,5 @@ bindkey -r "^u"
 bindkey -r "^d"
 
 
-source $HOME/.local/share/broot/launcher/bash/br
 eval "$(zoxide init zsh)"
+source /home/humberto/.config/broot/launcher/bash/br
