@@ -1,0 +1,7 @@
+{
+    "celld": {
+        "body": "# %% ---",
+        "description": "python cell delimiter",
+        "prefix": "celld"
+    }
+}

@@ -1,0 +1,33 @@
+! name: Kasugano
+
+*.background: #101010
+*.foreground: #ffffff
+*.selection_background: #2D4F67
+*.selection_foreground: #ffffff
+*.url_color: #a0e000
+*.cursorColor: #a0e000
+
+! normal
+*.color0: #3D3D3D
+*.color1: #6673BF
+*.color2: #3EA290
+*.color3: #B0EAD9 
+*.color4: #31659F
+*.color5: #596196
+*.color6: #8292B2
+*.color7: #C8CACC
+
+! bright
+*.color8 : #4D4D4D
+*.color9 : #899AFF
+*.color10: #52AD91
+*.color11: #98C9BB
+*.color12: #477AB3
+*.color13: #7882BF
+*.color14: #95A7CC
+*.color15: #EDEFF2
+
+! extended colors
+*.color16: #a0e000
+*.color17: #FF5D62
+

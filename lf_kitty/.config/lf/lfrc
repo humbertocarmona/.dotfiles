@@ -1,0 +1,289 @@
+set shell zsh
+set shellopts '-euy'
+set ifs "\n"
+
+set nohidden on
+set previewer ~/.config/lf/lf_kitty_preview
+
+set cleaner ~/.config/lf/lf_kitty_clean
+set icons on
+set nodrawbox on
+set preview on
+set ignorecase on
+# set ratios 1:2:3
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+map <enter> shell
+
+# Custom Functions -----------------------------------------
+
+cmd add_gitignore ${{
+        echo $(basename $f) >> .gitignore
+}}
+
+cmd add_rsync_filter ${{
+        echo $(basename $f) >> .rsync-filter
+}}
+
+cmd bzip2folder %{{
+    if [ -d $f ]; then
+        printf "making tar..."
+        tar cvf $f.tar $f
+        printf " ...compressing... "
+        bzip2 $f.tar
+        printf " ...done"
+    else
+        printf "compressing... "
+        bzip2 $f
+        printf " ...done"
+    fi
+}}
+
+cmd chMod %{{
+    printf ":"
+    read ans
+    
+    files=$(printf "$fx" | tr '\n' ';')
+    while [ "$files" ]; do
+        file=${files%%;*}
+        chmod $ans "$(basename "$file")"
+        if [ "$files" = "$file" ]; then
+            files=''
+        else
+            files="${files#*;}"
+        fi
+    done
+}}
+
+cmd clear_trash %trash-empty
+
+cmd clear_lf_cache %{{
+    rm $HOME/.cache/lf/thumbnail.*
+}}
+
+cmd code_here ${{
+    code $PWD
+}}
+
+cmd delete ${{
+    set -f
+        printf "$fx\n"
+        printf "delete?[y/n]"
+        read ans
+        [ $ans = "y" ] && rm -rf $fx
+}}
+
+cmd dragon %dragon-drop --all --and-exit $fx
+
+cmd dragon-stay %dragon-drop --all $fx
+
+cmd dragon-target %dragon-drop --target $f
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.bz2) bunzip2 $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+
+cmd fzf_jump ${{
+    res="$(fd -E .cache -E .pyenv -E Trash -H -L -I .+ $HOME | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi 
+
+
+    [ ! -z $res ] && lf -remote " send $id $cmd \"$res\" "
+}}
+
+cmd fzf_search ${{
+    res="$( \
+        RG_PREFIX="rg --line-number --no-heading --color=always --smart-case "
+        INITIAL_QUERY=""
+        FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+                --ansi --layout=reverse --preview '' \
+                --header 'Search in files' | cut -d':' -f1)"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
+
+cmd lazy_git ${{
+        lazygit -p "$f" 
+    }}
+
+cmd mkDir %{{
+    printf "Directory Name: "
+    read ans
+    mkdir -p  $ans
+}}
+
+cmd mkFile %{{
+    printf "File Name: "
+    read ans
+    touch $ans
+}}
+
+cmd on-cd &{{
+    # display git repository status in your prompt
+    source /usr/share/git/completion/git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=auto
+    GIT_PS1_SHOWSTASHSTATE=auto
+    GIT_PS1_SHOWUNTRACKEDFILES=auto
+    GIT_PS1_SHOWUPSTREAM=auto
+    GIT_PS1_COMPRESSSPARSESTATE=auto
+    git=$(__git_ps1 " [GIT BRANCH:> %s]") || true
+    fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m$git\033[0m"
+    lf -remote "send $id set promptfmt \"$fmt\""
+}}
+
+cmd open &{{
+	mimetype=$(xdg-mime query filetype $f)
+    printf "$mimetype"
+	case "$mimetype" in 
+	text/*)
+        lf -remote "send $id \$nvim $f"
+		;;
+	application/x-shellscript)
+        lf -remote "send $id \$nvim $f"
+		;;
+	application/json)
+        lf -remote "send $id \$nvim $f"
+		;;
+    *) mimeopen $f > /dev/null 2> /dev/null;;
+	esac
+}}
+
+cmd gz %gzip "$f"
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+cmd setwallpaper %{{
+    swaybg -i $f
+    #nitrogen --set-zoom-fill "$f"; cp $fx ~/.config/awesome/wall.jpg
+}}
+
+cmd tar %tar cvf "$f.tar" "$f"
+
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+
+cmd tmux_here ${{
+    local zfolder=$(basename $PWD)
+    zsh $HOME/.config/bin/ht.sh $zfolder
+}}
+
+
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+    trash-put "$(basename $file)"
+    # the next.
+    if [ "$files" = "$file" ]; then
+        files=''
+    else
+        files=${files#*;}
+    fi
+  done
+}}
+
+cmd zip %{{
+    zip -r $f $f
+}}
+
+
+# bindings 
+
+map a
+map az zip
+map at tar
+map ag gz
+map ab bzip2folder
+map au unarchiv
+map ax extract
+
+map c
+map cu unselect
+map cc clear
+map ch chMod
+map cd code_here
+map cC clear_lf_cache
+map cT clear_trash
+
+map d
+map dd cut
+map dg dragon-target
+map dr dragon
+map ds dragon-stay
+map dt trash
+
+map e
+map ee $editor "$f"
+map eu $view "$f"
+
+map f fzf_jump
+
+map g
+map gb cd ~/.config/bin
+map gc cd ~/.config/lf
+map gd cd ~/.dotfiles 
+map gf cd ~/.config/fish
+map gg lazy_git
+map gm cd /media/humberto/
+map gp cd ~/Projetos
+map gt cd ~/.local/share/Trash/files
+map gv cd ~/.config/nvim
+map gw cd ~/Pictures/Wallpapers
+map gs cd ~/.config/sway
+
+map ig add_gitignore
+map ir add_rsync_filter
+
+map m
+map mf mkFile
+map md mkDir
+
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+map p paste
+
+map r
+map rn rename
+map rl reload
+
+map t
+map tt tmux_here
+map tg tag-toggle
+
+map u unselect
+
+map w setwallpaper
+
+map x open $f 
+
+map y copy
+
+map rg fzf_search
+
+map <delete> trash
+map . set hidden!
+

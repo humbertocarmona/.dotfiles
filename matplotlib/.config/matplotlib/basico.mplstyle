@@ -1,0 +1,16 @@
+axes.facecolor:     white
+axes.labelsize :    14
+axes.spines.bottom: True
+axes.spines.left:   True
+axes.spines.right:  False
+axes.spines.top:    False
+axes.titlesize :    14
+
+figure.dpi:         200
+figure.figsize:     5, 3.5
+
+legend.fancybox:     False
+legend.frameon:     False
+
+xtick.labelsize :   12
+ytick.labelsize :   12

@@ -1,0 +1,36 @@
+*
+* .selectToClipboard: true
+*.disallowedWindowOps: 20,21,SetXProp
+*.font:Hack Nerd Font:style=regular:pixelsize=16:antialias=true:autohint=true;
+*.fontalt0:JuliaMono:pixelsize=18:antialias=true:autohint=true;
+*.fontalt1:Terminus:pixelsize=18:antialias=true:autohint=true; 
+
+*.normalborder: #550000
+*.selectborder: #DCD7BA
+
+! Xft.dpi: 288
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+
+*.borderpx: 2     
+*.snap: 12         
+*.showbar: 1       
+*.topbar: 1       
+*.nmaster: 1      
+*.resizehints: 0   
+*.mfact: 0.6        
+*.gappih: 8        
+*.gappiv: 8       
+*.gappoh: 8       
+*.gappov: 8       
+*.swallowfloating: 0
+*.smartgaps: 0    
+
+#include "/home/humberto/.config/x11/xstyles/current"
+st.cursorColor: #f2971
+st.font: Hack Nerd Font:style=regular:pixelsize=40:antialias=true:autohint=true;

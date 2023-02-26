@@ -1,0 +1,7 @@
+# to register the new mimetype .............
+# > sudo update-mime 
+# to associate with an application .........
+# > xdg-mime default nvim.desktop text/xlua
+############################################
+text/x-lua       lua
+

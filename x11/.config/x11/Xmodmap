@@ -1,0 +1,22 @@
+clear lock
+clear control
+! clear mod5
+
+! control left key
+! keycode 37 = Mode_switch NoSymbol Mode_switch
+! vim navigation 
+keycode 43 = h H Left Left
+keycode 44 = j J Down Down 
+keycode 45 = k K Up Up
+keycode 46 = l L Right Right 
+! caps lock key
+keycode 66 = Control_L Caps_Lock NoSymbol NoSymbol
+
+add control = Control_L Control_R
+! add mod5 = Mode_switch
+
+! swap alt left <-> super left
+! remove mod1 = Alt_L
+! remove mod4 = Super_L
+! add mod1 = Super_L
+! add mod4 = Alt_L

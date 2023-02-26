@@ -1,0 +1,153 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passtrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "tray",
+        "cpu",
+        "memory",
+        "custom/pomodoro",
+        "battery",
+        "custom/language",
+        "pulseaudio",
+        "network",
+        "clock"
+    ],
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false,
+        "format": "{}"
+    },
+    "sway/workspaces": {
+        "format": "{name}"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 80
+    },
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "clock": {
+        "format": "{: %R   %d/%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "kitty -e pulsemixer",
+        "on-scroll-up": "pamixer -d 5",
+        "on-scroll-down": "pamixer -i 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "network": {
+        "interval": 30,
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": [
+                "󰤟",
+                "󰤢",
+                "󰤥",
+                "󰤨"
+            ],
+            "ethernet": [
+                ""
+            ],
+            "disconnected": [
+                ""
+            ]
+        },
+        "on-click": "kitty -e nmtui",
+        "tooltip": false
+    },
+    "custom/language": {
+        "exec": "~/.config/waybar/scripts/get_keymap.sh",
+        "interval": 5,
+        // "format": " {}",
+        "format": "{}",
+        "tooltip": false
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
+    },
+    "custom/pomodoro": {
+        "exec": "i3-gnome-pomodoro status --format=waybar --show-seconds",
+        "return-type": "json",
+        "interval": 1,
+        "format": "{}",
+        "on-click": "i3-gnome-pomodoro toggle",
+        "on-middle-click": "i3-gnome-pomodoro stop",
+        "on-right-click": "i3-gnome-pomodoro start"
+    },
+    "cpu": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": ""
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "format-alt": " {used:0.1f}G",
+        "max-length": 10
+    },
+    "tray": {
+        "icon-size": 18,
+        "tooltip": false,
+        "spacing": 10
+    }
+}

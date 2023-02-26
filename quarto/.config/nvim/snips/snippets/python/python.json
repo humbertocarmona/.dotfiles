@@ -1,0 +1,21 @@
+
+{
+	// Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+    "celld":{
+		"prefix": "celld",
+		"body": "# %% ---------------------------------------------------------------------------",
+		"description": "add cell delimiter"
+	},
+    "docs":{
+        "prefix":"docs",
+        "body":[
+            "''' ${1:description}",
+            "    args: ${2:args}",
+            "    returns: ${3:returns}",
+            "'''"
+        ],
+        "description": "add doc string"
+    }
+
+}

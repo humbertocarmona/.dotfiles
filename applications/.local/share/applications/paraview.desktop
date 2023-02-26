@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Paraview
+Comment=Manually installed
+Icon=/opt/ParaView-5.11.0-MPI-Linux-Python3.9-x86_64/share/icons/hicolor/96x96/apps/paraview.png
+Exec=/usr/bin/paraview
+Terminal=false
+

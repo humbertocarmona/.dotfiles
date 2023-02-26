@@ -1,0 +1,8 @@
+__pycache__
+awesome/.config/awesome/awesome-wm-widgets
+
+packer_compiled.lua
+*.spl
+*.o
+*lock.json
+fish/.config/fish/conf.d/virtualfish-loader.fish

@@ -1,0 +1,25 @@
+function rgsed -d "find and replace pathern in files"
+    set options (fish_opt --short=f --long=from --required-val)
+    set options $options (fish_opt --short=t --long=to --required-val)
+
+    argparse $options -- $argv
+
+    set cmd "'s/"$_flag_from"/"$_flag_to"/g'"
+
+    echo $cmd
+    rg -l --no-heading $_flag_from | xargs sed -e "s/$_flag_from/$_flag_to/g"
+
+    while true
+        read -l -P "posso continuar ? [y/n]" reply
+        switch $reply
+            case Y y
+                rg -l --no-heading $_flag_from | xargs sed -i -e "s/$_flag_from/$_flag_to/g"
+                echo ""
+                echo "changed $_flag_from to $_flag_to"
+                echo "ja era..."
+                return 0
+            case '' N n
+                return 1
+        end
+    end
+end

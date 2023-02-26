@@ -1,0 +1,74 @@
+#! /bin/bash
+
+FILE_PATH="$1"
+W="$2"
+H="$3"
+X="$4"
+Y="$5"
+
+#MIMETYPE="$(file --dereference --brief --mime-type -- "${FILE_PATH}")"
+MIMETYPE="$(xdg-mime query filetype ${FILE_PATH})"
+display_image() {
+	local filepath="$1"
+	kitty +kitten icat --silent --stdin no --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$filepath" </dev/null >/dev/tty
+	exit 1
+}
+
+bat_or_cat() {
+	local filepath="$1"
+	bat --color always "$filepath"
+	exit 1
+}
+handle_extension() {
+	DENSITY=288
+	FILE_EXTENSION="${FILE_PATH##*.}"
+	FILE_EXTENSION_LOWER="$(printf "%s" "$FILE_EXTENSION" | tr '[:upper:]' '[:lower:]')"
+	CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$FILE_PATH")" | sha256sum | awk '{print $1}'))"
+
+	case "${FILE_EXTENSION_LOWER}" in
+	pdf)
+		[ ! -f "${CACHE}.jpg" ] &&
+			pdftoppm -jpeg -f 1 -singlefile "${FILE_PATH}" "${CACHE}"
+		display_image "${CACHE}.jpg"
+		;;
+	svg)
+		[ ! -f "${CACHE}.png" ] &&
+			rsvg-convert -d "${DENSITY}" -p "${DENSITY}" "${FILE_PATH}" -o "${CACHE}.png"
+		display_image "${CACHE}.png"
+		;;
+	lua)
+		bat_or_cat "${FILE_PATH}"
+		;;
+	zip)
+		unzip -l ${FILE_PATH}
+		exit 1
+		;;
+	gz)
+		gunzip -l ${FILE_PATH}
+		exit 1
+		;;
+	esac
+}
+
+handle_mime() {
+	local mimetype="${1}"
+	case "${mimetype}" in
+	text/* | */xml)
+		bat_or_cat "$FILE_PATH"
+		;;
+	application/* | */json)
+		bat_or_cat "$FILE_PATH"
+		;;
+	image/*)
+		display_image "$FILE_PATH"
+		;;
+	esac
+}
+
+handle_fallback() {
+	pistol "$FILE_PATH"
+	exit 1
+}
+handle_extension "$FILE_PATH"
+handle_mime "$MIMETYPE"
+handle_fallback

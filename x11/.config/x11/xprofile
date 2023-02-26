@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="google-chrome"
+export VIDEO="vlc"
+export IMAGE="sxiv"
+export COLORTERM="truecolor"
+export OPENER="xdg-open"
+export PAGER="bat"
+export WM="awesome"
+
+# XDG Paths
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export ZDOTDIR=$HOME/.config/zsh/
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .cache"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 50% --preview 'bat --style=numbers --color=always --line-range :500 {}' --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229 --color info:150,prompt:110,spinner:150,pointer:167,marker:174"
+
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+modmap=/etc/X11/xinit/.Xmodmap
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+usermodmap=$HOME/.Xmodmap
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+sysresources=/etc/X11/xinit/.Xresources
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+userresources=$HOME/.Xresources
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+# export XDG_SESSION_TYPE=x11
+# export GDK_BACKEND=x11
+
+if [ $(uname -n) == "LapTop" ]; then
+    # xrandr --output eDP-1 --scale 0.5 
+    # xrandr --output eDP-1 -s 3840x2400
+    # export QT_AUTO_SCREEN_SCALE_FACTOR=1    # 0 or 1
+    # export QT_SCALE_FACTOR=3                # case above is 0
+    # export QT_SCREEN_SCALE_FACTORS=3        # case above is 0
+    # export GDK_SCALE=1                      # integer
+    # export GDK_DPI_SCALE=1                  # text only
+else
+    # xrandr --dpi 96
+    # export QT_AUTO_SCREEN_SCALE_FACTOR=1
+    # export GDK_SCALE=1
+    # export GDK_DPI_SCALE=1
+fi
+
+# Network Manager Applet
+
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset 
+fi
+
+autostart="mpd picom dunst uncluter udiskie"
+for program in $autostart; do
+    pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
+# nm-applet --indicator &
+# flameshot &
+
+
+xset r rate 270 30
+

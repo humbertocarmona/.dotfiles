@@ -1,0 +1,21 @@
+### Input 
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+
+input type:keyboard {
+    xkb_layout us,br,us
+    xkb_variant ,abnt2,intl
+    xkb_options ctrl:nocaps,grp:rctrl_rshift_toggle
+}
+
+# Provide all touchpads and mice the same configuration
+input type:pointer {
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+input type:touchpad {
+    tap enabled
+    dwt enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}

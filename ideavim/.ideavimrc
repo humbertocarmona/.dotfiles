@@ -1,0 +1,16 @@
+set mapleader=","
+set easymotion
+set which-key
+set whichkey
+
+set notimeout
+set timeoutlen=5000
+
+set nu
+set relativenumber
+
+let g:WhichKeyDesc_windows="<Space>w Windows"
+let g:WhichKeyDesc_windows_delete="<Space>wd delete"
+let g:WhichKeyDesc_windows_split="<Space>ws split below"
+let g:WhichKeyDesc_commentray_prefix = "gc"
+let g:WhichKeyDesc_commentray_action = "gcc"

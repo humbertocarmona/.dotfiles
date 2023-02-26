@@ -1,0 +1,6 @@
+package colored-man-pages
+package config
+package spark
+theme bobthefish
+theme cmorrell
+theme default

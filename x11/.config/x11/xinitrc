@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -f ~/.xprofile ] && . ~/.xprofile
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
+
+# exec gnome-session
+# exec dwm 
+exec awesome

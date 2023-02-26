@@ -1,0 +1,10 @@
+# in fish this is the same as creating functions
+
+# alias --save pipup='pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+alias q='exit'
+alias rm='rm -i'
+alias mv='mv -i'
+alias l='exa --icons'
+alias ll='exa -lh --icons'
+alias la='exa -lha --icons'
+alias v='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
