@@ -1,5 +1,3 @@
-
-
 HISTFILE=~/.zsh_history
 setopt appendhistory
 
@@ -36,10 +34,15 @@ source "$ZDOTDIR/zsh-functions"
 # source ~/.local/bin/lfcd
 
 # Normal files to source
-zsh_add_file "zsh-exports"
+zsh_add_file "zsh-paths"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
+
+# eval "$(fnm env)"
+# eval "$(zoxide init zsh)"
+# eval "`pip completion --zsh`"
+
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

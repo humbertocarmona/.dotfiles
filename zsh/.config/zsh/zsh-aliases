@@ -2,7 +2,6 @@
 
 alias g='lazygit'
 
-alias lf='~/.local/bin/lfrun'
 alias fgrep='fgrep --color=auto'
 alias rev="xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1"
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"

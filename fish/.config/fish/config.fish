@@ -17,6 +17,10 @@ pyenv init - | source
 zoxide init fish | source
 source $HOME/.config/fish/fish_aliases
 
+fish_vi_key_bindings
+fish_vi_cursor
+#fish_default_key_bindings
+
 abbr cat bat
 abbr icat 'kitty +kitten icat --transfer-mode file'
 

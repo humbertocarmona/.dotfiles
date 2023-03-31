@@ -1,0 +1,10 @@
+#!/bin/sh
+# HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTSIZE=1000000
+SAVEHIST=1000000
+path+=($HOME/.local/bin)
+path+=($HOME/.config/bin)
+fpath+=($HOME/.zfunc)
+export PATH
+
+
