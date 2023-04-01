@@ -1,42 +1,32 @@
-#!/bin/sh
-
-alias g='lazygit'
-
-alias fgrep='fgrep --color=auto'
-alias rev="xinput set-prop 'MX Anywhere 2S Mouse' 'libinput Natural Scrolling Enabled' 1"
-alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
-
-# get fastest mirrors
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrorb="sudo reflector -c Brazil -f 10 -l 10 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
-# Remarkable
-# alias @ease='ssh 192.168.15.63'
-
-
-# confirm before overwriting something
-alias mv='mv -i'
-alias rm='rm -i'
-# easier to read disk
-alias df='df -h'     # human-readable sizes
-alias free='free -m' # show sizes in MB
-# get top process eating memory
-alias psmem='ps auxf | sort -nr -k 4 | head -5'
-# get top process eating cpu ##
-alias pscpu='ps auxf | sort -nr -k 3 | head -5'
-alias pse='ps -ef'
-
-# For when keys break
 alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
-
-alias ls='exa'
-alias l='exa -lh'
-alias ll='exa -lha'
-alias x='startx'
-alias fvim="nvim (fzf --height=40% --reverse)"
-alias rmusb='udiskie-umount -d /dev/sda1'
+alias bt='sudo btrfs'
+alias cat='bat'
+alias cls='clear'
+alias df='df -h'     # human-readable sizes
+alias di='docker images'
+alias dp='docker ps -a'
+alias f='lfcd'
+alias g='lazygit'
+alias icat='kitty +kitten icat --transfer-mode file'
+alias kb='rg bindsym ~/.config/sway/config | fzf --preview ""'
+alias l='exa --icons'
+alias ll='exa -l --icons'
+alias la='exa -lha --icons'
+alias mv='mv -i'
+alias mv='mv -i'
 alias q='exit'
-# alias lf="lf"
+alias rm='rm -i'
+alias ta='tmux attach-session'
+alias td='tmux detach'
+alias tk='tmux kill-session'
+alias tl='tmux list-sessions'
+alias tn="tmux new -s (pwd | sed 's/.*\///g')"
+alias v='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
+alias ve='pipenv shell --fancy'
+alias zb='z ~/.config/waybar'
+alias zd='z ~/.dotfiles'
+alias zf='z ~/.config/fish'
+alias zl='z ~/.config/lf'
+alias zs='z ~/.config/sway'
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+alias zv='z ~/.config/nvim'

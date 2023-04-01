@@ -1,4 +1,4 @@
-HISTFILE=~/.zsh_history
+HISTFILE=~/.config/.history
 setopt appendhistory
 
 # some useful options (man zshoptions)
