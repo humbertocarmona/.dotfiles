@@ -117,3 +117,7 @@ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.g
 echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' |
 	sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update && sudo apt install codium
+sudo apt install pdfsam
+sudo apt install xournalpp
+sudo apt install texlive-latex-recommended texlive-luatex texlive-pstricks
+sudo apt install equalx

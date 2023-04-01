@@ -20,30 +20,3 @@ source $HOME/.config/fish/fish_aliases
 fish_vi_key_bindings
 fish_vi_cursor
 #fish_default_key_bindings
-
-abbr cat bat
-abbr icat 'kitty +kitten icat --transfer-mode file'
-
-abbr bt 'sudo btrfs'
-abbr cl clear
-abbr df 'df -h' # human-readable sizes
-abbr kb 'rg bindsym ~/.config/sway/config | fzf --preview ""'
-
-abbr g lazygit
-abbr zd 'z ~/.dotfiles'
-abbr zv 'z ~/.config/nvim'
-abbr zl 'z ~/.config/lf'
-abbr zs 'z ~/.config/sway'
-abbr zb 'z ~/.config/waybar'
-abbr zf 'z ~/.config/fish'
-
-abbr ve 'pipenv shell --fancy'
-
-abbr f lfcd
-# tmux stuff
-abbr mux tmuxinator
-abbr ta 'tmux attach-session'
-abbr td 'tmux detach'
-abbr tk 'tmux kill-session'
-abbr tl 'tmux list-sessions'
-abbr tn "tmux new -s (pwd | sed 's/.*\///g')"

@@ -47,6 +47,11 @@ handle_extension() {
 		gunzip -l ${FILE_PATH}
 		exit 1
 		;;
+	kra)
+		[ ! -f "${CACHE}.png" ] &&
+			krita --export --export-filename "${CACHE}.png" "$FILE_PATH"
+		display_image "${CACHE}.png"
+		;;
 	esac
 }
 

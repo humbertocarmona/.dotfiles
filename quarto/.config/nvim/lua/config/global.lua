@@ -68,6 +68,11 @@ vim.opt.spell = false
 vim.opt.spelllang = { "en_us", "pt" }
 vim.opt.spellfile = spellfile
 
+local cursor1 = "n-v:block-nCursor,"
+local cursor2 = "c-i-ci-ve:hor50-Cursor-blinkwait300-blinkon200-blinkoff150,"
+local cursor3 = "r-cr-o:hor50"
+vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
+
 -- plugins
 -- slime, general
 vim.b.slime_cell_delimiter = "^#*\\s*%%"

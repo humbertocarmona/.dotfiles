@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=EqualX
+Comment=latex formula
+Icon=equalx.png
+Exec=/usr/bin/equalx
+Terminal=false
+
