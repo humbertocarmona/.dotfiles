@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=lf
+Comment=file manager
+Icon=equalx.png
+Exec=kitty -e /usr/bin/lf
+Terminal=false
+
