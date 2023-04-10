@@ -241,18 +241,17 @@ map eu $view "$f"
 
 map f fzf_jump
 
-map g
-map gb cd ~/.config/bin
-map gc cd ~/.config/lf
-map gd cd ~/.dotfiles 
-map gf cd ~/.config/fish
-map gg lazy_git
-map gm cd /media/humberto/
-map gp cd ~/Projetos
-map gt cd ~/.local/share/Trash/files
-map gv cd ~/.config/nvim
-map gw cd ~/Pictures/Wallpapers
-map gs cd ~/.config/sway
+map zb cd ~/.config/bin
+map zl cd ~/.config/lf
+map zd cd ~/.dotfiles 
+map zf cd ~/.config/fish
+map zg lazy_git
+map zm cd /media/humberto/
+map zp cd ~/projects
+map zt cd ~/.local/share/Trash/files
+map zv cd ~/.config/nvim
+map zw cd ~/Pictures/Wallpapers
+map zy cd ~/.config/sway
 
 map ig add_gitignore
 map ir add_rsync_filter

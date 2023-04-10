@@ -121,3 +121,4 @@ sudo apt install pdfsam
 sudo apt install xournalpp
 sudo apt install texlive-latex-recommended texlive-luatex texlive-pstricks
 sudo apt install equalx
+sudo apt install texlive-publishers texlive-lang-portuguese texlive-science

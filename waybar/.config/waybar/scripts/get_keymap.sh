@@ -1,8 +1,5 @@
 #!/bin/bash
-kmap=$(swaymsg -t get_inputs | jq '.[] | select(.type=="keyboard") | select(.libinput.accel_speed==0) | .xkb_active_layout_name')
-if [ -z "$kmap" -a "$kmap" != " " ]; then
-	kmap=$(swaymsg -t get_inputs | jq '.[] | select(.type=="keyboard") | select(.name|contains("Logit")) | .xkb_active_layout_name')
-fi
+kmap=$(swaymsg -t get_inputs | jq '.[] | select(.type=="keyboard") | select(.name|contains("keyboard")) | .xkb_active_layout_name')
 
 case "$kmap" in
 "\"English (US)\"")

@@ -7,14 +7,14 @@ vim.opt.updatetime = 250 -- for auto commands and hovers
 vim.opt.mouse = "a" -- enable mouse
 vim.opt.mousefocus = true
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard
-vim.cmd("set nowrap")
+-- vim.cmd("set nowrap")
 -- use spaces as tabs
 local tabsize = 4
 vim.opt.expandtab = true
 vim.opt.shiftwidth = tabsize
 vim.opt.tabstop = tabsize
 
--- space as leader
+-- , as leader
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 vim.opt.timeoutlen = 500 -- until which-key pops up
@@ -60,7 +60,7 @@ vim.opt.formatoptions:remove({ "c", "r", "o", "l" })
 vim.opt.formatoptions:append({ "t" })
 -- hide cmdline when not used
 vim.opt.cmdheight = 0
-vim.opt.textwidth = 90
+vim.opt.textwidth = 80
 vim.opt.colorcolumn = "+1"
 --spell checker
 local spellfile = os.getenv("HOME") .. "/.cspell/en.utf-8.add"
@@ -72,6 +72,9 @@ local cursor1 = "n-v:block-nCursor,"
 local cursor2 = "c-i-ci-ve:hor50-Cursor-blinkwait300-blinkon200-blinkoff150,"
 local cursor3 = "r-cr-o:hor50"
 vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
+
+vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_compiler_method = "latexmk"
 
 -- plugins
 -- slime, general
