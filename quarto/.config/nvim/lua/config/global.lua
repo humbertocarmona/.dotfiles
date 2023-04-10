@@ -56,8 +56,8 @@ vim.opt.showtabline = 1
 vim.opt.winbar = "%t"
 
 --don't continue comments automagically
-vim.opt.formatoptions:remove({ "c", "r", "o" })
-
+vim.opt.formatoptions:remove({ "c", "r", "o", "l" })
+vim.opt.formatoptions:append({ "t" })
 -- hide cmdline when not used
 vim.opt.cmdheight = 0
 vim.opt.textwidth = 90
