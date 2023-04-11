@@ -73,8 +73,8 @@ local cursor2 = "c-i-ci-ve:hor50-Cursor-blinkwait300-blinkon200-blinkoff150,"
 local cursor3 = "r-cr-o:hor50"
 vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
 
-vim.g.vimtex_view_method = "zathura"
-vim.g.vimtex_compiler_method = "latexmk"
+-- vim.g.vimtex_view_method = "zathura"
+-- vim.g.vimtex_compiler_method = "latexmk"
 
 -- plugins
 -- slime, general
