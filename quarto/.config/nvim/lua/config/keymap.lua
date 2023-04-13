@@ -77,8 +77,8 @@ nmap("<s-cr>", "<Plug>SlimeSendCell")
 vmap("<cr>", "<Plug>SlimeRegionSend")
 
 -- list hidden buffers
-nmap("<leader>ls", ":ls!<cr>")
-nmap("<leader>vh", ':execute "h " . expand("<cword>")<cr>')
+-- nmap("<leader>ls", ":ls!<cr>")
+-- nmap("<leader>vh", ':execute "h " . expand("<cword>")<cr>')
 
 -- source entire file
 nmap("<leader>xx", ":w<cr>:source %<cr>")
@@ -155,9 +155,9 @@ wk.register({
     },
     l = {
         name = "language/lsp",
-        r = { "<cmd>Telescope lsp_references<cr>", "references" },
-        R = { vim.lsp.buf.rename, "rename" },
         d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "go to definition" },
+        R = { "<cmd>Telescope lsp_references<cr>", "references" },
+        r = { vim.lsp.buf.rename, "rename" },
         D = { vim.lsp.buf.type_definition, "type definition" },
         a = { vim.lsp.buf.code_action, "coda action" },
         e = { vim.diagnostic.open_float, "diagnostics" },

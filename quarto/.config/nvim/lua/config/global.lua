@@ -60,7 +60,7 @@ vim.opt.formatoptions:remove({ "c", "r", "o", "l" })
 vim.opt.formatoptions:append({ "t" })
 -- hide cmdline when not used
 vim.opt.cmdheight = 0
-vim.opt.textwidth = 80
+vim.opt.textwidth = 120
 vim.opt.colorcolumn = "+1"
 --spell checker
 local spellfile = os.getenv("HOME") .. "/.cspell/en.utf-8.add"
