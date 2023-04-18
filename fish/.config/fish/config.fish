@@ -28,3 +28,4 @@ if test -f /opt/conda/bin/conda
     eval /opt/conda/bin/conda "shell.fish" hook $argv | source
 end
 # <<< conda initialize <<<
+source /opt/conda/etc/fish/conf.d/conda.fish
