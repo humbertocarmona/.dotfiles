@@ -20,3 +20,11 @@ source $HOME/.config/fish/fish_aliases
 fish_vi_key_bindings
 fish_vi_cursor
 #fish_default_key_bindings
+#
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/conda/bin/conda
+    eval /opt/conda/bin/conda "shell.fish" hook $argv | source
+end
+# <<< conda initialize <<<

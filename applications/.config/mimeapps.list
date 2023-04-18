@@ -20,10 +20,10 @@ image/webp=org.gnome.gThumb.desktop
 image/jxl=org.gnome.gThumb.desktop
 text/x-lua=nvim.desktop
 text/plain=nvim.desktop
-
-application/json=./nvim.desktop
+application/json=nvim.desktop
 application/x-krita=krita_kra.desktop
 application/zip=org.gnome.FileRoller.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop
 
 [Added Associations]
 image/bmp=org.gnome.gThumb.desktop;

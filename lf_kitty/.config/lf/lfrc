@@ -95,6 +95,20 @@ cmd extract ${{
 }}
 
 
+cmd fzf_jump_here ${{
+    res="$(fd -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $PWD | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi 
+
+
+    [ ! -z $res ] && lf -remote " send $id $cmd \"$res\" "
+}}
+
 cmd fzf_jump ${{
     res="$(fd -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $HOME | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
     if [ -d "$res" ] ; then
@@ -239,19 +253,9 @@ map e
 map ee $editor "$f"
 map eu $view "$f"
 
-map f fzf_jump
-
-map zb cd ~/.config/bin
-map zl cd ~/.config/lf
-map zd cd ~/.dotfiles 
-map zf cd ~/.config/fish
-map zg lazy_git
-map zm cd /media/humberto/
-map zp cd ~/projects
-map zt cd ~/.local/share/Trash/files
-map zv cd ~/.config/nvim
-map zw cd ~/Pictures/Wallpapers
-map zy cd ~/.config/sway
+map f
+map ff fzf_jump
+map fd fzf_jump_here
 
 map ig add_gitignore
 map ir add_rsync_filter
@@ -266,6 +270,7 @@ map O $mimeopen --ask $f
 map p paste
 
 map r
+map rg fzf_search
 map rn rename
 map rl reload
 
@@ -281,7 +286,17 @@ map x open $f
 
 map y copy
 
-map rg fzf_search
+map zb cd ~/.config/bin
+map zl cd ~/.config/lf
+map zd cd ~/.dotfiles 
+map zf cd ~/.config/fish
+map zg lazy_git
+map zm cd /media/humberto/
+map zp cd ~/projects
+map zt cd ~/.local/share/Trash/files
+map zv cd ~/.config/nvim
+map zw cd ~/Pictures/Wallpapers
+map zy cd ~/.config/sway
 
 map <delete> trash
 map . set hidden!
