@@ -135,7 +135,7 @@ cmd fzf_search ${{
 }}
 
 cmd lazy_git ${{
-        lazygit -p "$f" 
+        lazygit 
     }}
 
 cmd mkDir %{{
@@ -297,6 +297,8 @@ map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
 map zy cd ~/.config/sway
+map zz fzf_jump
+map zi fzf_jump_here
 
 map <delete> trash
 map . set hidden!
