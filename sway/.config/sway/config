@@ -37,12 +37,14 @@ for_window [app_id="LF"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="org.inkscape.Inkscape"] floating enable
 for_window [app_id="org.pwmt.zathura"] floating enable
+for_window [app_id="org.qgis.qgis"] floating enable
 for_window [app_id="python3"] floating enable
 for_window [app_id="xournalapp"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="Gimp-2.10"] floating enable
 for_window [class="gksqt"] floating enable
 for_window [class="matplotlib"] floating enable
+# for_window [class="Chromium"] floating enable
 for_window [window_role="File Operation Progress"] floating enable sticky
 for_window [window_role="Open Files"] floating enable sticky
 for_window [window_role="Preferences"] floating enable
@@ -61,8 +63,7 @@ assign [app_id= "org.inkscape.Inkscape"] 8
 assign [app_id= "org.qgis.qgis"] 9
 assign [class= "krita"] 9
 assign [class= "Gimp-2.10"] 9
-assign [class= "Brave-browser"] 10
-for_window [app_id="org.qgis.qgis"] floating enable
+assign [class= "Chromium"] 10
 
 ## Key bindings --------------------------------------------------------------- 
 # Resize and Drag windows by holding down $mod and left mouse buttons.
@@ -81,7 +82,7 @@ bindsym $mod+p exec $launcher
 bindsym $mod+Ctrl+t exec i3-gnome-pomodoro start
 bindsym $mod+Shift+t exec i3-gnome-pomodoro stop
 
-bindsym $mod+b exec brave-browser
+bindsym $mod+b exec chromium
 bindsym $mod+Shift+b exec min
 bindsym $mod+Print exec $screenshot
 

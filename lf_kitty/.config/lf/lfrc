@@ -75,11 +75,11 @@ cmd delete ${{
         [ $ans = "y" ] && rm -rf $fx
 }}
 
-cmd dragon %dragon-drop --all --and-exit $fx
+cmd dragon %dragon --all --and-exit $fx
 
-cmd dragon-stay %dragon-drop --all $fx
+cmd dragon-stay %dragon --all $fx
 
-cmd dragon-target %dragon-drop --target $f
+cmd dragon-target %dragon --target $f
 
 cmd extract ${{
     set -f
@@ -253,9 +253,7 @@ map e
 map ee $editor "$f"
 map eu $view "$f"
 
-map f
-map ff fzf_jump
-map fd fzf_jump_here
+map f fzf_jump
 
 map ig add_gitignore
 map ir add_rsync_filter
@@ -297,7 +295,6 @@ map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
 map zy cd ~/.config/sway
-map zz fzf_jump
 map zi fzf_jump_here
 
 map <delete> trash
