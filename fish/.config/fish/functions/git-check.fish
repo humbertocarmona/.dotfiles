@@ -1,4 +1,4 @@
-function check-git -d "check all git projects under pwd"
+function git-check -d "check all git projects under pwd"
     function USAGE
         echo get-git
     end
