@@ -114,7 +114,7 @@ cmd pycharm ${{
     }}
 
 cmd fzf_jump ${{
-    res="$(fd -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $HOME | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
+    res="$(fd -E .julia -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $HOME | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
