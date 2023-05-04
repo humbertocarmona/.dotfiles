@@ -2,7 +2,7 @@
 Type=Application
 Name=Mendeley Desktop
 Comment=Reference manager
-Icon=/opt/mendeley-reference-manager-2.85.0/Mendeley.png
+Icon=/opt/mendeley-reference-manager/Mendeley.png
 Exec=/usr/bin/mendeley
 Terminal=false
 
