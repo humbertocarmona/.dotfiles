@@ -44,7 +44,7 @@
 
 @define-color mode	    @color0;
 
-@define-color unfocused	@color16;
+@define-color unfocused	@color3;
 @define-color focused	@color15;
 @define-color inactive	@color5;
 @define-color hover	    @color4;

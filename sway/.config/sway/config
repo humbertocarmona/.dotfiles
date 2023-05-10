@@ -9,11 +9,12 @@ set $up k
 set $right l
 set $term kitty
 set $launcher wofi --show drun
-set $wallpaper0 $HOME/Pictures/Wallpapers/img_029.jpg
+# set $wallpaper $HOME/Pictures/Wallpapers/img_029.jpg
+# set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 set $wallpaper /usr/share/wallpapers/moonlight/contents/images/1920x1080.svg
+
 set $screenshot grimshot --notify copy area
 set $browser brave-browser
-set $browser2 chromium
 ## gaps --------------------------------------------------------------------------- 
 gaps inner 8
 gaps outer 2
