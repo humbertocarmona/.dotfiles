@@ -1,5 +1,5 @@
 #!/bin/bash
-kmap=$(swaymsg -t get_inputs | jq '.[] | select(.type=="keyboard") | select(.name|contains("keyboard")) | .xkb_active_layout_name')
+kmap=$(swaymsg -t get_inputs | jq '.[] | select(.type=="keyboard") | select((.name|contains("keyboard")) or (.name|contains("Keychron"))) | select(.libinput.accel_speed==null) | .xkb_active_layout_name')
 
 case "$kmap" in
 "\"English (US)\"")
@@ -12,6 +12,6 @@ case "$kmap" in
 	echo " BR"
 	;;
 *)
-	echo $kmap
+	echo ${kmap}
 	;;
 esac
