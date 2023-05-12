@@ -7,7 +7,8 @@ vim.opt.updatetime = 250 -- for auto commands and hovers
 vim.opt.mouse = "a" -- enable mouse
 vim.opt.mousefocus = true
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard
--- vim.cmd("set nowrap")
+vim.cmd("set nowrap")
+
 -- use spaces as tabs
 local tabsize = 4
 vim.opt.expandtab = true
