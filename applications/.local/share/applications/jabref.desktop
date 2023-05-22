@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=JabRef
+Comment=Reference manager
+Icon=/opt/JabRef/lib/JabRef.png
+Exec=/usr/bin/jabref
+Terminal=false
+

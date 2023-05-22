@@ -1,0 +1,29 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "julia.execution.resultType": "inline, errors in REPL",
+    "julia.lint.call": false,
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/en.utf-8.add",
+            "addWords": true,
+            "scope": "user"
+        }
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "workbench.colorTheme": "Julia (Monokai Vibrant)",
+    "editor.fontFamily": "Hack Nerd Font",
+    "editor.cursorStyle": "underline-thin",
+    "editor.fontLigatures": true,
+    "open-in-vim.openMethod":"kitty",
+    "open-in-vim.restoreCursorAfterVim": true,
+    "open-in-vim.useNeovim": true,
+    "editor.minimap.enabled": false,
+    "git.autofetch": true
+}

@@ -3,11 +3,11 @@
 # For a list of devices run: swaymsg -t get_outputs
 # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 # Devices
-set $display_laptop eDP-1
 set $display_external DP-1
+set $display_laptop eDP-1
 
 output $display_laptop scale 3
-output $display_external pos -1920 0 res 1920x1080
+output $display_external mode 1920x1080@75Hz pos 1920,0
 
 # Default wallpaper
 output * bg $wallpaper fill
