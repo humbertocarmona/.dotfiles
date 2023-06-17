@@ -14,7 +14,8 @@ set $launcher wofi --show drun
 set $wallpaper /usr/share/wallpapers/moonlight/contents/images/1920x1080.svg
 
 set $screenshot grimshot --notify copy area
-set $browser brave-browser
+set $browser vivaldi
+set $browser1 brave-browser
 ## gaps --------------------------------------------------------------------------- 
 gaps inner 8
 gaps outer 2
@@ -37,8 +38,10 @@ for_window [app_id="equalx"] floating enable
 for_window [app_id="file-roller"] floating enable
 for_window [app_id="gthumb"] floating enable
 for_window [app_id="insync"] floating enable
-for_window [app_id="LF"] floating enable
+for_window [app_id="lyx"] floating enable
+# for_window [app_id="LF"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="at.yrlf.wl_mirror"] fullscreen
 for_window [app_id="org.inkscape.Inkscape"] floating enable
 for_window [app_id="org.pwmt.zathura"] floating enable
 for_window [app_id="org.qgis.qgis"] floating enable
@@ -64,13 +67,15 @@ for_window [window_type="menu"] floating enable
 # for_window [window_type="con"] floating enable
 # for_window [app_id="galculator"] floating enable
 # assign [class="^Urxvt$" instance="^htop$"] -> 9
-assign [app_id= "org.inkscape.Inkscape"] 8
-assign [app_id= "org.qgis.qgis"] 9
-assign [class= "ParaView"] 9
-assign [class= "krita"] 9
-assign [class= "Gimp-2.10"] 9
-assign [class= "Chromium"] 10
-assign [class= "Brave-browser"] 10
+assign [app_id="at.yrlf.wl_mirror"] 2
+assign [app_id="org.inkscape.Inkscape"] 8
+assign [app_id="org.qgis.qgis"] 9
+assign [class="ParaView"] 9
+assign [class="krita"] 9
+assign [class="Gimp-2.10"] 9
+assign [class="Chromium"] 10
+assign [class="Brave-browser"] 10
+assign [class="Vivaldi-stable"] 10
 
 ## Key bindings --------------------------------------------------------------- 
 # Resize and Drag windows by holding down $mod and left mouse buttons.

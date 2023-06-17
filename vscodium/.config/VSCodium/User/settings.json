@@ -17,13 +17,22 @@
     "git.openRepositoryInParentFolders": "always",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
-    "workbench.colorTheme": "Julia (Monokai Vibrant)",
+    "workbench.colorTheme": "GitHub Dark Default",
     "editor.fontFamily": "Hack Nerd Font",
-    "editor.cursorStyle": "underline-thin",
     "editor.fontLigatures": true,
     "open-in-vim.openMethod":"kitty",
     "open-in-vim.restoreCursorAfterVim": true,
     "open-in-vim.useNeovim": true,
     "editor.minimap.enabled": false,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "git.confirmSync": false,
+    "terminal.integrated.fontSize": 12,
+    "editor.lineHeight": 1.5,
+    "files.exclude": {
+        "**/*.insyncdl": true
+    },
+    "[julia]": {
+        "editor.defaultFormatter": "0h7z.vscode-julia-format"
+    }
 }

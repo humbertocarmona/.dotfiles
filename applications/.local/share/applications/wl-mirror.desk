@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=wl-mirror
+Comment=mirror screen
+Icon=presentation_empty.png
+Exec=kitty --class=WL_MIRROR /usr/bin/wl-mirror -s n eDP-1
+Terminal=false
+

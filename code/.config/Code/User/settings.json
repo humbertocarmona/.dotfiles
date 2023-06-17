@@ -1,52 +1,51 @@
 {
-    "editor.fontFamily": "Inconsolata Nerd Font",
-    "editor.fontVariations": false,
-    "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "GitHub Dark Default",
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
+    "cSpell.language": "en,pt-BR",
+    "cSpell.enableFiletypes": [
+        "bibtex",
+        "cmake",
+        "csv",
+        "fish",
+        "julia",
+        "juliamarkdown",
+        "lua",
+        "xml"
     ],
-    "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": true,
-    "julia.lint.call": false,
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "quarto.mathjax.theme": "dark",
+    "editor.fontFamily": "Hack Nerd Font",
+    "editor.lineHeight": 1.4,
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
-    "[python]": {
-        "editor.formatOnType": true
-    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.fontLigatures": true,
+    "files.autoSave": "afterDelay",
     "files.exclude": {
         "**/*.insyncdl": true
     },
-    "editor.renderControlCharacters": false,
-    "editor.renderWhitespace": "none",
-    "window.zoomLevel": -1,
-    "cSpell.enableFiletypes": [
-        "julia",
-        "quarto"
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "julia.execution.resultType": "inline, errors in REPL",
+    "julia.lint.call": false,
+    "[julia]": {
+        "editor.defaultFormatter": "0h7z.vscode-julia-format"
+    },
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "ruff.path": [
+        "/usr/local/bin/ruff"
     ],
-    "cSpell.userWords": [
-    ],
-    "cSpell.language": "en,pt-BR,en-GB",
+    "julia-format.flag": "style=DefaultStyle(), indent=4, margin=92, always_for_in=true, for_in_replacement=\"∈\", whitespace_typedefs=true, import_to_using=true, align_struct_field=true, align_assignment=true, align_conditional=true, align_pair_arrow=true, normalize_line_endings=\"unix\", align_matrix=true, join_lines_based_on_source=true, indent_submodule=true, surround_whereop_typeparameters=false, remove_extra_newlines=true",
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "workbench.colorTheme": "KanagawaTheme",
     "cSpell.customDictionaries": {
         "custom-dictionary-user": {
-            "name": "en.utf-8.add",
-            "path": "~/.cspell/en.utf-8.add",
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
             "addWords": true,
             "scope": "user"
         }
     },
-    "git.confirmSync": false,
-    "jupyter.askForKernelRestart": false,
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 20,
-    "[julia]": {
-        "editor.defaultFormatter": "julialang.language-julia"
-    },
-    "editor.guides.highlightActiveIndentation":"always",
-    "editor.guides.indentation": true
+
 }
