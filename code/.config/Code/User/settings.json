@@ -41,8 +41,8 @@
     "workbench.colorTheme": "KanagawaTheme",
     "cSpell.customDictionaries": {
         "custom-dictionary-user": {
-            "name": "custom-dictionary-user",
-            "path": "~/.cspell/custom-dictionary-user.txt",
+            "name": "en.utf-8.add",
+            "path": "~/.cspell/en.utf-8.add",
             "addWords": true,
             "scope": "user"
         }

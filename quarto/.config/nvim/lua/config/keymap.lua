@@ -67,15 +67,6 @@ vmap("<A-l>", ":MoveHBlock(1)<CR>")
 
 nmap("Q", "<Nop>")
 
--- send code with ctrl+Enter
--- just like in e.g. RStudio
--- needs kitty (or other terminal) config:
--- map shift+enter send_text all \x1b[13;2u
--- map ctrl+enter send_text all \x1b[13;5u
-nmap("<c-cr>", "<Plug>SlimeSendCell")
-nmap("<s-cr>", "<Plug>SlimeSendCell")
-vmap("<cr>", "<Plug>SlimeRegionSend")
-
 -- list hidden buffers
 -- nmap("<leader>ls", ":ls!<cr>")
 -- nmap("<leader>vh", ':execute "h " . expand("<cword>")<cr>')
@@ -135,14 +126,10 @@ wk.register({
         l = { ":IPythonCellClear<cr>" },
         n = { ":IPythonCellNextCell<cr>" },
         p = { ":IPythonCellPrevCell<cr>" },
-        -- f = { ":SlimeConfig<cr>", "slime config" },
-        -- c = { "<Plug>SlimeSendCell", mode = "n", "send cell" },
-        -- n = { ":split term://$SHELL<cr>", "new terminal" },
-        -- r = { ":split term://R<cr>", "new R terminal" },
-        -- p = { ":split term://python<cr>", "new python terminal" },
-        -- i = { ":split term://ipython<cr>", "new ipython terminal" },
-        -- j = { ":split term://julia<cr>", "new julia terminal" },
-        -- s = { ":echo b:terminal_job_id<cr>", "show terminal id" },
+        -- v = { "<Plug>SlimeConfig" },
+        -- c = { "<Plug>SlimeCellsSendAndGoToNext" },
+        -- j = { "<Plug>SlimeCellsNext" },
+        -- k = { "<Plug>SlimeCellsPrev" },
     },
     v = {
         name = "vim",

@@ -6,3 +6,6 @@ packer_compiled.lua
 *.o
 *lock.json
 fish/.config/fish/conf.d/virtualfish-loader.fish
+applications/.local/share/applications/chrome-agimnkijcaahngcdmfeangaknmldooml-Profile_1.desktop
+applications/.local/share/applications/chrome-gneipglanmgpdhiohiogfnhdpoaafoob-Default.desktop
+applications/.local/share/applications/mimeinfo.cache
