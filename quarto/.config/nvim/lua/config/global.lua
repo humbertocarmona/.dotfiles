@@ -3,12 +3,13 @@ vim.opt.termguicolors = true
 
 -- more opinionated
 vim.opt.number = true -- show line numbers
+vim.opt.relativenumber = true
 vim.opt.updatetime = 250 -- for auto commands and hovers
 vim.opt.mouse = "a" -- enable mouse
 vim.opt.mousefocus = true
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard
-vim.cmd("set nowrap")
-
+-- vim.cmd("set nowrap")
+-- vim.opt.wrap = true
 -- use spaces as tabs
 local tabsize = 4
 vim.opt.expandtab = true
@@ -57,11 +58,15 @@ vim.opt.showtabline = 1
 vim.opt.winbar = "%t"
 
 --don't continue comments automagically
-vim.opt.formatoptions:remove({ "c", "r", "o", "l" })
+vim.opt.formatoptions:remove({ "o", "l" })
 vim.opt.formatoptions:append({ "t" })
+vim.opt.formatoptions:append({ "c" })
+vim.opt.formatoptions:append({ "r" })
+vim.opt.formatoptions:append({ "q" })
+vim.opt.formatoptions:append({ "a" })
 -- hide cmdline when not used
 vim.opt.cmdheight = 0
-vim.opt.textwidth = 120
+vim.opt.textwidth = 80
 vim.opt.colorcolumn = "+1"
 --spell checker
 local spellfile = os.getenv("HOME") .. "/.cspell/en.utf-8.add"
