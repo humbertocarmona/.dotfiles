@@ -200,7 +200,6 @@ wk.register({
         r = { "zg", "rigth" },
         w = { "zw", "wrong" },
         b = { "zw", "bad" },
-        ["?"] = { "<cmd>Telescope spell_suggest<cr>", "suggest" },
     },
     g = {
         name = "git",
@@ -217,7 +216,7 @@ wk.register({
             c = { ":DiffviewClose<cr>", "close" },
         },
     },
-    s = {
+    w = {
         name = "write",
         s = { ":w<cr>", "save (write)" },
         w = { ":wq<cr>", "write and quit" },

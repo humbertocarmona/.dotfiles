@@ -57,13 +57,7 @@ vim.opt.showtabline = 1
 --windowline
 vim.opt.winbar = "%t"
 
---don't continue comments automagically
-vim.opt.formatoptions:remove({ "o", "l" })
-vim.opt.formatoptions:append({ "t" })
-vim.opt.formatoptions:append({ "c" })
-vim.opt.formatoptions:append({ "r" })
-vim.opt.formatoptions:append({ "q" })
-vim.opt.formatoptions:append({ "a" })
+vim.opt.formatoptions = "tcqrj"
 -- hide cmdline when not used
 vim.opt.cmdheight = 0
 vim.opt.textwidth = 80
@@ -81,7 +75,6 @@ vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
 
 -- vim.g.vimtex_view_method = "zathura"
 -- vim.g.vimtex_compiler_method = "latexmk"
-
 -- plugins
 -- slime, general
 vim.b.slime_cell_delimiter = "^#*\\s*%%"

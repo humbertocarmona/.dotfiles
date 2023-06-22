@@ -71,6 +71,7 @@ return {
             })
         end,
     },
+
     -- send code from python/r/qmd docuemts to the terminal
     -- thanks to tmux can be used for any repl
     -- like ipython, R, bash
@@ -82,13 +83,17 @@ return {
     --     "klafyvel/vim-slime-cells",
     --     ft = { "julia" },
     -- },
+
     {
         "hanschen/vim-ipython-cell",
         ft = { "python", "julia" },
     },
+
     -- paste an image to markdown from the clipboard
     -- :PasteImg,
-    "ekickx/clipboard-image.nvim",
+    {
+        "ekickx/clipboard-image.nvim",
+    },
 
     -- display images in the terminal!
     {
@@ -99,10 +104,12 @@ return {
             -- }
         end,
     },
+
     {
         "ahmedkhalf/jupyter-nvim",
         config = function() require("jupyter-nvim").setup() end,
     },
+
     {
         "lervag/vimtex",
         ft = { "tex", "latex" },
@@ -112,5 +119,12 @@ return {
             vim.g.vimtex_view_method = "zathura"
             vim.g.vimtex_compiler_method = "latexmk"
         end,
+    },
+
+    {
+        "GCBallesteros/vim-textobj-hydrogen",
+        dependencies = {
+            "kana/vim-textobj-user",
+        },
     },
 }
