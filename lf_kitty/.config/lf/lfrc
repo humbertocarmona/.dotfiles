@@ -289,17 +289,19 @@ map x open $f
 map y copy
 
 map zb cd ~/.config/bin
-map zl cd ~/.config/lf
+map zc cd ~/.config
 map zd cd ~/.dotfiles 
 map zf cd ~/.config/fish
 map zg lazy_git
+map zi fzf_jump_here
+map zj cd ~/.julia
+map zl cd ~/.config/lf
 map zm cd /media/humberto/
 map zp cd ~/projects
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
 map zy cd ~/.config/sway
-map zi fzf_jump_here
 
 map <delete> trash
 map . set hidden!

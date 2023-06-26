@@ -12,6 +12,9 @@ set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+set -U JULIA_LOAD_PATH $HOME/.julia/packages $JULIA_LOAD_PATH
+set -U JULIA_LOAD_PATH $HOME/projects/RL/random_laser_jl $JULIA_LOAD_PATH
+
 pyenv init - | source
 
 zoxide init fish | source
@@ -24,8 +27,8 @@ fish_vi_cursor
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# if test -f /opt/conda/bin/conda
-#     eval /opt/conda/bin/conda "shell.fish" hook $argv | source
-# end
+if test -f /opt/conda/bin/conda
+    eval /opt/conda/bin/conda "shell.fish" hook $argv | source
+end
 # <<< conda initialize <<<
-source /opt/conda/etc/fish/conf.d/conda.fish
+# source /opt/conda/etc/fish/conf.d/conda.fish
