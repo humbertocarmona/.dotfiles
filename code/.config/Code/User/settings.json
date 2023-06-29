@@ -50,5 +50,41 @@
     "git.openRepositoryInParentFolders": "always",
     "rewrap.autoWrap.enabled": true,
     "editor.wordWrapColumn": 82,
+    "latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk (lualatex)",
+			"tools": [
+				"lualatexmk"
+			]
+		},
+		{
+			"name": "latexmk",
+			"tools": [
+				"latexmk"
+			]
+		},
+		{
+			"name": "latexmk (xelatex)",
+			"tools": [
+				"xelatexmk"
+			]
+		},
+		{
+			"name": "pdflatex -> bibtex -> pdflatex * 2",
+			"tools": [
+				"pdflatex",
+				"bibtex",
+				"pdflatex",
+				"pdflatex"
+			]
+		},
+	],
+	"latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '%INDENT%'"
+    ]
 
 }

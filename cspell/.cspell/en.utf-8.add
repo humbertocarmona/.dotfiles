@@ -30,6 +30,7 @@ Carmona
 celld
 cgrad
 chanm
+chktex
 cholesky
 citecolor
 classoption
@@ -112,6 +113,7 @@ infomap
 inplace
 insyncdl
 isapprox
+isbn
 isempty
 isnothing
 ispressed
@@ -269,6 +271,7 @@ topleft
 twocolumn
 typeof
 urlcolor
+urldate
 usepackage
 userplot
 utri

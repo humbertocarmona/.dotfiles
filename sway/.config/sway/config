@@ -73,7 +73,8 @@ assign [app_id="org.qgis.qgis"] 9
 assign [class="ParaView"] 9
 assign [class="krita"] 9
 assign [class="Gimp-2.10"] 9
-assign [window_role="browser"] 10
+assign [class="Google-chrome"] 10
+# assign [window_role="browser"] 10
 
 ## Key bindings --------------------------------------------------------------- 
 # Resize and Drag windows by holding down $mod and left mouse buttons.
