@@ -9,17 +9,16 @@ set $up k
 set $right l
 set $term kitty
 set $launcher wofi --show drun
-# set $wallpaper $HOME/Pictures/Wallpapers/img_029.jpg
+set $wallpaper $HOME/Pictures/Wallpapers/img_010.jpg
 # set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
-set $wallpaper /usr/share/wallpapers/moonlight/contents/images/1920x1080.svg
-
+# set $wallpaper /usr/share/wallpapers/moonlight/contents/images/1920x1080.svg
+set $filemgr dolphin
 set $screenshot grimshot --notify copy area
-set $browser vivaldi
-set $browser1 brave-browser
+set $browser google-chrome
 ## gaps --------------------------------------------------------------------------- 
 gaps inner 8
 gaps outer 2
-default_border pixel 2
+default_border pixel 1
 
 
 ## Idle configuration ------------------------------------------------------------- 
@@ -41,6 +40,7 @@ for_window [app_id="insync"] floating enable
 for_window [app_id="lyx"] floating enable
 # for_window [app_id="LF"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="org.kde.dolphin"] floating enable
 for_window [app_id="at.yrlf.wl_mirror"] fullscreen
 for_window [app_id="org.inkscape.Inkscape"] floating enable
 for_window [app_id="org.pwmt.zathura"] floating enable
@@ -73,9 +73,7 @@ assign [app_id="org.qgis.qgis"] 9
 assign [class="ParaView"] 9
 assign [class="krita"] 9
 assign [class="Gimp-2.10"] 9
-assign [class="Chromium"] 10
-assign [class="Brave-browser"] 10
-assign [class="Vivaldi-stable"] 10
+assign [window_role="browser"] 10
 
 ## Key bindings --------------------------------------------------------------- 
 # Resize and Drag windows by holding down $mod and left mouse buttons.
@@ -95,9 +93,8 @@ bindsym $mod+Ctrl+t exec i3-gnome-pomodoro start
 bindsym $mod+Shift+t exec i3-gnome-pomodoro stop
 
 bindsym $mod+b exec $browser
-bindsym $mod+Shift+b exec $browser2
 bindsym $mod+Print exec $screenshot
-
+bindsym $mod+e exec $filemgr
 # Moving around
 # Move your focus around
 bindsym $mod+$left focus left
@@ -197,3 +194,5 @@ exec nm-tray
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/$(hostname)/*
 exec_always ~/.config/waybar/waybar.sh
+output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_010.jpg fill
+output DP-1 bg /home/humberto/Pictures/Wallpapers/img_003.jpg fill

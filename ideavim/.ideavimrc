@@ -4,13 +4,12 @@ set which-key
 set whichkey
 
 set notimeout
-set timeoutlen=5000
-
+"set timeoutlen=5000
+let g:textwidth=90
 set nu
 set relativenumber
+set formatoptions="tcqrj"
+let g:mapleader = ","
 
-let g:WhichKeyDesc_windows="<Space>w Windows"
-let g:WhichKeyDesc_windows_delete="<Space>wd delete"
-let g:WhichKeyDesc_windows_split="<Space>ws split below"
-let g:WhichKeyDesc_commentray_prefix = "gc"
-let g:WhichKeyDesc_commentray_action = "gcc"
+noremap <leader>e :bufdo e!<cr>
+" let g:WhichKeyDesc_reload="<leader>e :bufdo e!<cr>"

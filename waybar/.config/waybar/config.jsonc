@@ -16,7 +16,7 @@
     ],
     "modules-right": [
         "tray",
-        "custom/pomodoro",
+        // "custom/pomodoro",
         // "cpu",
         // "memory",
         "battery",
@@ -120,19 +120,20 @@
             "",
             "",
             "",
-            ""
+            "",
+            "󱐥"
         ],
         "max-length": 25
     },
-    "custom/pomodoro": {
-        "exec": "i3-gnome-pomodoro status --format=waybar --show-seconds",
-        "return-type": "json",
-        "interval": 1,
-        "format": "{}",
-        "on-click": "i3-gnome-pomodoro toggle",
-        "on-middle-click": "i3-gnome-pomodoro stop",
-        "on-right-click": "i3-gnome-pomodoro start"
-    },
+    // "custom/pomodoro": {
+    //     "exec": "i3-gnome-pomodoro status --format=waybar --show-seconds",
+    //     "return-type": "json",
+    //     "interval": 1,
+    //     "format": "{}",
+    //     "on-click": "i3-gnome-pomodoro toggle",
+    //     "on-middle-click": "i3-gnome-pomodoro stop",
+    //     "on-right-click": "i3-gnome-pomodoro start"
+    // },
     "cpu": {
         "interval": 30,
         "format": " {}%",

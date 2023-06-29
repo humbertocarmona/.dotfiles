@@ -48,5 +48,7 @@
         }
     },
     "git.openRepositoryInParentFolders": "always",
+    "rewrap.autoWrap.enabled": true,
+    "editor.wordWrapColumn": 82,
 
 }
