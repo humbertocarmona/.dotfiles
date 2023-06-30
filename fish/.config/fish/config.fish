@@ -27,8 +27,8 @@ fish_vi_cursor
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/conda/bin/conda
-    eval /opt/conda/bin/conda "shell.fish" hook $argv | source
-end
+#if test -f /opt/conda/bin/conda
+#    eval /opt/conda/bin/conda "shell.fish" hook $argv | source
+#end
 # <<< conda initialize <<<
-# source /opt/conda/etc/fish/conf.d/conda.fish
+source /opt/conda/etc/fish/conf.d/conda.fish

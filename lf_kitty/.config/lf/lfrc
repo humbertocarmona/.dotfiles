@@ -180,7 +180,7 @@ cmd open &{{
 	application/json)
         lf -remote "send $id \$nvim $f"
 		;;
-    *) mimeopen $f > /dev/null 2> /dev/null;;
+    *) xdg-open $f > /dev/null 2> /dev/null;;
 	esac
 }}
 
@@ -266,8 +266,7 @@ map m
 map mf mkFile
 map md mkDir
 
-map o &mimeopen $f
-map O $mimeopen --ask $f
+map o $mimeopen --ask $f
 
 map p paste
 

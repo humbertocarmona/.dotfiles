@@ -47,6 +47,7 @@ for_window [app_id="org.pwmt.zathura"] floating enable
 for_window [app_id="org.qgis.qgis"] floating enable
 for_window [app_id="python3"] floating enable
 for_window [app_id="xournalapp"] floating enable
+for_window [app_id="mirage"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="Gimp-2.10"] floating enable
 for_window [class="gksqt"] floating enable
@@ -195,5 +196,4 @@ exec nm-tray
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/$(hostname)/*
 exec_always ~/.config/waybar/waybar.sh
-output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_010.jpg fill
-output DP-1 bg /home/humberto/Pictures/Wallpapers/img_003.jpg fill
+output HDMI-A-2 bg /home/humberto/Pictures/Wallpapers/img_016.jpg fill
