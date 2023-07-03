@@ -12,6 +12,7 @@ arrowsize
 arrowstyle
 assetpath
 astype
+asvetliakov
 autofetch
 autopep
 axislegend
@@ -57,6 +58,7 @@ datascience
 deleteat
 depthbuffer
 despine
+detrend
 dicpath
 dmax
 docstr
@@ -101,6 +103,7 @@ geopandas
 getlogger
 gridlaplacian
 groupby
+hcat
 heightrounded
 hrsh7th
 humberto
@@ -181,7 +184,9 @@ mouseposition
 mplstyle
 multiflip
 mysql
+ncols
 ndarray
+neovim
 Neovim
 networkx
 newaxis
@@ -189,6 +194,7 @@ NFe
 njit
 nopython
 nrows
+nsteps
 numba
 numpy
 nvim
@@ -226,7 +232,11 @@ randn
 randperm
 randsubseq
 rconly
+readboltzmann
+readcsv
+readdebora
 readdlm
+readjson
 readlines
 renamecols
 rgba
@@ -268,6 +278,7 @@ titlefontsize
 titlesize
 toarray
 topleft
+trimcols
 twocolumn
 typeof
 urlcolor
@@ -283,6 +294,7 @@ vmax
 vmin
 vprops
 wireframe
+writejson
 xaxis
 xelatex
 xelatexmk

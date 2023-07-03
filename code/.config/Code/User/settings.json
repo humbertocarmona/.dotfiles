@@ -10,12 +10,12 @@
         "lua",
         "xml"
     ],
-    "editor.fontFamily": "Hack Nerd Font",
+    "editor.fontFamily": "Inconsolata Nerd Font Mono",
     "editor.lineHeight": 1.4,
     "editor.minimap.enabled": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.fontLigatures": true,
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/*.insyncdl": true
     },
@@ -38,7 +38,6 @@
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "workbench.colorTheme": "KanagawaTheme",
     "cSpell.customDictionaries": {
         "custom-dictionary-user": {
             "name": "en.utf-8.add",
@@ -85,6 +84,27 @@
         "%DIR%/",
         "%TMPFILE%",
         "-y=defaultIndent: '%INDENT%'"
-    ]
-
+    ],
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.colorCustomizations": {
+    },
+    "terminal.integrated.cursorStyle": "underline",
+    "editor.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
+    "terminal.explorerKind": "external",
+    "notebook.output.fontFamily": "Inconsolata Nerd Font Mono",
+    "notebook.output.fontSize": 14,
+    "latex-workshop.linting.chktex.exec.args": [
+        "-wall",
+        "-n22",
+        "-n30",
+        "-e16",
+        "-q",
+        "-n21",
+        "-n1"
+    ],
 }

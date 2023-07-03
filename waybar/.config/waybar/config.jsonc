@@ -61,7 +61,7 @@
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
-        "on-click": "kitty -e pulsemixer",
+        "on-click": "kitty --class 'pulsemixer' -e pulsemixer",
         "on-scroll-up": "pamixer -d 5",
         "on-scroll-down": "pamixer -i 5",
         "scroll-step": 5,
