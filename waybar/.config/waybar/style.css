@@ -81,7 +81,7 @@
     background: rgba(20,30,40,0.7);
     color: @text;
     font-family: RobotoMono, MesloLGM;
-    font-size: 10pt;
+    font-size: 14pt;
 }
 
 
@@ -90,7 +90,7 @@
 
 #workspaces button {
     color: @unfocused ; 
-    padding: 2pt;
+    padding: 4pt;
 }
 
 #workspaces button.visible {
@@ -127,7 +127,7 @@
     color: @battery;
     margin-left: 0px;
     margin-right: 10px;
-    font-size: 18pt
+    font-size: 24pt
 }
 
 #custom-language {
@@ -146,7 +146,7 @@
     color: @network;
     margin-left: 0px;
     margin-right: 10px;
-    font-size: 14pt;
+    font-size: 24pt;
 }
 
 #clock {

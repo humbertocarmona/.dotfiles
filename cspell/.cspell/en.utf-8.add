@@ -19,6 +19,7 @@ axislegend
 backgroundcolor
 barplot
 basico
+betweeness
 bgcolorlegend
 bibtex
 binarize
@@ -115,6 +116,7 @@ Inconsolata
 infomap
 inplace
 insyncdl
+IPECE
 isapprox
 isbn
 isempty
@@ -131,6 +133,7 @@ julia
 julialang
 juliamarkdown
 jupyter
+Kalman
 Kanagawa
 labelfont
 labelpad
@@ -250,6 +253,8 @@ scrartcl
 seaborn
 Seaborn
 searchsorted
+SEIIR
+SEIR
 seriestype
 setlevel
 sinc
@@ -266,6 +271,8 @@ strokearound
 strokecolor
 strokewidth
 struct
+superpropagadores
+Superpropagadores
 tablefmt
 tellheight
 tellwidth
@@ -281,6 +288,7 @@ topleft
 trimcols
 twocolumn
 typeof
+UNIFOR
 urlcolor
 urldate
 usepackage
