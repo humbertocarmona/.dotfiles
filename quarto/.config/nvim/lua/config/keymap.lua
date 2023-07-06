@@ -12,10 +12,10 @@ R = function(name)
     return require(name)
 end
 
-local buffopts = { noremap = true, silent = true }
-local nmap = function(key, effect) vim.keymap.set("n", key, effect, buffopts) end
-local vmap = function(key, effect) vim.keymap.set("v", key, effect, buffopts) end
-local imap = function(key, effect) vim.keymap.set("i", key, effect, buffopts) end
+local opts = { noremap = true, silent = true }
+local nmap = function(key, effect) vim.keymap.set("n", key, effect, opts) end
+local vmap = function(key, effect) vim.keymap.set("v", key, effect, opts) end
+local imap = function(key, effect) vim.keymap.set("i", key, effect, opts) end
 
 -- Resize window using <shift> arrow keys
 nmap("<S-Up>", "<cmd>resize +2<CR>")
@@ -97,10 +97,6 @@ nmap("<c-u>", "<c-u>zz")
 
 nmap("<leader>j", [[<c-w>wi]])
 
-nmap("<leader>cc", ":IPythonCellExecuteCellJump<cr>")
-nmap("<leader>cl", ":IPythonCellClear<cr>")
-nmap("<leader>cn", ":IPythonCellNextCell<cr>")
-nmap("<leader>cp", ":IPythonCellPrevCell<cr>")
 local function open_plugin()
     local word = vim.fn.expand("<cWORD>")
     -- url = string.match(url, '".+"')
@@ -120,8 +116,36 @@ end
 --add your own here if you want them to
 --show up in the popup as well
 wk.register({
+    ["b"] = { "<cmd>VimtexCompile<CR>", "build" },
+    ["cw"] = { "<cmd>VimtexCountWords!<CR>", "count" },
+    ["d"] = { "<cmd>bdelete!<CR>", "delete buffer" },
+    ["e"] = { "<cmd>Neotree<CR>", "explorer" },
+    ["i"] = { "<cmd>VimtexTocOpen<CR>", "index" },
+    ["q"] = { "<cmd>wqa!<CR>", "quit" },
+    -- ["r"] = { ""                                  , "reorder" },
+    -- ["r"] = { "<cmd>lua require('autolist').force_recalculate()<CR>" , "reorder list" },
+    ["u"] = { "<cmd>UndotreeToggle<CR>", "undo" },
+    ["v"] = { "<cmd>VimtexView<CR>", "view" },
+    a = {
+        name = "Actions",
+        a = { "<cmd>lua PdfAnnots()<CR>", "annotate" },
+        b = { "<cmd>terminal bibexport -o %:p:r.bib %:p:r.aux<CR>", "bib export" },
+        g = { "<cmd>e ~/.config/nvim/templates/Glossary.tex<CR>", "edit glossary" },
+        h = { "<cmd>lua _HTOP_TOGGLE()<CR>", "htop" },
+        i = { "<cmd>IlluminateToggle<CR>", "illuminate" },
+        r = { "<cmd>VimtexErrors<CR>", "report errors" },
+        s = { "<cmd>e ~/.config/nvim/snips/snippets/<cr>", "edit snippets" },
+        u = { "<cmd>cd %:p:h<CR>", "update cwd" },
+        -- w = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.docx'<CR>" , "word"},
+        v = { "<plug>(vimtex-context-menu)", "vimtex menu" },
+        p = { open_plugin, "open plugin" },
+        t = { switchTheme, "switch theme" },
+        c = { ":Telescope colorscheme<cr>", "colortheme" },
+        l = { ":Lazy<cr>", "Lazy" },
+        m = { ":Mason<cr>", "Mason" },
+    },
     c = {
-        name = "code",
+        name = "Coding",
         c = { ":IPythonCellExecuteCellJump<cr>" },
         l = { ":IPythonCellClear<cr>" },
         n = { ":IPythonCellNextCell<cr>" },
@@ -131,44 +155,10 @@ wk.register({
         -- j = { "<Plug>SlimeCellsNext" },
         -- k = { "<Plug>SlimeCellsPrev" },
     },
-    v = {
-        name = "vim",
-        p = { open_plugin, "open plugin" },
-        t = { switchTheme, "switch theme" },
-        c = { ":Telescope colorscheme<cr>", "colortheme" },
-        l = { ":Lazy<cr>", "Lazy" },
-        m = { ":Mason<cr>", "Mason" },
-        s = { ":e $MYVIMRC | :cd %:p:h | split . | wincmd k<cr>", "Settings" },
-    },
-    l = {
-        name = "language/lsp",
-        d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "go to definition" },
-        R = { "<cmd>Telescope lsp_references<cr>", "references" },
-        r = { vim.lsp.buf.rename, "rename" },
-        D = { vim.lsp.buf.type_definition, "type definition" },
-        a = { vim.lsp.buf.code_action, "coda action" },
-        e = { vim.diagnostic.open_float, "diagnostics" },
-        f = { vim.lsp.buf.format, "format" },
-        o = { ":SymbolsOutline<cr>", "outline" },
-        g = {
-            name = "diagnostics",
-            d = { vim.diagnostic.disable, "disable" },
-            e = { vim.diagnostic.enable, "enable" },
-        },
-        n = { ":Neogen<cr>", "neogen docstring" },
-    },
-    Q = {
-        name = "quarto",
-        a = { ":QuartoActivate<cr>", "activate" },
-        p = { ":lua require'quarto'.quartoPreview()<cr>", "preview" },
-        q = { ":lua require'quarto'.quartoClosePreview()<cr>", "close" },
-        h = { ":QuartoHelp ", "help" },
-        e = { ":lua require'otter'.export()<cr>", "export" },
-        E = { ":lua require'otter'.export(true)<cr>", "export overwrite" },
-    },
     f = {
         name = "find (telescope)",
         b = { "<cmd>Telescope file_browser<cr>", "files", { noremap = true } },
+        c = { "<cmd>Telescope bibtex<CR>", "citations" },
         f = { "<cmd>Telescope find_files<cr>", "files" },
         -- h = { "<cmd>Telescope help_tags<cr>", "help" },
         k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
@@ -177,29 +167,13 @@ wk.register({
         z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fuzzy" },
         m = { "<cmd>Telescope marks<cr>", "marks" },
         M = { "<cmd>Telescope man_pages<cr>", "man pages" },
-        c = { "<cmd>Telescope git_commits<cr>", "git commits" },
+        gc = { "<cmd>Telescope git_commits<cr>", "git commits" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "symbols" },
         d = { "<cmd>Telescope buffers<cr>", "buffers" },
         q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
         l = { "<cmd>Telescope loclist<cr>", "loclist" },
         j = { "<cmd>Telescope jumplist<cr>", "marks" },
         p = { "project" },
-    },
-    h = {
-        name = "hidden",
-        h = { ":set conceallevel=1<cr>", "hide/conceal" },
-        s = { ":set conceallevel=0<cr>", "show/unconceal" },
-    },
-    s = {
-        name = "spellcheck",
-        s = { "<cmd>Telescope spell_suggest<cr>", "spelling" },
-        ["/"] = { "<cmd>setlocal spell!<cr>", "spellcheck" },
-        n = { "]s", "next" },
-        p = { "[s", "previous" },
-        g = { "zg", "good" },
-        r = { "zg", "rigth" },
-        w = { "zw", "wrong" },
-        b = { "zw", "bad" },
     },
     g = {
         name = "git",
@@ -216,11 +190,103 @@ wk.register({
             c = { ":DiffviewClose<cr>", "close" },
         },
     },
+    l = {
+        name = "Lsp",
+        d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "go to definition" },
+        R = { "<cmd>Telescope lsp_references<cr>", "references" },
+        r = { vim.lsp.buf.rename, "rename" },
+        D = { vim.lsp.buf.type_definition, "type definition" },
+        a = { vim.lsp.buf.code_action, "coda action" },
+        e = { vim.diagnostic.open_float, "diagnostics" },
+        f = { vim.lsp.buf.format, "format" },
+        o = { ":SymbolsOutline<cr>", "outline" },
+        g = {
+            name = "diagnostics",
+            d = { vim.diagnostic.disable, "disable" },
+            e = { vim.diagnostic.enable, "enable" },
+        },
+        l = { "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", "LSP" },
+        n = { ":Neogen<cr>", "neogen docstring" },
+    },
+    m = {
+        name = "Manage sessions",
+        s = { "<cmd>SessionManager save_current_session<CR>", "save" },
+        d = { "<cmd>SessionManager delete_session<CR>", "delete" },
+        l = { "<cmd>SessionManager load_session<CR>", "load" },
+    },
+    p = {
+        name = "Pandoc",
+        w = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.docx'<CR>", "word" },
+        m = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.md'<CR>", "markdown" },
+        h = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.html'<CR>", "html" },
+        l = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.tex'<CR>", "latex" },
+        p = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.pdf'<CR>", "pdf" },
+        -- x = { "<cmd>echo "run: unoconv -f pdf path-to.docx""  , "word to pdf"},
+    },
+    Q = {
+        name = "Quarto",
+        a = { ":QuartoActivate<cr>", "activate" },
+        p = { ":lua require'quarto'.quartoPreview()<cr>", "preview" },
+        q = { ":lua require'quarto'.quartoClosePreview()<cr>", "close" },
+        h = { ":QuartoHelp ", "help" },
+        e = { ":lua require'otter'.export()<cr>", "export" },
+        E = { ":lua require'otter'.export(true)<cr>", "export overwrite" },
+    },
+    s = {
+        name = "SURROUND",
+        s = { "<Plug>(nvim-surround-normal)", "surround" },
+        d = { "<Plug>(nvim-surround-delete)", "delete" },
+        c = { "<Plug>(nvim-surround-change)", "change" },
+    },
+    t = {
+        name = "Tex",
+        c = { "<cmd>VimtexClean<CR>", "clean aux" },
+        l = {
+            "<cmd>read ~/.config/nvim/templates/Letter.tex<CR>",
+            "Letter.tex",
+        },
+        g = {
+            "<cmd>read ~/.config/nvim/templates/Glossary.tex<CR>",
+            "Glossary.tex",
+        },
+        h = {
+            "<cmd>read ~/.config/nvim/templates/HandOut.tex<CR>",
+            "HandOut.tex",
+        },
+        b = {
+            "<cmd>read ~/.config/nvim/templates/PhilBeamer.tex<CR>",
+            "PhilBeamer.tex",
+        },
+        s = {
+            "<cmd>read ~/.config/nvim/templates/SubFile.tex<CR>",
+            "SubFile.tex",
+        },
+        r = {
+            "<cmd>read ~/.config/nvim/templates/Root.tex<CR>",
+            "Root.tex",
+        },
+        m = {
+            "<cmd>read ~/.config/nvim/templates/MultipleAnswer.tex<CR>",
+            "MultipleAnswer.tex",
+        },
+        p = { '<cmd>lua require("nabla").popup()<CR>', "preview symbols" },
+    },
     w = {
-        name = "write",
-        s = { ":w<cr>", "save (write)" },
-        w = { ":wq<cr>", "write and quit" },
-        q = { ":q!<cr>", "quit (no save)" },
+        name = "Write",
+        w = { ":w<cr>", "save (write)" },
+        q = { ":wq<cr>", "write and quit" },
+        x = { ":q!<cr>", "quit (no save)" },
+    },
+    z = {
+        name = "Spellcheck",
+        s = { "<cmd>Telescope spell_suggest<cr>", "spelling" },
+        ["/"] = { "<cmd>setlocal spell!<cr>", "spellcheck" },
+        n = { "]s", "next" },
+        p = { "[s", "previous" },
+        g = { "zg", "good" },
+        r = { "zg", "rigth" },
+        w = { "zw", "wrong" },
+        b = { "zw", "bad" },
     },
 }, { mode = "n", prefix = "<leader>" })
 
@@ -242,27 +308,26 @@ wk.register({
     -- ["qq"] = { ":q!<cr>", "quit no save" },
     -- ["wq"] = { ":wq<cr>", "write and quit" },
 }, { mode = "n" })
-
 -- visual mode
-wk.register({
-    ["<cr>"] = { "<Plug>SlimeRegionSend", "run code region" },
-    -- ["gx"] = { '"ty:!xdg-open t<cr>', "open file" },
-    -- ["<M-j>"] = { ":m'>+<cr>`<my`>mzgv`yo`z", "move line down" },
-    -- ["<M-k>"] = { ":m'<-2<cr>`>my`<mzgv`yo`z", "move line up" },
-    -- ["."] = { ":norm .<cr>", "repat last normal mode command" },
-    -- ["q"] = { ":norm @q<cr>", "repat q macro" },
-}, { mode = "v" })
-
+-- wk.register({
+--     ["<cr>"] = { "<Plug>SlimeRegionSend", "run code region" },
+--     -- ["gx"] = { '"ty:!xdg-open t<cr>', "open file" },
+--     -- ["<M-j>"] = { ":m'>+<cr>`<my`>mzgv`yo`z", "move line down" },
+--     -- ["<M-k>"] = { ":m'<-2<cr>`>my`<mzgv`yo`z", "move line up" },
+--     -- ["."] = { ":norm .<cr>", "repat last normal mode command" },
+--     -- ["q"] = { ":norm @q<cr>", "repat q macro" },
+-- }, { mode = "v" })
+--
 -- wk.register({
 --     ["<leader>"] = { "<Plug>SlimeRegionSend", "run code region" },
 --     ["p"] = { '"_dP', "replace without overwriting reg" },
 -- }, { mode = "v", prefix = "<leader>" })
-
-wk.register({
-    -- ['<c-e>'] = { "<esc>:FeMaco<cr>i", "edit code" },
-    ["<m-->"] = { " <- ", "assign" },
-    ["<m-m>"] = { " |>", "pipe" },
-    ["<m-i>"] = { "```{r}<cr>```<esc>O", "r code chunk" },
-    ["<cm-i>"] = { "<esc>o```{python}<cr>```<esc>O", "r code chunk" },
-    ["<m-I>"] = { "<esc>o```{python}<cr>```<esc>O", "r code chunk" },
-}, { mode = "i" })
+--
+-- wk.register({
+--     -- ['<c-e>'] = { "<esc>:FeMaco<cr>i", "edit code" },
+--     ["<m-->"] = { " <- ", "assign" },
+--     ["<m-m>"] = { " |>", "pipe" },
+--     ["<m-i>"] = { "```{r}<cr>```<esc>O", "r code chunk" },
+--     ["<cm-i>"] = { "<esc>o```{python}<cr>```<esc>O", "r code chunk" },
+--     ["<m-I>"] = { "<esc>o```{python}<cr>```<esc>O", "r code chunk" },
+-- }, { mode = "i" })

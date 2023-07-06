@@ -10,7 +10,7 @@ function rrsync -d "special rsync using .rsync-filter"
     set options $options (fish_opt --short=t --long=to --required-val)
     set options $options (fish_opt --short=l --long=flags --required-val)
     set options $options (fish_opt --short=d --long=delete)
-    :
+
     argparse $options -- $argv
     or return
 

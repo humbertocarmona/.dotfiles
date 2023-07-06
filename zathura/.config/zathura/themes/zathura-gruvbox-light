@@ -1,8 +1,3 @@
-# Synctex
-
-set synctex true
-set synctex-editor-command "nvim --remote-silent +%{line} %{input}"
-
 # Basic Settings
 
 set highlight-transparency .1
@@ -17,8 +12,6 @@ map K zoom in
 map J zoom out
 map p print
 map w recolor
-map k 5k
-map j 5k
 
 set notification-error-bg       "#ebdbb2" # bg
 set notification-error-fg       "#9d0006" # bright:red
@@ -49,7 +42,7 @@ set statusbar-fg                "#3c3836" # fg
 set highlight-color             "#b57614" # bright:yellow
 set highlight-active-color      "#af3a03" # bright:orange
 
-set default-bg                  "#1d2021" # bg
+set default-bg                  "#ebdbb2" # bg
 set default-fg                  "#3c3836" # fg
 set render-loading              true
 set render-loading-bg           "#ebdbb2" # bg
@@ -60,4 +53,3 @@ set recolor-lightcolor          "#ebdbb2" # bg
 set recolor-darkcolor           "#3c3836" # fg
 set recolor                     "true"
 # set recolor-keephue             true      # keep original color
-# set recolor-reverse-video       "true"

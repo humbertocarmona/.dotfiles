@@ -1,6 +1,33 @@
 return {
     { "tpope/vim-repeat" },
-    { "tpope/vim-surround" },
+    -- { "tpope/vim-surround" },
+    {
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup({
+                keymaps = {
+                    insert = false,
+                    insert_line = false,
+                    normal = false,
+                    normal_cur = false,
+                    normal_line = false,
+                    normal_cur_line = false,
+                    visual = "<S-s>",
+                    visual_line = false,
+                    delete = false,
+                    change = false,
+                },
+                aliases = {
+                    ["a"] = false,
+                    ["b"] = false,
+                    ["B"] = false,
+                    ["r"] = false,
+                    ["q"] = false,
+                    ["s"] = false,
+                },
+            })
+        end,
+    },
     { "fedepujol/move.nvim" },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -24,4 +51,25 @@ return {
         dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
     },
+    {
+        "gbprod/yanky.nvim",
+        config = function()
+            require("yanky").setup({
+                ring = {
+                    history_length = 100,
+                    storage = "shada",
+                    sync_with_numbered_registers = true,
+                    cancel_event = "update",
+                },
+                system_clipboard = {
+                    sync_with_ring = true,
+                },
+            })
+        end,
+    },
+    {
+        "mbbill/undotree",
+        config = function() vim.g["undotree_SetFocusWhenToggle"] = true end,
+    }, -- Vimscript
+    { "jbyuki/nabla.nvim" },
 }

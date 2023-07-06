@@ -1,3 +1,15 @@
+vim.opt.backup = false
+vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.conceallevel = 0
+vim.opt.showmode = false
+vim.opt.showbreak = "    "
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.writebackup = false
+vim.opt.scrolloff = 7
+vim.opt.sidescrolloff = 7
+vim.opt.shortmess:append("c")
+
 vim.g.markdown_fenced_languages = { "html", "python", "bash=sh", "R=r" }
 vim.opt.termguicolors = true
 
@@ -29,11 +41,11 @@ vim.opt.smartcase = true
 vim.g.nord_borders = true
 
 -- indent
-vim.opt.smartindent = true
+vim.opt.smartindent = false
 vim.opt.breakindent = true
-
+vim.opt.autoindent = false
 -- consistent number column
-vim.opt.signcolumn = "yes:1"
+vim.opt.signcolumn = "yes"
 
 -- how to show a autocomplete menu
 vim.opt.completeopt = "menuone,noinsert"
@@ -59,7 +71,7 @@ vim.opt.winbar = "%t"
 
 vim.opt.formatoptions = "tcqrj"
 -- hide cmdline when not used
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 2
 vim.opt.textwidth = 90
 vim.opt.colorcolumn = "+1"
 --spell checker
@@ -73,25 +85,7 @@ local cursor2 = "c-i-ci-ve:hor50-Cursor-blinkwait300-blinkon200-blinkoff150,"
 local cursor3 = "r-cr-o:hor50"
 vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
 
--- vim.g.vimtex_view_method = "zathura"
--- vim.g.vimtex_compiler_method = "latexmk"
 -- plugins
--- slime, general
-vim.b.slime_cell_delimiter = "^#*\\s*%%"
-vim.g.slime_target = "tmux"
-vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
-vim.g.slime_dont_ask_default = 1
-vim.g.slime_preserve_curpos = 0
-vim.g.slime_no_mappings = 1
-vim.g.slime_paste_file = "/home/humberto/.slime_paste"
-vim.g.slime_python_ipython = 1
-vim.g.slime_bracketed_paste = 0
-vim.g.ipython_cell_highlight_cells = 1
--- git blame, lualine
-vim.g.gitblame_display_virtual_text = 0
--- to make ipython cell to work with julia
-vim.g.ipython_cell_run_command = 'include("{filepath}")'
--- vim.g.ipython_cell_cell_command = "include_string(Main, clipboard())"
 
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
