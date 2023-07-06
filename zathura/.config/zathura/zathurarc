@@ -9,8 +9,8 @@ set highlight-transparency .1
 set zoom-center "true"
 set selection-clipboard clipboard
 set render-loading "false"
-set window-width 960
-set window-height 1080
+# set window-width 960
+# set window-height 1000
 
 map <Space> toggle_index
 map K zoom in
@@ -56,8 +56,8 @@ set render-loading-bg           "#ebdbb2" # bg
 set render-loading-fg           "#3c3836" # fg
 
 # Recolor book content's color
-set recolor-lightcolor          "#ebdbb2" # bg
+set recolor-lightcolor          "#cfc6af" # bg
 set recolor-darkcolor           "#3c3836" # fg
 set recolor                     "true"
-# set recolor-keephue             true      # keep original color
+set recolor-keephue             true      # keep original color
 # set recolor-reverse-video       "true"

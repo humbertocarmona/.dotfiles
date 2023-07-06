@@ -5,6 +5,7 @@ packer_compiled.lua
 *.spl
 *.o
 *lock.json
+**/fishd.tmp.*
 fish/.config/fish/conf.d/virtualfish-loader.fish
 applications/.local/share/applications/chrome-agimnkijcaahngcdmfeangaknmldooml-Profile_1.desktop
 applications/.local/share/applications/chrome-gneipglanmgpdhiohiogfnhdpoaafoob-Default.desktop

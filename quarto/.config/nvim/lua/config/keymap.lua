@@ -116,16 +116,18 @@ end
 --add your own here if you want them to
 --show up in the popup as well
 wk.register({
-    ["b"] = { "<cmd>VimtexCompile<CR>", "build" },
-    ["cw"] = { "<cmd>VimtexCountWords!<CR>", "count" },
+    ["b"] = { "<cmd>VimtexCompile<CR>", "Latex build" },
+    ["v"] = { "<cmd>VimtexView<CR>", "Latex view" },
+    ["i"] = { "<cmd>VimtexTocOpen<CR>", "Latex index" },
+    ["c"] = { "<cmd>VimtexCountWords!<CR>", "Latex word count" },
+
     ["d"] = { "<cmd>bdelete!<CR>", "delete buffer" },
     ["e"] = { "<cmd>Neotree<CR>", "explorer" },
-    ["i"] = { "<cmd>VimtexTocOpen<CR>", "index" },
-    ["q"] = { "<cmd>wqa!<CR>", "quit" },
+    ["w"] = { "<cmd>w<CR>", "quit" },
+    ["x"] = { "<cmd>wqa!<CR>", "quit" },
     -- ["r"] = { ""                                  , "reorder" },
     -- ["r"] = { "<cmd>lua require('autolist').force_recalculate()<CR>" , "reorder list" },
     ["u"] = { "<cmd>UndotreeToggle<CR>", "undo" },
-    ["v"] = { "<cmd>VimtexView<CR>", "view" },
     a = {
         name = "Actions",
         a = { "<cmd>lua PdfAnnots()<CR>", "annotate" },
@@ -136,7 +138,6 @@ wk.register({
         r = { "<cmd>VimtexErrors<CR>", "report errors" },
         s = { "<cmd>e ~/.config/nvim/snips/snippets/<cr>", "edit snippets" },
         u = { "<cmd>cd %:p:h<CR>", "update cwd" },
-        -- w = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.docx'<CR>" , "word"},
         v = { "<plug>(vimtex-context-menu)", "vimtex menu" },
         p = { open_plugin, "open plugin" },
         t = { switchTheme, "switch theme" },
@@ -144,8 +145,8 @@ wk.register({
         l = { ":Lazy<cr>", "Lazy" },
         m = { ":Mason<cr>", "Mason" },
     },
-    c = {
-        name = "Coding",
+    D = {
+        name = "Dev",
         c = { ":IPythonCellExecuteCellJump<cr>" },
         l = { ":IPythonCellClear<cr>" },
         n = { ":IPythonCellNextCell<cr>" },
@@ -216,12 +217,13 @@ wk.register({
     },
     p = {
         name = "Pandoc",
-        w = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.docx'<CR>", "word" },
+        w = { function() os.execute("pandoc -s %:p -o %:p:r.docx") end, "word" },
         m = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.md'<CR>", "markdown" },
         h = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.html'<CR>", "html" },
         l = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.tex'<CR>", "latex" },
         p = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.pdf'<CR>", "pdf" },
         -- x = { "<cmd>echo "run: unoconv -f pdf path-to.docx""  , "word to pdf"},
+        -- w = { "<cmd>TermExec cmd='pandoc %:p -o %:p:r.docx'<CR>" , "word"},
     },
     Q = {
         name = "Quarto",
@@ -270,12 +272,6 @@ wk.register({
             "MultipleAnswer.tex",
         },
         p = { '<cmd>lua require("nabla").popup()<CR>', "preview symbols" },
-    },
-    w = {
-        name = "Write",
-        w = { ":w<cr>", "save (write)" },
-        q = { ":wq<cr>", "write and quit" },
-        x = { ":q!<cr>", "quit (no save)" },
     },
     z = {
         name = "Spellcheck",
