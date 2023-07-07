@@ -248,6 +248,7 @@ return {
 
             -- Set menu
             dashboard.section.buttons.val = {
+                dashboard.button("s", "  > Load session", "<cmd>SessionManager load_session<CR>"),
                 dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
                 dashboard.button("f", "  > Find browser", ":Telescope file_browser<CR>"),
                 dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),

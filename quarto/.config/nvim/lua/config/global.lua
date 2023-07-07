@@ -71,8 +71,8 @@ vim.opt.winbar = "%t"
 
 vim.opt.formatoptions = "tcqrj"
 -- hide cmdline when not used
-vim.opt.cmdheight = 2
-vim.opt.textwidth = 90
+vim.opt.cmdheight = 1
+vim.opt.textwidth = 80
 vim.opt.colorcolumn = "+1"
 --spell checker
 local spellfile = os.getenv("HOME") .. "/.cspell/en.utf-8.add"
@@ -80,10 +80,10 @@ vim.opt.spell = false
 vim.opt.spelllang = { "en_us", "pt" }
 vim.opt.spellfile = spellfile
 
-local cursor1 = "n-v:block-nCursor,"
-local cursor2 = "c-i-ci-ve:hor50-Cursor-blinkwait300-blinkon200-blinkoff150,"
-local cursor3 = "r-cr-o:hor50"
-vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
+-- local cursor1 = "n-v:block-nCursor,"
+-- local cursor2 = "c-i-ci-ve:hor50-Cursor-blinkwait300-blinkon200-blinkoff150,"
+-- local cursor3 = "r-cr-o:hor50"
+-- vim.opt.guicursor = cursor1 .. cursor2 .. cursor3
 
 -- plugins
 
