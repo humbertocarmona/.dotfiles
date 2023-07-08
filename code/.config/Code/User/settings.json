@@ -10,7 +10,7 @@
         "lua",
         "xml"
     ],
-    "editor.fontFamily": "Inconsolata Nerd Font Mono",
+    "editor.fontFamily": "RobotoMono Nerd Font Mono",
     "editor.lineHeight": 1.4,
     "editor.minimap.enabled": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -85,7 +85,6 @@
         "%TMPFILE%",
         "-y=defaultIndent: '%INDENT%'"
     ],
-    "latex-workshop.latex.autoBuild.run": "onSave",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
@@ -117,4 +116,6 @@
     "vim.neovimUseConfigFile": true,
     "latex-workshop.intellisense.citation.backend": "biblatex",
     "latex-workshop.kpsewhich.enabled": true,
+    "latex-workshop.latex.autoBuild.run":"onSave",
+    "latex-workshop.view.pdf.external.viewer.command": "zathura",
 }

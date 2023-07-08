@@ -116,7 +116,8 @@ end
 --add your own here if you want them to
 --show up in the popup as well
 wk.register({
-    ["b"] = { "<cmd>VimtexCompile<CR>", "Latex build" },
+    ["bb"] = { "<cmd>Telescope buffers<cr>", "files", { noremap = true } },
+    ["bc"] = { "<cmd>VimtexCompile<CR>", "Latex build" },
     ["v"] = { "<cmd>VimtexView<CR>", "Latex view" },
     ["i"] = { "<cmd>VimtexTocOpen<CR>", "Latex index" },
     ["c"] = { "<cmd>VimtexCountWords!<CR>", "Latex word count" },
@@ -206,7 +207,7 @@ wk.register({
             d = { vim.diagnostic.disable, "disable" },
             e = { vim.diagnostic.enable, "enable" },
         },
-        l = { "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", "LSP" },
+        l = { "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", "cmptoggle" },
         n = { ":Neogen<cr>", "neogen docstring" },
     },
     m = {
@@ -234,12 +235,6 @@ wk.register({
         e = { ":lua require'otter'.export()<cr>", "export" },
         E = { ":lua require'otter'.export(true)<cr>", "export overwrite" },
     },
-    s = {
-        name = "SURROUND",
-        s = { "<Plug>(nvim-surround-normal)", "surround" },
-        d = { "<Plug>(nvim-surround-delete)", "delete" },
-        c = { "<Plug>(nvim-surround-change)", "change" },
-    },
     t = {
         name = "Tex",
         c = { "<cmd>VimtexClean<CR>", "clean aux" },
@@ -247,9 +242,9 @@ wk.register({
             "<cmd>read ~/.config/nvim/templates/Letter.tex<CR>",
             "Letter.tex",
         },
-        g = {
-            "<cmd>read ~/.config/nvim/templates/Glossary.tex<CR>",
-            "Glossary.tex",
+        e = {
+            "<cmd>read ~/.config/nvim/templates/Prova.tex<CR>",
+            "Prova.tex",
         },
         h = {
             "<cmd>read ~/.config/nvim/templates/HandOut.tex<CR>",
@@ -267,11 +262,6 @@ wk.register({
             "<cmd>read ~/.config/nvim/templates/Root.tex<CR>",
             "Root.tex",
         },
-        m = {
-            "<cmd>read ~/.config/nvim/templates/MultipleAnswer.tex<CR>",
-            "MultipleAnswer.tex",
-        },
-        p = { '<cmd>lua require("nabla").popup()<CR>', "preview symbols" },
     },
     z = {
         name = "Spellcheck",

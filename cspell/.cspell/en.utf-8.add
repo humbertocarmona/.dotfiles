@@ -29,6 +29,7 @@ bottomleft
 campixel
 camrelative
 Carmona
+CD0343
 celld
 cgrad
 chanm
@@ -51,6 +52,8 @@ compat
 confint
 connectionstyle
 contourf
+CoV
+COVID
 cumsum
 cursorclass
 darkterrain
@@ -75,6 +78,7 @@ Eigenpair
 eigenproblem
 eigenstate
 eprop
+Erneson
 errorbar
 esbenp
 extedlow
@@ -101,6 +105,7 @@ frameon
 framestyle
 ftree
 FUNCAP
+geolocalizadas
 geopandas
 getlogger
 gridlaplacian
@@ -138,6 +143,8 @@ juliamarkdown
 jupyter
 Kalman
 Kanagawa
+Kleiber
+kshell
 labelfont
 labelpad
 labelsize
@@ -275,12 +282,15 @@ strokearound
 strokecolor
 strokewidth
 struct
+superlinear
+superpropagação
 superpropagadores
 Superpropagadores
 tablefmt
 tellheight
 tellwidth
 testset
+textcite
 textcoords
 textrm
 tightlimits
@@ -340,11 +350,3 @@ yticklabels
 ytickpos
 yticks
 zlim
-superpropagação
-kshell
-geolocalizadas
-COVID
-CoV
-Kleiber
-superlinear
-textcite

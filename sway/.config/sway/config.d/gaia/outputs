@@ -6,7 +6,7 @@
 set $display_external DP-1
 set $display_laptop eDP-1
 
-output $display_laptop scale 3 pos 0 280
+output $display_laptop scale 3 pos 3200 0
 output $display_external pos 1280 0 mode 1920x1080@75Hz
 
 # Disable main laptop screen

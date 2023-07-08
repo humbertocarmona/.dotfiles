@@ -1,4 +1,4 @@
-function latexclean
+function lc -d "clean latex"
     function USAGE
         echo "USAGE: latexclean --project projetc_name"
         echo ""
