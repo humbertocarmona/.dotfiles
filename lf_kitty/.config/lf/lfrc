@@ -127,6 +127,20 @@ cmd fzf_jump ${{
     [ ! -z $res ] && lf -remote " send $id $cmd \"$res\" "
 }}
 
+cmd fzf_jump_pwd ${{
+    res="$(fd -E .julia -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $PWD | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi 
+
+
+    [ ! -z $res ] && lf -remote " send $id $cmd \"$res\" "
+}}
+
 cmd fzf_search ${{
     res="$( \
         RG_PREFIX="rg --line-number --no-heading --color=always --smart-case "
@@ -257,7 +271,8 @@ map e
 map ee $editor "$f"
 map eu $view "$f"
 
-map f fzf_jump
+map / fzf_jump
+map f fzf_jump_pwd
 
 map ig add_gitignore
 map ir add_rsync_filter
