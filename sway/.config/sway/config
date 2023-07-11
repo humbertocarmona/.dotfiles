@@ -44,7 +44,8 @@ for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="org.kde.dolphin"] floating enable
 for_window [app_id="at.yrlf.wl_mirror"] fullscreen
 for_window [app_id="org.inkscape.Inkscape"] floating enable
-
+for_window [app_id="libreoffice-calc"] floating anable
+ 
 for_window [app_id="org.pwmt.zathura"] {
     floating enable
     resize set width 100ppt

@@ -1,21 +1,23 @@
+% ! Tex program=lualatex
 \documentclass[12pt]{exam}
 
-\usepackage[T1]{fontenc} % not needed for LuaTex
+% \usepackage[T1]{fontenc} % not needed for LuaTex
 \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
 \usepackage{wrapfig} % Allows in-line images
 
 % \usepackage{sans}
 \usepackage{mathpazo} % Use the Palatino font
 
-\usepackage[brazil]{babel}
+\usepackage{polyglossia} % aqui para o lualatex
+\setdefaultlanguage[variant=brazilian]{portuguese}
+
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath}
 
 \author{Humberto Carmona}
-\firstpageheader{CD0343 - FÍSICA II}{Departamento de Física \\
+\firstpageheader{Disciplina}{Departamento de Física \\
                 Universidade Federal do Ceará}{2023.2}
-\selectlanguage{portuguese}
 
 \begin{document}
 \vspace{0.5cm}
