@@ -19,7 +19,8 @@ alias td='tmux detach'
 alias tk='tmux kill-session'
 alias tl='tmux list-sessions'
 alias tn="tmux new -s (pwd | sed 's/.*\///g')"
-alias v='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
+alias vf='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
+alias v nvim
 alias zb='z ~/.config/waybar'
 alias zc='z ~/.config'
 alias zd='z ~/.dotfiles'
