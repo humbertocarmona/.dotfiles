@@ -19,10 +19,6 @@ return {
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = { "markdown" },
-                    -- additional_vim_regex_highlighting = false,
-                    -- note: the vim regex based highlighting from
-                    -- quarto-vim / vim-pandoc set the wrong comment character
-                    -- for some sections where there is `$` math.
                 },
                 indent = {
                     enable = true,

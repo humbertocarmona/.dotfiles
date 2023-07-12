@@ -39,8 +39,6 @@ return {
             })
         end,
     },
-    -- commenting with e.g. `gcc` or `gcip`
-    -- respects TS, so it works in quarto documents
     {
         "numToStr/Comment.nvim",
         version = nil,

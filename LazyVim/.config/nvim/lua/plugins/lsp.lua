@@ -85,8 +85,8 @@ return {
             lspconfig.marksman.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
-                filetypes = { "markdown", "quarto" },
-                root_dir = util.root_pattern(".git", ".marksman.toml", "_quarto.yml"),
+                filetypes = { "markdown" },
+                root_dir = util.root_pattern(".git", ".marksman.toml"),
             })
 
             local function strsplit(s, delimiter)
@@ -126,7 +126,6 @@ return {
                         diagnostics = {
                             globals = {
                                 "vim",
-                                "quarto",
                                 "pandoc",
                                 "io",
                                 "string",

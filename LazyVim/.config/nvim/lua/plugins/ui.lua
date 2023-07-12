@@ -65,7 +65,7 @@ return {
                     section_separators = "",
                     component_separators = "",
                     globalstatus = true,
-                    theme = "catppuccin",
+                    theme = "oh-my-monokai",
                 },
                 sections = {
                     lualine_a = { "mode", { macro_reg, type = "lua_expr", color = "WarningMsg" } },
@@ -247,6 +247,21 @@ return {
         event = "BufReadPre", -- this will only start session saving when an actual file was opened
         opts = {
             -- add any custom options here
+        },
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
         },
     },
 }

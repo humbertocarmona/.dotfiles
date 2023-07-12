@@ -11,7 +11,6 @@ vim.opt.sidescrolloff = 7
 vim.opt.shortmess:append("c")
 
 vim.g.markdown_fenced_languages = { "html", "python", "bash=sh", "R=r" }
-vim.opt.termguicolors = true
 
 -- more opinionated
 vim.opt.number = true -- show line numbers
@@ -39,7 +38,7 @@ vim.opt.smartcase = true
 
 -- color theme tweaks
 vim.g.nord_borders = true
-
+vim.opt.termguicolors = true
 -- indent
 vim.opt.smartindent = false
 vim.opt.breakindent = true
