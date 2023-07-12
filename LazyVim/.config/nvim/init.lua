@@ -10,6 +10,5 @@ else
     require("config.vimtex")
     require("config.lazy")
     require("config.keymap")
-    require("config.jukitmaps")
     require("config.autocommands")
 end

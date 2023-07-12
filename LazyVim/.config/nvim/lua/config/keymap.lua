@@ -141,10 +141,6 @@ wk.register({
     },
     d = {
         name = "Dev",
-        v = { "<Plug>SlimeConfig" },
-        c = { "<Plug>SlimeCellsSendAndGoToNext" },
-        j = { "<Plug>SlimeCellsNext" },
-        k = { "<Plug>SlimeCellsPrev" },
     },
     f = {
         name = "find (telescope)",
