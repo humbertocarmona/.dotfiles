@@ -16,12 +16,13 @@ return {
             })
         end,
     },
-    { "shaunsingh/nord.nvim" },
-    { "folke/tokyonight.nvim" },
-    { "EdenEast/nightfox.nvim" },
+    -- { "shaunsingh/nord.nvim" },
+    -- { "folke/tokyonight.nvim" },
+    -- { "EdenEast/nightfox.nvim" },
     {
         "catppuccin/nvim",
         name = "catppuccin",
+        event = "VeryLazy",
         config = function()
             require("catppuccin").setup({
                 flavour = "mocha", -- mocha, macchiato, frappe, latte

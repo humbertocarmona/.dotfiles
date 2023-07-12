@@ -37,9 +37,9 @@ nmap("<C-Right>", "<C-w>l")
 nmap("<C-/>", ":ToggleTerm<CR>")
 
 -- Add undo break-points
-imap(",", ",<c-g>u")
-imap(".", ".<c-g>u")
-imap(";", ";<c-g>u")
+-- imap(",", ",<c-g>u")
+-- imap(".", ".<c-g>u")
+-- imap(";", ";<c-g>u")
 
 local function switchTheme()
     if vim.o.background == "light" then
@@ -54,16 +54,6 @@ end
 -- Better buffer navigation
 nmap("<S-l>", ":bnext<CR>")
 nmap("<S-h>", ":bprevious<CR>")
-
--- nmap("<A-j>", ":MoveLine(1)<CR>")
--- nmap("<A-k>", ":MoveLine(-1)<CR>")
--- nmap("<A-h>", ":MoveHChar(-1)<CR>")
--- nmap("<A-l>", ":MoveHChar(1)<CR>")
---
--- vmap("<A-j>", ":MoveBlock(1)<CR>")
--- vmap("<A-k>", ":MoveBlock(-1)<CR>")
--- vmap("<A-h>", ":MoveHBlock(-1)<CR>")
--- vmap("<A-l>", ":MoveHBlock(1)<CR>")
 
 nmap("Q", "<Nop>")
 
@@ -151,14 +141,10 @@ wk.register({
     },
     d = {
         name = "Dev",
-        -- c = { ":IPythonCellExecuteCellJump<cr>" },
-        -- l = { ":IPythonCellClear<cr>" },
-        -- n = { ":IPythonCellNextCell<cr>" },
-        -- p = { ":IPythonCellPrevCell<cr>" },
-        -- v = { "<Plug>SlimeConfig" },
-        -- c = { "<Plug>SlimeCellsSendAndGoToNext" },
-        -- j = { "<Plug>SlimeCellsNext" },
-        -- k = { "<Plug>SlimeCellsPrev" },
+        v = { "<Plug>SlimeConfig" },
+        c = { "<Plug>SlimeCellsSendAndGoToNext" },
+        j = { "<Plug>SlimeCellsNext" },
+        k = { "<Plug>SlimeCellsPrev" },
     },
     f = {
         name = "find (telescope)",

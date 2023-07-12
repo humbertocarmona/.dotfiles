@@ -1,20 +1,5 @@
 return {
     {
-        "akinsho/bufferline.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("bufferline").setup({
-                options = {
-                    name_formatter = function(buf) return buf.name end,
-                    max_name_length = 15,
-                    max_prefix_length = 15,
-                },
-            })
-        end,
-    },
-    {
         "nvim-tree/nvim-tree.lua",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
@@ -264,4 +249,19 @@ return {
             "rcarriga/nvim-notify",
         },
     },
+    -- {
+    --     "akinsho/bufferline.nvim",
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     config = function()
+    --         require("bufferline").setup({
+    --             options = {
+    --                 name_formatter = function(buf) return buf.name end,
+    --                 max_name_length = 15,
+    --                 max_prefix_length = 15,
+    --             },
+    --         })
+    --     end,
+    -- },
 }

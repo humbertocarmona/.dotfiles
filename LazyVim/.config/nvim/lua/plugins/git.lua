@@ -1,17 +1,17 @@
 return {
-    {
-        "TimUntersberger/neogit",
-        lazy = true,
-        cmd = "Neogit",
-        config = function()
-            require("neogit").setup({
-                disable_commit_confirmation = true,
-                integrations = {
-                    diffview = true,
-                },
-            })
-        end,
-    },
+    -- {
+    --     "TimUntersberger/neogit",
+    --     lazy = true,
+    --     cmd = "Neogit",
+    --     config = function()
+    --         require("neogit").setup({
+    --             disable_commit_confirmation = true,
+    --             integrations = {
+    --                 diffview = true,
+    --             },
+    --         })
+    --     end,
+    -- },
     {
         "lewis6991/gitsigns.nvim",
         config = function() require("gitsigns").setup() end,
