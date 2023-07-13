@@ -10,9 +10,6 @@ return {
             vim.g.slime_dont_ask_default = 1
             vim.g.slime_bracketed_paste = 1
             vim.g.slime_no_mappings = 1
-            vim.keymap.set("n", "<leader>dc", "<Plug>SlimeCellsSendAndGoToNext", {})
-            vim.keymap.set("n", "<leader>dj", "<Plug>SlimeCellsNext", {})
-            vim.keymap.set("n", "<leader>dk", "<Plug>SlimeCellsPrev", {})
         end,
     },
     {

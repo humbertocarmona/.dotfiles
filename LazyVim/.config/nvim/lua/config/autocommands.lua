@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 ----------------------------------------------------------
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "help" },
-    callback = function() vim.keymap.set("n", "q", ":close<cr>", { buffer = true, silent = true, noremap = true }) end,
+    callback = function() vim.keymap.set("n", "<esc>", ":close<cr>", { buffer = true, silent = true, noremap = true }) end,
 })
 
 ----------------------------------------------------------
@@ -27,7 +27,63 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 ----------------------------------------------------------
--- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
---     pattern = { "*" },
---     command = "ASToggle",
--- })
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+local wk = require("which-key")
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "julia", "python" },
+    callback = function()
+        wk.register({
+            d = {
+                name = "Dev",
+                s = { "<Plug>SlimeCellsSendAndGoToNext", "Send cell" },
+                j = { "<Plug>SlimeCellsNext", "Next cell" },
+                k = { "<Plug>SlimeCellsPrev", "Previous cell" },
+            },
+        }, { mode = "n", prefix = "<leader>" })
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "tex" },
+    callback = function()
+        wk.register({
+            l = {
+                name = "Tex",
+                b = { ":VimtexCompile<cr>:", "Latex build" },
+                cw = { ":VimtexCountWords!<cr>:", "Latex word count" },
+                cc = { ":VimtexClean<cr>:", "Latex clean aux" },
+                i = { ":VimtexTocOpen<cr>:", "Latex index" },
+                r = {
+                    name = "Read",
+                    l = {
+                        ":read ~/.config/nvim/templates/Letter.tex<cr>:",
+                        "Letter.tex",
+                    },
+                    e = {
+                        ":read ~/.config/nvim/templates/Prova.tex<cr>:",
+                        "Prova.tex",
+                    },
+                    h = {
+                        ":read ~/.config/nvim/templates/HandOut.tex<cr>:",
+                        "HandOut.tex",
+                    },
+                    b = {
+                        ":read ~/.config/nvim/templates/PhilBeamer.tex<cr>:",
+                        "PhilBeamer.tex",
+                    },
+                    s = {
+                        ":read ~/.config/nvim/templates/SubFile.tex<cr>:",
+                        "SubFile.tex",
+                    },
+                    r = {
+                        ":read ~/.config/nvim/templates/Root.tex<cr>:",
+                        "Root.tex",
+                    },
+                },
+                v = { ":VimtexView<cr>:", "Latex view" },
+            },
+        }, { mode = "n", prefix = "<leader>" })
+    end,
+})
