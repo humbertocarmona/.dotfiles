@@ -5,12 +5,6 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 })
 
 ----------------------------------------------------------
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "help" },
-    callback = function() vim.keymap.set("n", "<esc>", ":close<cr>", { buffer = true, silent = true, noremap = true }) end,
-})
-
-----------------------------------------------------------
 vim.api.nvim_create_augroup("pandoc_syntax", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     pattern = { "*.md" },
@@ -30,6 +24,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 local wk = require("which-key")
+----------------------------------------------------------
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "help" },
+    callback = function() vim.keymap.set("n", "<esc>", ":close<cr>", { buffer = true, silent = true, noremap = true }) end,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "julia", "python" },
@@ -40,6 +39,7 @@ vim.api.nvim_create_autocmd("FileType", {
                 s = { "<Plug>SlimeCellsSendAndGoToNext", "Send cell" },
                 j = { "<Plug>SlimeCellsNext", "Next cell" },
                 k = { "<Plug>SlimeCellsPrev", "Previous cell" },
+                d = { ":Oil ~/.julia/dev<cr>", "Julia dev" },
             },
         }, { mode = "n", prefix = "<leader>" })
     end,
