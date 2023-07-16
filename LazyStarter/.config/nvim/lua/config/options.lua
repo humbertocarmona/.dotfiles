@@ -9,11 +9,11 @@ vim.g.maplocalleader = ","
 local opt = vim.opt
 
 opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 opt.textwidth = 80
-
+opt.colorcolumn = { 80 }
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99
-local spellfile = os.getenv("HOME") .. "/.cspell/en.utf-8.add"
 opt.spelllang = { "pt", "en" }
-opt.spellfile = spellfile

@@ -11,8 +11,13 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "gruvbox",
+            colorscheme = "tokyonight-night",
         },
+    },
+    -- colorizer
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function() require("colorizer").setup() end,
     },
     -- replace neo-tree by nvim-tree
     { "nvim-neo-tree/neo-tree.nvim", enabled = false },
@@ -32,7 +37,15 @@ return {
         },
         config = function() require("nvim-tree").setup({}) end,
     },
-
+    {
+        "rcarriga/nvim-notify",
+        opts = {
+            timeout = 3000,
+            max_height = function() return math.floor(vim.o.lines * 0.75) end,
+            max_width = function() return math.floor(vim.o.columns * 0.55) end,
+            background_colour = "#000000",
+        },
+    },
     {
         "folke/which-key.nvim",
         opts = {

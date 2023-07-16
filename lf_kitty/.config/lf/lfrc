@@ -309,7 +309,7 @@ map zf cd ~/.config/fish
 map zg lazy_git
 map zh cd ~/
 map zi fzf_jump_here
-map zj cd ~/.julia
+map zj cd ~/.julia/dev/
 map zl cd ~/.config/lf
 map zm cd /media/humberto/
 map zp cd ~/projects

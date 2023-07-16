@@ -1,20 +1,57 @@
-@define-color color0    #0c0c0c;
-@define-color color1    #780c0c;
-@define-color color2    #5a94a4;
-@define-color color3    #C0A36E;
-@define-color color5    #957FB8;
-@define-color color6    #6A9589;
-@define-color color7    #C8C093;
+/* @define-color color0    #0c0c0c; */
+/* @define-color color1    #780c0c; */
+/* @define-color color2    #5a94a4; */
+/* @define-color color3    #C0A36E; */
+/* @define-color color5    #957FB8; */
+/* @define-color color6    #6A9589; */
+/* @define-color color7    #C8C093; */
+
+/* @define-color color8  #727169; */
+/* @define-color color9  #E82424; */
+/* @define-color color10 #98BB6C; */
+/* @define-color color11 #E6C384; */
+/* @define-color color12 #7FB4CA; */
+/* @define-color color13 #938AA9; */
+/* @define-color color14 #7AA89F; */
+/* @define-color color15 #DCD7BA; */
+
+/*  tokyonight */
+
+@define-color foreground #a9b1d6;
+@define-color background #1a1b26;
 
 
-@define-color color8  #727169;
-@define-color color9  #E82424;
-@define-color color10 #98BB6C;
-@define-color color11 #E6C384;
-@define-color color12 #7FB4CA;
-@define-color color13 #938AA9;
-@define-color color14 #7AA89F;
-@define-color color15 #DCD7BA;
+/* # Black */
+@define-color color0 #414868;
+@define-color color8 #414868;
+
+/* # Red */
+@define-color color1 #f7768e;
+@define-color color9 #f7768e;
+
+/* # Green */
+@define-color color2  #73daca;
+@define-color color10 #73daca;
+
+/* # Yellow */
+@define-color color3  #e0af68;
+@define-color color11 #e0af68;
+
+/* # Blue */
+@define-color color4  #7aa2f7;
+@define-color color12 #7aa2f7;
+
+/* # Magenta */
+@define-color color5  #bb9af7;
+@define-color color13 #bb9af7;
+
+/* # Cyan */
+@define-color color6  #7dcfff;
+@define-color color14 #7dcfff;
+
+/* # White */
+@define-color color7  #c0caf5;
+@define-color color15 #c0caf5;
 
 
 /* Colors (gruvbox) */
@@ -37,7 +74,7 @@
 /* @define-color color15   #ebdbb2; */
 /* @define-color color16   #504945; */
 
-@define-color text      @color15;
+@define-color text      @foreground;
 
 @define-color warning 	@color9;
 @define-color critical	@color1;

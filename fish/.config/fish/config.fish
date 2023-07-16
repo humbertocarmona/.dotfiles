@@ -15,8 +15,6 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 set -U JULIA_LOAD_PATH $HOME/.julia/packages $JULIA_LOAD_PATH
 set -U JULIA_LOAD_PATH $HOME/projects/RL/random_laser_jl $JULIA_LOAD_PATH
 
-pyenv init - | source
-
 zoxide init fish | source
 source $HOME/.config/fish/fish_aliases
 
