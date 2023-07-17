@@ -3,11 +3,13 @@
 # For a list of devices run: swaymsg -t get_outputs
 # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 # Devices
-set $display_external DP-1
+set $display_external1 DP-1
+set $display_external3 DP-3
 set $display_laptop eDP-1
 
 output $display_laptop scale 3 pos 0 0
-output $display_external pos 1280 100
+output $display_external1 mode 1920x1080@60Hz
+output $display_external3 mode 1920x1080@60Hz
 
 # Disable main laptop screen
 bindsym $mod+F7 output $display_laptop disable
