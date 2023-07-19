@@ -7,11 +7,12 @@ return {
     { "ellisonleao/gruvbox.nvim" },
     { "folke/tokyonight.nvim" },
     { "EdenEast/nightfox.nvim" },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- Configure LazyVim to load gruvbox
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "tokyonight-night",
+            colorscheme = "catppuccin-mocha",
         },
     },
     -- colorizer
@@ -21,6 +22,10 @@ return {
     },
     -- replace neo-tree by nvim-tree
     { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+    {
+        "nvim-tree/nvim-web-devicons",
+        config = function() require("nvim-web-devicons").setup({}) end,
+    },
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
@@ -35,7 +40,19 @@ return {
                 desc = "NvimTree",
             },
         },
-        config = function() require("nvim-tree").setup({}) end,
+        config = function()
+            require("nvim-tree").setup({
+                view = {
+                    width = 30,
+                },
+                renderer = {
+                    group_empty = true,
+                },
+                filters = {
+                    dotfiles = true,
+                },
+            })
+        end,
     },
     {
         "rcarriga/nvim-notify",

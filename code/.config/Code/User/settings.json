@@ -105,7 +105,8 @@
         "-q",
         "-n21",
         "-n1",
-        "-n19"
+        "-n19",
+        "-n8"
     ],
     "vim.enableNeovim": true,
     "vim.neovimConfigPath": "~/.config/nvim/init.lua",

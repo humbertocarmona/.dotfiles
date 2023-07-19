@@ -1,4 +1,13 @@
 return {
+    {
+        "christoomey/vim-tmux-navigator",
+        keys = {
+            { "<C-h>", ": TmuxNavigateLeft<cr>", desc = "window left" },
+            { "<C-l>", ": TmuxNavigateRight<cr>", desc = "window right" },
+            { "<C-j>", ": TmuxNavigateDown<cr>", desc = "window down" },
+            { "<C-k>", ": TmuxNavigateUp<cr>", desc = "window up" },
+        },
+    },
     { "folke/flash.nvim", enabled = false },
     {
         "echasnovski/mini.surround",
@@ -17,10 +26,10 @@ return {
     {
         "lervag/vimtex",
         ft = { "tex", "latex" },
-        keys = {
-            { "<leader>cc", ":VimtexCompile<cr>", desc = "VimtexCompile" },
-            { "<leader>cv", ":VimtexView<cr>", desc = "VimtexView" },
-        },
+        -- keys = {
+        --     { "<leader>cc", ":VimtexCompile<cr>", desc = "VimtexCompile" },
+        --     { "<leader>cv", ":VimtexView<cr>", desc = "VimtexView" },
+        -- },
         config = function()
             vim.g.vimtex_view_method = "zathura"
             vim.g.vimtex_compiler_method = "latexmk"

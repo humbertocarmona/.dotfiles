@@ -1,5 +1,6 @@
 package colored-man-pages
 package config
+package https://github.com/catppuccin/fish
 package spark
 theme bobthefish
 theme cmorrell
