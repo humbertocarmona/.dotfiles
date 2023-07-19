@@ -1,7 +1,7 @@
 return {
     {
         "klafyvel/vim-slime-cells",
-        -- ft = { "julia", "python" },
+        ft = { "julia", "python" },
         dependencies = { "jpalardy/vim-slime" },
         keys = {
             { "<leader>cc", "<Plug>SlimeConfig", desc = "Slime config" },

@@ -215,5 +215,5 @@ exec nm-tray
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/$(hostname)/*
 exec_always ~/.config/waybar/waybar.sh
-output DP-3 bg /home/humberto/Pictures/Wallpapers/img_063.jpg fill
 output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_063.jpg fill
+output DP-1 bg /home/humberto/Pictures/Wallpapers/img_063.jpg fill
