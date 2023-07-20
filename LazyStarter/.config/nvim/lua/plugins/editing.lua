@@ -1,5 +1,18 @@
 return {
     {
+        "pocco81/auto-save.nvim",
+        lazy = true,
+        cmd = "ASToggle",
+        keys = {
+            { "<leader>a", ":ASToggle<cr>", desc = "auto-save" },
+        },
+        config = function()
+            require("auto-save").setup({
+                trigger_events = { "InsertLeave" },
+            })
+        end,
+    },
+    {
         "christoomey/vim-tmux-navigator",
         keys = {
             { "<C-h>", ": TmuxNavigateLeft<cr>", desc = "window left" },
