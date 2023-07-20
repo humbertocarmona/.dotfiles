@@ -1,5 +1,27 @@
 return {
     {
+        "hrsh7th/nvim-cmp",
+        dependencies = { "kdheepak/cmp-latex-symbols" },
+        opts = function(_, opts)
+            local cmp = require("cmp")
+            opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
+        end,
+    },
+    {
+        "echasnovski/mini.surround",
+        opts = {
+            mappings = {
+                add = "sa", -- Add surrounding in Normal and Visual modes
+                delete = "sd", -- Delete surrounding
+                find = "sf", -- Find surrounding (to the right)
+                find_left = "sF", -- Find surrounding (to the left)
+                highlight = "sh", -- Highlight surrounding
+                replace = "sr", -- Replace surrounding
+                update_n_lines = "sn", -- Update `n_lines`
+            },
+        },
+    },
+    {
         "klafyvel/vim-slime-cells",
         ft = { "julia", "python" },
         dependencies = { "jpalardy/vim-slime" },

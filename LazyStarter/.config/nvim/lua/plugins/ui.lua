@@ -1,57 +1,31 @@
 return {
     {
-        "xiyaowong/nvim-transparent",
-        config = function() require("transparent").setup() end,
-    },
-    -- add gruvbox
-    { "ellisonleao/gruvbox.nvim" },
-    { "folke/tokyonight.nvim" },
-    { "EdenEast/nightfox.nvim" },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    -- Configure LazyVim to load gruvbox
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "catppuccin-mocha",
-        },
-    },
-    -- colorizer
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function() require("colorizer").setup() end,
-    },
-    -- replace neo-tree by nvim-tree
-    { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-    {
-        "nvim-tree/nvim-web-devicons",
-        config = function() require("nvim-web-devicons").setup({}) end,
-    },
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        keys = {
-            {
-                "<leader>e",
-                ":NvimTreeToggle<cr>",
-                desc = "NvimTree",
-            },
-        },
-        config = function()
-            require("nvim-tree").setup({
-                view = {
-                    width = 30,
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    dotfiles = true,
-                },
-            })
+        "goolord/alpha-nvim",
+
+        opts = function()
+            local dashboard = require("alpha.themes.dashboard")
+            local logo = [[ Z z z z]]
+
+            dashboard.section.header.val = vim.split(logo, "\n")
+            dashboard.section.buttons.val = {
+                dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+                dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
+                dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+                dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
+                dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
+                dashboard.button("s", " " .. " Restore Session", [[:SessionRestore<cr>]]),
+                dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
+                dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+            }
+            for _, button in ipairs(dashboard.section.buttons.val) do
+                button.opts.hl = "AlphaButtons"
+                button.opts.hl_shortcut = "AlphaShortcut"
+            end
+            dashboard.section.header.opts.hl = "AlphaHeader"
+            dashboard.section.buttons.opts.hl = "AlphaButtons"
+            dashboard.section.footer.opts.hl = "AlphaFooter"
+            dashboard.opts.layout[1].val = 8
+            return dashboard
         end,
     },
     {

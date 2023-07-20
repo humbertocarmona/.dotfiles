@@ -21,21 +21,6 @@ return {
             { "<C-k>", ": TmuxNavigateUp<cr>", desc = "window up" },
         },
     },
-    { "folke/flash.nvim", enabled = false },
-    {
-        "echasnovski/mini.surround",
-        opts = {
-            mappings = {
-                add = "sa", -- Add surrounding in Normal and Visual modes
-                delete = "sd", -- Delete surrounding
-                find = "sf", -- Find surrounding (to the right)
-                find_left = "sF", -- Find surrounding (to the left)
-                highlight = "sh", -- Highlight surrounding
-                replace = "sr", -- Replace surrounding
-                update_n_lines = "sn", -- Update `n_lines`
-            },
-        },
-    },
     {
         "lervag/vimtex",
         ft = { "tex", "latex" },
@@ -55,12 +40,22 @@ return {
             vim.g.vimtex_context_pdf_viewer = "okular"
         end,
     },
+    { "folke/persistence.nvim", enabled = false },
     {
-        "hrsh7th/nvim-cmp",
-        dependencies = { "kdheepak/cmp-latex-symbols" },
-        opts = function(_, opts)
-            local cmp = require("cmp")
-            opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
+        "rmagatti/auto-session",
+        config = function()
+            require("auto-session").setup({
+                log_level = "error",
+                auto_session_suppress_dirs = { "~/", "~/projects/", "~/Downloads", "/" },
+                auto_session_enable_last_session = false,
+                auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
+                auto_session_enabled = true,
+                auto_save_enabled = true,
+                auto_restore_enabled = false,
+                auto_session_use_git_branch = nil,
+                -- the configs below are lua only
+                bypass_session_save_file_types = nil,
+            })
         end,
     },
 }
