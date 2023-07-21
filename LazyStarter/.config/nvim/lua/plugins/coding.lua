@@ -1,13 +1,5 @@
 return {
     {
-        "hrsh7th/nvim-cmp",
-        dependencies = { "kdheepak/cmp-latex-symbols" },
-        opts = function(_, opts)
-            local cmp = require("cmp")
-            opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
-        end,
-    },
-    {
         "echasnovski/mini.surround",
         opts = {
             mappings = {
@@ -23,6 +15,7 @@ return {
     },
     {
         "klafyvel/vim-slime-cells",
+
         ft = { "julia", "python" },
         dependencies = { "jpalardy/vim-slime" },
         keys = {
@@ -43,6 +36,26 @@ return {
             vim.g.slime_dont_ask_default = 1
             vim.g.slime_bracketed_paste = 1
             vim.g.slime_no_mappings = 1
+        end,
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+            config = function()
+                require("luasnip.loaders.from_vscode").lazy_load()
+                require("luasnip.loaders.from_vscode").lazy_load({
+                    paths = { "~/.config/nvim/snips" },
+                })
+            end,
+        },
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = { "kdheepak/cmp-latex-symbols" },
+        opts = function(_, opts)
+            local cmp = require("cmp")
+            opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
         end,
     },
 }

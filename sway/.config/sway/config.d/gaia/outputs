@@ -8,8 +8,8 @@ set $display_external3 DP-3
 set $display_laptop eDP-1
 
 output $display_laptop scale 3 pos 0 0
-output $display_external1 mode 1920x1080@60Hz
-output $display_external3 mode 1920x1080@60Hz
+output $display_external1 mode 1920x1080@60Hz pos 1280 50
+output $display_external3 mode 1920x1080@60Hz pos 1280 50
 
 # Disable main laptop screen
 bindsym $mod+F7 output $display_laptop disable

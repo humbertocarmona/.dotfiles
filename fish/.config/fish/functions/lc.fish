@@ -19,6 +19,10 @@ function lc -d "clean latex"
     end
 
     set -l main main
+    if test -e "Root.tex"
+        echo "found Root.tex"
+        set main Root
+    end
 
     if set -q _flag_p
         set main $argv
