@@ -19,5 +19,15 @@
         "prefix": "imath",
         "body": "\\($0\\)",
         "description": "insert inline math"
+    },
+    "Reference equation": {
+        "prefix": "eq.",
+        "body": "Eq.~\\eqref{eq:$1}$0",
+        "description": "insert reference to equation"
+    },
+    "Reference figure": {
+        "prefix": "fig.",
+        "body": "Fig.~\\ref{fig:$1}$0",
+        "description": "insert reference to figure"
     }
 }

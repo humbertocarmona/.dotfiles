@@ -64,4 +64,46 @@ return {
             })
         end,
     },
+    {
+        "stevearc/oil.nvim",
+        lazy = false,
+        opts = {
+            columns = {
+                "icon",
+                -- "permissions",
+                -- "size",
+                -- "mtime",
+            },
+        },
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        keys = {
+            { "<leader>-", ":lua require('oil').open()<cr>", desc = "open parent dir" },
+        },
+    },
+    {
+        "akinsho/bufferline.nvim",
+        opts = {
+            options = {
+                close_command = function(n) require("mini.bufremove").delete(n, false) end,
+                right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+                diagnostics = "nvim_lsp",
+                always_show_bufferline = false,
+                diagnostics_indicator = function(_, _, diag)
+                    local icons = require("lazyvim.config").icons.diagnostics
+                    local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+                        .. (diag.warning and icons.Warn .. diag.warning or "")
+                    return vim.trim(ret)
+                end,
+                offsets = {
+                    {
+                        filetype = "NvimTree",
+                        text = "NvimTree",
+                        highlight = "Directory",
+                        text_align = "left",
+                    },
+                },
+            },
+        },
+    },
 }

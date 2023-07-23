@@ -8,6 +8,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
+set $term2 alacritty
 set $launcher wofi --show drun
 set $wallpaper $HOME/Pictures/Wallpapers/img_010.jpg
 # set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
@@ -111,6 +112,7 @@ bindsym $mod+p exec $launcher
 bindsym $mod+v exec $ide
 bindsym $mod+Print exec $screenshot
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term2
 
 # Moving around
 # Move your focus around
@@ -215,5 +217,5 @@ exec nm-tray
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/$(hostname)/*
 exec_always ~/.config/waybar/waybar.sh
-output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_011.jpg fill
-output DP-1 bg /home/humberto/Pictures/Wallpapers/img_016.jpg fill
+output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_005.jpg fill
+output DP-1 bg /home/humberto/Pictures/Wallpapers/img_021.jpg fill

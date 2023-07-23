@@ -81,33 +81,42 @@ return {
                                 hint = icons.diagnostics.Hint,
                             },
                         },
-                        { "filetype", icon_only = false, separator = "", padding = { left = 1, right = 0 } },
-                        { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-        -- stylua: ignore
-        {
-          function() return require("nvim-navic").get_location() end,
-          cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-        },
+                        {
+                            "filetype",
+                            icon_only = false,
+                            separator = "",
+                            padding = { left = 1, right = 0 },
+                        },
+                        {
+                            "filename",
+                            path = 1,
+                            symbols = { modified = "  ", readonly = "", unnamed = "" },
+                        },
+                        -- stylua: ignore
+                        {
+                            function() return require("nvim-navic").get_location() end,
+                            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+                        },
                     },
                     lualine_x = {
-        -- stylua: ignore
-        {
-          function() return require("noice").api.status.command.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-          color = Util.fg("Statement"),
-        },
-        -- stylua: ignore
-        {
-          function() return require("noice").api.status.mode.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-          color = Util.fg("Constant"),
-        },
-        -- stylua: ignore
-        {
-          function() return "  " .. require("dap").status() end,
-          cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-          color = Util.fg("Debug"),
-        },
+                        -- stylua: ignore
+                        {
+                        function() return require("noice").api.status.command.get() end,
+                        cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+                        color = Util.fg("Statement"),
+                        },
+                        -- stylua: ignore
+                        {
+                        function() return require("noice").api.status.mode.get() end,
+                        cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+                        color = Util.fg("Constant"),
+                        },
+                        -- stylua: ignore
+                        {
+                        function() return "  " .. require("dap").status() end,
+                        cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+                        color = Util.fg("Debug"),
+                        },
                         {
                             require("lazy.status").updates,
                             cond = require("lazy.status").has_updates,
@@ -133,5 +142,21 @@ return {
                 extensions = { "neo-tree", "lazy" },
             }
         end,
+    },
+    {
+        "LazyVim/LazyVim",
+        keys = {
+            { "<leader>L", ":Lazy<cr>", desc = "lazyvim" },
+        },
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        keys = {
+            { "<leader>ft", ":ToggleTerm<cr>", desc = "toggleterm" },
+        },
+        opts = {
+            direction = "float",
+        },
     },
 }
