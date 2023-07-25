@@ -17,6 +17,7 @@ autofetch
 autopep
 axislegend
 backgroundcolor
+Barabási
 barplot
 basico
 betweeness
@@ -33,6 +34,7 @@ CD0343
 celld
 cgrad
 chanm
+chikungunya
 chktex
 cholesky
 citecolor
@@ -278,6 +280,7 @@ STACKSIZE
 stddev
 stephist
 stripmark
+Strogatz
 strokearound
 strokecolor
 strokewidth
@@ -349,6 +352,5 @@ ytick
 yticklabels
 ytickpos
 yticks
-zlim
-chikungunya
 zika
+zlim

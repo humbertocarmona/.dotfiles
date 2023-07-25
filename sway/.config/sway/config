@@ -49,18 +49,19 @@ for_window [app_id="org.qgis.qgis"] floating enable
 for_window [app_id="org.kde.dolphin"] floating enable
 for_window [app_id="org.kde.okular"] floating enable
 for_window [app_id="org.kde.gwenview"] floating enable
+for_window [app_id="org.pwmt.zathura"] floating enable
 
 for_window [app_id="python3"] floating enable
 for_window [app_id="xournalapp"] floating enable
 for_window [app_id="mirage"] floating enable
 
-# for_window [app_id="neovide"] {
-#     floating enable
-#     resize set width 100ppt
-#     resize set height 100ppt
-#     move position 22ppt 0
-#     resize set width 55ppt
-# }
+for_window [app_id="neovide"] {
+    floating enable
+    resize set width 100ppt
+    resize set height 100ppt
+    move position 22ppt 0
+    resize set width 55ppt
+}
 
 for_window [class="Matplotlib"] floating enable
 for_window [class="Gimp-2.10"] floating enable

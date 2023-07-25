@@ -92,7 +92,6 @@
     "workbench.colorCustomizations": {
     },
     "terminal.integrated.cursorStyle": "underline",
-    "editor.fontSize": 18,
     "terminal.integrated.fontSize": 16,
     "terminal.explorerKind": "external",
     "notebook.output.fontFamily": "Inconsolata Nerd Font Mono",
@@ -119,4 +118,6 @@
     "latex-workshop.kpsewhich.enabled": true,
     "latex-workshop.latex.autoBuild.run":"onSave",
     "latex-workshop.view.pdf.external.viewer.command": "zathura",
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    "git.enableSmartCommit": true,
 }

@@ -36,7 +36,7 @@ return {
             vim.g.tex_indent_brace = 0
             vim.g.tex_indent_items = 0
             vim.g.tex_flavor = "latex"
-            vim.g.vimtex_quickfix_enabled = 0
+            vim.g.vimtex_quickfix_enabled = 1
             vim.g.vimtex_context_pdf_viewer = "okular"
         end,
     },

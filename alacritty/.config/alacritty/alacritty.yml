@@ -188,7 +188,7 @@ draw_bold_text_with_bright_colors: false
 
 
 import:
-  - ~/.config/alacritty/colorthemes/gruvbox-dark.yml
+  - ~/.config/alacritty/themes/tokyo-night.yaml
 
 
 # cursor:

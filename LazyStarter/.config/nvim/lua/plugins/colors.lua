@@ -4,6 +4,16 @@ return {
         "norcalli/nvim-colorizer.lua",
         config = function() require("colorizer").setup() end,
     },
+    {
+        "folke/tokyonight.nvim",
+        opts = {
+            transparent = true,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent",
+            },
+        },
+    },
     -- transparent
     {
         "xiyaowong/nvim-transparent",
@@ -15,10 +25,10 @@ return {
     { "EdenEast/nightfox.nvim" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- Configure LazyVim to load gruvbox
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "catppuccin-mocha",
-        },
-    },
+    -- {
+    --     "LazyVim/LazyVim",
+    --     opts = {
+    --         colorscheme = "catppuccin-mocha",
+    --     },
+    -- },
 }
