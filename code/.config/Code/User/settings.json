@@ -88,7 +88,7 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.colorCustomizations": {
     },
     "terminal.integrated.cursorStyle": "underline",
@@ -120,4 +120,11 @@
     "latex-workshop.view.pdf.external.viewer.command": "zathura",
     "latex-workshop.latex.rootFile.useSubFile": false,
     "git.enableSmartCommit": true,
+    "vscode-neovim.mouseSelectionStartVisualMode": true,
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/",
+    "nvim-ui.nvimColorInsert": "#ffffff",
+    "nvim-ui.nvimColorNormal": "#F2EE9D",
+    "nvim-ui.nvimColorVisual": "#A1CCD1",
+    "glassit.alpha": 1,
+    "editor.fontSize": 16,
 }
