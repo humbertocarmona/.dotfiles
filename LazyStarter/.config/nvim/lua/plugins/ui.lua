@@ -151,9 +151,10 @@ return {
     },
     {
         "akinsho/toggleterm.nvim",
+        lazy = false,
         version = "*",
         keys = {
-            { "<leader>ft", ":ToggleTerm<cr>", desc = "toggleterm" },
+            { "<leader>ft", ":ToggleTerm<cr>", desc = "ToggleTerm" },
         },
         opts = {
             direction = "float",

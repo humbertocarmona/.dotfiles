@@ -1,7 +1,7 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
-    "mod": "dock",
+    // "mod": "dock",
     "exclusive": true,
     "passtrough": false,
     "gtk-layer-shell": true,
@@ -22,7 +22,7 @@
         "battery",
         "custom/language",
         "pulseaudio",
-        "network",
+        "network"
     ],
     "sway/window": {
         "max-length": 80,
@@ -37,21 +37,20 @@
         "max-length": 80
     },
     "hyprland/workspaces": {
+        "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "all-outputs": true,
-        "on-click": "activate",
-        "format": "{name}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "active": "",
-            "default": ""
-        }
+        "all-outputs": false
+        // "format-icons": {
+        //     "1": "",
+        //     "2": "",
+        //     "3": "",
+        //     "4": "",
+        //     "5": "",
+        //     "urgent": "",
+        //     "active": "",
+        //     "default": ""
+        // }
     },
     "clock": {
         "format": "{: %R   %d/%m}",
