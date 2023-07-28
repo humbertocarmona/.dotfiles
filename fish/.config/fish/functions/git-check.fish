@@ -1,12 +1,20 @@
 function git-check -d "check all git projects under pwd"
-    function USAGE
-        echo get-git
-    end
 
     function gitstatus
-        set -g __fish_git_prompt_char_dirtystate " "
+        set -g __fish_git_prompt_showdirtystate 1
+        set -g __fish_git_prompt_showuntrackedfiles 1
+        set -g __fish_git_prompt_showupstream informative
+        set -g __fish_git_prompt_showcolorhints 1
+        set -g __fish_git_prompt_use_informative_chars 1
+        set -g __fish_git_prompt_showdirtystate 1
         set -g __fish_git_prompt_char_untrackedfiles "?"
         set -l vcs (fish_vcs_prompt 2>/dev/null)
+        string match -qi "*.utf-8" -- $LANG $LC_CTYPE $LC_ALL
+        and set -g __fish_git_prompt_char_dirtystate ""
+        set -g __fish_git_prompt_char_untrackedfiles "?"
+
+        set -l vcs (fish_vcs_prompt 2>/dev/null)
+
         echo $vcs
     end
 
@@ -18,17 +26,16 @@ function git-check -d "check all git projects under pwd"
 
 
     if set -q _flag_h
-        USAGE
+        echo "check all git projects under pwd"
         return
     end
 
     set -l rootfolder $PWD
-    echo $rootfolder
     set -l gits (fd -H -t d .git)
     for folder in $gits
         cd $folder
         cd ..
-        echo -n $PWD
+        echo -n "$PWD :"
         gitstatus
         cd $rootfolder
     end

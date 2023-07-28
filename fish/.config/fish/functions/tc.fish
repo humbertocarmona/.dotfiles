@@ -1,7 +1,9 @@
-function t
+function tc
 
     if test (count $argv) -lt 1
-        echo "use 't some pattern'"
+        echo "this script creates a tmux session if it ∄"
+        echo "or creates a new one"
+        echo "usage: 'tc some-pattern'"
         return
     end
 

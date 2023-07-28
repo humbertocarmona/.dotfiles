@@ -1,4 +1,4 @@
-function d
+function dpat
 
     set -l target $argv
     if test (count $argv) -lt 1
