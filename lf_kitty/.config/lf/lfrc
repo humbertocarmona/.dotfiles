@@ -2,14 +2,14 @@ set shell zsh
 set shellopts '-euy'
 set ifs "\n"
 
-set nohidden on
+set nohidden 
 set previewer ~/.config/lf/lf_kitty_preview
 
 set cleaner ~/.config/lf/lf_kitty_clean
-set icons on
-set nodrawbox on
-set preview on
-set ignorecase on
+set icons true
+set nodrawbox 
+set preview true
+set ignorecase true
 # set ratios 1:2:3
 
 # leave some space at the top and the bottom of the screen
@@ -311,8 +311,8 @@ map zh cd ~/
 map zi fzf_jump_here
 map zj cd ~/.julia/dev/
 map zl cd ~/.config/lf
-map zm cd /media/humberto/
-map zp cd ~/projects
+map zm cd /run/media/humberto/
+map zp cd ~/Dev
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers

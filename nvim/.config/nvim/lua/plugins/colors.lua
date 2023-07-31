@@ -20,7 +20,8 @@ return {
         config = function() require("transparent").setup() end,
     },
     -- add gruvbox
-    { "ellisonleao/gruvbox.nvim" },
+    { "ellisonleao/gruvbox.nvim",
+    lazy = false},
     { "folke/tokyonight.nvim" },
     { "EdenEast/nightfox.nvim" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -28,7 +29,7 @@ return {
     -- {
     --     "LazyVim/LazyVim",
     --     opts = {
-    --         colorscheme = "catppuccin-mocha",
+    --         colorscheme = "gruvbox",
     --     },
     -- },
 }

@@ -58,4 +58,6 @@ return {
             opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
         end,
     },
+    {"elkowar/yuck.vim",
+    ft={"yuck"}}
 }
