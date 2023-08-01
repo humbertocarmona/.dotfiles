@@ -29,4 +29,5 @@ fish_vi_cursor
 #    eval /opt/conda/bin/conda "shell.fish" hook $argv | source
 #end
 # <<< conda initialize <<<
-source /opt/conda/etc/fish/conf.d/conda.fish
+# source /opt/conda/etc/fish/conf.d/conda.fish
+source $HOME/.venv/bin/activate.fish
