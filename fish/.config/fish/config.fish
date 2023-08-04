@@ -9,6 +9,7 @@ set -gx TEXMFHOME $HOME/.texmf
 set -U fish_user_paths $GOPATH/bin $fish_user_paths
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set -U fish_user_paths /usr/local/texlive/2023/bin/x86_64-linux $fish_user_paths
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
@@ -20,14 +21,11 @@ source $HOME/.config/fish/fish_aliases
 
 fish_vi_key_bindings
 fish_vi_cursor
-#fish_default_key_bindings
-#
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#if test -f /opt/conda/bin/conda
-#    eval /opt/conda/bin/conda "shell.fish" hook $argv | source
-#end
+if test -f /usr/bin/conda
+    eval /usr/bin/conda "shell.fish" hook $argv | source
+end
+conda activate py311
 # <<< conda initialize <<<
-# source /opt/conda/etc/fish/conf.d/conda.fish
-source $HOME/.venv/bin/activate.fish

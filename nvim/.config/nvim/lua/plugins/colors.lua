@@ -4,6 +4,15 @@ return {
         "norcalli/nvim-colorizer.lua",
         config = function() require("colorizer").setup() end,
     },
+    -- transparent
+    {
+        "xiyaowong/nvim-transparent",
+        config = function()
+            require("transparent").setup({
+                extra_groups = { "NormalFloat", "NvimTreeNormal" }, -- table: additional groups that should be cleared
+            })
+        end,
+    },
     {
         "folke/tokyonight.nvim",
         opts = {
@@ -14,22 +23,14 @@ return {
             },
         },
     },
-    -- transparent
     {
-        "xiyaowong/nvim-transparent",
-        config = function() require("transparent").setup() end,
+        "ellisonleao/gruvbox.nvim",
+        config = function() vim.g.gruvbox_transparent_bg = true end,
     },
-    -- add gruvbox
-    { "ellisonleao/gruvbox.nvim",
-    lazy = false},
-    { "folke/tokyonight.nvim" },
-    { "EdenEast/nightfox.nvim" },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    -- Configure LazyVim to load gruvbox
-    -- {
-    --     "LazyVim/LazyVim",
-    --     opts = {
-    --         colorscheme = "gruvbox",
-    --     },
-    -- },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "gruvbox",
+        },
+    },
 }

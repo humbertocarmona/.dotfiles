@@ -12,6 +12,7 @@ abbr rm 'rm -i'
 abbr v nvim
 abbr cf 'sudo nvim /etc/nixos/configuration.nix'
 abbr sw 'sudo nixos-rebuild switch'
+
 alias di='docker images'
 alias dp='docker ps -a'
 alias icat='kitty +kitten icat --transfer-mode file'
@@ -32,3 +33,4 @@ alias zp='z ~/Dev/'
 alias zv='z ~/.config/nvim'
 alias zy='z ~/.config/sway'
 alias pipup="pip list oudated --format=freeze | rg -v '^\-e' | cut -d= -f 1 | xargs -n1 pip install -U"
+alias logoutkde="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
