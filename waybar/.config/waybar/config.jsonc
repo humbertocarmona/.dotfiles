@@ -1,14 +1,13 @@
 {
     "layer": "top",
     "position": "top",
-    // "mod": "dock",
+    "mod": "dock",
     "exclusive": true,
     "passtrough": false,
-    "gtk-layer-shell": true,
+    "gtk-layer-shell": false,
     "height": 0,
     "modules-left": [
         "sway/workspaces",
-        "sway/mode",
         "sway/window"
     ],
     "modules-center": [
@@ -79,9 +78,9 @@
         }
     },
     "network": {
-        "interval": 30,
+        "interval": 5,
         "format": "{icon}",
-        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt": "{ipaddr} {icon}",
         "format-alt-click": "click-right",
         "format-icons": {
             "wifi": [
@@ -101,8 +100,8 @@
         "tooltip": false
     },
     "custom/language": {
-        "exec": "~/.config/waybar/scripts/get_keymap.sh",
-        "interval": 5,
+        "exec": "~/.config/waybar/scripts/get_keymap_hypr.sh",
+        "interval": 2,
         // "format": " {}",
         "format": "{}",
         "tooltip": false
@@ -124,15 +123,6 @@
         ],
         "max-length": 25
     },
-    // "custom/pomodoro": {
-    //     "exec": "i3-gnome-pomodoro status --format=waybar --show-seconds",
-    //     "return-type": "json",
-    //     "interval": 1,
-    //     "format": "{}",
-    //     "on-click": "i3-gnome-pomodoro toggle",
-    //     "on-middle-click": "i3-gnome-pomodoro stop",
-    //     "on-right-click": "i3-gnome-pomodoro start"
-    // },
     "cpu": {
         "interval": 30,
         "format": " {}%",
