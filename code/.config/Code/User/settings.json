@@ -10,7 +10,7 @@
         "lua",
         "xml"
     ],
-    "editor.fontFamily": "RobotoMono Nerd Font Mono",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.lineHeight": 1.4,
     "editor.minimap.enabled": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -23,9 +23,6 @@
     "git.confirmSync": false,
     "julia.execution.resultType": "inline, errors in REPL",
     "julia.lint.call": false,
-    "[julia]": {
-        "editor.defaultFormatter": "0h7z.vscode-julia-format"
-    },
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
     "ruff.path": [
@@ -50,35 +47,35 @@
     "rewrap.autoWrap.enabled": true,
     "editor.wordWrapColumn": 82,
     "latex-workshop.latex.recipes": [
-		{
-			"name": "latexmk (lualatex)",
-			"tools": [
-				"lualatexmk"
-			]
-		},
-		{
-			"name": "latexmk",
-			"tools": [
-				"latexmk"
-			]
-		},
-		{
-			"name": "latexmk (xelatex)",
-			"tools": [
-				"xelatexmk"
-			]
-		},
-		{
-			"name": "pdflatex -> bibtex -> pdflatex * 2",
-			"tools": [
-				"pdflatex",
-				"bibtex",
-				"pdflatex",
-				"pdflatex"
-			]
-		},
-	],
-	"latex-workshop.linting.chktex.enabled": true,
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex * 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.latexindent.args": [
         "-c",
         "%DIR%/",
@@ -88,9 +85,8 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "workbench.colorTheme": "Solarized Dark",
-    "workbench.colorCustomizations": {
-    },
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorCustomizations": {},
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.fontSize": 16,
     "terminal.explorerKind": "external",
@@ -107,24 +103,9 @@
         "-n19",
         "-n8"
     ],
-    "vim.enableNeovim": true,
-    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
-    "vim.camelCaseMotion.enable": true,
-    "vim.cursorStylePerMode.insert": "line",
-    "vim.cursorStylePerMode.normal": "block",
-    "vim.neovimPath": "/usr/bin/nvim",
-    "vim.neovimUseConfigFile": true,
     "latex-workshop.intellisense.citation.backend": "biblatex",
     "latex-workshop.kpsewhich.enabled": true,
-    "latex-workshop.latex.autoBuild.run":"onSave",
+    "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.view.pdf.external.viewer.command": "zathura",
-    "latex-workshop.latex.rootFile.useSubFile": false,
-    "git.enableSmartCommit": true,
-    "vscode-neovim.mouseSelectionStartVisualMode": true,
-    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/",
-    "nvim-ui.nvimColorInsert": "#ffffff",
-    "nvim-ui.nvimColorNormal": "#F2EE9D",
-    "nvim-ui.nvimColorVisual": "#A1CCD1",
-    "glassit.alpha": 1,
-    "editor.fontSize": 16,
+    "latex-workshop.latex.rootFile.useSubFile": false
 }

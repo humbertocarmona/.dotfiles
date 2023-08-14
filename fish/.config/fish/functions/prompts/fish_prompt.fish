@@ -17,7 +17,7 @@ function fish_prompt
     # ----------------------------------------------
 
     # ------------------ pwd -----------------------
-    echo (set_color cyan)" "(prompt_pwd -d 2 -D 1)" "
+    echo -n (set_color cyan)" "(prompt_pwd -d 1 -D 1)" "
     # ---------------------------------------------
 
 
@@ -25,7 +25,6 @@ function fish_prompt
     if [ $USER = root ]
         echo '# '
     else
-        #echo ' '
-        echo '> '
+        echo '& '
     end
 end

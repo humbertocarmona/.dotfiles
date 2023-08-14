@@ -22,6 +22,7 @@ barplot
 basico
 betweeness
 bgcolorlegend
+biblatex
 bibtex
 binarize
 blockmodel
@@ -147,6 +148,7 @@ jupyter
 Kalman
 Kanagawa
 Kleiber
+kpsewhich
 kshell
 labelfont
 labelpad
@@ -305,7 +307,9 @@ toarray
 topleft
 trimcols
 twocolumn
+typedefs
 typeof
+typeparameters
 UNIFOR
 urlcolor
 urldate
@@ -319,6 +323,7 @@ vline
 vmax
 vmin
 vprops
+whereop
 wireframe
 writejson
 xaxis
@@ -353,5 +358,6 @@ ytick
 yticklabels
 ytickpos
 yticks
+zathura
 zika
 zlim
