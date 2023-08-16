@@ -249,6 +249,7 @@ qtagg
 randn
 randperm
 randsubseq
+RANSAC
 rconly
 readboltzmann
 readcsv
@@ -263,6 +264,7 @@ rstart
 runin
 savefig
 scalefontsizes
+scatterplot
 scipy
 scrartcl
 seaborn
@@ -276,6 +278,7 @@ setlevel
 sinc
 sizex
 sizey
+sklearn
 slepc
 sout
 sprintf
@@ -320,6 +323,7 @@ utriangle
 vcat
 vcmap
 vline
+vlines
 vmax
 vmin
 vprops
@@ -329,6 +333,7 @@ writejson
 xaxis
 xelatex
 xelatexmk
+xfit
 xlabel
 xlim
 xlims
@@ -349,6 +354,7 @@ xytext
 yapf
 yaxis
 yerr
+yfit
 ylabel
 ylim
 ylims

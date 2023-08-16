@@ -1,6 +1,6 @@
 function fish_prompt
     set -l stcolor red
-    test $status = 0; and set stcolor normal
+    test $status = 0; and set stcolor purple
 
     # ----- [user@hostmbane] --------------------------
     echo -n (set_color blue)"["
