@@ -53,7 +53,7 @@ function rrsync -d "special rsync using .rsync-filter"
         return
     end
 
-    set cmd1 rsync $(echo --filter=\':- .rsync-filter\')
+    set cmd1 rsync $(echo --filter=\': .rsync-filter\')
     set cmd2 --no-perms
     set cmd3 $_flag_flags $_flag_from$_flag_project
     set cmd4 $_flag_to$_flag_project
