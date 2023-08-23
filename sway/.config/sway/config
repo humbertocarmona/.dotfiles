@@ -9,13 +9,10 @@ set $up k
 set $right l
 set $term kitty
 set $term2 alacritty
-set $launcher wofi --show drun
-set $wallpaper $HOME/Pictures/Wallpapers/img_010.jpg
-# set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
-# set $wallpaper /usr/share/wallpapers/moonlight/contents/images/1920x1080.svg
+set $launcher rofi -show drun
 set $filemgr dolphin
 set $screenshot grimshot --notify copy area
-set $browser google-chrome
+set $browser google-chrome-stable
 set $ide code
 ## gaps --------------------------------------------------------------------------- 
 gaps inner 8
@@ -84,13 +81,13 @@ for_window [window_type="menu"] floating enable
 # for_window [window_type="con"] floating enable
 # for_window [app_id="galculator"] floating enable
 # assign [class="^Urxvt$" instance="^htop$"] -> 9
-assign [app_id="at.yrlf.wl_mirror"] 2
-assign [app_id="org.inkscape.Inkscape"] 8
-assign [app_id="org.qgis.qgis"] 9
-assign [class="ParaView"] 9
-assign [class="krita"] 9
-assign [class="Gimp-2.10"] 9
-assign [class="Google-chrome"] 10
+# assign [app_id="at.yrlf.wl_mirror"] 2
+# assign [app_id="org.inkscape.Inkscape"] 8
+# assign [app_id="org.qgis.qgis"] 9
+# assign [class="ParaView"] 9
+# assign [class="krita"] 9
+# assign [class="Gimp-2.10"] 9
+# assign [class="Google-chrome"] 10
 # assign [window_role="browser"] 10
 
 ## Key bindings --------------------------------------------------------------- 

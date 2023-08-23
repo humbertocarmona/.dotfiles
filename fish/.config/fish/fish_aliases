@@ -23,7 +23,7 @@ abbr zj 'z ~/.julia/dev/'
 abbr zl 'z ~/.config/lf'
 abbr zp 'z ~/Dev/'
 abbr zv 'z ~/.config/nvim'
-abbr zy 'z ~/.config/hypr'
+abbr zy 'z ~/.config/sway'
 
 alias di='docker images'
 alias dp='docker ps -a'
