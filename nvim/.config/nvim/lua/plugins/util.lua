@@ -23,7 +23,7 @@ return {
     },
     {
         "lervag/vimtex",
-        ft = { "tex", "latex" },
+        --ft = { "tex", "latex" },
         -- keys = {
         --     { "<leader>cc", ":VimtexCompile<cr>", desc = "VimtexCompile" },
         --     { "<leader>cv", ":VimtexView<cr>", desc = "VimtexView" },
@@ -31,7 +31,6 @@ return {
         config = function()
             vim.g.vimtex_view_method = "zathura"
             vim.g.vimtex_compiler_method = "latexmk"
-
             vim.g.vimtex_mappings_enabled = 1
             vim.g.tex_indent_brace = 0
             vim.g.tex_indent_items = 0
@@ -46,8 +45,9 @@ return {
         config = function()
             require("auto-session").setup({
                 log_level = "error",
-                auto_session_suppress_dirs = { "~/", "~/projects/", "~/Downloads", "/" },
+                auto_session_suppress_dirs = { "~/Downloads", "/" },
                 auto_session_enable_last_session = false,
+                auto_session_last_session_dir = ".",
                 auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
                 auto_session_enabled = true,
                 auto_save_enabled = true,

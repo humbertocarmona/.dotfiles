@@ -46,6 +46,11 @@ return {
                 ":read ~/.config/nvim/templates/Subfiles/C-References.bib<cr>",
                 desc = "C-References.bib",
             },
+            {
+                "<leader>fH",
+                ":lua require('telescope.builtin').find_files({cwd='~/'})",
+                desc = "find from HOME",
+            },
         },
     },
     -- replace neo-tree by nvim-tree
@@ -106,7 +111,7 @@ return {
                 close_command = function(n) require("mini.bufremove").delete(n, false) end,
                 right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
                 diagnostics = "nvim_lsp",
-                always_show_bufferline = false,
+                always_show_bufferline = true,
                 diagnostics_indicator = function(_, _, diag)
                     local icons = require("lazyvim.config").icons.diagnostics
                     local ret = (diag.error and icons.Error .. diag.error .. " " or "")
