@@ -60,6 +60,7 @@ COVID
 cumsum
 cursorclass
 darkterrain
+dataframe
 dataframes
 datascience
 deleteat
@@ -70,7 +71,9 @@ dicpath
 dmax
 docstr
 documentclass
+dropna
 dtype
+dtypes
 eachcol
 eachindex
 eachrow
@@ -158,6 +161,7 @@ lastrowid
 latexindent
 latexmk
 latexmkrc
+latin
 legendfontsize
 legendposition
 lengthscale
@@ -180,6 +184,7 @@ makeschapterhead
 Makie
 mapreduce
 mapto
+mariadb
 markercolor
 markersize
 mathcal
@@ -190,6 +195,7 @@ matplotlib
 maxx
 maxy
 mcmc
+mdates
 Mersenne
 meshscatter
 microsecond
@@ -276,6 +282,7 @@ SEIR
 seriestype
 SESA
 setlevel
+simpledbf
 sinc
 sizex
 sizey
@@ -283,6 +290,8 @@ sklearn
 slepc
 sout
 sprintf
+sqlalchemy
+sqlite
 STACKSIZE
 stddev
 stephist

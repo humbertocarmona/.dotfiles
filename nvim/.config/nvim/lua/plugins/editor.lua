@@ -48,7 +48,7 @@ return {
             },
             {
                 "<leader>fH",
-                ":lua require('telescope.builtin').find_files({cwd='~/'})",
+                ":lua require('telescope.builtin').find_files({cwd='~/'})<cr>",
                 desc = "find from HOME",
             },
         },

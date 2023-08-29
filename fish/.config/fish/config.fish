@@ -6,6 +6,8 @@ set -gx BAT_THEME Catppuccin-mocha
 # set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git --ignore .cache -g ""'
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --color=always {}'"
 set -gx TEXMFHOME $HOME/.texmf
+set -x PYTHONPATH $PYTHONPATH $HOME/Dev/ESP/Mabell/src/
+
 set -U fish_user_paths $GOPATH/bin $fish_user_paths
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
@@ -22,4 +24,4 @@ source $HOME/.config/fish/fish_aliases
 fish_vi_key_bindings
 fish_vi_cursor
 source /opt/conda/etc/fish/conf.d/conda.fish
-conda activate py311
+# conda activate py311
