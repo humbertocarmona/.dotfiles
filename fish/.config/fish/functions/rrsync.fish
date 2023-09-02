@@ -4,7 +4,7 @@ function rrsync -d "special rsync using .rsync-filter"
         echo ""
     end
 
-    set -l options (fish_opt -s h -l help)
+    set -l options (fish_opt --short=h --long=help)
     set options $options (fish_opt --short=p --long=project --required-val)
     set options $options (fish_opt --short=f --long=from --required-val)
     set options $options (fish_opt --short=t --long=to --required-val)

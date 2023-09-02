@@ -122,6 +122,7 @@ heightrounded
 Hethcode
 Hethcote
 hiperparâmetros
+histplot
 hrsh7th
 humberto
 icell
@@ -209,6 +210,7 @@ mouseposition
 mplstyle
 multiflip
 mysql
+nbins
 ncols
 ndarray
 neovim
@@ -282,6 +284,8 @@ SEIR
 seriestype
 SESA
 setlevel
+sharex
+sharey
 simpledbf
 sinc
 sizex
@@ -345,6 +349,7 @@ xaxis
 xelatex
 xelatexmk
 xfit
+xlab
 xlabel
 xlim
 xlims
@@ -366,6 +371,7 @@ yapf
 yaxis
 yerr
 yfit
+ylab
 ylabel
 ylim
 ylims

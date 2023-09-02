@@ -1,6 +1,6 @@
 function lc -d "clean latex"
     function USAGE
-        echo "USAGE: latexclean --project projetc_name"
+        echo "USAGE: latexclean --project main_file (without extension)"
         echo ""
     end
 
@@ -22,6 +22,19 @@ function lc -d "clean latex"
     if test -e "Root.tex"
         echo "found Root.tex"
         set main Root
+    end
+
+    for file in (fd -t f -e tex)
+        set -l first_line (head -n 1 $file)
+        set -l root_filename (string match -r '% ?!TEX root ?= ?(.+)$' -- $first_line)
+
+        # Check if root_filename is empty
+        if test -n "$root_filename"
+            echo "root filename is $root_filename[2]"
+            set main (string split "." $root_filename[2])
+        else
+            echo "No root filename found."
+        end
     end
 
     if set -q _flag_p
