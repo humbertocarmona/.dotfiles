@@ -39,4 +39,23 @@ function git-check -d "check all git projects under pwd"
         gitstatus
         cd $rootfolder
     end
+
+    while true
+        read -l -P "auto commit and push? (Y/n)" reply
+        switch $reply
+            case Y y
+                for folder in $gits
+                    cd $folder
+                    cd ..
+                    echo -n "$PWD :"
+                    git commit -a -m "auto commit"
+                    git push origin main
+                    gitstatus
+                    cd $rootfolder
+                end
+                return 0
+            case '' N n
+                return 1
+        end
+    end
 end
