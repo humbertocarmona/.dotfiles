@@ -221,3 +221,4 @@ include ~/.config/sway/config.d/$(hostname)/*
 exec_always ~/.config/waybar/waybar.sh
 output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_020.jpg fill
 output DP-1 bg /home/humberto/Pictures/Wallpapers/img_025.jpg fill
+output HDMI-A-2 bg /home/humberto/Pictures/Wallpapers/img_020.jpg fill
