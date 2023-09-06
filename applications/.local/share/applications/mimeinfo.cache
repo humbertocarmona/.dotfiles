@@ -1,1 +1,16 @@
 [MIME Cache]
+application/pdf=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+application/rdf+xml=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+application/rss+xml=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+application/xhtml+xml=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+application/xhtml_xml=google-chrome.desktop;
+application/xml=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+image/gif=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+image/jpeg=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+image/png=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+image/webp=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+text/html=cal-share-applications-google-chrome.desktop;google-chrome.desktop;
+text/xml=google-chrome.desktop;
+x-scheme-handler/eclipse+command=_usr_share_dbeaver-ce_.desktop;
+x-scheme-handler/http=google-chrome.desktop;
+x-scheme-handler/https=google-chrome.desktop;

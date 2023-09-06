@@ -91,18 +91,17 @@
     background: transparent;
     border: none;
     border-radius: 0;
-	min-height: 0;
 	margin: 0;
 	padding: 0;
 	box-shadow: none;
 	text-shadow: none;
 }
-
+/* -gtk-icon-shadow: none; */
 #waybar {
     background: rgba(20,30,40,0.7);
     color: @text;
     font-family: RobotoMono, MesloLGM;
-    font-size: 10pt;
+    font-size: 6pt;
 }
 
 
@@ -112,6 +111,7 @@
 #workspaces button {
     color: @focused ; 
     padding: 4pt;
+    font-size: 8pt
 }
 
 #workspaces button.visible {
@@ -135,9 +135,10 @@
 
 #window {
     color: @text;
-    border-radius: 0px;
+    border-radius: 3px;
     margin-left: 60px;
     margin-right: 60px;
+    font-size: 6pt;
 }
 #custom-pomodoro {
     color: @pomodoro;
@@ -148,32 +149,35 @@
     color: @battery;
     margin-left: 0px;
     margin-right: 10px;
-    font-size: 18pt
+    font-size: 6pt
 }
 
 #custom-language {
     color: @layout;
     margin-left: 0px;
     margin-right: 10px;
+    font-size: 6pt
 }
 
 #pulseaudio {
     color: @pulseaudio;
     margin-left: 0px;
     margin-right: 10px;
+    font-size: 6pt;
 }
 
 #network {
     color: @network;
     margin-left: 0px;
     margin-right: 10px;
-    font-size: 18pt;
+    font-size: 8pt;
 }
 
 #clock {
     color: @clock;
     margin-left: 10px;
     margin-right: 0px;
+    font-size: 6pt;
 }
 
 #custom-pomodoro.paused {
@@ -187,7 +191,8 @@
 #tray {
     margin-left:10pt;
     margin-right: 10pt;
-    color: @tray
+    color: @tray;
+    font-size: 6pt;
 }
 
 #cpu {

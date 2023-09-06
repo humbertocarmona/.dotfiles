@@ -4,7 +4,7 @@
     "mod": "dock",
     "exclusive": true,
     "passtrough": false,
-    "gtk-layer-shell": false,
+    "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
         "sway/workspaces",
@@ -65,11 +65,11 @@
         // }
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": "{:   %R     %d/%m}",
+        "tooltip-format": "{:%Y %B} <tt> <small> {calendar} </small></tt>"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}   {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
         "on-click": "kitty --class 'pulsemixer' -e pulsemixer",
@@ -149,8 +149,8 @@
         "max-length": 10
     },
     "tray": {
-        "icon-size": 18,
-        "tooltip": false,
-        "spacing": 10
+        "icon-size": 14,
+        "tooltip": true,
+        "spacing": 12
     }
 }

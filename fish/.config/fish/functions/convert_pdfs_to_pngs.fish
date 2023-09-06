@@ -1,12 +1,15 @@
-function convert_pdfs_to_pngs -a pattern
-    fd -e pdf -x echo {} | grep -E "$pattern" | while read file
-        set name (basename "$file" .pdf)
-        set output_file "$name.png"
-        if not test -f $output_file
-            echo "Converting $file to $output_file"
-            convert -density 300 -quality 100 "$file" "$output_file"
+function convert_pdfs_to_pngs
+    set regex_pattern $argv[1]
+
+    for file in (fd -t f -e pdf | rg -e $regex_pattern)
+        set base_name (basename $file .pdf)
+        set output_file $base_name.png
+
+        if not test -e $output_file
+            convert -density 300 $file -quality 100 $output_file
+            echo "Converted $file to $output_file"
         else
-            echo "$output_file already exists"
+            echo "File $output_file already exists, skipping..."
         end
     end
 end

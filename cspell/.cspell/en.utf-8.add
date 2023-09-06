@@ -153,6 +153,7 @@ jupyter
 Kalman
 Kanagawa
 Kleiber
+Kolmogorov
 kpsewhich
 kshell
 labelfont
@@ -292,6 +293,7 @@ sizex
 sizey
 sklearn
 slepc
+Smirnov
 sout
 sprintf
 sqlalchemy
