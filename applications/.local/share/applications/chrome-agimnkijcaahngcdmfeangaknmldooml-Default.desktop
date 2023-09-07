@@ -8,12 +8,12 @@ Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=agimn
 Icon=chrome-agimnkijcaahngcdmfeangaknmldooml-Default
 NoDisplay=true
 StartupWMClass=crx_agimnkijcaahngcdmfeangaknmldooml
-Actions=Explore;Subscriptions
+Actions=Explorar;Inscri--es
 
-[Desktop Action Explore]
-Name=Explore
+[Desktop Action Explorar]
+Name=Explorar
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml "--app-launch-url-for-shortcuts-menu-item=https://www.youtube.com/feed/explore?feature=app_shortcuts"
 
-[Desktop Action Subscriptions]
-Name=Subscriptions
+[Desktop Action Inscri--es]
+Name=Inscrições
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml "--app-launch-url-for-shortcuts-menu-item=https://www.youtube.com/feed/subscriptions?feature=app_shortcuts"

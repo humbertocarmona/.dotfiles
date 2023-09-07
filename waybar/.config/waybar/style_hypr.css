@@ -1,0 +1,209 @@
+
+
+/* Colors (gruvbox) */
+/* @define-color color0    #282828; */
+/* @define-color color1    #cc241d; */
+/* @define-color color2    #98971a; */
+/* @define-color color3    #d79921; */
+/* @define-color color4    #458588; */
+/* @define-color color5    #b16286; */
+/* @define-color color6    #689d6a; */
+/* @define-color color7    #a89984; */
+/**/
+/* @define-color color8    #928374; */
+/* @define-color color9    #fb4934; */
+/* @define-color color10   #b8bb26; */
+/* @define-color color11   #fabd2f; */
+/* @define-color color12   #83a598; */
+/* @define-color color13   #d3869b; */
+/* @define-color color14   #8ec07c; */
+/* @define-color color15   #ebdbb2; */
+/* @define-color color16   #504945; */
+
+
+/*  tokyonight */
+@define-color foreground #a9b1d6;
+@define-color background #1a1b26;
+
+
+/* # Black */
+@define-color color0 #414868;
+@define-color color8 #414868;
+
+/* # Red */
+@define-color color1 #f7768e;
+@define-color color9 #f7768e;
+
+/* # Green */
+@define-color color2  #73daca;
+@define-color color10 #73daca;
+
+/* # Yellow */
+@define-color color3  #e0af68;
+@define-color color11 #e0af68;
+
+/* # Blue */
+@define-color color4  #7aa2f7;
+@define-color color12 #7aa2f7;
+
+/* # Magenta */
+@define-color color5  #bb9af7;
+@define-color color13 #bb9af7;
+
+/* # Cyan */
+@define-color color6  #7dcfff;
+@define-color color14 #7dcfff;
+
+/* # White */
+@define-color color7  #c0caf5;
+@define-color color15 #c0caf5;
+
+
+
+@define-color text      @foreground;
+
+@define-color warning 	@color9;
+@define-color critical	@color1;
+
+@define-color mode	    @color0;
+
+@define-color unfocused	@color2;
+@define-color focused	@color0;
+@define-color inactive	@color0;
+@define-color hover	    @color4;
+
+
+@define-color sound	    @color13;
+@define-color network	@color5;
+@define-color memory	@color15;
+@define-color cpu	    @color6;
+@define-color temp	    @color14;
+@define-color layout	@color11;
+@define-color language	@color11;
+@define-color battery	@color12;
+@define-color clock     @color15;
+@define-color tray      @color15;
+@define-color pomodoro  @color14;
+
+
+
+/* reset all */
+* {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+}
+/* -gtk-icon-shadow: none; */
+#waybar {
+    background: rgba(20,30,40,0.7);
+    color: @text;
+    font-family: RobotoMono, MesloLGM;
+    font-size: 10pt;
+}
+
+
+/* ------  workspace ---------------------*/
+
+
+#workspaces button {
+    color: @focused ; 
+    padding: 4pt;
+    font-size: 12pt
+}
+
+#workspaces button.visible {
+    color: @unfocused;
+}
+
+#workspaces button.active{
+    color: @focused;
+}
+
+#workspaces button.urgent {
+    color: @warning;
+}
+
+#workspaces button:hover {
+    color: @hover;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+
+#window {
+    color: @text;
+    border-radius: 3px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 10pt;
+}
+#custom-pomodoro {
+    color: @pomodoro;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+#battery {
+    color: @battery;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 10pt
+}
+
+#custom-language {
+    color: @layout;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 10pt
+}
+
+#pulseaudio {
+    color: @pulseaudio;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 10pt;
+}
+
+#network {
+    color: @network;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 12pt;
+}
+
+#clock {
+    color: @clock;
+    margin-left: 10px;
+    margin-right: 0px;
+    font-size: 10pt;
+}
+
+#custom-pomodoro.paused {
+  border-bottom: 3px solid @warning;
+}
+
+#mode {
+    color: @mode;
+}
+
+#tray {
+    margin-left:10pt;
+    margin-right: 10pt;
+    color: @tray;
+    font-size: 10pt;
+}
+
+#cpu {
+    background: transparent;
+    color: @cpu;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+#memory {
+    color: @memory;
+    margin-left: 0px;
+    margin-right: 10px;
+}
