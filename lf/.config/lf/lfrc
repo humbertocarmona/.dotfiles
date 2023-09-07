@@ -244,6 +244,9 @@ cmd zip %{{
     zip -r $f $f
 }}
 
+cmd docx-preview ${{
+    pandoc -t plain "$fx" | less
+}}
 
 # bindings 
 
@@ -269,6 +272,7 @@ map dg dragon-target
 map dr dragon
 map ds dragon-stay
 map dt trash
+map dc docx-preview
 
 map e
 map ee $editor "$f"

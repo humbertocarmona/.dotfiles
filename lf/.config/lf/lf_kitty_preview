@@ -52,6 +52,9 @@ handle_extension() {
 			krita --export --export-filename "${CACHE}.png" "$FILE_PATH"
 		display_image "${CACHE}.png"
 		;;
+	docx)
+		pandoc -t plain ${FILE_PATH} | bat
+		;;
 	esac
 }
 
