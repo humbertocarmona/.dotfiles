@@ -12,8 +12,8 @@
 
     "modules-left": ["wlr/workspaces"],
     // "modules-right": ["temperature","network","battery","custom/ss","custom/cycle_wall","custom/expand","cpu","clock"],
-    "modules-right": ["battery","custom/ss","custom/cycle_wall","keyboard-state", "custom/expand","tray"],
-    "modules-center": ["custom/dynamic_pill","clock"],
+    "modules-right": ["battery","pulseaudio", "custom/ss","custom/cycle_wall","keyboard-state", "custom/expand","tray","clock"],
+    "modules-center": ["custom/dynamic_pill"],
 
 
     // custom modules ////////////////
@@ -66,10 +66,10 @@
         "format": "{icon}",
         "format-active": " {icon} ",
         "on-click": "activate",
-        "all-outputs": true
-        // "format-icons":{
-        //     "10":"10"
-        // }
+        "all-outputs": true,
+        "format-icons":{
+             "10":"10"
+        }
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
