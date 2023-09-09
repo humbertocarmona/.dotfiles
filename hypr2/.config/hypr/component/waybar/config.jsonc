@@ -18,9 +18,8 @@
         "clock"
     ],
     "modules-right": [
-        "mpd",
         "battery",
-        "custom/ss",
+        //"custom/ss",
         "custom/cycle_wall",
         "custom/language",
         "custom/expand",

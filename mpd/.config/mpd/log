@@ -1,0 +1,60 @@
+Sep 09 10:55 : state_file: Loading state file /home/humberto/.config/mpd/state
+Sep 09 10:55 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Sep 09 10:55 : exception: Failed to read from /home/humberto/.config/mpd/state: Is a directory
+Sep 09 10:55 : inotify: initializing inotify
+Sep 09 10:55 : inotify: watching music directory
+Sep 09 10:55 : client: [0] opened from [::1]:50208
+Sep 09 10:55 : client: [0] process command "status"
+Sep 09 10:55 : client: [0] command returned 0
+Sep 09 10:55 : client: [0] process command "currentsong"
+Sep 09 10:55 : client: [0] command returned 0
+Sep 09 10:55 : client: [1] opened from [::1]:50218
+Sep 09 10:55 : client: [1] process command "status"
+Sep 09 10:55 : client: [1] command returned 0
+Sep 09 10:55 : client: [1] process command "currentsong"
+Sep 09 10:55 : client: [1] command returned 0
+Sep 09 10:55 : client: [0] process command "status"
+Sep 09 10:55 : client: [0] command returned 0
+Sep 09 10:55 : client: [0] process command "currentsong"
+Sep 09 10:55 : client: [0] command returned 0
+Sep 09 10:55 : client: [0] process command "idle playlist player options"
+Sep 09 10:55 : client: [0] command returned 1
+Sep 09 10:55 : client: [1] process command "status"
+Sep 09 10:55 : client: [1] command returned 0
+Sep 09 10:55 : client: [1] process command "currentsong"
+Sep 09 10:55 : client: [1] command returned 0
+Sep 09 10:55 : client: [1] process command "idle playlist player options"
+Sep 09 10:55 : client: [1] command returned 1
+Sep 09 10:57 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Sep 09 10:57 : state_file: Loading state file /home/humberto/.config/mpd/state
+Sep 09 10:57 : exception: Failed to read from /home/humberto/.config/mpd/state: Is a directory
+Sep 09 10:57 : inotify: initializing inotify
+Sep 09 10:57 : inotify: watching music directory
+Sep 09 10:57 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Sep 09 10:57 : state_file: Loading state file /home/humberto/.config/mpd/state
+Sep 09 10:57 : exception: Failed to read from /home/humberto/.config/mpd/state: Is a directory
+Sep 09 10:57 : inotify: initializing inotify
+Sep 09 10:57 : inotify: watching music directory
+Sep 09 10:58 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Sep 09 10:58 : state_file: Loading state file /home/humberto/.config/mpd/state
+Sep 09 10:58 : exception: Failed to read from /home/humberto/.config/mpd/state: Is a directory
+Sep 09 10:58 : inotify: initializing inotify
+Sep 09 10:58 : inotify: watching music directory
+Sep 09 11:08 : state_file: Saving state file /home/humberto/.config/mpd/state
+Sep 09 11:08 : signal_handlers: got SIGHUP, reopening log files and flushing caches
+Sep 09 11:08 : log: Cycling log files
+Sep 09 11:08 : log: Done cycling log files
+Sep 09 11:08 : state_file: Saving state file /home/humberto/.config/mpd/state
+Sep 09 11:08 : exception: Failed to commit /home/humberto/.config/mpd/state: File exists
+Sep 09 11:08 : exception: Failed to commit /home/humberto/.config/mpd/state: File exists
+Sep 09 11:08 : fifo_output: Removing FIFO "/tmp/mpd.fifo"
+Sep 09 11:08 : signal_handlers: got SIGHUP, reopening log files and flushing caches
+Sep 09 11:08 : log: Cycling log files
+Sep 09 11:08 : log: Done cycling log files
+Sep 09 11:08 : state_file: Saving state file /home/humberto/.config/mpd/state
+Sep 09 11:08 : exception: Failed to commit /home/humberto/.config/mpd/state: File exists
+Sep 09 11:08 : signal_handlers: got SIGHUP, reopening log files and flushing caches
+Sep 09 11:08 : log: Cycling log files
+Sep 09 11:08 : log: Done cycling log files
+Sep 09 11:08 : state_file: Saving state file /home/humberto/.config/mpd/state
+Sep 09 11:08 : exception: Failed to commit /home/humberto/.config/mpd/state: File exists

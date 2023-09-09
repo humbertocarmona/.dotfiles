@@ -209,17 +209,26 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 25%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 25%+
 
+
+
 # exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 exec insync start
-exec swaync
-exec udiskie -t
-# exec nm-tray
-exec nm-applet --indicator & disown
 
+exec dunst
+# exec swaync
+
+exec udiskie -t
+exec nm-applet --indicator & disown
+exec waypaper --restore --backend swww
+
+# other
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/$(hostname)/*
-exec_always ~/.config/waybar/waybar.sh
-output eDP-1 bg /home/humberto/Pictures/Wallpapers/img_020.jpg fill
-output DP-1 bg /home/humberto/Pictures/Wallpapers/img_025.jpg fill
-output HDMI-A-2 bg /home/humberto/Pictures/Wallpapers/img_020.jpg fill
+
+# exec_always ~/.config/waybar/waybar.sh
+# output eDP-1 bg /home/humberto/Pictures/Wallpapers/altinopolis.jpg fill
+# output DP-1 bg /home/humberto/Pictures/Wallpapers/img_017.jpg fill
+# output HDMI-A-2 bg /home/humberto/Pictures/Wallpapers/img_020.jpg fill
