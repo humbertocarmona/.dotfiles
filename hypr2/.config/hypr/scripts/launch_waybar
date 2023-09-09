@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+config=$HOME/.config/hypr/component/waybar
+
+waybar -c $config/config.jsonc -s $config/style.css &
