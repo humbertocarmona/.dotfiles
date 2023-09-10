@@ -12,7 +12,8 @@ set $term2 alacritty
 set $launcher rofi -show drun
 set $filemgr dolphin
 set $screenshot grimshot --notify copy area
-set $browser google-chrome-stable
+set $browser1 google-chrome-stable
+set $browser2 microsoft-edge-stable
 set $ide code
 ## gaps --------------------------------------------------------------------------- 
 gaps inner 8
@@ -109,7 +110,7 @@ bindsym $mod+Shift+Print exec swaymsg "output eDP-1 power toggle"
 bindsym $mod+Shift+Delete exec 'systemctl poweroff'
 
 # Start applications
-bindsym $mod+b exec $browser
+bindsym $mod+b exec $browser1
 bindsym $mod+e exec $filemgr
 bindsym $mod+p exec $launcher
 bindsym $mod+v exec $ide

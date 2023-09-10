@@ -9,16 +9,12 @@ dunst &
 
 # waybar
 $scripts/launch_waybar &
-$scripts/tools/dynamic &
 
 # wallpaper
 # $scripts/wall $config/wallpapers/4.jpg &
 waypaper --restore --backend swww
 
 nm-applet &
-
-# effects
-$scripts/rgb &
 
 # other
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
