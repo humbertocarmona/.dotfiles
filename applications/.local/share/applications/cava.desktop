@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=cava
+Comment=soung 
+Icon=/home/humberto/.local/share/applications/cava.png
+Exec=kitty --class=cava -e /usr/bin/cava
+Terminal=false
+
