@@ -27,15 +27,21 @@
     ],
     // Modules configuration
     "hyprland/workspaces": {
-        "on-click": "activate",
-        "all-outputs": true,
+        // "on-click": "activate",
+        "disable-scroll": true,
+        "all-outputs": false,
         "format": "{name}: {icon}",
+        "disable-auto-back-and-forth": true,
         "format-icons": {
             "1": "",
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "󰽉",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -123,8 +129,9 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60,
-        "format": "{:%I:%M}",
-        "max-length": 25
+        "format": "{:%B %d, %I:%M}",
+        "max-length": 25,
+        "on-click": "merkuro-calendar"
     },
     "cpu": {
         "interval": 1,
