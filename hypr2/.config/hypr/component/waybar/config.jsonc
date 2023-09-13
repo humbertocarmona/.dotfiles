@@ -19,10 +19,8 @@
     ],
     "modules-right": [
         "battery",
-        //"custom/ss",
         "custom/cycle_wall",
         "custom/language",
-        "custom/expand",
         "tray"
     ],
     // Modules configuration
@@ -50,8 +48,8 @@
     "custom/language": {
         "exec": "~/.config/hypr/scripts/get_keymap_hypr.sh",
         "interval": 1,
-        "format": " {}",
-        //"format": "{}",
+        // "format": " {}",
+        "format": "{}",
         "tooltip": false
     },
     // custom modules ////////////////
@@ -61,14 +59,13 @@
         "escape": true
     },
     "custom/ss": {
-        "format": "{}",
-        "exec": "~/.config/hypr/scripts/tools/expand ss-icon",
+        "format": " {}",
+        // "exec": "~/.config/hypr/scripts/tools/expand ss-icon",
         "on-click": "~/.config/hypr/scripts/screenshot_full"
     },
     "custom/cycle_wall": {
-        "format": "{}",
-        "exec": "~/.config/hypr/scripts/tools/expand wall",
-        // "interval": 1,
+        "format": "󱨑{}",
+        "interval": 1,
         "on-click": "~/.config/hypr/scripts/tools/expand cycle"
     },
     "custom/expand": {

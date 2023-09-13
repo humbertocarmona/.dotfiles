@@ -18,6 +18,7 @@
 #idle_inhibitor,
 #custom-expand,
 #custom-cycle_wall,
+#custom-language,
 #custom-ss,
 #custom-dynamic_pill,
 #mpd {
@@ -177,15 +178,31 @@ window#waybar {
 }
 
 
+/* #custom-cycle_wall{ */
+/*     background: rgb(245,194,231); */
+/*     background: linear-gradient(45deg, rgba(245,194,231,1) 0%, rgba(203,166,247,1) 0%, rgba(243,139,168,1) 13%, rgba(235,160,172,1) 26%, rgba(250,179,135,1) 34%, rgba(249,226,175,1) 49%, rgba(166,227,161,1) 65%, rgba(148,226,213,1) 77%, rgba(137,220,235,1) 82%, rgba(116,199,236,1) 88%, rgba(137,180,250,1) 95%);  */
+/*     color: #fff; */
+/*     background-size: 500% 500%; */
+/*     animation: gradient 7s linear infinite; */
+/*     font-weight:  bolder; */
+/*     border-radius: 15px; */
+/* } */
+
 #custom-cycle_wall{
-    background: rgb(245,194,231);
-    background: linear-gradient(45deg, rgba(245,194,231,1) 0%, rgba(203,166,247,1) 0%, rgba(243,139,168,1) 13%, rgba(235,160,172,1) 26%, rgba(250,179,135,1) 34%, rgba(249,226,175,1) 49%, rgba(166,227,161,1) 65%, rgba(148,226,213,1) 77%, rgba(137,220,235,1) 82%, rgba(116,199,236,1) 88%, rgba(137,180,250,1) 95%); 
-    color: #fff;
+    background: transparent;
+    color: #000000;
     background-size: 500% 500%;
-    animation: gradient 7s linear infinite;
     font-weight:  bolder;
     border-radius: 15px;
 }
+#custom-language{
+    background: transparent;
+    color: #000000;
+    background-size: 500% 500%;
+    font-weight:  bolder;
+    border-radius: 15px;
+}
+
 
 #clock label{
     color: #11111b;
@@ -226,8 +243,8 @@ window#waybar {
 }
 
 #battery {
-    background-color: #11111b;
-    color:#a6e3a1;
+    background-color: transparent;
+    color:#000000;
     font-weight: bolder;
     font-size: 12px;
     padding-left: 15px;
@@ -240,7 +257,6 @@ window#waybar {
         color:#96804e;
     }
 }
-
 
 
 #battery.critical:not(.charging) {

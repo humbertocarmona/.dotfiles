@@ -1,3 +1,12 @@
 #!/usr/bin/bash
-swww init
-swww img $1 --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3
+if ! pidof swww-daemon >dev/null; then
+	swww init
+fi
+
+# swww img $1 --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3
+swww img $1 --transition-type simple --transition-step 255 -o eDP-1
+#!/bin/bash
+
+if [ "$#" -eq 2 ]; then
+	swww img $2 --transition-type simple --transition-step 255 -o DP-1
+fi
