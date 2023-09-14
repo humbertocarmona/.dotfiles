@@ -1,7 +1,7 @@
 autologin.username="carmona-30867"
 autologin.saved_credentials="{\"carmona-30867\":[\"carmona-30867\",\"vlD3ZY5DYZNoj52pKxsA9opFWYsk1nkZN5pjN7tW1YjU+LDNHTkikSoMlnfiLiDtrCOh9lae5a9Anyw1yuLezBeZGkwKhDQSl3v6w6ZlWP2cY3D5MYqMxMXPgjJEf0TYOm0iC/hy2bdjn9UTuyxtg3pahu55dCc9M79Eewz0FowXQjJVxIs7SVAiDZVUh7Gq/zS+YaEkFjNgMl5ZrPnKLOZCGF40/kx75H/qiEY6Hj2MpILCpYAbxFgi/79tGP4ET5Ex3uaN3d6kyLd50ph6KmuahRSuypgW2ySUkJhuzE4iE8BMrA/jJ6QngCByf05r\"]}"
 autologin.blob="vlD3ZY5DYZNoj52pKxsA9opFWYsk1nkZN5pjN7tW1YjU+LDNHTkikSoMlnfiLiDtrCOh9lae5a9Anyw1yuLezBeZGkwKhDQSl3v6w6ZlWP2cY3D5MYqMxMXPgjJEf0TYOm0iC/hy2bdjn9UTuyxtg3pahu55dCc9M79Eewz0FowXQjJVxIs7SVAiDZVUh7Gq/zS+YaEkFjNgMl5ZrPnKLOZCGF40/kx75H/qiEY6Hj2MpILCpYAbxFgi/79tGP4ET5Ex3uaN3d6kyLd50ph6KmuahRSuypgW2ySUkJhuzE4iE8BMrA/jJ6QngCByf05r"
-core.clock_delta=-1
+core.clock_delta=0
 app.window.position.saved=true
 app.window.position.height=735
 app.autostart-mode=""
