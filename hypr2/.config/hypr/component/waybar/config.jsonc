@@ -15,13 +15,14 @@
     ],
     "modules-center": [
         "custom/dynamic_pill",
-        "clock"
+        "hyprland/window",
     ],
     "modules-right": [
         "battery",
         "custom/cycle_wall",
         "custom/language",
-        "tray"
+        "tray",
+        "clock"
     ],
     // Modules configuration
     "hyprland/workspaces": {
@@ -45,6 +46,9 @@
             "focused": "",
             "default": ""
         }
+    },
+    "hyprland/window": {
+        "format": "{}"
     },
     "custom/language": {
         "exec": "~/.config/hypr/scripts/get_keymap_hypr.sh",
