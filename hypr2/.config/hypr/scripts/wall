@@ -1,12 +1,23 @@
-#!/usr/bin/bash
-if ! pidof swww-daemon >dev/null; then
+#!/bin/bash
+
+# Initialize swww-daemon if not running
+if ! pidof swww-daemon >/dev/null; then
 	swww init
 fi
 
-# swww img $1 --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3
-swww img $1 --transition-type simple --transition-step 255
-#!/bin/bash
+# Retrieve monitor information
+monitor_info=$(hyprctl monitors -j)
+monitor_names=($(echo "$monitor_info" | jq -r '.[].name'))
 
-if [ "$#" -eq 2 ]; then
-	swww img $2 --transition-type simple --transition-step 255 -o DP-1
-fi
+# Find the main monitor (ID=0 in this case)
+monitor_main=$(echo "$monitor_info" | jq -r '.[] | select(.id == 0) | .name')
+echo "Main monitor is $monitor_main"
+
+# Display images based on monitor names
+for name in "${monitor_names[@]}"; do
+	if [ "$name" == "$monitor_main" ]; then
+		swww img "$1" --transition-type simple --transition-step 255 -o $monitor_main
+	else
+		swww img "$2" --transition-type simple --transition-step 255 -o $name
+	fi
+done
