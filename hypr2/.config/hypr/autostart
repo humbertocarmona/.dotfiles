@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+TEMP=/tmp/current_wall
+wallpapers=(~/.config/hypr/wallpapers/*)
 
 # variables
 config=$HOME/.config/hypr
@@ -11,8 +13,8 @@ dunst &
 $scripts/launch_waybar &
 
 # wallpaper
-# $scripts/wall $config/wallpapers/4.jpg &
-waypaper --restore --backend swww
+$scripts/expand wall &
+# waypaper --restore --backend swww
 
 nm-applet &
 

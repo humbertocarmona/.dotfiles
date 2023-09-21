@@ -4,7 +4,7 @@ if ! pidof swww-daemon >dev/null; then
 fi
 
 # swww img $1 --transition-type grow --transition-pos "$(hyprctl cursorpos)" --transition-duration 3
-swww img $1 --transition-type simple --transition-step 255 -o eDP-1
+swww img $1 --transition-type simple --transition-step 255
 #!/bin/bash
 
 if [ "$#" -eq 2 ]; then

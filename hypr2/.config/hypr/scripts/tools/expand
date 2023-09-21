@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 TEMP=/tmp/current_wall
 
-files=(~/.config/hypr/wallpapers/*)
+wallpapers=(~/.config/hypr/wallpapers/*)
 
-hypr=~/.config/hypr
-scripts=$hypr/scripts
+config=~/.config/hypr
+scripts=$config/scripts
 
 cooldown=0.1
 
@@ -15,18 +15,18 @@ while true; do
 		index2=$((index + 1))
 		echo $index >$TEMP
 
-		$scripts/wall "${files[$index]}" "${files[$index2]}"
+		$scripts/wall "${wallpapers[$index]}" "${wallpapers[$index2]}"
 		exit 0
 		;;
 	"cycle")
 		index=$(cat $TEMP)
 		index=$((index + 2))
-		if [ $index -ge ${#files[@]} ]; then
+		if [ $index -ge ${#wallpapers[@]} ]; then
 			index=0
 		fi
 		index2=$((index + 1))
 		echo $index >$TEMP
-		$scripts/wall "${files[$index]}" "${files[$index2]}"
+		$scripts/wall "${wallpapers[$index]}" "${wallpapers[$index2]}"
 		exit 0
 		;;
 	"arrow-icon")
