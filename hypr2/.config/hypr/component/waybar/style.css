@@ -23,8 +23,8 @@
 #custom-dynamic_pill,
 #mpd {
     padding: 0 10px;
-    border-radius: 15px;
-    background: #11111b;
+    border-radius: 5px;
+    background: #1c1c1c;
     color: #b4befe;
     box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
     margin-top: 2px;
@@ -37,16 +37,17 @@ window#waybar {
 }
 
 #window {
-    color : rgb(250, 241, 228);
+    color : #1c1c1c;
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 2px;
     background: transparent;  
-    border-radius: 15px;
+    background-color: rgba(200,200,200,1);
+    border-radius: 5px;
 }
 
 #custom-dynamic_pill label {
-    color: #11111b;
+    color: #1c1c1c;
     font-weight: bold;
 }
 
@@ -61,7 +62,7 @@ window#waybar {
 }
 
 #workspaces button.active label{
-    color: #11111b;
+    color: #1c1c1c;
     font-weight: bolder;
 }
 
@@ -74,8 +75,8 @@ window#waybar {
 }
 #workspaces button{
     box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
-    background-color: #11111b ;
-    border-radius: 15px;
+    background-color: #1c1c1c ;
+    border-radius: 5px;
     margin-right: 10px;
     padding: 10px;
     padding-top: 2px;
@@ -174,19 +175,19 @@ window#waybar {
 }
 
 #custom-dynamic_pill.paused{
-    background: #11111b ;
+    background: #1c1c1c ;
     font-weight: bolder;
     color: #b4befe;
 }
 
 #custom-ss{
-    background: #11111b;
+    background: #1c1c1c;
     color: #89b4fa;
     font-weight:  bolder;
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 
@@ -197,31 +198,31 @@ window#waybar {
 /*     background-size: 500% 500%; */
 /*     animation: gradient 7s linear infinite; */
 /*     font-weight:  bolder; */
-/*     border-radius: 15px; */
+/*     border-radius: 5px; */
 /* } */
 
 #custom-cycle_wall{
     background: transparent;
-    color: #ffa000;
+    color: rgba(250, 241, 228,100);
     background-size: 500% 500%;
     font-weight:  bolder;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 #custom-language{
     background: transparent;
-    color: #ffa000;
+    color: rgba(250, 241, 228,100);
     background-size: 500% 500%;
     font-weight:  bolder;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 
 
 #clock {
     background: #0C2D48;
-    background: transparent;
+    background-color: rgba(200,200,200,1);
     margin-right: 5px;
-    color: #fff ;
+    color: #1b1b1b ;
     /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377); */
     font-size: 12px;
     padding-top: 2px;
@@ -252,7 +253,7 @@ window#waybar {
 
 #battery {
     background-color: transparent;
-    color:#000000;
+    color: rgba(250, 241, 228,100);
     font-weight: bolder;
     font-size: 12px;
     padding-left: 15px;
@@ -360,7 +361,8 @@ window#waybar {
 
 #tray {
     color: rgba(250, 241, 228,100);
-    background-color: #2980b9;
+    background-color: transparent;
+    /* background-color: rgba(200,200,200,1); */
 }
 
 #tray > .passive {

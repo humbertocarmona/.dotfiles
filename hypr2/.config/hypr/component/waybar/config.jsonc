@@ -11,18 +11,18 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media"
+        "custom/media",
+        "hyprland/window"
     ],
     "modules-center": [
         "custom/dynamic_pill",
-        "hyprland/window",
+        "clock"
     ],
     "modules-right": [
         "battery",
         "custom/cycle_wall",
         "custom/language",
-        "tray",
-        "clock"
+        "tray"
     ],
     // Modules configuration
     "hyprland/workspaces": {
