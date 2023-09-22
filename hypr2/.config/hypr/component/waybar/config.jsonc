@@ -22,6 +22,7 @@
         "battery",
         "custom/cycle_wall",
         "custom/language",
+        "pulseaudio",
         "tray"
     ],
     // Modules configuration
@@ -48,7 +49,8 @@
         }
     },
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+        "max-length": 80
     },
     "custom/language": {
         "exec": "~/.config/hypr/scripts/get_keymap_hypr.sh",
@@ -124,7 +126,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
     "clock": {
