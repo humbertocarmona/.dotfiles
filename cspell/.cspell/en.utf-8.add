@@ -69,6 +69,7 @@ deleteat
 depthbuffer
 despine
 detrend
+detrended
 dicpath
 dmax
 docstr
@@ -124,6 +125,7 @@ Hethcode
 Hethcote
 hiperparâmetros
 histplot
+hlines
 hrsh7th
 humberto
 hypersphere
@@ -250,8 +252,10 @@ petsc
 pmid
 pointsize
 polycolor
+polyfit
 preprocess
 println
+pseudolog
 pyimport
 pymysql
 pyplot
@@ -262,6 +266,7 @@ qtagg
 randn
 randperm
 randsubseq
+rangebars
 RANSAC
 rconly
 readboltzmann
@@ -273,6 +278,7 @@ readlines
 regdic
 renamecols
 rgba
+rollmean
 Rosenbrock
 rstart
 runge
@@ -301,6 +307,7 @@ sklearn
 slepc
 Smirnov
 sout
+splitext
 sprintf
 sqlalchemy
 sqlite
@@ -341,6 +348,7 @@ typeparameters
 UNIFOR
 urlcolor
 urldate
+usecols
 usepackage
 userplot
 usetex
