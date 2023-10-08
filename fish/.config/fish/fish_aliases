@@ -1,5 +1,4 @@
 abbr cat 'bat'
-abbr cf 'sudo nvim /etc/nixos/configuration.nix'
 abbr cls clear
 abbr df 'df -h' # human-readable sizes
 abbr f 'lfcd'
@@ -39,3 +38,4 @@ alias tk='tmux kill-session'
 alias tl='tmux list-sessions'
 alias tn="tmux new -s (pwd | sed 's/.*\///g')"
 alias vf='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
+alias refresh-keys="sudo pacman-key --refresh-keys"

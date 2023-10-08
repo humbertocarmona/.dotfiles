@@ -1,17 +1,36 @@
 return {
+    { "echasnovski/mini.surround", enabled = false },
     {
-        "echasnovski/mini.surround",
-        opts = {
-            mappings = {
-                add = "sa", -- Add surrounding in Normal and Visual modes
-                delete = "sd", -- Delete surrounding
-                find = "sf", -- Find surrounding (to the right)
-                find_left = "sF", -- Find surrounding (to the left)
-                highlight = "sh", -- Highlight surrounding
-                replace = "sr", -- Replace surrounding
-                update_n_lines = "sn", -- Update `n_lines`
-            },
-        },
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                keymaps = {
+                    normal = "s",
+                    normal_cur = "ss",
+                },
+                surrounds = {
+                    ["b"] = {
+                        add = { "\\left(", "\\right)" },
+                        find = function() end,
+                        delete = function() end,
+                    },
+                    ["B"] = {
+                        add = { "\\left[", "\\right]" },
+                        find = function() end,
+                        delete = function() end,
+                    },
+                },
+                aliases = {
+                    ["b"] = false,
+                    ["B"] = false,
+                },
+                highlight = {
+                    duration = 0,
+                },
+            })
+        end,
     },
     {
         "klafyvel/vim-slime-cells",
@@ -58,6 +77,5 @@ return {
             opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
         end,
     },
-    {"elkowar/yuck.vim",
-    ft={"yuck"}}
+    { "elkowar/yuck.vim", ft = { "yuck" } },
 }

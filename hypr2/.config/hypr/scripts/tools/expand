@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-TEMP=/tmp/current_wall
+TEMP=~/.config/hypr/scripts/current_wall
 
 wallpapers=(~/.config/hypr/wallpapers/*)
 
@@ -13,7 +13,6 @@ while true; do
 	"wall")
 		index=$(cat $TEMP)
 		index2=$((index + 1))
-		echo $index >$TEMP
 
 		$scripts/wall "${wallpapers[$index]}" "${wallpapers[$index2]}"
 		exit 0
