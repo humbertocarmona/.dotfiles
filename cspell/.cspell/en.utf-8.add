@@ -392,6 +392,7 @@ xscale
 xtick
 xtickfontrotation
 xticklab
+xticklabelrotation
 xticklabels
 xticklabs
 xtickpos
