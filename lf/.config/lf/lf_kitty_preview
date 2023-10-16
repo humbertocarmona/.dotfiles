@@ -8,6 +8,7 @@ Y="$5"
 
 #MIMETYPE="$(file --dereference --brief --mime-type -- "${FILE_PATH}")"
 MIMETYPE="$(xdg-mime query filetype ${FILE_PATH})"
+
 display_image() {
 	local filepath="$1"
 	kitty +kitten icat --silent --stdin no --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$filepath" </dev/null >/dev/tty
@@ -15,6 +16,7 @@ display_image() {
 }
 
 bat_or_cat() {
+	echo "eita"
 	local filepath="$1"
 	bat --color always "$filepath"
 	exit 1
