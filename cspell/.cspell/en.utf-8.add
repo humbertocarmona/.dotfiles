@@ -198,6 +198,7 @@ makeschapterhead
 Makie
 mapcols
 mapreduce
+mapslices
 mapto
 mariadb
 markercolor
@@ -228,6 +229,7 @@ nbins
 ncol
 ncols
 ndarray
+ndims
 neovim
 Neovim
 networkx
@@ -312,6 +314,7 @@ SEIR
 seirs
 seriestype
 SESA
+setdiff
 setlevel
 sharex
 sharey
@@ -370,6 +373,7 @@ userplot
 usetex
 utri
 utriangle
+vals
 vcat
 vcmap
 vline
