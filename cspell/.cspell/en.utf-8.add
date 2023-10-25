@@ -94,6 +94,7 @@ eprop
 Erneson
 errorbar
 esbenp
+expt
 extedlow
 extendhigh
 facecolor
@@ -129,6 +130,7 @@ hcat
 heightrounded
 Hethcode
 Hethcote
+hidexdecorations
 hideydecorations
 hiperparâmetros
 histplot
@@ -363,6 +365,7 @@ titlesize
 toarray
 topleft
 trimcols
+triu
 twocolumn
 typedefs
 typeof
