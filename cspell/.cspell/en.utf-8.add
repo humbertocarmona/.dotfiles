@@ -1,5 +1,6 @@
 # Custom Dictionary Words
 ablines
+addprocs
 alacritty
 algoritimo
 amsmath
@@ -128,6 +129,7 @@ hcat
 heightrounded
 Hethcode
 Hethcote
+hideydecorations
 hiperparâmetros
 histplot
 hlines
@@ -237,6 +239,7 @@ newaxis
 NFe
 njit
 nopython
+nprocs
 nrow
 nrows
 nsteps
@@ -396,6 +399,7 @@ xlims
 xmax
 xmean
 xmin
+xrange
 xscale
 xtick
 xtickfontrotation
