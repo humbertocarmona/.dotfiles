@@ -49,6 +49,7 @@ cmap
 cmtt
 CNAE
 coef
+colgap
 colindex
 Colorbar
 colorlinks
@@ -190,6 +191,8 @@ lineplot
 linestyle
 linewidth
 linkcolor
+linkxaxes
+linkyaxes
 linspace
 lmplot
 loglog
@@ -245,6 +248,7 @@ nprocs
 nrow
 nrows
 nsteps
+nthreads
 numba
 numpy
 nvim
@@ -302,6 +306,8 @@ rgba
 Rilder
 rollmean
 Rosenbrock
+rowgap
+rowsize
 rstart
 runge
 runin
@@ -358,6 +364,7 @@ testset
 textcite
 textcoords
 textrm
+threadid
 tightlimits
 timeseries
 titlefontsize

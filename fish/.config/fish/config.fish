@@ -7,7 +7,7 @@ set -gx BAT_THEME Catppuccin-mocha
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --color=always {}'"
 set -gx TEXMFHOME $HOME/.texmf
 set -x PYTHONPATH $PYTHONPATH $HOME/Dev/ESP/Mabell/src/
-set -xU JULIA_NUM_THREADS 16
+set -xU JULIA_NUM_THREADS 8
 
 set -U fish_user_paths $GOPATH/bin $fish_user_paths
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
