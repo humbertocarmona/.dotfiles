@@ -19,6 +19,7 @@ autofetch
 autopep
 axislegend
 backgroundcolor
+Balland
 Barabási
 barplot
 basico
@@ -79,6 +80,7 @@ dicpath
 dmax
 docstr
 documentclass
+donot
 dropna
 dtype
 dtypes
@@ -354,6 +356,8 @@ superlinear
 superpropagação
 superpropagadores
 Superpropagadores
+synctex
+synctexjs
 tablefmt
 tellheight
 tellwidth
