@@ -38,8 +38,9 @@ return {
         ft = { "julia", "python" },
         dependencies = { "jpalardy/vim-slime" },
         keys = {
-            { "<leader>cc", "<Plug>SlimeConfig", desc = "Slime config" },
+            { "<leader>cv", "<Plug>SlimeConfig", desc = "Slime config" },
             { "<leader>cs", "<Plug>SlimeCellsSendAndGoToNext", desc = "Send and go to next" },
+            { "<leader>cc", "<Plug>SlimeParagraphSend", desc = "Send paragraph" },
             { "<leader>cj", "<Plug>SlimeCellsNext", desc = "Go to next" },
             { "<leader>ck", "<Plug>SlimeCellsPrev", desc = "Go to prev" },
         },

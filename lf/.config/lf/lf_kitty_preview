@@ -17,11 +17,11 @@ display_image() {
 }
 
 bat_or_cat() {
-	echo "eita"
 	local filepath="$1"
 	bat --color always "$filepath"
 	exit 1
 }
+
 handle_extension() {
 	DENSITY=288
 	FILE_EXTENSION="${FILE_PATH##*.}"
