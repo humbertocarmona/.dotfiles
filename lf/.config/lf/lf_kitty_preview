@@ -9,15 +9,20 @@ Y="$5"
 #MIMETYPE="$(file --dereference --brief --mime-type -- "${FILE_PATH}")"
 MIMETYPE="$(xdg-mime query filetype ${FILE_PATH})"
 
+clean_image() {
+	kitty +kitten icat --clear --transfer-mode file </dev/null >/dev/tty
+}
 display_image() {
 	local filepath="$1"
 	# kitty +kitten icat --silent --stdin no --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$filepath" </dev/null >/dev/tty
+	clean_image
 	kitty +kitten icat --silent --stdin no --transfer-mode memory --place "${W}x${H}@${X}x${Y}" "$filepath" </dev/null >/dev/tty
 	exit 1
 }
 
 bat_or_cat() {
 	local filepath="$1"
+	clean_image
 	bat --color always "$filepath"
 	exit 1
 }
@@ -43,10 +48,12 @@ handle_extension() {
 		bat_or_cat "${FILE_PATH}"
 		;;
 	zip)
+		clean_image
 		unzip -l ${FILE_PATH}
 		exit 1
 		;;
 	gz)
+		clean_image
 		gunzip -l ${FILE_PATH}
 		exit 1
 		;;
@@ -56,6 +63,7 @@ handle_extension() {
 		display_image "${CACHE}.png"
 		;;
 	docx)
+		clean_image
 		pandoc -t plain ${FILE_PATH} | bat
 		;;
 	esac

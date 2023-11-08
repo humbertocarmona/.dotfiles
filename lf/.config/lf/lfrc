@@ -311,7 +311,7 @@ map y copy
 
 map zb cd ~/.config/bin
 map zc cd ~/.config
-map zd cd ~/.dotfiles 
+map z. cd ~/.dotfiles 
 map zf cd ~/.config/fish
 map zg lazy_git
 map zh cd ~/
@@ -319,7 +319,7 @@ map zi fzf_jump_here
 map zj cd ~/.julia/dev/
 map zl cd ~/.config/lf
 map zm cd /run/media/humberto/
-map zp cd ~/Dev
+map zd cd ~/Dev
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
