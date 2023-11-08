@@ -192,6 +192,7 @@ linecolor
 lineplot
 linestyle
 linewidth
+linkaxes
 linkcolor
 linkxaxes
 linkyaxes
@@ -311,6 +312,7 @@ rollmean
 Rosenbrock
 rowgap
 rowsize
+royalblue
 rstart
 runge
 runin
@@ -391,6 +393,7 @@ userplot
 usetex
 utri
 utriangle
+valign
 vals
 vcat
 vcmap
