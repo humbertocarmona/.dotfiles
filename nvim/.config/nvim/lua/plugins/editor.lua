@@ -1,23 +1,5 @@
 return {
     { "folke/flash.nvim", enabled = false },
-    -- {
-    --     "folke/flash.nvim",
-    --     event = "VeryLazy",
-    --     vscode = true,
-    --     opts = {},
-    --     keys = {
-    --         { "e", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
-    --         { "E", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    --         { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    --         {
-    --             "R",
-    --             mode = { "o", "x" },
-    --             function() require("flash").treesitter_search() end,
-    --             desc = "Treesitter Search",
-    --         },
-    --         { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    --     },
-    -- },
     {
         "nvim-telescope/telescope.nvim",
         keys = {
@@ -128,5 +110,36 @@ return {
                 },
             },
         },
+    },
+    {
+        "jmbuhr/otter.nvim",
+    },
+    {
+        "quarto-dev/quarto-nvim",
+        ft = { "quarto" },
+        config = function()
+            require("quarto").setup({
+                debug = false,
+                closePreviewOnExit = true,
+                lspFeatures = {
+                    enabled = true,
+                    languages = { "r", "python", "julia", "bash" },
+                    chunks = "curly", -- 'curly' or 'all'
+                    diagnostics = {
+                        enabled = true,
+                        triggers = { "BufWritePost" },
+                    },
+                    completion = {
+                        enabled = true,
+                    },
+                },
+                keymap = {
+                    hover = "K",
+                    definition = "gd",
+                    rename = "<leader>lR",
+                    references = "gr",
+                },
+            })
+        end,
     },
 }
