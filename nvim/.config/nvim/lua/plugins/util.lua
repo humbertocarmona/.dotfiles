@@ -23,7 +23,7 @@ return {
     },
     {
         "lervag/vimtex",
-        --ft = { "tex", "latex" },
+        ft = { "tex", "latex" },
         -- keys = {
         --     { "<leader>cc", ":VimtexCompile<cr>", desc = "VimtexCompile" },
         --     { "<leader>cv", ":VimtexView<cr>", desc = "VimtexView" },

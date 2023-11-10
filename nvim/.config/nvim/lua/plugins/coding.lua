@@ -7,19 +7,35 @@ return {
         config = function()
             require("nvim-surround").setup({
                 keymaps = {
-                    normal = "s",
-                    normal_cur = "ss",
+                    insert = "<C-g>s",
+                    insert_line = "<C-g>S",
+                    normal = "gs",
+                    normal_cur = "gss",
+                    normal_line = "gsS",
+                    normal_cur_line = "gSS",
+                    visual = "gs",
+                    visual_line = "gss",
+                    delete = "ds",
+                    change = "cs",
                 },
                 surrounds = {
                     ["b"] = {
                         add = { "\\left(", "\\right)" },
                         find = function() end,
                         delete = function() end,
+                        change = {
+                            target = "^\\left(([^%s<>]*)().-([^/]*)()\\right)$",
+                            replacement = function() end,
+                        },
                     },
                     ["B"] = {
                         add = { "\\left[", "\\right]" },
                         find = function() end,
                         delete = function() end,
+                        change = {
+                            target = "^\\left[([^%s<>]*)().-([^/]*)()\\right]$",
+                            replacement = function() end,
+                        },
                     },
                 },
                 aliases = {
@@ -29,6 +45,17 @@ return {
                 highlight = {
                     duration = 0,
                 },
+                move_cursor = false,
+                indent_lines = function(start, stop)
+                    local b = vim.bo
+                    -- Only re-indent the selection if a formatter is set up already
+                    if
+                        start < stop
+                        and (b.equalprg ~= "" or b.indentexpr ~= "" or b.cindent or b.smartindent or b.lisp)
+                    then
+                        vim.cmd(string.format("silent normal! %dG=%dG", start, stop))
+                    end
+                end,
             })
         end,
     },
@@ -78,5 +105,4 @@ return {
             opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "latex_symbols" } }))
         end,
     },
-    { "elkowar/yuck.vim", ft = { "yuck" } },
 }

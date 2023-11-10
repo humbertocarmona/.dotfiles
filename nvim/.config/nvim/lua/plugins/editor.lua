@@ -71,7 +71,7 @@ return {
     },
     {
         "stevearc/oil.nvim",
-        lazy = false,
+        lazy = true,
         opts = {
             columns = {
                 "icon",
@@ -113,6 +113,9 @@ return {
     },
     {
         "jmbuhr/otter.nvim",
+        lazy = true,
+        ft = { "quarto" },
+        dependencies = { "quarto-dev/quarto-nvim" },
     },
     {
         "quarto-dev/quarto-nvim",

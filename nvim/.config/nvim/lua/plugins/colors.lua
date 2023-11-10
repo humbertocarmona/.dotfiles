@@ -46,10 +46,11 @@ return {
         "ellisonleao/gruvbox.nvim",
         config = function() vim.g.gruvbox_transparent_bg = true end,
     },
-    -- {
-    --     "LazyVim/LazyVim",
-    --     opts = {
-    --         colorscheme = "gruvbox",
-    --     },
-    -- },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "gruvbox",
+            -- colorscheme = "catppuccin",
+        },
+    },
 }
