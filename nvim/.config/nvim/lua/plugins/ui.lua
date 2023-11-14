@@ -151,7 +151,7 @@ return {
     },
     {
         "akinsho/toggleterm.nvim",
-        lazy = false,
+        lazy = true,
         version = "*",
         keys = {
             { "<leader>ft", ":ToggleTerm<cr>", desc = "ToggleTerm" },
