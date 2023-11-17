@@ -7,7 +7,6 @@ return {
                 "cmake",
                 "cpp",
                 "css",
-                "csv",
                 "fish",
                 "html",
                 "javascript",
