@@ -1,5 +1,5 @@
 set shell zsh
-set shellopts '-euy'
+# set shellopts '-euy'
 set ifs "\n"
 
 set nohidden
@@ -221,6 +221,7 @@ cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 cmd tmux_here ${{
     local zfolder=$(basename $PWD)
     zsh $HOME/.config/bin/t.sh $zfolder
+    lf
 }}
 
 
@@ -248,6 +249,10 @@ cmd docx-preview ${{
     pandoc -t plain "$fx" | less
 }}
 
+cmd icat_clear ${{
+    kitten --clear
+}}
+
 # bindings 
 
 map a
@@ -259,8 +264,9 @@ map au unarchiv
 map ax extract
 
 map c
+map cc icat_clear
 map cu unselect
-map cc clear
+map ca clear
 map ch chMod
 map cd code_here
 map cC clear_lf_cache
@@ -278,8 +284,8 @@ map e
 map ee $editor "$f"
 map eu $view "$f"
 
-map f fzf_jump
-map F fzf_jump_pwd
+map F fzf_jump
+map f fzf_jump_pwd
 
 map ig add_gitignore
 map ir add_rsync_filter
@@ -298,7 +304,7 @@ map rn rename
 map rl reload
 
 map t
-map tt tmux_here
+map tn tmux_here
 map tg tag-toggle
 
 map u unselect

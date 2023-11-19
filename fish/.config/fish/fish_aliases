@@ -3,6 +3,7 @@ abbr cls clear
 abbr df 'df -h' # human-readable sizes
 abbr f 'lfcd'
 abbr g 'lazygit'
+abbr j 'julia'
 abbr l 'exa --icons'
 abbr la 'exa -lha --icons'
 abbr ll 'exa -lh --icons'

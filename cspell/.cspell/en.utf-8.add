@@ -412,6 +412,7 @@ xelatexmk
 xfit
 xlab
 xlabel
+xlabelrotation
 xlim
 xlims
 xmax
