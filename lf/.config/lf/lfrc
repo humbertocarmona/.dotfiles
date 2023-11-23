@@ -286,6 +286,7 @@ map eu $view "$f"
 
 map F fzf_jump
 map f fzf_jump_pwd
+map zf fzf_jump_here
 
 map ig add_gitignore
 map ir add_rsync_filter
@@ -315,21 +316,18 @@ map x open $f
 
 map y copy
 
-map zb cd ~/.config/bin
-map zc cd ~/.config
-map z. cd ~/.dotfiles 
-map zf cd ~/.config/fish
-map zh cd ~/.config/hypr
-map zg lazy_git
-map zz cd ~/
-map zi fzf_jump_here
-map zj cd ~/.julia/dev/
-map zl cd ~/.config/lf
-map zm cd /run/media/humberto/
-map zd cd ~/Dev
-map zt cd ~/.local/share/Trash/files
-map zv cd ~/.config/nvim
-map zw cd ~/Pictures/Wallpapers
+map gb cd ~/.config/bin
+map gc cd ~/.config
+map g. cd ~/.dotfiles 
+map gf cd ~/.config/fish
+map gg lazy_git
+map gj cd ~/.julia/dev/
+map gl cd ~/.config/lf
+map gm cd /run/media/humberto/
+map gd cd ~/Dev
+map gt cd ~/.local/share/Trash/files
+map gv cd ~/.config/nvim
+map gw cd ~/Pictures/Wallpapers
 
 map <delete> trash
 map . set hidden!
