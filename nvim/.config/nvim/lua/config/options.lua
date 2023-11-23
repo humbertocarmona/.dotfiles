@@ -14,7 +14,7 @@ vim.g.maplocalleader = ","
 local opt = vim.opt
 
 opt.linespace = 2
-opt.guifont = "RobotoMono Nerd Font Mono:h12"
+opt.guifont = "FiraCode Nerd Font Mono:h12"
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true

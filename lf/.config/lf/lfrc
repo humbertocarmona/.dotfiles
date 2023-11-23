@@ -319,8 +319,9 @@ map zb cd ~/.config/bin
 map zc cd ~/.config
 map z. cd ~/.dotfiles 
 map zf cd ~/.config/fish
+map zh cd ~/.config/hypr
 map zg lazy_git
-map zh cd ~/
+map zz cd ~/
 map zi fzf_jump_here
 map zj cd ~/.julia/dev/
 map zl cd ~/.config/lf
@@ -329,7 +330,6 @@ map zd cd ~/Dev
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
-map zy cd ~/.config/sway
 
 map <delete> trash
 map . set hidden!

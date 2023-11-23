@@ -76,8 +76,8 @@ return {
                 vim.g.slime_target = "tmux"
                 vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
             else
-                vim.g.slime_target = "kitty"
-                vim.g.slime_default_config = { kitty_listen_on = "2" }
+                vim.g.slime_target = "neovim"
+                vim.g.slime_default_config = { jobid = "16" }
             end
             vim.g.slime_cell_delimiter = "^\\s*##"
             vim.g.slime_dont_ask_default = 1
