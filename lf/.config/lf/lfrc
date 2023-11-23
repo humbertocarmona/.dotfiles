@@ -284,9 +284,9 @@ map e
 map ee $editor "$f"
 map eu $view "$f"
 
-map F fzf_jump
 map f fzf_jump_pwd
-map zf fzf_jump_here
+map h fzf_jump_here
+map j fzf_jump
 
 map ig add_gitignore
 map ir add_rsync_filter
