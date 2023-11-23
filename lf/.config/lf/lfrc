@@ -155,10 +155,6 @@ cmd fzf_search ${{
     [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
-cmd lazy_git ${{
-        lazygit 
-    }}
-
 cmd mkDir %{{
     printf "Directory Name: "
     read ans
@@ -220,10 +216,14 @@ cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 
 cmd tmux_here ${{
     local zfolder=$(basename $PWD)
-    zsh $HOME/.config/bin/t.sh $zfolder
-    lf
+    local sess="session_$zfolder"
+    tmux new -s "$sess" 'lfcd'
+    # zsh $HOME/.config/bin/t.sh $zfolder
 }}
 
+cmd tmux_detach ${{
+    tmux detach
+}}
 
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
@@ -284,12 +284,21 @@ map e
 map ee $editor "$f"
 map eu $view "$f"
 
-map f fzf_jump_pwd
-map h fzf_jump_here
-map j fzf_jump
+map f
+map fp fzf_jump_pwd
+map fh fzf_jump_here
+map fj fzf_jump
+
+map gh ${{ lazygit }}
+
 
 map ig add_gitignore
 map ir add_rsync_filter
+
+map n 
+map nu ${{nvim -u NONE "$f"}}
+
+map nv ${{nvim -O "$fx"}}
 
 map m
 map mf mkFile
@@ -304,9 +313,8 @@ map rg fzf_search
 map rn rename
 map rl reload
 
-map t
-map tn tmux_here
-map tg tag-toggle
+map t tmux_here
+map dt tmux_detach
 
 map u unselect
 
@@ -316,18 +324,21 @@ map x open $f
 
 map y copy
 
-map gb cd ~/.config/bin
-map gc cd ~/.config
-map g. cd ~/.dotfiles 
-map gf cd ~/.config/fish
-map gg lazy_git
-map gj cd ~/.julia/dev/
-map gl cd ~/.config/lf
-map gm cd /run/media/humberto/
-map gd cd ~/Dev
-map gt cd ~/.local/share/Trash/files
-map gv cd ~/.config/nvim
-map gw cd ~/Pictures/Wallpapers
+map zb cd ~/.config/bin
+map zc cd ~/.config
+map z. cd ~/.dotfiles 
+map zf cd ~/.config/fish
+map zg lazy_git
+map zh cd ~/.config/hypr
+map zj cd ~/.julia/dev/
+map zk cd ~/.config/kitty
+map zl cd ~/.config/lf
+map zm cd /run/media/humberto/
+map zd cd ~/Dev
+map zt cd ~/.local/share/Trash/files
+map zv cd ~/.config/nvim
+map zw cd ~/Pictures/Wallpapers
+map zz cd ~/
 
 map <delete> trash
 map . set hidden!

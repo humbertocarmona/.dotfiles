@@ -2,9 +2,54 @@
     "Add cell": {
         "prefix": "cell",
         "body": [
-            "# %% --------------------------------------------------",
-            "$1"
+            "# %%",
+            "$1",
+
+            "# %%"
         ],
         "description": "add cell"
+    },
+    "Add one cell": {
+        "prefix": "celln",
+        "body": [
+            "$1",
+            "# %%"
+        ],
+        "description": "add cell"
+    },
+    "Makie figure": {
+        "prefix": "mfig",
+        "body": [
+            "f = Figure()",
+            "ax = Axis(f[1,1])",
+            "$1",
+            "display(f)"
+        ],
+        "description": "add makie figure"
+    },
+    "Makie figure Q": {
+        "prefix": "mfigq",
+        "body": [
+            "f = Figure()",
+            "ax = Axis(f[1,1])",
+            "$1(ax, $2, label=\"$3\")",
+            "axislegend()",
+            "displayq(f,ax)"
+        ],
+        "description": "add makie figure - require displayq()"
+    },
+    "Quit Makie": {
+        "prefix": "mquit",
+        "body": [
+            "using GLMakie.GLFW",
+            "using GLMakie: to_native",
+            "$1",
+            "glfw_window = to_native(display(f))",
+            "on(events(ax.scene).keyboardbutton) do _",
+            "   if ispressed(ax.scene, Keyboard.q)",
+            "   GLFW.SetWindowShouldClose(glfw_window, true)",
+            "   end",
+            "end"
+        ]
     }
 }

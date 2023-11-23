@@ -3,8 +3,6 @@ application/pdf=org.pwmt.zathura.desktop;
 application/toml=nvim.desktop;neovide.desktop;code.desktop;
 image/png=swayimg.desktop;
 inode/directory=org.kde.dolphin.desktop;
-text/csv=neovide.desktop;nvim.desktop;code.desktop;libreoffice-calc.desktop;vim.desktop;
-text/plain=neovide.desktop;nvim.desktop;code.desktop;libreoffice-calc.desktop;vim.desktop;
 text/julia=neovide.desktop;nvim.desktop;code.desktop;
 text/x-bibtex=nvim.desktop;neovide.desktop;code.desktop;
 text/html=google-chrome.desktop;
@@ -16,3 +14,5 @@ x-scheme-handler/https=google-chrome.desktop;
 x-scheme-handler/x-github-client=github-desktop.desktop
 x-scheme-handler/x-github-desktop-auth=github-desktop.desktop
 
+text/plain=neovide.desktop;
+text/csv=neovide.desktop;

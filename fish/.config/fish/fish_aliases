@@ -1,8 +1,8 @@
-abbr cat 'bat'
+abbr cat bat
 abbr cls clear
 abbr df 'df -h' # human-readable sizes
-abbr f 'lfcd'
-abbr g 'lazygit'
+abbr f lfcd
+abbr g lazygit
 abbr j 'julia --project=./'
 abbr l 'exa --icons'
 abbr la 'exa -lha --icons'
@@ -10,21 +10,22 @@ abbr ll 'exa -lh --icons'
 abbr mv 'mv -i'
 abbr open 'mimeopen -a'
 abbr pac 'sudo pacman'
-abbr q 'exit'
+abbr q exit
 abbr rm 'rm -i'
 abbr v nvim
 abbr vb 'nvim ~/.config/waybar/config.jsonc'
 abbr vl 'nvim ~/.config/lf/lfrc'
 abbr vy 'nvim ~/.config/hypr/hyprland.conf'
 
-abbr g. 'z ~/.dotfiles'
-abbr gc 'z ~/.config'
-abbr gd 'z ~/Dev/'
-abbr gf 'z ~/.config/fish'
-abbr gh 'z ~/.config/hypr/'
-abbr gj 'z ~/.julia/dev/'
-abbr gl 'z ~/.config/lf'
-abbr gv 'z ~/.config/nvim'
+abbr z. 'z ~/.dotfiles'
+abbr zc 'z ~/.config'
+abbr zd 'z ~/Dev/'
+abbr zf 'z ~/.config/fish'
+abbr zh 'z ~/.config/hypr/'
+abbr zj 'z ~/.julia/dev/'
+abbr zk 'z ~/.config/kitty/'
+abbr zl 'z ~/.config/lf'
+abbr zv 'z ~/.config/nvim'
 
 alias di='docker images'
 alias dp='docker ps -a'
@@ -37,5 +38,8 @@ alias td='tmux detach'
 alias tk='tmux kill-session'
 alias tl='tmux list-sessions'
 alias tn="tmux new -s (pwd | sed 's/.*\///g')"
+alias tt="tmux new -s session_(pwd | sed 's/.*\///g') 'lfcd'"
 alias vf='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
+alias vu='nvim -u NONE'
 alias refresh-keys="sudo pacman-key --refresh-keys"
+alias fixbluetooth="sudo btmgmt ssp on"

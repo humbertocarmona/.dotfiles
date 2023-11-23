@@ -11,3 +11,21 @@
 
 2023/10/23 (11:24:29) | ===> btop++ v.1.2.13
 2023/10/23 (11:24:57) | ERROR: Stall in Runner thread, restarting!
+
+2023/12/03 (13:24:13) | ===> btop++ v.1.2.13
+2023/12/03 (13:24:13) | WARNING: Failed to get disk/partition stats for mount "swap" with statvfs error code: 2. Ignoring...
+
+2023/12/11 (11:43:13) | ===> btop++ v.1.2.13
+2023/12/11 (11:43:13) | WARNING: Failed to get disk/partition stats for mount "swap" with statvfs error code: 2. Ignoring...
+
+2023/12/11 (11:44:38) | ===> btop++ v.1.2.13
+2023/12/11 (11:44:38) | WARNING: Failed to get disk/partition stats for mount "swap" with statvfs error code: 2. Ignoring...
+
+2023/12/11 (11:46:19) | ===> btop++ v.1.2.13
+2023/12/11 (11:46:19) | WARNING: Failed to get disk/partition stats for mount "swap" with statvfs error code: 2. Ignoring...
+
+2023/12/25 (16:45:44) | ===> btop++ v.1.2.13
+2023/12/25 (16:45:44) | WARNING: Failed to get disk/partition stats for mount "swap" with statvfs error code: 2. Ignoring...
+
+2024/01/04 (09:34:35) | ===> btop++ v.1.2.13
+2024/01/04 (09:34:35) | WARNING: Failed to get disk/partition stats for mount "swap" with statvfs error code: 2. Ignoring...

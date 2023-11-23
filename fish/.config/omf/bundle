@@ -2,10 +2,8 @@ package colored-man-pages
 package config
 package https://github.com/catppuccin/fish
 package spark
-package vcs
 theme ays
 theme boxfish
-theme chain
 theme clearance
 theme coffeeandcode
 theme default
@@ -13,9 +11,11 @@ theme doughsay
 theme gentoo
 theme integral
 theme johanson
+theme kawasaki
 theme lambda-zero
 theme ocean
 theme sashimi
 theme simplevi
 theme slacker
 theme tomita
+theme zish

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Bitwarden
-Comment=Password manager
-Icon=/opt/Bitwarden-2023.3.0/bitwarden.png
-Exec=/usr/bin/bitwarden
-Terminal=false
-

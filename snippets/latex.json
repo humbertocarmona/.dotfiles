@@ -29,5 +29,10 @@
         "prefix": "fig.",
         "body": "Fig.~\\ref{fig:$1}$0",
         "description": "insert reference to figure"
+    },
+    "BrickRed": {
+        "prefix": "textred",
+        "body": "\\textcolor{BrickRed}{$0}",
+        "description": "brick red text"
     }
 }

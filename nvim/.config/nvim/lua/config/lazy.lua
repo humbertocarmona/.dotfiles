@@ -10,9 +10,9 @@ require("lazy").setup({
     spec = {
         -- add LazyVim and import its plugins
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+
         -- import any extras modules here
         { import = "lazyvim.plugins.extras.coding.yanky" },
-        -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
         -- import/override with your plugins
         { import = "plugins" },
     },
@@ -25,8 +25,14 @@ require("lazy").setup({
         version = false, -- always use the latest git commit
         -- version = "*", -- try installing the latest stable version for plugins that support semver
     },
-    install = { colorscheme = { "catppuccin" } },
-    checker = { enabled = true }, -- automatically check for plugin updates
+    install = { colorscheme = { "tokyonigh" } },
+    checker = {
+        enabled = true,
+        notify = true,
+    }, -- automatically check for plugin updates
+    change_detection = {
+        notify = false,
+    },
     performance = {
         rtp = {
             -- disable some rtp plugins
