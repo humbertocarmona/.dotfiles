@@ -30,6 +30,8 @@ return {
                 p = { "<Plug>SlimeParagraphSend", "Slime send paragraph" },
                 j = { "<Plug>SlimeCellsNext", "go to next slime cell" },
                 k = { "<Plug>SlimeCellsPrev", "go to previous slime cell" },
+                m = { "<Plug>SlimeMotionSend", "sed motion" },
+                l = { "<Plug>SlimeLineSend", "send line" },
             },
         }, { prefix = "<leader>" })
 
