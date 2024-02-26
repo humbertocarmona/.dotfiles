@@ -2,51 +2,31 @@
     "Add cell": {
         "prefix": "cell",
         "body": [
+            "# %%"
+        ],
+        "description": "add cell"
+    },
+
+    "Add one cell": {
+        "prefix": "cellone",
+        "body": [
             "# %%",
             "$1",
-
+            "",
             "# %%"
         ],
-        "description": "add cell"
-    },
-    "Add cell --": {
-        "prefix": "cellp",
-        "body": [
-            "# %% ---------------------------------------------------------------------------",
-            "$1",
-
-            "# %% ---------------------------------------------------------------------------"
-        ],
-        "description": "add cell --"
-    },
-    "Add one cell": {
-        "prefix": "celln",
-        "body": [
-            "$1",
-            "# %%"
-        ],
-        "description": "add cell"
+        "description": "add one cell"
     },
     "Makie figure": {
         "prefix": "mfig",
         "body": [
             "f = Figure()",
             "ax = Axis(f[1,1])",
-            "$1",
+            "$1(ax, $2, label=\"$3\")",
+            "axislegend()",
             "display(f)"
         ],
         "description": "add makie figure"
-    },
-    "Makie figure Q": {
-        "prefix": "mfigq",
-        "body": [
-            "f = Figure()",
-            "ax = Axis(f[1,1])",
-            "$1(ax, $2, label=\"$3\")",
-            "axislegend()",
-            "displayq(f,ax)"
-        ],
-        "description": "add makie figure - require displayq()"
     },
     "Quit Makie": {
         "prefix": "mquit",
@@ -60,6 +40,7 @@
             "   GLFW.SetWindowShouldClose(glfw_window, true)",
             "   end",
             "end"
-        ]
+        ],
+        "description": "header to quit GLMakie window with q)"
     }
 }

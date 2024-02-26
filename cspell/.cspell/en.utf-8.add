@@ -29,6 +29,7 @@ biblatex
 bibtex
 binarize
 binarized
+binazized
 blockmodel
 boltzmann
 bottomleft
@@ -341,6 +342,7 @@ runge
 runid
 runin
 savefig
+scalefactor
 scalefontsizes
 scatterplot
 scipy
@@ -375,6 +377,7 @@ sqlite
 STACKSIZE
 stddev
 stephist
+stringtype
 stripmark
 Strogatz
 strokearound
