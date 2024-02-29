@@ -2,7 +2,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "folke/which-key.nvim",
+        -- "folke/which-key.nvim",
     },
     config = function()
         require("nvim-tree").setup({
@@ -23,12 +23,12 @@ return {
             },
         })
 
-        local wk = require("which-key")
-        wk.register({
-            ["e"] = {
-                "<cmd>NvimTreeToggle<CR>",
-                "Toggle file explorer",
-            },
-        }, { prefix = "<leader>" })
+        -- local wk = require("which-key")
+        -- wk.register({
+        --     ["e"] = {
+        --         "<cmd>NvimTreeToggle<CR>",
+        --         "Toggle file explorer",
+        --     },
+        -- }, { prefix = "<leader>" })
     end,
 }

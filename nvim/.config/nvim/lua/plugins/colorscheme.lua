@@ -5,10 +5,12 @@ return {
         -- priority = 1000,
         opts = {
             transparent = true,
-            style = "night",
+            style = "storm",
             styles = {
                 sidebars = "transparent",
                 floats = "transparent",
+                comments = { italic = true },
+                keywords = { italic = true },
             },
         },
     },
@@ -61,7 +63,7 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "nightfly",
+            colorscheme = "tokyonight",
         },
     },
 }

@@ -9,7 +9,7 @@ return {
         -- https://github.com/nvim-lua/plenary.nvim
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope.nvim",
-        "folke/which-key.nvim",
+        -- "folke/which-key.nvim",
     },
     opts = {
         menu = {
@@ -19,14 +19,14 @@ return {
     config = function()
         require("telescope").load_extension("harpoon")
 
-        -- Harpoon 1
-        vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "add_file" })
-        vim.keymap.set("n", "<C-e>", require("harpoon.ui").toggle_quick_menu, { desc = "quick menu" })
-        vim.keymap.set("n", "<leader>fh", "<CMD>Telescope harpoon marks<CR>", { desc = "Telescope Harpoon" })
-        vim.keymap.set("n", "<leader>hh", function() require("harpoon.ui").nav_file(1) end, { desc = "Hapoon 1" })
-        vim.keymap.set("n", "<leader>hj", function() require("harpoon.ui").nav_file(2) end, { desc = "Hapoon 2" })
-        vim.keymap.set("n", "<leader>hk", function() require("harpoon.ui").nav_file(3) end, { desc = "Hapoon 3" })
-        vim.keymap.set("n", "<leader>hl", function() require("harpoon.ui").nav_file(4) end, { desc = "Hapoon 4" })
+        -- -- Harpoon 1
+        -- vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "add_file" })
+        -- vim.keymap.set("n", "<C-e>", require("harpoon.ui").toggle_quick_menu, { desc = "quick menu" })
+        -- vim.keymap.set("n", "<leader>fh", "<CMD>Telescope harpoon marks<CR>", { desc = "Telescope Harpoon" })
+        -- vim.keymap.set("n", "<leader>hh", function() require("harpoon.ui").nav_file(1) end, { desc = "Hapoon 1" })
+        -- vim.keymap.set("n", "<leader>hj", function() require("harpoon.ui").nav_file(2) end, { desc = "Hapoon 2" })
+        -- vim.keymap.set("n", "<leader>hk", function() require("harpoon.ui").nav_file(3) end, { desc = "Hapoon 3" })
+        -- vim.keymap.set("n", "<leader>hl", function() require("harpoon.ui").nav_file(4) end, { desc = "Hapoon 4" })
 
         -- Harpoon 2
         --     local harpoon = require("harpoon"4

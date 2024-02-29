@@ -313,8 +313,10 @@ map rg fzf_search
 map rn rename
 map rl reload
 
-map t tmux_here
-map dt tmux_detach
+map t
+map tt tmux_here
+map td tmux_detach
+map ta ${{tmux attach}}
 
 map u unselect
 
