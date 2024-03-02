@@ -122,3 +122,6 @@ Int64
 tol
 neq
 e-7
+ToggleTerm
+NoNeckPain
+NvimTree

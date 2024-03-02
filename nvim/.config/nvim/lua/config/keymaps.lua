@@ -1,4 +1,5 @@
 -- keymaps are loaded after plugins
+local wk = require("which-key")
 
 local function map(mode, lhs, rhs, opts)
     local keys = require("lazy.core.handler").handlers.keys
@@ -63,16 +64,22 @@ vim.api.nvim_set_keymap("n", "<C-left>", ':lua SearchCell("b")<CR>', { noremap =
 map({ "n", "t" }, "<C-/>", "<cmd>ToggleTerm<cr>", { desc = "ToggleTerm", remap = false })
 
 -- Harpoon 1 ------------------------------------------------------------------
-vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "add_file" })
-vim.keymap.set("n", "<C-e>", require("harpoon.ui").toggle_quick_menu, { desc = "quick menu" })
-vim.keymap.set("n", "<leader>fh", "<CMD>Telescope harpoon marks<CR>", { desc = "Telescope Harpoon" })
-vim.keymap.set("n", "<leader>hh", function() require("harpoon.ui").nav_file(1) end, { desc = "Hapoon 1" })
-vim.keymap.set("n", "<leader>hj", function() require("harpoon.ui").nav_file(2) end, { desc = "Hapoon 2" })
-vim.keymap.set("n", "<leader>hk", function() require("harpoon.ui").nav_file(3) end, { desc = "Hapoon 3" })
-vim.keymap.set("n", "<leader>hl", function() require("harpoon.ui").nav_file(4) end, { desc = "Hapoon 4" })
+
+wk.register({
+    h = {
+        name = "harpoon",
+        a = { require("harpoon.mark").add_file, "harpoon add file" },
+        h = { function() require("harpoon.ui").nav_file(1) end, "harpoon 1" },
+        j = { function() require("harpoon.ui").nav_file(2) end, "harpoon 2" },
+        k = { function() require("harpoon.ui").nav_file(3) end, "harpoon 3" },
+        l = { function() require("harpoon.ui").nav_file(4) end, "harpoon 4" },
+    },
+    f = {
+        h = { "<CMD>Telescope harpoon marks<CR>", "Telescope Harpoon" },
+    },
+}, { prefix = "<leader>" })
 
 -- SlimeCells -----------------------------------------------------------------
-local wk = require("which-key")
 wk.register({
     c = {
         v = { "<Plug>SlimeConfig", "Slime Config" },
@@ -87,13 +94,14 @@ wk.register({
         l = { "<Plug>SlimeLineSend", "send line" },
     },
 }, { prefix = "<leader>" })
-
 vim.api.nvim_set_keymap("x", "<C-l>", "<Plug>SlimeRegionSend", { desc = "Slime send" })
 
+-- Auto Save ------------------------------------------------------------------
 wk.register({
     a = { "<cmd>ASToggle<cr>", "toggle auto-save" },
 }, { prefix = "<leader>" })
 
+-- NvimTree -------------------------------------------------------------------
 wk.register({
     ["e"] = {
         "<cmd>NvimTreeToggle<CR>",
@@ -101,7 +109,7 @@ wk.register({
     },
 }, { prefix = "<leader>" })
 
--- NoNeckPain
+-- NoNeckPain ---------------------------------------------------------------
 wk.register({
     k = {
         name = "NoNeckPain",
@@ -112,3 +120,31 @@ wk.register({
         s = { "<cmd>NoNeckPainResize 90<cr>", "no-neck-pain single" },
     },
 }, { prefix = "<leader>" })
+
+-- ToggleTerm ---------------------------------------------------------------
+local set_opfunc = vim.fn[vim.api.nvim_exec(
+    [[
+  func s:set_opfunc(val)
+    let &opfunc = a:val
+  endfunc
+  echon get(function('s:set_opfunc'), 'name')
+]],
+    true
+)]
+
+wk.register({
+    t = {
+        name = "ToggleTerm",
+        t = { "<cmd>ToggleTerm <cr>", "Open terminal" },
+        l = { "<cmd>ToggleTermSendCurrentLine <cr>", "send current line" },
+        v = { "<cmd>ToggleTermSendVisualLines <cr>", "send visual lines" },
+        s = { "<cmd>ToggleTermSendVisualSelection <cr>", "send visual selection" },
+    },
+}, { prefix = "<leader>" })
+
+vim.keymap.set("n", [[<leader><c-\>]], function()
+    set_opfunc(
+        function(motion_type) require("toggleterm").send_lines_to_terminal(motion_type, false, { args = vim.v.count }) end
+    )
+    vim.api.nvim_feedkeys("g@", "n", false)
+end, { desc = "sent motion to term" })
