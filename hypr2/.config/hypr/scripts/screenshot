@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 # grim -g "$(slurp)" - | wl-copy
 grim -g "$(slurp)" -t png
-notify-send "Saved to png" -a "ss"
+notify-send "Saved to png"

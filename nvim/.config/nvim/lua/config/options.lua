@@ -37,11 +37,14 @@ opt.colorcolumn = { 81 }
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99
-opt.spell = true
+opt.spell = false
 opt.spelllang = { "en", "pt" }
 opt.conceallevel = 0
 vim.filetype.add({
-    pattern = { [".*/hypr/.*.conf"] = "hyprlang" },
+    pattern = { [".*/hypr/.*.conf"] = "fish" },
+})
+vim.filetype.add({
+    pattern = { [".*/lf/.*"] = "fish" },
 })
 vim.filetype.add({
     pattern = { [".*/fish/.*"] = "fish" },

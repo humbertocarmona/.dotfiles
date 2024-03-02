@@ -12,7 +12,7 @@ return {
                 Util.on_load("telescope.nvim", function() require("telescope").load_extension("fzf") end)
             end,
         },
-        {},
+        { "debugloop/telescope-undo.nvim" },
     },
     keys = {
         {

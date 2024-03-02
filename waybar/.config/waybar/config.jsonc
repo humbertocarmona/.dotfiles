@@ -1,156 +1,242 @@
+// -*- mode: jsonc -*-
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passtrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
-        "sway/window"
+        "hyprland/workspaces",
+        "custom/media",
+        "hyprland/window"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "tray",
-        // "custom/pomodoro",
-        // "cpu",
-        // "memory",
-        "battery",
         "custom/language",
-        "pulseaudio"
-        //"network"
+        "custom/cycle_wall",
+        // "mpd",
+        //"idle_inhibitor",
+        "pulseaudio",
+        "network",
+        //"power-profiles-daemon",
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        // "keyboard-state",
+        "battery",
+        "battery#bat2",
+        "tray"
     ],
-    "sway/window": {
-        "max-length": 80,
-        "tooltip": false,
-        "format": "{}"
-    },
-    "sway/workspaces": {
-        "format": "{icon}",
+    // Modules configuration
+    "hyprland/workspaces": {
+        // "on-click": "activate",
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}: {icon}",
+        "disable-auto-back-and-forth": true,
         "format-icons": {
-            "1": "󰎤",
-            "2": "󰎧",
-            "3": "󰎪",
-            "4": "󰎭",
-            "5": "󰎱",
-            "6": "󰎳",
-            "7": "󰎶",
-            "8": "󰎹",
-            "9": "󰎼",
-            "10": "󱁷",
-            "urgent": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "󰽉",
+            "9": "",
+            "10": "",
+            "11": "",
+            "12": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
         }
     },
     "hyprland/window": {
         "format": "{}",
         "max-length": 80
     },
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "all-outputs": false
-        // "format-icons": {
-        //     "1": "",
-        //     "2": "",
-        //     "3": "",
-        //     "4": "",
-        //     "5": "",
-        //     "urgent": "",
-        //     "active": "",
-        //     "default": ""
-        // }
-    },
-    "clock": {
-        "format": "{:   %R     %d/%m}",
-        "tooltip-format": "{:%Y %B} <tt> <small> {calendar} </small></tt>"
-    },
-    "pulseaudio": {
-        "format": "{icon}   {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "kitty --class 'pulsemixer' -e pulsemixer",
-        "on-scroll-up": "pamixer -d 5",
-        "on-scroll-down": "pamixer -i 5",
-        "scroll-step": 5,
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
+            "locked": "",
+            "unlocked": ""
         }
     },
-    "network": {
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
         "interval": 5,
-        "format": "{icon}",
-        "format-alt": "{ipaddr} {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": {
-            "wifi": [
-                "󰤟",
-                "󰤢",
-                "󰤥",
-                "󰤨"
-            ],
-            "ethernet": [
-                ""
-            ],
-            "disconnected": [
-                ""
-            ]
+        "consume-icons": {
+            "on": " "
         },
-        "on-click": "kitty -e nmtui",
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
         "tooltip": false
     },
-    "custom/language": {
-        "exec": "~/.config/waybar/scripts/get_keymap.sh",
-        "interval": 2,
-        // "format": " {}",
-        "format": "{}",
-        "tooltip": false
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-        "interval": 60,
         "states": {
+            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "󱐥"
-        ],
-        "max-length": 25
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
     },
-    "cpu": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10,
-        "on-click": ""
+    "battery#bat2": {
+        "bat": "BAT2"
     },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "format-alt": " {used:0.1f}G",
-        "max-length": 10
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
     },
-    "tray": {
-        "icon-size": 14,
-        "tooltip": true,
-        "spacing": 12
-    }
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/language": {
+        "exec": "~/.config/hypr/scripts/get_keymap_hypr.sh",
+        "interval": 1,
+        // "format": "  {}",
+        "format": " {} ",
+        "tooltip": false
+    },
+    "custom/cycle_wall": {
+        "format": " 󱨑  {}",
+        "interval": 1,
+        "on-click": "~/.config/hypr/scripts/tools/expand cycle"
+    },
 }

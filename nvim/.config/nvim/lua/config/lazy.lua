@@ -24,7 +24,7 @@ require("lazy").setup({
     --install = { colorscheme = { "tokyonigh" } },
     checker = {
         enabled = true,
-        notify = true,
+        notify = false,
     }, -- automatically check for plugin updates
     change_detection = {
         notify = false,

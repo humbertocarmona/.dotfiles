@@ -30,19 +30,19 @@ cmd add_rsync_filter ${{
         echo $(basename $f) >> .rsync-filter
 }}
 
-cmd bzip2folder %{{
-    if [ -d $f ]; then
-        printf "making tar..."
-        tar cvf $f.tar $f
-        printf " ...compressing... "
-        bzip2 $f.tar
-        printf " ...done"
-    else
-        printf "compressing... "
-        bzip2 $f
-        printf " ...done"
-    fi
-}}
+# cmd bzip2folder %{{
+#     if [ -d $f ]; then
+#         printf "making tar..."
+#         tar cvf $f.tar $f
+#         printf " ...compressing... "
+#         bzip2 $f.tar
+#         printf " ...done"
+#     else
+#         printf "compressing... "
+#         bzip2 $f
+#         printf " ...done"
+#     fi
+# }}
 
 cmd chMod %{{
     printf ":"
@@ -86,38 +86,25 @@ cmd dragon-target %dragon --target $f
 
 cmd extract ${{
     set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.bz2) bunzip2 $f;;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
-    esac
+    atool -x $f
 }}
 
+# cmd extract ${{
+#     set -f
+#     case $f in
+#         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+#         *.tar.gz|*.tgz) tar xzvf $f;;
+#         *.tar.xz|*.txz) tar xJvf $f;;
+#         *.zip) unzip $f;;
+#         *.bz2) bunzip2 $f;;
+#         *.rar) unrar x $f;;
+#         *.7z) 7z x $f;;
+#     esac
+# }}
 
-cmd fzf_jump_here ${{
-    res="$(fd -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $PWD | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
-    if [ -d "$res" ] ; then
-        cmd="cd"
-    elif [ -f "$res" ] ; then
-        cmd="select"
-    else
-        exit 0
-    fi 
 
-
-    [ ! -z $res ] && lf -remote " send $id $cmd \"$res\" "
-}}
-
-cmd pycharm ${{
-        pycharm &; swaymsg move scratchpad;
-    }}
-
-cmd fzf_jump ${{
-    res="$(fd -E .julia -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $HOME | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
+cmd fzf_jump_home ${{
+    res="$(fd -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $HOME | fzf --height 80% --layout reverse --preview='exa --tree -L 2 {}')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
@@ -131,7 +118,7 @@ cmd fzf_jump ${{
 }}
 
 cmd fzf_jump_pwd ${{
-    res="$(fd -E .julia -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $PWD | fzf --height 50% --layout reverse --preview='exa --tree -L 2 {}')"
+    res="$(fd -E .virtualenvs -E .cache -E .pyenv -E Trash -H -L -I .+ $PWD | fzf --height 80% --layout reverse --preview='exa --tree -L 2 {}')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
@@ -253,14 +240,25 @@ cmd icat_clear ${{
     kitten --clear
 }}
 
-# bindings 
+cmd z %{{
+	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd zi ${{
+	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd on-cd &{{
+        zoxide add "$PWD"
+}}# bindings 
 
 map a
 map az zip
 map at tar
-map ag gz
-map ab bzip2folder
-map au unarchiv
+map ag targz
+map ab tarbz2
 map ax extract
 
 map c
@@ -268,7 +266,6 @@ map cc icat_clear
 map cu unselect
 map ca clear
 map ch chMod
-map cd code_here
 map cC clear_lf_cache
 map cT clear_trash
 
@@ -280,14 +277,13 @@ map ds dragon-stay
 map dt trash
 map dc docx-preview
 
-map e
-map ee $editor "$f"
-map eu $view "$f"
+# map e
+# map ee $editor "$f"
+# map eu $view "$f"
 
-map f
-map fp fzf_jump_pwd
-map fh fzf_jump_here
-map fj fzf_jump
+map f fzf_jump_home
+map e fzf_jump_pwd
+map s fzf_search
 
 map gh ${{ lazygit }}
 
@@ -308,10 +304,9 @@ map o $mimeopen --ask $f
 
 map p paste
 
-map r
-map rg fzf_search
-map rn rename
-map rl reload
+map r rename
+# map rn rename
+# map rl reload
 
 map t
 map tt tmux_here
@@ -320,15 +315,16 @@ map ta ${{tmux attach}}
 
 map u unselect
 
-map w setwallpaper
+# map w setwallpaper
 
-map x open $f 
+map w open $f 
+map w code_here
 
 map y copy
 
 map zb cd ~/.config/bin
 map zc cd ~/.config
-map z. cd ~/.dotfiles 
+map z. cd ~/.dotfiles
 map zf cd ~/.config/fish
 map zg lazy_git
 map zh cd ~/.config/hypr
@@ -341,7 +337,6 @@ map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
 map zz cd ~/
-
 map <delete> trash
 map . set hidden!
-
+map / zi

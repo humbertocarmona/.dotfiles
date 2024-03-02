@@ -36,6 +36,7 @@ bottomleft
 campixel
 camrelative
 Carmona
+CaskaydiaCove
 celld
 cgrad
 chanm
@@ -49,6 +50,7 @@ clim
 cmap
 cmtt
 CNAE
+coarse_grain
 coef
 colgap
 colindex
@@ -58,6 +60,7 @@ colormap
 colorrange
 Colour
 commandline
+comminution
 compat
 confint
 connectionstyle
@@ -89,6 +92,7 @@ dtype
 dtypes
 eachcol
 eachindex
+eachline
 eachrow
 edgecolor
 edgecolors
@@ -104,6 +108,7 @@ esbenp
 expt
 extedlow
 extendhigh
+ExtraLight
 facecolor
 fancybox
 fdate
@@ -115,6 +120,7 @@ findall
 findfirst
 findmax
 Fira
+FiraCode
 firstindex
 fitrobust
 fname
@@ -134,11 +140,13 @@ getlogger
 getproperty
 gridlaplacian
 groupby
+h12
 haskey
 hcat
 heightrounded
 Hethcode
 Hethcote
+hidespines
 hidexdecorations
 hideydecorations
 hiperparâmetros
@@ -150,6 +158,7 @@ humberto
 hypersphere
 icell
 iloc
+imax
 imread
 imshow
 Inconsolata
@@ -193,6 +202,7 @@ latexindent
 latexmk
 latexmkrc
 latin
+leftspinecolor
 legendfontsize
 legendposition
 lengthscale
@@ -280,6 +290,7 @@ nzunion
 occursin
 odata
 offdiag
+opt.guifont
 orthographicprojection
 outpath
 papersize
@@ -302,6 +313,7 @@ polycolor
 polyfit
 preprocess
 println
+Propo
 pseudolog
 pvalue
 pyimport
@@ -328,9 +340,12 @@ readjson
 readline
 readlines
 regdic
+relax.jl
 relx
 renamecols
 rgba
+rightspinecolor
+rightspinevisible
 Rilder
 rollmean
 Rosenbrock
@@ -376,6 +391,7 @@ sqlalchemy
 sqlite
 STACKSIZE
 stddev
+steelblue
 stephist
 stringtype
 stripmark
@@ -408,6 +424,7 @@ timeseries
 titlefontsize
 titlesize
 toarray
+Todo
 topleft
 Tridiagonal
 trimcols
@@ -447,6 +464,7 @@ xfit
 xlab
 xlabel
 xlabelrotation
+xlabelsize
 xlim
 xlims
 xmax
@@ -474,6 +492,7 @@ yfit
 ylab
 ylabel
 ylabelpadding
+ylabelsize
 ylim
 ylims
 ymax
@@ -481,7 +500,9 @@ ymin
 yscale
 yshift
 ytick
+ytickcolor
 ytickformat
+yticklabelcolor
 yticklabels
 ytickpos
 ytickrange
@@ -489,10 +510,4 @@ yticks
 zathura
 zika
 zlim
-Todo
-opt.guifont
-FiraCode
-CaskaydiaCove
-ExtraLight
-Propo
-h12
+λwindow

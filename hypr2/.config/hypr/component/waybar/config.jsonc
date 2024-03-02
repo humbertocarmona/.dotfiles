@@ -23,8 +23,9 @@
         "custom/cycle_wall",
         "custom/language",
         "pulseaudio",
-        "tray"
+        "network"
     ],
+        //"tray",
     // Modules configuration
     "hyprland/workspaces": {
         // "on-click": "activate",
@@ -184,7 +185,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}",
+        "format": "{icon}'  '{}%",
         "format-plugged": "󱐥",
         "format-icons": [
             "",
