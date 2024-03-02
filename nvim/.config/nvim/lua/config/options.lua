@@ -38,7 +38,7 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99
 opt.spell = true
-opt.spelllang = { "pt", "en" }
+opt.spelllang = { "en", "pt" }
 opt.conceallevel = 0
 vim.filetype.add({
     pattern = { [".*/hypr/.*.conf"] = "hyprlang" },

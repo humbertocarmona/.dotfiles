@@ -2,10 +2,10 @@ return {
     {
         "folke/tokyonight.nvim",
         lazy = true,
-        -- priority = 1000,
+        priority = 2000,
         opts = {
             transparent = true,
-            style = "storm",
+            style = "night",
             styles = {
                 sidebars = "transparent",
                 floats = "transparent",
@@ -17,6 +17,7 @@ return {
     {
         "bluz71/vim-nightfly-guicolors",
         lazy = true,
+        priority = 1002,
         config = function()
             vim.g.nightflyCursorColor = false --	Disabled
             vim.g.nightflyItalics = true --	Enabled
@@ -32,6 +33,7 @@ return {
     {
         "ellisonleao/gruvbox.nvim",
         lazy = true,
+        priority = 1001,
         config = function()
             require("gruvbox").setup({
                 terminal_colors = true, -- add neovim terminal colors
