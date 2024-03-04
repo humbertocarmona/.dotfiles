@@ -94,7 +94,7 @@ wk.register({
         l = { "<Plug>SlimeLineSend", "send line" },
     },
 }, { prefix = "<leader>" })
-vim.api.nvim_set_keymap("x", "<C-l>", "<Plug>SlimeRegionSend", { desc = "Slime send" })
+-- vim.api.nvim_set_keymap("x", "<C-l>", "<Plug>SlimeRegionSend", { desc = "Slime send" })
 
 -- Auto Save ------------------------------------------------------------------
 wk.register({
@@ -137,14 +137,22 @@ wk.register({
         name = "ToggleTerm",
         t = { "<cmd>ToggleTerm <cr>", "Open terminal" },
         l = { "<cmd>ToggleTermSendCurrentLine <cr>", "send current line" },
-        v = { "<cmd>ToggleTermSendVisualLines <cr>", "send visual lines" },
-        s = { "<cmd>ToggleTermSendVisualSelection <cr>", "send visual selection" },
     },
 }, { prefix = "<leader>" })
+
+wk.register({
+    t = {
+        name = "ToggleTerm",
+        s = { "<cmd>ToggleTermSendVisualLines <cr>", "send visual lines" },
+        v = { "<cmd>ToggleTermSendVisualSelection <cr>", "send visual selection" },
+    },
+}, { prefix = "<leader>", mode = "v" })
+
+vim.api.nvim_set_keymap("x", "<C-l>", "<cmd>ToggleTermSendVisualLines <cr>", { desc = "send to term" })
 
 vim.keymap.set("n", [[<leader><c-\>]], function()
     set_opfunc(
         function(motion_type) require("toggleterm").send_lines_to_terminal(motion_type, false, { args = vim.v.count }) end
     )
     vim.api.nvim_feedkeys("g@", "n", false)
-end, { desc = "sent motion to term" })
+end, { desc = "send motion to term" })
