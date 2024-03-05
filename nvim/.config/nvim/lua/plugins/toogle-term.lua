@@ -14,6 +14,7 @@ return {
                         return term.name
                     end,
                 },
+                open_mapping = [[<c-\>]],
             },
         },
     },
