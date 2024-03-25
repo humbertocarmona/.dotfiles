@@ -30,19 +30,19 @@ cmd add_rsync_filter ${{
         echo $(basename $f) >> .rsync-filter
 }}
 
-cmd bzip2folder %{{
-    if [ -d $f ]; then
-        printf "making tar..."
-        tar cvf $f.tar $f
-        printf " ...compressing... "
-        bzip2 $f.tar
-        printf " ...done"
-    else
-        printf "compressing... "
-        bzip2 $f
-        printf " ...done"
-    fi
-}}
+# cmd bzip2folder %{{
+#     if [ -d $f ]; then
+#         printf "making tar..."
+#         tar cvf $f.tar $f
+#         printf " ...compressing... "
+#         bzip2 $f.tar
+#         printf " ...done"
+#     else
+#         printf "compressing... "
+#         bzip2 $f
+#         printf " ...done"
+#     fi
+# }}
 
 cmd chMod %{{
     printf ":"
@@ -86,16 +86,21 @@ cmd dragon-target %dragon --target $f
 
 cmd extract ${{
     set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.bz2) bunzip2 $f;;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
-    esac
+    atool -x $f
 }}
+
+# cmd extract ${{
+#     set -f
+#     case $f in
+#         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+#         *.tar.gz|*.tgz) tar xzvf $f;;
+#         *.tar.xz|*.txz) tar xJvf $f;;
+#         *.zip) unzip $f;;
+#         *.bz2) bunzip2 $f;;
+#         *.rar) unrar x $f;;
+#         *.7z) 7z x $f;;
+#     esac
+# }}
 
 
 cmd fzf_jump_home ${{
@@ -235,14 +240,25 @@ cmd icat_clear ${{
     kitten --clear
 }}
 
-# bindings 
+cmd z %{{
+	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd zi ${{
+	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd on-cd &{{
+        zoxide add "$PWD"
+}}# bindings 
 
 map a
 map az zip
 map at tar
-map ag gz
-map ab bzip2folder
-map au unarchiv
+map ag targz
+map ab tarbz2
 map ax extract
 
 map c
@@ -301,14 +317,14 @@ map u unselect
 
 # map w setwallpaper
 
-map x open $f 
+map w open $f 
 map w code_here
 
 map y copy
 
 map zb cd ~/.config/bin
 map zc cd ~/.config
-map z. cd ~/.dotfiles 
+map z. cd ~/.dotfiles
 map zf cd ~/.config/fish
 map zg lazy_git
 map zh cd ~/.config/hypr
@@ -320,8 +336,7 @@ map zd cd ~/Dev
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
 map zw cd ~/Pictures/Wallpapers
-map zz cd ~/
 
 map <delete> trash
 map . set hidden!
-
+map / zi

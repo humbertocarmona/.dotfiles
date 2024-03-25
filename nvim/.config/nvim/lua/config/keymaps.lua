@@ -134,20 +134,23 @@ local set_opfunc = vim.fn[vim.api.nvim_exec(
 
 wk.register({
     t = {
-        name = "ToggleTerm",
+        name = "Telescope/ToggleTerm",
         t = { "<cmd>ToggleTerm <cr>", "Open terminal" },
         l = { "<cmd>ToggleTermSendCurrentLine <cr>", "send current line" },
+        u = { "<cmd>Telescope undo <cr>", "Telescope undo" },
     },
 }, { prefix = "<leader>" })
 
 wk.register({
     t = {
-        name = "ToggleTerm",
-        s = { "<cmd>ToggleTermSendVisualLines <cr>", "send visual lines" },
+        name = "Telescole/ToggleTerm",
+        l = { "<cmd>ToggleTermSendVisualLines <cr>", "send visual lines" },
         v = { "<cmd>ToggleTermSendVisualSelection <cr>", "send visual selection" },
+        u = { "<cmd>Telescope undo <cr>", "Telescope Undo" },
     },
 }, { prefix = "<leader>", mode = "v" })
 
+vim.api.nvim_set_keymap("n", "<C-p>", "<cmd>ToggleTermSendCurrentLine <cr>", { desc = "send to term" })
 vim.api.nvim_set_keymap("x", "<C-l>", "<cmd>ToggleTermSendVisualLines <cr>", { desc = "send to term" })
 
 vim.keymap.set("n", [[<leader><c-\>]], function()

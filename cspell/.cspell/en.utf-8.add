@@ -36,6 +36,7 @@ bottomleft
 campixel
 camrelative
 Carmona
+CaskaydiaCove
 celld
 cgrad
 chanm
@@ -49,6 +50,7 @@ clim
 cmap
 cmtt
 CNAE
+coarse_grain
 coef
 colgap
 colindex
@@ -104,6 +106,7 @@ esbenp
 expt
 extedlow
 extendhigh
+ExtraLight
 facecolor
 fancybox
 fdate
@@ -115,6 +118,7 @@ findall
 findfirst
 findmax
 Fira
+FiraCode
 firstindex
 fitrobust
 fname
@@ -134,6 +138,7 @@ getlogger
 getproperty
 gridlaplacian
 groupby
+h12
 haskey
 hcat
 heightrounded
@@ -280,6 +285,7 @@ nzunion
 occursin
 odata
 offdiag
+opt.guifont
 orthographicprojection
 outpath
 papersize
@@ -302,6 +308,7 @@ polycolor
 polyfit
 preprocess
 println
+Propo
 pseudolog
 pvalue
 pyimport
@@ -328,6 +335,7 @@ readjson
 readline
 readlines
 regdic
+relax.jl
 relx
 renamecols
 rgba
@@ -408,6 +416,7 @@ timeseries
 titlefontsize
 titlesize
 toarray
+Todo
 topleft
 Tridiagonal
 trimcols
@@ -489,12 +498,4 @@ yticks
 zathura
 zika
 zlim
-Todo
-opt.guifont
-FiraCode
-CaskaydiaCove
-ExtraLight
-Propo
-h12
-relax.jl
-coarse_grain
+λwindow

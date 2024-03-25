@@ -41,7 +41,10 @@ opt.spell = false
 opt.spelllang = { "en", "pt" }
 opt.conceallevel = 0
 vim.filetype.add({
-    pattern = { [".*/hypr/.*.conf"] = "hyprlang" },
+    pattern = { [".*/hypr/.*.conf"] = "fish" },
+})
+vim.filetype.add({
+    pattern = { [".*/lf/.*"] = "fish" },
 })
 vim.filetype.add({
     pattern = { [".*/fish/.*"] = "fish" },
