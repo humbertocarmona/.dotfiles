@@ -91,6 +91,7 @@ dtype
 dtypes
 eachcol
 eachindex
+eachline
 eachrow
 edgecolor
 edgecolors
