@@ -24,4 +24,4 @@ Exec=/usr/bin/google-chrome-stable --force-device-scale-factor=1
 Name=New Incognito Window
 StartupWMClass=Google-chrome
 Exec=/usr/bin/google-chrome-stable --force-device-scale-factor=1
-MimeType=x-scheme-handler/webcal;application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
+MimeType=x-scheme-handler/mailto;x-scheme-handler/webcal;application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
