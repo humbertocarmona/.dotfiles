@@ -46,3 +46,4 @@ alias vf='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
 alias vu='nvim -u NONE'
 alias refresh-keys="sudo pacman-key --refresh-keys"
 alias fixbluetooth="sudo btmgmt ssp on"
+alias trash-view="trash-list | sort -r | fzf"

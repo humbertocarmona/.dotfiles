@@ -30,6 +30,7 @@ bibtex
 binarize
 binarized
 binazized
+binirizing
 blockmodel
 boltzmann
 bottomleft
@@ -111,6 +112,7 @@ extendhigh
 ExtraLight
 facecolor
 fancybox
+fastparquet
 fdate
 figsize
 filecolor
@@ -273,6 +275,7 @@ newaxis
 NFe
 nfeat
 njit
+nmax
 nopython
 nprint
 nprocs

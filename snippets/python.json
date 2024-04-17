@@ -11,11 +11,11 @@
             "'''"
         ],
         "description": "add doc string"
-    }
+    },
 	"Add cell":{
 		"prefix": "cell",
 		"body": ["",
-				 "# %% --------------------------------------------------",
+				 "# %%",
 				 "$1"],
 		"description": "add cell"
 	}

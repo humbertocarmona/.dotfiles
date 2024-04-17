@@ -15,8 +15,8 @@
         "hyprland/window"
     ],
     "modules-center": [
-        "custom/dynamic_pill",
-        "clock"
+        "custom/dynamic_pill"
+        //"clock"
     ],
     "modules-right": [
         "battery",
@@ -25,7 +25,7 @@
         "pulseaudio",
         "network"
     ],
-        //"tray",
+    //"tray",
     // Modules configuration
     "hyprland/workspaces": {
         // "on-click": "activate",
@@ -137,7 +137,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60,
         "format": "{:%B %d, %I:%M}",
-        "max-length": 25,
+        "max-length": 45,
         "on-click": "merkuro-calendar"
     },
     "cpu": {
