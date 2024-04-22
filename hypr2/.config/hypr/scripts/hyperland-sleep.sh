@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # needs pacman -S swayidle
 #
 # save it as ~/.config/hypr/scripts/sleep.sh

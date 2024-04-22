@@ -73,6 +73,7 @@ COVID
 cpptools
 cumsum
 cursorclass
+darkgreen
 darkterrain
 dataframe
 dataframes
@@ -122,10 +123,12 @@ fillto
 findall
 findfirst
 findmax
+findmaxima
 Fira
 FiraCode
 firstindex
 fitrobust
+fitzoom
 fname
 fontdict
 fontfamily
@@ -141,6 +144,8 @@ geolocalizadas
 geopandas
 getlogger
 getproperty
+golay
+Golay
 gridlaplacian
 groupby
 h12
@@ -184,6 +189,7 @@ iterrows
 jacobian
 jldopen
 jldsave
+joinpath
 jsdelivr
 julia
 julialang
@@ -214,6 +220,7 @@ lightnavy
 linecolor
 lineplot
 linestyle
+linesyle
 linewidth
 linkaxes
 linkcolor
@@ -300,12 +307,14 @@ outpath
 papersize
 parisi
 parsefile
+patchsize
 pdfauthor
 pdfkeywords
 pdflatex
 pdfpagemode
 pdfstartview
 pdfsubject
+peakproms
 pearson
 permutedims
 perspectiveness
@@ -328,6 +337,7 @@ pyvenv
 qqline
 qqnorm
 qtagg
+quantile
 Queryverse
 randn
 randperm
@@ -348,9 +358,11 @@ relax.jl
 relx
 renamecols
 rgba
+rightarrow
 rightspinecolor
 rightspinevisible
 Rilder
+rmsd
 rollmean
 Rosenbrock
 rowgap
@@ -361,6 +373,8 @@ runge
 runid
 runin
 savefig
+savitzky
+Savitzky
 scalefactor
 scalefontsizes
 scatterplot
@@ -451,12 +465,14 @@ vals
 vcat
 vcmap
 verticalalignment
+viewmode
 viridis
 vline
 vlines
 vmax
 vmin
 vprops
+walkdir
 whereop
 wireframe
 writejson
@@ -467,6 +483,7 @@ xelatexmk
 xfit
 xlab
 xlabel
+xlabeloffset
 xlabelrotation
 xlabelsize
 xlim
@@ -475,6 +492,7 @@ xmax
 xmean
 xmin
 xrange
+xreversed
 xscale
 xtick
 xtickfontrotation
@@ -495,6 +513,7 @@ yerr
 yfit
 ylab
 ylabel
+ylabeloffset
 ylabelpadding
 ylabelsize
 ylim
@@ -513,5 +532,8 @@ ytickrange
 yticks
 zathura
 zika
+zlabel
+zlabeloffset
 zlim
+zlims
 λwindow
