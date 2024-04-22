@@ -25,5 +25,3 @@ source $HOME/.config/fish/fish_aliases
 
 fish_vi_key_bindings
 fish_vi_cursor
-source /opt/conda/etc/fish/conf.d/conda.fish
-# conda activate py311
