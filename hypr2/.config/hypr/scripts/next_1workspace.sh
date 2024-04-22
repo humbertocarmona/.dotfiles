@@ -8,7 +8,7 @@ zero=0
 c="$(hyprctl activeworkspace -j | jq '.id')"
 
 if [ $1 -gt $zero ]; then
-	((c += +1))
+	((c -= +1))
 else
 	((c += 1))
 fi
