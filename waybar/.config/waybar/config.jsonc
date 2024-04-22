@@ -34,7 +34,7 @@
         // "on-click": "activate",
         "disable-scroll": true,
         "all-outputs": false,
-        "format": "{name} {icon}",
+        "format": "{icon}",
         "disable-auto-back-and-forth": true,
         "format-icons": {
              "1":"⠁",
