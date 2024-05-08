@@ -290,6 +290,7 @@ nprocs
 nrow
 nrows
 nsamples
+nspins
 nsteps
 nthreads
 ntriplets
