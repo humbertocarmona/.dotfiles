@@ -1,6 +1,5 @@
 [MIME Cache]
-application/pdf=FoxitReader.desktop;cal-share-applications-google-chrome.desktop;
-application/ppdf=FoxitReader.desktop;
+application/pdf=cal-share-applications-google-chrome.desktop;
 application/rdf+xml=cal-share-applications-google-chrome.desktop;
 application/rss+xml=cal-share-applications-google-chrome.desktop;
 application/xhtml+xml=cal-share-applications-google-chrome.desktop;

@@ -70,6 +70,10 @@ cmd code_here ${{
     code $PWD
 }}
 
+cmd neovide_here ${{
+    neovide $PWD
+}}
+
 cmd delete ${{
     set -f
         printf "$fx\n"
@@ -316,10 +320,11 @@ map ta ${{tmux attach}}
 map u unselect
 
 # map w setwallpaper
-
-# map w open $f 
 map w
-map w code_here
+map wf open $f 
+map wc code_here
+map wn neovide_here
+
 
 map y copy
 
