@@ -317,7 +317,8 @@ map u unselect
 
 # map w setwallpaper
 
-map w open $f 
+# map w open $f 
+map w
 map w code_here
 
 map y copy
