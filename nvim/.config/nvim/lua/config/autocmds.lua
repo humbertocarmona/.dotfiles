@@ -13,4 +13,4 @@ local function augroup(name) return vim.api.nvim_create_augroup("lazyvim_" .. na
 --     command = "set filetype=hyprlang",
 -- })
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { command = "NoNeckPain" })
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { command = "NoNeckPain" })
