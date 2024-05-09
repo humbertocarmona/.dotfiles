@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Idea
-Comment=Intelij Idea
-Icon=/opt/idea-IU-223.8836.41/bin/idea.png
-Exec=/usr/bin/idea
-Terminal=false
-

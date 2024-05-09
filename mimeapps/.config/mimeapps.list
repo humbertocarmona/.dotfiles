@@ -1,6 +1,6 @@
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
-application/toml=nvim.desktop;neovide.desktop;code.desktop;
+application/toml=neovide.desktop;nvim.desktop;
 image/png=swayimg.desktop;
 inode/directory=org.kde.dolphin.desktop;
 text/julia=neovide.desktop;nvim.desktop;code.desktop;

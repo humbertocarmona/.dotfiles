@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Clion
-Comment=Intelij C/C++ development
-Icon=/opt/clion-2023.1.2/bin/clion.png
-Exec=/usr/bin/clion
-Terminal=false
-
