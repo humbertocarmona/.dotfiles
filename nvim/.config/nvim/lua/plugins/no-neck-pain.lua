@@ -3,7 +3,7 @@ return {
     cmd = { "NoNeckPain" },
     config = function()
         require("no-neck-pain").setup({
-            width = 90,
+            width = 100,
             buffers = {
                 backgroundColor = "tokyonight",
                 blend = -0.1,

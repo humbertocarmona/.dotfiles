@@ -22,13 +22,5 @@ return {
                 ignore = false,
             },
         })
-
-        -- local wk = require("which-key")
-        -- wk.register({
-        --     ["e"] = {
-        --         "<cmd>NvimTreeToggle<CR>",
-        --         "Toggle file explorer",
-        --     },
-        -- }, { prefix = "<leader>" })
     end,
 }
