@@ -22,7 +22,7 @@ function rgsed -d "find and replace pathern in files"
     set cmd "'s/"$_flag_from"/"$_flag_to"/g'"
 
     echo "$cmd in files:"
-    rg -l --no-heading $_flag_from
+    rg --no-heading $_flag_from
 
     while true
         read -l -P "posso continuar ? [y/n]" reply
