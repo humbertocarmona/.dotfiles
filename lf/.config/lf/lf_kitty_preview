@@ -47,6 +47,9 @@ handle_extension() {
 	lua)
 		bat_or_cat "${FILE_PATH}"
 		;;
+	csv)
+		bat_or_cat "${FILE_PATH}"
+		;;
 	zip)
 		clean_image
 		unzip -l ${FILE_PATH}
