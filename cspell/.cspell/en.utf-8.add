@@ -1,5 +1,6 @@
 # Custom Dictionary Words
 ablines
+abspath
 addprocs
 alacritty
 amsmath
@@ -29,12 +30,13 @@ biblatex
 bibtex
 binarization
 binarize
-binarized
 binazized
 binirizing
 blockmodel
 boltzmann
 bottomleft
+bson
+BSON
 campixel
 camrelative
 Carmona
@@ -69,11 +71,14 @@ connectionstyle
 contourf
 conv
 CoV
+covary
 COVID
 cpptools
+crunk
 cumsum
 cursorclass
 darkgreen
+darkorange
 darkterrain
 dataframe
 dataframes
@@ -89,6 +94,7 @@ displayq
 dmax
 docstr
 documentclass
+dodgerblue
 donot
 dropna
 dtype
@@ -108,6 +114,9 @@ Erneson
 errorbar
 errorbars
 esbenp
+exeflag
+exeflags
+expq
 expt
 extedlow
 extendhigh
@@ -116,6 +125,7 @@ facecolor
 fancybox
 fastparquet
 fdate
+fieldnames
 figsize
 filecolor
 filedate
@@ -123,7 +133,6 @@ fillto
 findall
 findfirst
 findmax
-findmaxima
 Fira
 FiraCode
 firstindex
@@ -142,18 +151,16 @@ ftree
 FUNCAP
 geolocalizadas
 geopandas
+getfield
 getlogger
 getproperty
-golay
-Golay
 gridlaplacian
 groupby
-h12
 haskey
 hcat
 heightrounded
 Hethcode
-Hethcote
+hidedecorations
 hidespines
 hidexdecorations
 hideydecorations
@@ -161,7 +168,6 @@ hiperparâmetros
 histplot
 hlines
 horizontalalignment
-hrsh7th
 humberto
 hypersphere
 icell
@@ -170,6 +176,7 @@ imax
 imread
 imshow
 Inconsolata
+indianred
 indx
 infomap
 inplace
@@ -182,6 +189,7 @@ isempty
 isfile
 Ising
 isnothing
+isone
 ispressed
 issn
 issymmetric
@@ -207,10 +215,12 @@ labelfont
 labelpad
 labelsize
 lastrowid
+latexfonts
 latexindent
 latexmk
 latexmkrc
 latin
+leftrightarrow
 leftspinecolor
 legendfontsize
 legendposition
@@ -220,7 +230,6 @@ lightnavy
 linecolor
 lineplot
 linestyle
-linesyle
 linewidth
 linkaxes
 linkcolor
@@ -229,6 +238,7 @@ linkyaxes
 linspace
 lmplot
 loglog
+logq
 logspace
 lpad
 lualatex
@@ -302,7 +312,6 @@ nzunion
 occursin
 odata
 offdiag
-opt.guifont
 orthographicprojection
 outpath
 papersize
@@ -321,6 +330,7 @@ permutedims
 perspectiveness
 perspectiveprojection
 petsc
+pmap
 pmid
 pointsize
 polycolor
@@ -372,7 +382,6 @@ royalblue
 rstart
 runge
 runid
-runin
 savefig
 savitzky
 Savitzky
@@ -410,6 +419,7 @@ sqlalchemy
 sqlite
 STACKSIZE
 stddev
+stdev
 steelblue
 stephist
 stringtype
@@ -438,6 +448,7 @@ textcoords
 textrm
 thermalization
 threadid
+ticklabels
 tightlimits
 Tijk
 timeseries
@@ -449,8 +460,11 @@ topleft
 Tridiagonal
 trimcols
 triu
+tsallis
+Tsallis
 twocolumn
 typedefs
+typedict
 typeof
 typeparameters
 UNIFOR
@@ -479,6 +493,7 @@ whereop
 wireframe
 writejson
 xaxis
+xcross
 xdistribute
 xelatex
 xelatexmk
@@ -493,6 +508,7 @@ xlims
 xmax
 xmean
 xmin
+Xoshiro
 xrange
 xreversed
 xscale
@@ -501,7 +517,6 @@ xtickfontrotation
 xticklab
 xticklabelrotation
 xticklabels
-xticklabs
 xtickpos
 xticks
 xutils

@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Leia-me do IRPF 2024
-Exec="/home/humberto/Documents/Pessoal/IRPF/IRPF2024/Leia-me do IRPF 2024" %U
-Icon=/home/humberto/Documents/Pessoal/IRPF/IRPF2024/.install4j/Leia-me do IRPF 2024.png
-Categories=Application;
-StartupWMClass=install4j-serpro-ppgd-app-IRPFPGD123524222

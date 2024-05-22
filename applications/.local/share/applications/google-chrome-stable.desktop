@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=/usr/bin/google-chrome-stable --force-device-scale-factor=1
-Name=/usr/bin/google-chrome-stable --force-device-scale-factor=1
-NoDisplay=true
-StartupNotify=false
-Type=Application
-X-KDE-GlobalAccel-CommandShortcut=true

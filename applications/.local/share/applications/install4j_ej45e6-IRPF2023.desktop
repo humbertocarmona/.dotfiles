@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=IRPF2023
-Exec="/home/humberto/ProgramasRFB/IRPF2023/IRPF2023" %U
-Icon=/home/humberto/ProgramasRFB/IRPF2023/.install4j/IRPF2023.png
-Categories=Application;
-StartupWMClass=install4j-serpro-ppgd-app-IRPFPGD275692530
