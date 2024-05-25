@@ -163,58 +163,21 @@ button:hover {
     animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
 
 label:focus {
     background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
 }
 
 #disk {
     background-color: #964B00;
 }
 
-#backlight {
-    background-color: #90b1b1;
-}
 
-#network {
-    background-color: #2980b9;
-}
 
 #network.disconnected {
     background-color: #f53c3c;
 }
 
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
 
 #pulseaudio.muted {
     background-color: #90b1b1;
@@ -244,13 +207,6 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
 
 #tray {
     background-color: #2980b9;
@@ -344,13 +300,62 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2a3f56;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #6c6648; 
+    color: #000000;
+}
+
+#backlight {
+    background-color: #739b91;
+}
+
+#temperature {
+    background-color: #2a3f56;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+#memory {
+    background-color: #c6c1a3;
+}
+
+#cpu {
+    background-color: #5c533f;
+    color: #000000;
+}
+
+#network {
+    background-color: #6c6648; 
+}
+
+#pulseaudio {
+    background-color: #739b91;
+    color: #000000;
+}
+
 #custom-cycle_wall{
-    background: #0069d4;
+    background:#2a3f56;
     color: rgba(250, 241, 228,100);
     font-weight:  bolder;
 }
 #custom-language{
-    background: #97e1ad;
+    background: #c6c1a3;
     color: #050505;
     font-weight:  bolder;
 }
