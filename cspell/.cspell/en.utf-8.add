@@ -121,6 +121,7 @@ expt
 extedlow
 extendhigh
 ExtraLight
+extremize
 facecolor
 fancybox
 fastparquet
@@ -294,6 +295,7 @@ NFe
 nfeat
 njit
 nmax
+nonextensive
 nopython
 nprint
 nprocs
