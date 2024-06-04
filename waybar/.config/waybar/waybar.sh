@@ -7,4 +7,5 @@ killall -q waybar
 # while pgrep -x waybar >/dev/null; do sleep 1; done
 
 # Launch main
-waybar -s ./style.css -c ./config.jsonc
+waybar -s ./style.css -c ./config.jsonc &
+disown (pidof waybar)

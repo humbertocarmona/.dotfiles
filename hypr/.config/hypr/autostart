@@ -1,24 +1,12 @@
 #!/usr/bin/bash
 TEMP=/tmp/current_wall
-wallpapers=(~/.config/hypr/wallpapers/*)
 
 # variables
 config=$HOME/.config/hypr
 scripts=$config/scripts
 
-# notification daemon
-dunst &
-
 # waybar
 $scripts/launch_waybar &
 
 # wallpaper
-$scripts/expand wall &
-# waypaper --restore --backend swww
-
-nm-applet &
-
-# other
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
-# notify-send -a aurora "hello $(whoami)" &
+# expand $scripts/wall &

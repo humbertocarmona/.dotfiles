@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FiraCode, FontAwesome, Roboto;
+    font-family: FiraCode Nerd Font Mono, "Font Awesome 6 Free Solid", RobotoMono Nerd Font Mono, Braille;
     font-size: 14px;
 }
 
@@ -321,7 +321,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: #739b91;
+    background-color: #6c6648;
 }
 
 #temperature {
