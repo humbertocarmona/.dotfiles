@@ -94,7 +94,14 @@ wk.register({
         l = { "<Plug>SlimeLineSend", "send line" },
     },
 }, { prefix = "<leader>" })
--- vim.api.nvim_set_keymap("x", "<C-l>", "<Plug>SlimeRegionSend", { desc = "Slime send" })
+wk.register({
+    c = {
+        c = {
+            "<Plug>SlimeRegionSend",
+            "Slime region send",
+        },
+    },
+}, { prefix = "<leader>", mode = "v" })
 
 -- Auto Save ------------------------------------------------------------------
 wk.register({
