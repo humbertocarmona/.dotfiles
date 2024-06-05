@@ -47,3 +47,4 @@ alias vu='nvim -u NONE'
 alias refresh-keys="sudo pacman-key --refresh-keys"
 alias fixbluetooth="sudo btmgmt ssp on"
 alias trash-view="trash-list | sort -r | fzf"
+alias ovpn="sudo openvpn /etc/openvpn/client/gateway1-UDP4-1194-carmona.ovpn"
