@@ -11,7 +11,7 @@ fi
 # Check if device is currently enabled (1 = enabled, 0 = disabled)
 DEVICE="$(hyprctl getoption $HYPRLAND_VARIABLE | grep 'int: 1')"
 
-if [ -z "$DEVICE" ]; then,e
+if [ -z "$DEVICE" ]; then
 	# if the device is disabled, then enable
 	notify-send -u normal "Enabling Touchpad"
 	hyprctl keyword $HYPRLAND_VARIABLE true
