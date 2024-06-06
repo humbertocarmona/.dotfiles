@@ -159,6 +159,7 @@ gridlaplacian
 groupby
 haskey
 hcat
+heatmaps
 heightrounded
 Hethcode
 hidedecorations
@@ -241,6 +242,8 @@ lmplot
 loglog
 logq
 logspace
+lorentzians
+Lorentzians
 lpad
 lualatex
 lualatexmk
@@ -277,6 +280,7 @@ monospace
 mouseposition
 mplstyle
 multiflip
+Mvec
 mysql
 navia
 nbanks
@@ -516,6 +520,7 @@ xreversed
 xscale
 xtick
 xtickfontrotation
+xtickformat
 xticklab
 xticklabelrotation
 xticklabels
@@ -546,13 +551,16 @@ ytickcolor
 ytickformat
 yticklabelcolor
 yticklabels
+yticklabelspace
 ytickpos
 ytickrange
 yticks
+yvec
 zathura
 zika
 zlabel
 zlabeloffset
 zlim
 zlims
+zvec
 λwindow

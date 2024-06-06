@@ -21,6 +21,5 @@ set -xU JULIA_NUM_THREADS 8
 
 zoxide init fish | source
 source $HOME/.config/fish/fish_aliases
-
 fish_vi_key_bindings
 fish_vi_cursor
