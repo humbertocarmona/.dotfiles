@@ -13,6 +13,7 @@ abbr pac 'sudo pacman'
 abbr pa 'paru --skipreview'
 abbr q exit
 abbr rm 'rm -i'
+abbr rmf 'rm -f'
 abbr v nvim
 abbr vb 'nvim ~/.config/waybar/config.jsonc'
 abbr vl 'nvim ~/.config/lf/lfrc'
