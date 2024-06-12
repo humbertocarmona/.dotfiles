@@ -12,22 +12,40 @@
     },
     "Insert Citation": {
         "prefix": "icite",
-        "body": "$1~\\cite{$0}",
+        "body": "$1~\\cite{$2}$0",
         "description": "insert citation"
     },
     "Inline math": {
         "prefix": "imath",
-        "body": "\\($0\\)",
+        "body": ["\\($1\\)$0"],
         "description": "insert inline math"
+    },
+    "Insert equation":{
+        "prefix":"ieq",
+        "body":[
+            "\\begin{equation}\\label{eq:$0}",
+            "$1",
+            "\\end{equation}"    
+        ],
+        "description":"Insert equation"
+    },
+    "Insert align":{
+        "prefix":"ialign",
+        "body":[
+            "\\begin{align}\\label{eq:$0}",
+            "$1",
+            "\\end{align}"    
+        ],
+        "description":"Insert align"
     },
     "Reference equation": {
         "prefix": "eq.",
-        "body": "Eq.~\\eqref{eq:$1}$0",
+        "body": "$1~\\eqref{eq:$2}$0",
         "description": "insert reference to equation"
     },
     "Reference figure": {
         "prefix": "fig.",
-        "body": "Fig.~\\ref{fig:$1}$0",
+        "body": "$1~\\ref{fig:$2}$0",
         "description": "insert reference to figure"
     },
     "BrickRed": {

@@ -49,3 +49,7 @@ vim.filetype.add({
 vim.filetype.add({
     pattern = { [".*/fish/.*"] = "fish" },
 })
+
+vim.g.autoformat = true
+vim.opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+vim.opt.formatoptions = "jcroqlnt" -- tcqj
