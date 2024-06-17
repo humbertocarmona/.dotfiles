@@ -12,7 +12,7 @@ set -xU JULIA_NUM_THREADS 8
 # set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 # set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/texlive/2023/bin/x86_64-linux $fish_user_paths
-# set -U fish_user_paths /opt/juliaup/bin $fish_user_paths
+set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
 
 # set -Ux PYENV_ROOT $HOME/.pyenv
 # set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
@@ -26,14 +26,13 @@ fish_vi_cursor
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/miniconda3/bin/conda
-    eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f /opt/miniconda/bin/conda
+    eval /opt/miniconda/bin/conda "shell.fish" hook $argv | source
 else
-    if test -f "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/opt/miniconda3/etc/fish/conf.d/conda.fish"
+    if test -f "/opt/miniconda/etc/fish/conf.d/conda.fish"
+        . "/opt/miniconda/etc/fish/conf.d/conda.fish"
     else
-        set -x PATH "/opt/miniconda3/bin" $PATH
+        set -x PATH /opt/miniconda/bin $PATH
     end
 end
 # <<< conda initialize <<<
-

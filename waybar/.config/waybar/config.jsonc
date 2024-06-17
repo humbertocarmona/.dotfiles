@@ -27,13 +27,10 @@
         "battery",
         "tray"
     ],
-    // Modules configuration
     "hyprland/workspaces": {
-        // "on-click": "activate",
-        "disable-scroll": true,
         "all-outputs": false,
         "format": "{icon}",
-        "disable-auto-back-and-forth": true,
+        "disable-auto-back-and-forth": false,
         "format-icons": {
             "1": "⠁",
             "2": "⠃",

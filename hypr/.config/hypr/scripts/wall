@@ -2,7 +2,7 @@
 
 # Initialize swww-daemon if not running
 if ! pidof swww-daemon >/dev/null; then
-	swww init
+	swww-daemon
 fi
 
 # Retrieve monitor information
