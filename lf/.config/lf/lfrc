@@ -286,7 +286,7 @@ map dc docx-preview
 # map eu $view "$f"
 
 map f fzf_jump_home
-map e fzf_jump_pwd
+map e zi
 map s fzf_search
 
 map gh ${{ lazygit }}
@@ -345,4 +345,4 @@ map zw cd ~/Pictures/Wallpapers
 map zz cd ~/
 map <delete> trash
 map . set hidden!
-map / zi
+map / fzf_jump_pwd

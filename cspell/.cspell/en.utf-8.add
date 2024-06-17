@@ -157,6 +157,7 @@ getlogger
 getproperty
 gridlaplacian
 groupby
+halign
 haskey
 hcat
 heatmaps
@@ -187,6 +188,7 @@ insyncdl
 IPECE
 isapprox
 isbn
+isdir
 isempty
 isfile
 Ising
@@ -565,4 +567,3 @@ zlims
 zvec
 λrange
 λwindow
-Tsallis
