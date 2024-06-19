@@ -1,7 +1,10 @@
+addprocs
+backgroundcolor
 Bialek
 bson
 BSON
 dodgerblue
+exeflags
 fname
 framevisible
 halign
@@ -11,7 +14,10 @@ Makie
 mkpath
 nbonds
 nspins
+pmap
 tellheight
 tellwidth
 xlabel
+xlims
 ylabel
+ylims
