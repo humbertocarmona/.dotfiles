@@ -222,7 +222,7 @@ cmd trash ${{
     # extract the substring from start of string up to delimiter.
     # this is the first "element" of the string.
     file=${files%%;*}
-    trash-put "$(basename $file)"
+    send2trash "$(basename $file)"
     # the next.
     if [ "$files" = "$file" ]; then
         files=''

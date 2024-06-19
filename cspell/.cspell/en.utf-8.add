@@ -6,10 +6,13 @@ BSON
 dodgerblue
 exeflags
 fname
+fontsize
 framevisible
 halign
 indianred
 isdir
+latexfonts
+lualatex
 Makie
 mkpath
 nbonds
@@ -17,6 +20,7 @@ nspins
 pmap
 tellheight
 tellwidth
+Tsallis
 xlabel
 xlims
 ylabel
