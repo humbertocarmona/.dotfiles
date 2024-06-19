@@ -4,9 +4,9 @@ abbr df 'df -h' # human-readable sizes
 abbr f lfcd
 abbr g lazygit
 abbr j 'julia --project'
-abbr l 'exa --icons'
-abbr la 'exa -lha --icons'
-abbr ll 'exa -lh --icons'
+abbr l 'eza --icons'
+abbr la 'eza -lha --icons'
+abbr ll 'eza -lh --icons'
 abbr mv 'mv -i'
 abbr open 'mimeopen -a'
 abbr pac 'sudo pacman'
@@ -48,4 +48,4 @@ alias vu='nvim -u NONE'
 alias refresh-keys="sudo pacman-key --refresh-keys"
 alias fixbluetooth="sudo btmgmt ssp on"
 alias trash-view="trash-list | sort -r | fzf"
-alias ovpn="sudo openvpn /etc/openvpn/client/gateway1-UDP4-1194-carmona.ovpn"
+alias ovpn="sudo /sbin/openvpn /etc/openvpn/client/gateway1-UDP4-1194-carmona.ovpn"
