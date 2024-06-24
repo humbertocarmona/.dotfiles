@@ -49,6 +49,17 @@
         ],
         "description": "add Makie bar"
     },
+    "Makie figure": {
+        "prefix": "mfig",
+        "body": [
+            "f = Figure()",
+            "ax = Axis(f[1,1])",
+            "$1(ax, $2, label=\"$3\")",
+            "axislegend()",
+            "display(f)"
+        ],
+        "description": "add makie figure"
+    },
     "Quit Makie": {
         "prefix": "mquit",
         "body": [

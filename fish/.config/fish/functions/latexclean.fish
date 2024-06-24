@@ -21,29 +21,36 @@ function latexclean -d "clean up auxiliary LaTeX files"
         return
     end
 
-    set -l main nenhum
+    set -l main all
 
     if set -q _flag_p
         set main $argv
     end
 
-    if test -e "main.tex"
-        echo "found main.tex"
-        set main main
-    else if test -e "root.tex"
-        echo "found root.tex"
-        set main root
-    end
-
-    if test "$main" = nenhum
+    if test "$main" = all
         for file in (fd -t f -e tex)
-            set -l first_line (head -n 1 $file)
-            set -l root_filename (string match -r '% ?!TEX root ?= ?(.+)$' -- $first_line)
+            set f (path change-extension '' $file)
+            echo "cleaning $f"
+            clean_latex $f
+            return
+        end
+    else if test "$main" = nenhum
+        if test -e "main.tex"
+            echo "found main.tex"
+            set main main
+        else if test -e "root.tex"
+            echo "found root.tex"
+            set main root
+        else 
+            for file in (fd -t f -e tex)
+                set -l first_line (head -n 1 $file)
+                set -l root_filename (string match -r '% ?!TEX root ?= ?(.+)$' -- $first_line)
 
-            if test -n "$root_filename"
-                echo "root filename is $root_filename[2]"
-                set main (string split "." $root_filename[2])
-                break
+                if test -n "$root_filename"
+                    echo "root filename is $root_filename[2]"
+                    set main (string split "." $root_filename[2])
+                    break
+                end
             end
         end
 
@@ -53,15 +60,7 @@ function latexclean -d "clean up auxiliary LaTeX files"
         end
     end
 
-    if test "$main" = all
-        for file in (fd -t f -e tex)
-            set f (path change-extension '' $file)
-            echo "cleaning $f"
-            clean_latex $f
-        end
-    end
-
     echo "project = $main"
-
     clean_latex $main
+    return
 end
