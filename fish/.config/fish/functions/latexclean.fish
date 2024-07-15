@@ -32,8 +32,8 @@ function latexclean -d "clean up auxiliary LaTeX files"
             set f (path change-extension '' $file)
             echo "cleaning $f"
             clean_latex $f
-            return
         end
+        return
     else if test "$main" = nenhum
         if test -e "main.tex"
             echo "found main.tex"
@@ -41,7 +41,7 @@ function latexclean -d "clean up auxiliary LaTeX files"
         else if test -e "root.tex"
             echo "found root.tex"
             set main root
-        else 
+        else
             for file in (fd -t f -e tex)
                 set -l first_line (head -n 1 $file)
                 set -l root_filename (string match -r '% ?!TEX root ?= ?(.+)$' -- $first_line)

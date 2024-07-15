@@ -27,7 +27,7 @@ require("lazy").setup({
         notify = false,
     }, -- automatically check for plugin updates
     change_detection = {
-        notify = false,
+        notify = true,
     },
     performance = {
         rtp = {

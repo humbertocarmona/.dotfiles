@@ -6,7 +6,7 @@ set synctex-editor-command "nvr --remote-silent +%{line} %{input}"
 
 # Basic Settings
 
-set highlight-transparency .4
+# set highlight-transparency .4
 set zoom-center "true"
 set selection-clipboard clipboard
 # set render-loading "false"

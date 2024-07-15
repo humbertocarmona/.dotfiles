@@ -63,99 +63,69 @@ vim.api.nvim_set_keymap("n", "<C-left>", ':lua SearchCell("b")<CR>', { noremap =
 
 map({ "n", "t" }, "<C-/>", "<cmd>ToggleTerm<cr>", { desc = "ToggleTerm", remap = false })
 
--- Harpoon 1 ------------------------------------------------------------------
-
-wk.register({
-    h = {
-        name = "harpoon",
-        a = { require("harpoon.mark").add_file, "harpoon add file" },
-        h = { function() require("harpoon.ui").nav_file(1) end, "harpoon 1" },
-        j = { function() require("harpoon.ui").nav_file(2) end, "harpoon 2" },
-        k = { function() require("harpoon.ui").nav_file(3) end, "harpoon 3" },
-        l = { function() require("harpoon.ui").nav_file(4) end, "harpoon 4" },
-    },
-    f = {
-        h = { "<CMD>Telescope harpoon marks<CR>", "Telescope Harpoon" },
-    },
-}, { prefix = "<leader>" })
-
 -- SlimeCells -----------------------------------------------------------------
-wk.register({
-    c = {
-        v = { "<Plug>SlimeConfig", "Slime Config" },
-        c = {
-            "<Plug>SlimeCellsSendAndGoToNext",
-            "Slime send and go to next",
-        },
-        p = { "<Plug>SlimeParagraphSend", "Slime send paragraph" },
-        j = { "<Plug>SlimeCellsNext", "go to next slime cell" },
-        k = { "<Plug>SlimeCellsPrev", "go to previous slime cell" },
-        m = { "<Plug>SlimeMotionSend", "sed motion" },
-        l = { "<Plug>SlimeLineSend", "send line" },
+wk.add({
+    {
+        mode = { "n" },
+        { "<leader>v", group = "Slime" },
+        { "<leader>vc", "<Plug>SlimeCellsSendAndGoToNext", desc = "Slime send and go to next" },
+        { "<leader>vp", "<Plug>SlimeParagraphSend", desc = "Slime send paragraph" },
+        { "<leader>vj", "<Plug>SlimeCellsNext", desc = "go to next slime cell" },
+        { "<leader>vk", "<Plug>SlimeCellsPrev", desc = "go to previous slime cell" },
+        { "<leader>vm", "<Plug>SlimeMotionSend", desc = "sed motion" },
+        { "<leader>vl", "<Plug>SlimeLineSend", desc = "send line" },
     },
-}, { prefix = "<leader>" })
-wk.register({
-    c = {
-        c = {
-            "<Plug>SlimeRegionSend",
-            "Slime region send",
-        },
+    {
+        mode = { "v" },
+        { "<leader>vc", "<Plug>SlimeRegionSend", desc = "Slime region send" },
     },
-}, { prefix = "<leader>", mode = "v" })
+})
 
 -- Auto Save ------------------------------------------------------------------
-wk.register({
-    a = { "<cmd>ASToggle<cr>", "toggle auto-save" },
-}, { prefix = "<leader>" })
+wk.add({ "<leader>a", "<cmd>ASToggle<cr>", desc = "toggle auto-save" })
 
 -- NvimTree -------------------------------------------------------------------
-wk.register({
-    ["e"] = {
-        "<cmd>NvimTreeToggle<CR>",
-        "Toggle file explorer",
-    },
-}, { prefix = "<leader>" })
+wk.add({ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" })
 
 -- NoNeckPain ---------------------------------------------------------------
-wk.register({
-    k = {
-        name = "NoNeckPain",
-        k = { "<cmd>NoNeckPain<cr>", "toggle no-neck-pain" },
-        u = { "<cmd>NoNeckPainWidthUp<cr>", "no-neck-pain width up" },
-        d = { "<cmd>NoNeckPainWidthDown<cr>", "no-neck-pain width down" },
-        w = { "<cmd>NoNeckPainResize 144<cr>", "no-neck-pain wide" },
-        s = { "<cmd>NoNeckPainResize 90<cr>", "no-neck-pain single" },
+wk.add({
+    {
+        mode = { "n" },
+        { "<leader>k", group = "NoNeckPain" },
+        { "<leader>kk", "<cmd>NoNeckPain<cr>", desc = "toggle" },
+        { "<leader>ku", "<cmd>NoNeckPainWidthUp<cr>", desc = "no-neck-pain width up" },
+        { "<leader>kd", "<cmd>NoNeckPainWidthDown<cr>", desc = "no-neck-pain width down" },
+        { "<leader>kw", "<cmd>NoNeckPainResize 144<cr>", desc = "no-neck-pain wide" },
+        { "<leader>ks", "<cmd>NoNeckPainResize 90<cr>", desc = "no-neck-pain single" },
     },
-}, { prefix = "<leader>" })
+})
 
 -- ToggleTerm ---------------------------------------------------------------
 local set_opfunc = vim.fn[vim.api.nvim_exec(
     [[
   func s:set_opfunc(val)
-    let &opfunc = a:val
+    let zRzRunc = a:val
   endfunc
   echon get(function('s:set_opfunc'), 'name')
 ]],
     true
 )]
 
-wk.register({
-    t = {
-        name = "Telescope/ToggleTerm",
-        t = { "<cmd>ToggleTerm <cr>", "Open terminal" },
-        l = { "<cmd>ToggleTermSendCurrentLine <cr>", "send current line" },
-        u = { "<cmd>Telescope undo <cr>", "Telescope undo" },
+wk.add({
+    {
+        mode = { "n" },
+        { "<leader>t", group = "ToggleTerm" },
+        { "<leader>tt ", "<cmd>ToggleTerm <cr>", desc = "Open terminal" },
+        { "<leader>tl", "<cmd>ToggleTermSendCurrentLine <cr>", desc = "send current line" },
+        { "<leader>tu", "<cmd>Telescope undo <cr>", desc = "Telescope undo" },
     },
-}, { prefix = "<leader>" })
-
-wk.register({
-    t = {
-        name = "Telescole/ToggleTerm",
-        l = { "<cmd>ToggleTermSendVisualLines <cr>", "send visual lines" },
-        v = { "<cmd>ToggleTermSendVisualSelection <cr>", "send visual selection" },
-        u = { "<cmd>Telescope undo <cr>", "Telescope Undo" },
+    {
+        mode = { "v" },
+        { "<leader>l", "<cmd>ToggleTermSendVisualLines <cr>", desc = "send visual lines" },
+        { "<leader>v", "<cmd>ToggleTermSendVisualSelection <cr>", desc = "send visual selection" },
+        { "<leader>u", "<cmd>Telescope undo <cr>", desc = "Telescope Undo" },
     },
-}, { prefix = "<leader>", mode = "v" })
+})
 
 vim.api.nvim_set_keymap("n", "<C-p>", "<cmd>ToggleTermSendCurrentLine <cr>", { desc = "send to term" })
 vim.api.nvim_set_keymap("x", "<C-l>", "<cmd>ToggleTermSendVisualLines <cr>", { desc = "send to term" })
