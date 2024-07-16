@@ -1,4 +1,5 @@
 abspath
+addbibresource
 addprocs
 alignmode
 argmax
@@ -8,12 +9,14 @@ backgroundcolor
 barplot
 basenames
 Bialek
+biblatex
 binarization
 binarize
 binarized
 bson
 BSON
 Butterworth
+Carmona
 cgrad
 cmap
 colgap
@@ -57,6 +60,7 @@ isone
 joinpath
 julia
 labelfont
+labelformat
 labelsize
 latexfonts
 linestyle
@@ -66,6 +70,7 @@ linkyaxes
 lpad
 lualatex
 Makie
+markercolor
 markersize
 mkpath
 nbins
@@ -106,6 +111,7 @@ titlefont
 titlesize
 Tsallis
 typedict
+usepackage
 utriangle
 valign
 vals
@@ -147,10 +153,7 @@ zlabeloffset
 zlims
 zmax
 zmin
+zscore
 ztickformat
 zvec
 λwindow
-addbibresource
-usepackage
-biblatex
-labelformat

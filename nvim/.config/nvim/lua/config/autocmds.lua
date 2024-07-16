@@ -8,9 +8,9 @@ local function augroup(name) return vim.api.nvim_create_augroup("lazyvim_" .. na
 --     command = "set filetype=bash",
 -- })
 
--- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
---     pattern = { "hyprland.conf", "env.conf", "execs.conf", "rules.conf", "keybinds.conf" },
---     command = "set filetype=hyprlang",
--- })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "hyprland.conf", "env.conf", "execs.conf", "rules.conf", "keybinds.conf" },
+    command = "set filetype=hyprlang",
+})
 
 -- vim.api.nvim_create_autocmd({ "VimEnter" }, { command = "NoNeckPain" })
