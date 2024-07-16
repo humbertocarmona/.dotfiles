@@ -1,4 +1,5 @@
-# set -gx TERMINAL kitty
+set -gx TERMINAL kitty
+set -gx TERM kitty
 # set -gx ZDOTDIR $HOME/.config/zsh
 # set -gx EDITOR nvim
 # set -gx GOPATH $HOME/.go
