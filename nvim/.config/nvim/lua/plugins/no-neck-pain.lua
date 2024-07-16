@@ -5,7 +5,7 @@ return {
         require("no-neck-pain").setup({
             width = 120,
             buffers = {
-                color = {
+                colors = {
                     backgroundColor = "tokyonight",
                     blend = -0.1,
                 },
