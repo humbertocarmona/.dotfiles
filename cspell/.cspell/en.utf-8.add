@@ -63,6 +63,7 @@ labelfont
 labelformat
 labelsize
 latexfonts
+linecolor
 linestyle
 linewidth
 linkxaxes
