@@ -5,16 +5,17 @@ return {
         priority = 2000,
         opts = {
             transparent = true,
-            style = "storm",
+            style = "night",
             styles = {
                 sidebars = "transparent",
                 floats = "transparent",
                 comments = { italic = true },
                 keywords = { italic = true },
+                functions = { italic = true },
             },
+            on_colors = function(colors) colors.comment = "#EBE3D5" end,
         },
     },
-    -- Install without configuration
     {
         "projekt0n/github-nvim-theme",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme

@@ -1,7 +1,5 @@
 -- Options are automatically loaded before lazy.nvim startup
-
-vim.opt.termguicolors = true
-
+vim.g.default_terminal = "${TERM}"
 vim.g.neovide_theme = "auto"
 vim.g.neovide_cursor_trail_size = 0.
 vim.g.neovide_cursor_animation_length = 0
@@ -25,6 +23,7 @@ vim.g.maplocalleader = ","
 
 local opt = vim.opt
 
+opt.termguicolors = true
 opt.linespace = 2
 opt.guifont = "FiraCode Nerd Font Propo:h12"
 -- opt.guifont = "CaskaydiaCove NF ExtraLight"

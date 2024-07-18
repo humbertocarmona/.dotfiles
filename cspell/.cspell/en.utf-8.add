@@ -140,6 +140,7 @@ ylabel
 ylabeloffset
 ylabelpadding
 ylabelsize
+ylim
 ylims
 ymax
 ymin
@@ -149,6 +150,7 @@ yticklabel
 yticklabelspace
 yticks
 yvec
+z-score
 zlabel
 zlabeloffset
 zlims
@@ -158,4 +160,3 @@ zscore
 ztickformat
 zvec
 λwindow
-z-score
