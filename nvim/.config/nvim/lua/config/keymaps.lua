@@ -3,18 +3,6 @@ local wk = require("which-key")
 
 local map = LazyVim.safe_keymap_set
 
--- local function map(mode, lhs, rhs, opts)
---     local keys = require("lazy.core.handler").handlers.keys
---     ---@cast keys LazyKeysHandler
---     -- do not create the keymap if a lazy keys handler exists
---     if not keys.active[keys.parse({ lhs, mode = mode }).id] then
---         opts = opts or {}
---         opts.silent = opts.silent ~= false
---         if opts.remap and not vim.g.vscode then opts.remap = nil end
---         vim.keymap.set(mode, lhs, rhs, opts)
---     end
--- end
-
 function SearchAndSelectCell(direction)
     local startPattern = "^#\\s*%%"
     local endPattern = "^#\\s*%%"
@@ -57,12 +45,10 @@ function SearchCell(direction)
     vim.fn.search(pattern, searchFlag)
 end
 
-vim.api.nvim_set_keymap("v", "<C-right>", ':lua SearchAndSelectCell("f")<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-left>", ':lua SearchAndSelectCell("b")<CR>', { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<C-right>", ':lua SearchCell("f")<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-left>", ':lua SearchCell("b")<CR>', { noremap = true, silent = true })
-
+map({ "v" }, "<C-right>", ':lua SearchAndSelectCell("f")<CR>', { noremap = true, silent = true })
+map({ "v" }, "<C-left>", ':lua SearchAndSelectCell("b")<CR>', { noremap = true, silent = true })
+map({ "n" }, "<C-right>", ':lua SearchCell("f")<CR>', { noremap = true, silent = true })
+map({ "n" }, "<C-left>", ':lua SearchCell("b")<CR>', { noremap = true, silent = true })
 map({ "n", "t" }, "<C-/>", "<cmd>ToggleTerm<cr>", { desc = "ToggleTerm", remap = false })
 
 -- SlimeCells -----------------------------------------------------------------
@@ -129,10 +115,9 @@ wk.add({
     },
 })
 
-vim.api.nvim_set_keymap("n", "<C-p>", "<cmd>ToggleTermSendCurrentLine <cr>", { desc = "send to term" })
-vim.api.nvim_set_keymap("x", "<C-l>", "<cmd>ToggleTermSendVisualLines <cr>", { desc = "send to term" })
-
-vim.keymap.set("n", [[<leader><c-\>]], function()
+map({ "n" }, "<C-p>", "<cmd>ToggleTermSendCurrentLine <cr>", { desc = "send to term" })
+map({ "x" }, "<C-l>", "<cmd>ToggleTermSendVisualLines <cr>", { desc = "send to term" })
+map({ "n" }, [[<leader><c-\>]], function()
     set_opfunc(
         function(motion_type) require("toggleterm").send_lines_to_terminal(motion_type, false, { args = vim.v.count }) end
     )
