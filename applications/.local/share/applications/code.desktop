@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=PyCharm
+Comment=Python IDE
+Icon=/opt/VSCode-linux-x64/resources/app/resources/linux/code.png
+Exec=/usr/bin/code
+Terminal=false
+
