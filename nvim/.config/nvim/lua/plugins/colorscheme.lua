@@ -13,7 +13,7 @@ return {
                 keywords = { italic = true },
                 functions = { italic = true },
             },
-            on_colors = function(colors) colors.comment = "#EBE3D5" end,
+            -- on_colors = function(colors) colors.comment = "#EBE3D5" end,
         },
     },
     {
