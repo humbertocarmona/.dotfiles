@@ -10,7 +10,7 @@ set -gx TEXMFHOME $HOME/.texmf
 set -xU JULIA_NUM_THREADS 8
 
 # set -U fish_user_paths $GOPATH/bin $fish_user_paths
-# set -U fish_user_paths $HOME/.config/bin $fish_user_paths
+set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 # set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/texlive/2023/bin/x86_64-linux $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
