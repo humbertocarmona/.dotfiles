@@ -15,6 +15,8 @@ set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/texlive/2023/bin/x86_64-linux $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
 
+
+
 # set -Ux PYENV_ROOT $HOME/.pyenv
 # set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # set -U JULIA_LOAD_PATH $HOME/.julia/packages $JULIA_LOAD_PATH

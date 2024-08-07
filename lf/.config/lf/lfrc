@@ -308,9 +308,10 @@ map o $mimeopen --ask $f
 
 map p paste
 
-map r rename
-# map rn rename
-# map rl reload
+#map r rename
+map r
+map rn rename
+map rl reload
 
 map t
 map tt tmux_here
