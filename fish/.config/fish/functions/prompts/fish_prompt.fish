@@ -14,6 +14,13 @@ function fish_prompt
         echo -n -s (set_color "#1d5da1")(basename "$VIRTUAL_ENV")
         echo -n (set_color blue)"] "
     end
+
+    if set -q CONDA_DEFAULT_ENV
+        echo -n (set_color blue)"["
+        echo -n -s (set_color "#1d5da1")(basename "$CONDA_DEFAULT_ENV")
+        echo -n (set_color blue)"] "
+    end
+
     # ----------------------------------------------
 
     # ------------------ pwd -----------------------

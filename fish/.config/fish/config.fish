@@ -1,5 +1,5 @@
-set -gx TERMINAL kitty
-set -gx TERM kitty
+# set -gx TERMINAL kitty
+# set -gx TERM kitty
 # set -gx ZDOTDIR $HOME/.config/zsh
 # set -gx EDITOR nvim
 # set -gx GOPATH $HOME/.go
@@ -14,7 +14,10 @@ set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 # set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/texlive/2023/bin/x86_64-linux $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
-
+set -x LANG en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
+#set -x LANG pt_BR.UTF-8
+#set -x LC_ALL pt_BR.UTF-8
 
 
 # set -Ux PYENV_ROOT $HOME/.pyenv
@@ -29,13 +32,15 @@ fish_vi_cursor
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/miniconda/bin/conda
-    eval /opt/miniconda/bin/conda "shell.fish" hook $argv | source
+if test -f /opt/miniconda3/bin/conda
+    eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
 else
     if test -f "/opt/miniconda/etc/fish/conf.d/conda.fish"
-        . "/opt/miniconda/etc/fish/conf.d/conda.fish"
+        . "/opt/miniconda3/etc/fish/conf.d/conda.fish"
     else
-        set -x PATH /opt/miniconda/bin $PATH
+        set -x PATH /opt/miniconda3/bin $PATH
     end
 end
 # <<< conda initialize <<<
+conda deactivate
+cd $HOME

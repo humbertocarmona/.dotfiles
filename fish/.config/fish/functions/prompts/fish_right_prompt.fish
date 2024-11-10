@@ -8,8 +8,8 @@ function fish_right_prompt
     string match -qi "*.utf-8" -- $LANG $LC_CTYPE $LC_ALL
     and set -g __fish_git_prompt_char_dirtystate ""
     set -g __fish_git_prompt_char_untrackedfiles "?"
-    
+
     set -l vcs (fish_vcs_prompt 2>/dev/null)
-    
     echo -n (set_color normal) $vcs
+
 end

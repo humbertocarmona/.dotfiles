@@ -332,6 +332,7 @@ map y copy
 map zb cd ~/.config/bin
 map zc cd ~/.config
 map z. cd ~/.dotfiles
+map ze cd ~/Dev/Cientista-Chefe/Escola
 map zf cd ~/.config/fish
 map zg lazy_git
 map zh cd ~/.config/hypr

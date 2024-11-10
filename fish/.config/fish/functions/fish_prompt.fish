@@ -1,0 +1,1 @@
+prompts/fish_prompt.fish
