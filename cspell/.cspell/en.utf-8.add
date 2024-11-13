@@ -60,6 +60,7 @@ eachrow
 eltype
 errorbars
 exeflags
+expq
 extremize
 filtfilt
 findall

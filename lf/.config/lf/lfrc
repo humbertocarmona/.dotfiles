@@ -343,7 +343,7 @@ map zm cd /run/media/humberto/
 map zd cd ~/Dev
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
-map zw cd ~/Pictures/Wallpapers
+map zw cd ~/Workspace
 map zz cd ~/
 map <delete> trash
 map . set hidden!
