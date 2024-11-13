@@ -146,6 +146,7 @@ preprocess
 println
 proprow
 Ptype
+qgen
 quantile
 readlines
 RGBA

@@ -95,7 +95,8 @@ return {
         "LazyVim/LazyVim",
         opts = {
             -- colorscheme = "tokyonight-storm",
-            colorscheme = "solarized-osaka",
+            -- colorscheme = "solarized-osaka",
+            colorscheme = "github_dark_default",
         },
     },
 }

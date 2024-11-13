@@ -44,3 +44,8 @@ end
 # <<< conda initialize <<<
 conda deactivate
 cd $HOME
+if not test -d /run/tmux
+    echo "criando tmux"
+    sudo mkdir /run/tmux
+    sudo chown -R humberto:humberto /run/
+end
