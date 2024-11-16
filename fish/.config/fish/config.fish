@@ -4,14 +4,14 @@
 # set -gx EDITOR nvim
 # set -gx GOPATH $HOME/.go
 # set -gx BAT_THEME Catppuccin-mocha
-set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --stile=numbers--color=always {}' --preview-window '~3'"
+set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --style=numbers --color=always {}' --preview-window '~3'"
 set -gx TEXMFHOME $HOME/.texmf
 # set -x PYTHONPATH $PYTHONPATH $HOME/Dev/ESP/Mabell/src/
 set -xU JULIA_NUM_THREADS 8
 
 # set -U fish_user_paths $GOPATH/bin $fish_user_paths
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
-# set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set -U fish_user_paths $HOME/go/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/texlive/2023/bin/x86_64-linux $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
 set -x LANG en_US.UTF-8
