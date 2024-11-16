@@ -4,7 +4,7 @@
 # set -gx EDITOR nvim
 # set -gx GOPATH $HOME/.go
 # set -gx BAT_THEME Catppuccin-mocha
-set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --color=always {}'"
+set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --stile=numbers--color=always {}' --preview-window '~3'"
 set -gx TEXMFHOME $HOME/.texmf
 # set -x PYTHONPATH $PYTHONPATH $HOME/Dev/ESP/Mabell/src/
 set -xU JULIA_NUM_THREADS 8

@@ -96,7 +96,7 @@ return {
         opts = {
             -- colorscheme = "tokyonight-storm",
             -- colorscheme = "solarized-osaka",
-            colorscheme = "github_dark_default",
+            colorscheme = "github_dark_dimmed",
         },
     },
 }
