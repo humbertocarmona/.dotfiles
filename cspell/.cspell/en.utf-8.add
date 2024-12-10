@@ -63,6 +63,7 @@ errorbars
 exeflags
 expq
 extremize
+extremizing
 filtfilt
 findall
 findfirst
@@ -168,6 +169,8 @@ spdlog
 spinecolor
 sprintf
 sqlite
+SS1
+SS2
 startswith
 steelblue
 stressmajorization
@@ -184,6 +187,7 @@ ticklabels
 timeformat
 titlefont
 titlesize
+Tkacik
 topspinevisible
 tqdm
 Tsallis
