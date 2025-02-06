@@ -49,3 +49,8 @@ if not test -d /run/tmux
     sudo mkdir /run/tmux
     sudo chown -R humberto:humberto /run/
 end
+if tmux list-sessions >/dev/null
+    tmux attach-session -d -c . >/dev/null
+else
+    tmux new -s (pwd | sed 's/.*\///g') >/dev/null
+end
