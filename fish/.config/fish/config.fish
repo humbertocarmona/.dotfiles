@@ -24,6 +24,7 @@ set -x LC_ALL en_US.UTF-8
 # set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # set -U JULIA_LOAD_PATH $HOME/.julia/packages $JULIA_LOAD_PATH
 # set -U JULIA_LOAD_PATH $HOME/projects/RL/random_laser_jl $JULIA_LOAD_PATH
+set -U __conda_prefix ''
 
 zoxide init fish | source
 source $HOME/.config/fish/fish_aliases
@@ -35,14 +36,15 @@ fish_vi_cursor
 if test -f /opt/miniconda3/bin/conda
     eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
 else
-    if test -f "/opt/miniconda/etc/fish/conf.d/conda.fish"
-        . "/opt/miniconda3/etc/fish/conf.d/conda.fish"
+    if test -f /opt/miniconda/etc/fish/conf.d/conda.fish
+        . /opt/miniconda3/etc/fish/conf.d/conda.fish
     else
         set -x PATH /opt/miniconda3/bin $PATH
     end
 end
 # <<< conda initialize <<<
-conda deactivate
+#conda deactivate
+conda activate py312
 cd $HOME
 if not test -d /run/tmux
     echo "criando tmux"
@@ -50,7 +52,7 @@ if not test -d /run/tmux
     sudo chown -R humberto:humberto /run/
 end
 if tmux list-sessions >/dev/null
-    tmux attach-session -d -c . >/dev/null
+    # tmux attach-session -d -c . >/dev/null
 else
     tmux new -s (pwd | sed 's/.*\///g') >/dev/null
 end
