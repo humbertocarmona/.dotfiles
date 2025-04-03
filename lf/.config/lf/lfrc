@@ -82,11 +82,11 @@ cmd delete ${{
         [ $ans = "y" ] && rm -rf $fx
 }}
 
-cmd dragon %dragon --all --and-exit $fx
+cmd dragon %dragon -T --all --and-exit $fx
 
-cmd dragon-stay %dragon --all $fx
+cmd dragon-stay %dragon -T --all $fx
 
-cmd dragon-target %dragon --target $f
+cmd dragon-target %dragon -T --target $f
 
 cmd extract ${{
     set -f
@@ -343,7 +343,7 @@ map zm cd /run/media/humberto/
 map zd cd ~/Dev
 map zt cd ~/.local/share/Trash/files
 map zv cd ~/.config/nvim
-map zw cd ~/Workspace
+map zw cd ~/Workspace/
 map zz cd ~/
 map <delete> trash
 map . set hidden!
