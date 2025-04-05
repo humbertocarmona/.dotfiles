@@ -31,20 +31,8 @@ source $HOME/.config/fish/fish_aliases
 fish_vi_key_bindings
 fish_vi_cursor
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/miniconda3/bin/conda
-    eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f /opt/miniconda/etc/fish/conf.d/conda.fish
-        . /opt/miniconda3/etc/fish/conf.d/conda.fish
-    else
-        set -x PATH /opt/miniconda3/bin $PATH
-    end
-end
-# <<< conda initialize <<<
-#conda deactivate
-conda activate py312
+
+# >>> tmux >>>
 cd $HOME
 if not test -d /run/tmux
     echo "criando tmux"
@@ -56,3 +44,19 @@ if tmux list-sessions >/dev/null
 else
     tmux new -s (pwd | sed 's/.*\///g') >/dev/null
 end
+# <<< tmux <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/miniconda3/bin/conda
+    eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
+else
+    if test -f '/opt/miniconda/etc/fish/conf.d/conda.fish'
+        . /opt/miniconda3/etc/fish/conf.d/conda.fish
+    else
+        set -x PATH /opt/miniconda3/bin $PATH
+    end
+end
+conda activate py312
+# conda deactivate
+# <<< conda initialize <<<

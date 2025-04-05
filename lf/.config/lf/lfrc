@@ -1,4 +1,4 @@
-set shell zsh
+sea shell zsh
 # set shellopts '-euy'
 set ifs "\n"
 
