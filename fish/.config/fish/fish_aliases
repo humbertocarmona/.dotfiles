@@ -32,7 +32,6 @@ abbr zl 'z ~/.config/lf'
 abbr zv 'z ~/.config/nvim'
 abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avu'
 abbr rsn 'rsync --no-perms --links --progress -avu'
-abbr rmb 'rm -rf ~/Workspace/MaxEntropyCpp/build/*'
 
 alias paru='paru --skipreview'
 alias di='docker images'

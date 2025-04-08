@@ -5,7 +5,7 @@ function latexclean -d "clean up auxiliary LaTeX files"
     end
 
     function clean_latex
-        for ext in aux bbl bcf fdb_latexmk fls log run.xml synctex.gz toc blg pdf bbl-SAVE-ERROR out
+        for ext in aux bbl bcf fdb_latexmk fls log run.xml synctex.gz toc blg pdf bbl-SAVE-ERROR out dvi
             rm -f "$argv[1].$ext"
         end
     end
