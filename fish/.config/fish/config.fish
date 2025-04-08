@@ -45,14 +45,19 @@ end
 # <<< conda initialize <<<
 #conda deactivate
 conda activate py312
-cd $HOME
 if not test -d /run/tmux
     echo "criando tmux"
     sudo mkdir /run/tmux
     sudo chown -R humberto:humberto /run/
 end
-if tmux list-sessions >/dev/null
-    tmux attach-session -d -c . >/dev/null
-else
-    tmux new -s (pwd | sed 's/.*\///g') >/dev/null
-end
+
+# Get current directory name (used as session name)
+#set session_name (pwd | sed 's:.*/::')
+
+# Check if tmux is running any session with that name
+#if tmux list-sessions 2>/dev/null
+#    echo "available tmux sessions: ta -t session_name"
+#    tmux list-sessions
+#else
+#    tmux new-session -s "$session_name" -c "$PWD" 2>/dev/null
+#end
