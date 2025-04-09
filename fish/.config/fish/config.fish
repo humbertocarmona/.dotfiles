@@ -42,6 +42,8 @@ else
         set -x PATH /opt/miniconda3/bin $PATH
     end
 end
+# conda activate py312
+conda deactivate
 # <<< conda initialize <<<
 #conda deactivate
 conda activate py312

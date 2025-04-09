@@ -153,6 +153,7 @@ latexfonts
 latexmk
 leftjoin
 legendtitle
+lerp
 lightgreen
 linalg
 linecolor
@@ -179,6 +180,7 @@ missings
 missingstring
 mkpath
 mplot
+mult
 multitoken
 nbins
 ndarray
@@ -215,6 +217,7 @@ readlines
 regdic
 reginfo
 regioes
+resave
 rightspinevisible
 roma
 rowgap
