@@ -1,7 +1,8 @@
 abbr cat bat
 abbr cls clear
 abbr df 'df -h' # human-readable sizes
-abbr f lfcd
+abbr f lf
+abbr ff lfcd
 abbr g lazygit
 abbr j 'julia --project'
 abbr l 'eza  --icons'
