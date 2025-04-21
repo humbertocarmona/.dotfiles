@@ -39,6 +39,10 @@ opt.foldlevel = 2
 opt.spell = false
 opt.spelllang = { "en", "pt" }
 opt.conceallevel = 0
+opt.undofile = true
+opt.undodir = vim.fn.stdpath("state") .. "/undo"
+opt.undolevels = 1000
+opt.undoreload = 10000
 vim.filetype.add({
     pattern = { [".*/hypr/.*.conf"] = "fish" },
 })

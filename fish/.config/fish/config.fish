@@ -45,8 +45,6 @@ end
 # conda activate py312
 conda deactivate
 # <<< conda initialize <<<
-#conda deactivate
-conda activate py312
 if not test -d /run/tmux
     echo "criando tmux"
     sudo mkdir /run/tmux

@@ -29,6 +29,7 @@ boxplot
 Bpcx
 bson
 bunzip
+carlo
 Cascadia
 cbar
 ccmake
@@ -173,6 +174,7 @@ markerfacecolor
 markershape
 markersize
 Marsaglia
+Mersenne
 meshgrid
 midnightblue
 miniconda
@@ -181,12 +183,16 @@ missingstring
 mkpath
 mplot
 mult
+multiplicatively
 multitoken
 nbins
 ndarray
 nedges
 nonstopmode
+nrows
+nsamples
 nspins
+ntriplets
 nzrange
 occursin
 okular
@@ -257,6 +263,7 @@ tellheight
 tellwidth
 testset
 textfont
+thermo
 ticklabels
 timeformat
 titlefont
@@ -287,6 +294,7 @@ vmax
 vmin
 vname
 vscodedisplay
+wang
 weibull
 whiskerwidth
 wong
