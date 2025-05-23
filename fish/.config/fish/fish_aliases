@@ -1,9 +1,11 @@
+abbr c 'code .'
 abbr cat bat
 abbr cls clear
 abbr df 'df -h' # human-readable sizes
 abbr f lf
 abbr ff lfcd
 abbr g lazygit
+abbr isa 'ssh Isa'
 abbr j 'julia --project'
 abbr l 'eza  --icons'
 abbr ll 'eza -lha --icons'
@@ -31,8 +33,8 @@ abbr zj 'z ~/.julia/dev/'
 abbr zk 'z ~/.config/kitty/'
 abbr zl 'z ~/.config/lf'
 abbr zv 'z ~/.config/nvim'
-abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avu'
-abbr rsn 'rsync --no-perms --links --progress -avu'
+abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avuz'
+abbr rsn 'rsync --no-perms --links --progress -avuz'
 
 alias paru='paru --skipreview'
 alias di='docker images'

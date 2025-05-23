@@ -41,6 +41,7 @@ cmun
 CNAE
 CODATA
 coef
+coeffs
 colgap
 colorbar
 Colorbar
@@ -66,6 +67,8 @@ dayname
 dayofweek
 ddof
 delim
+detrend
+detrended
 dicpath
 digitalfilter
 dijkstra
@@ -79,6 +82,7 @@ eachrow
 edgecolors
 elinewidth
 eltype
+ergodicity
 errorbar
 errorbars
 evolucao
@@ -96,6 +100,7 @@ fout
 frameon
 framestyle
 framevisible
+free-energy
 fwhm
 fxaa
 GDAL
@@ -111,6 +116,7 @@ groupby
 gtest
 halign
 haskey
+heatbath
 heatmaps
 hidedecorations
 hidespines
@@ -120,6 +126,7 @@ highclip
 Highpass
 hlines
 hndlr
+Hopfield's
 hspace
 ibge
 ifnotexists
@@ -129,12 +136,14 @@ imshow
 indegree
 indianred
 inplace
+interp
 invivo
 ipynb
 isdir
 isempty
 isfile
 isin
+ising
 ismissing
 isnothing
 isone
@@ -155,6 +164,8 @@ latexmk
 leftjoin
 legendtitle
 lerp
+Lévi
+Lévy
 lightgreen
 linalg
 linecolor
@@ -163,6 +174,7 @@ linestyle
 linewidth
 linkxaxes
 linkyaxes
+loadtxt
 logocolors
 logspace
 lpad
@@ -186,6 +198,7 @@ mult
 multiplicatively
 multitoken
 nbins
+ncols
 ndarray
 nedges
 nonstopmode
@@ -242,6 +255,8 @@ seriestype
 setlevel
 Shapefile
 sharex
+sisj
+sisjsk
 skyblue
 spinecolor
 splev
@@ -274,6 +289,7 @@ topleft
 topspinevisible
 tqdm
 triu
+tsem
 typedict
 unidecode
 uppercasenormalize
@@ -301,6 +317,7 @@ wong
 wspace
 xautolimitmargin
 xaxis
+xaxisvisible
 xgridlines
 xgridvisible
 xlabel
@@ -329,6 +346,7 @@ xticks
 xvec
 yautolimitmargin
 yaxis
+yaxisposition
 yerr
 yfit
 ygridlines
