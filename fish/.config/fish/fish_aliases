@@ -2,8 +2,8 @@ abbr c 'code .'
 abbr cat bat
 abbr cls clear
 abbr df 'df -h' # human-readable sizes
-abbr f lf
-abbr ff lfcd
+abbr f lfcd
+abbr ee 'explorer.exe'
 abbr g lazygit
 abbr isa 'ssh Isa'
 abbr j 'julia --project'
@@ -11,11 +11,14 @@ abbr l 'eza  --icons'
 abbr ll 'eza -lha --icons'
 abbr la 'eza -lh --icons'
 abbr mv 'mv -i'
-abbr open 'mimeopen -a'
+abbr open xdg-open
 abbr pac 'sudo pacman'
 abbr pa 'paru --skipreview'
 abbr q exit
-abbr rm 'rm -i'
+abbr qq 'wsl.exe --shutdown'
+abbr urm trash-restore
+abbr rm 'send2trash -v'
+abbr rmi 'rm -i'
 abbr rmf 'rm -f'
 abbr v nvim
 abbr vb 'nvim ~/.config/waybar/config.jsonc'

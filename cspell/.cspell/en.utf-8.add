@@ -4,6 +4,7 @@ acum
 addprocs
 alignmode
 allpaths
+antiferromagnetism
 arange
 argmax
 argmin
@@ -69,6 +70,7 @@ ddof
 delim
 detrend
 detrended
+diagind
 dicpath
 digitalfilter
 dijkstra
@@ -81,6 +83,7 @@ eachindex
 eachrow
 edgecolors
 elinewidth
+Elsevier
 eltype
 ergodicity
 errorbar
@@ -96,6 +99,7 @@ findnz
 flipaxis
 fname
 fontsize
+forestgreen
 fout
 frameon
 framestyle
@@ -130,6 +134,7 @@ Hopfield's
 hspace
 ibge
 ifnotexists
+igraph
 iloc
 imax
 imshow
@@ -137,6 +142,7 @@ indegree
 indianred
 inplace
 interp
+interquartile
 invivo
 ipynb
 isdir
@@ -153,11 +159,13 @@ joinpath
 julia
 jupyter
 jupyterlab
+Kolmogorov
 labelfont
 labelformat
 labelpad
 labelsize
 labextension
+Langevin
 lastdayofmonth
 latexfonts
 latexmk
@@ -179,6 +187,7 @@ logocolors
 logspace
 lpad
 lualatex
+magnetizations
 makeunique
 makie
 markercolor
@@ -186,6 +195,7 @@ markerfacecolor
 markershape
 markersize
 Marsaglia
+mcolors
 Mersenne
 meshgrid
 midnightblue
@@ -201,6 +211,7 @@ nbins
 ncols
 ndarray
 nedges
+neighbouring
 nonstopmode
 nrows
 nsamples
@@ -240,10 +251,12 @@ resave
 rightspinevisible
 roma
 rowgap
+rowsize
 rowvals
 rtol
 runid
 Savart
+savefig
 savetxt
 scalefactor
 scatterplot
@@ -258,6 +271,7 @@ sharex
 sisj
 sisjsk
 skyblue
+Smirnov
 spinecolor
 splev
 splrep
@@ -273,6 +287,7 @@ stripmark
 strokecolor
 strokewidth
 struct
+supremum
 synctex
 tellheight
 tellwidth
@@ -280,6 +295,7 @@ testset
 textfont
 thermo
 ticklabels
+ticklabelsize
 timeformat
 titlefont
 titlehalign
@@ -312,12 +328,14 @@ vname
 vscodedisplay
 wang
 weibull
+whiskerlinewidth
 whiskerwidth
 wong
 wspace
 xautolimitmargin
 xaxis
 xaxisvisible
+xfine
 xgridlines
 xgridvisible
 xlabel
@@ -336,6 +354,7 @@ xtickfontrotation
 xtickformat
 xticklab
 xticklabel
+xticklabelpad
 xticklabelrotation
 xticklabels
 xticklabelsize
@@ -343,11 +362,13 @@ xticklabelsvisible
 xticklabs
 xtickpos
 xticks
+xticksvisible
 xvec
 yautolimitmargin
 yaxis
 yaxisposition
 yerr
+yfine
 yfit
 ygridlines
 ygridvisible
@@ -368,6 +389,7 @@ yshift
 ytickformat
 yticklab
 yticklabel
+yticklabelpad
 yticklabels
 yticklabelsize
 yticklabelspace
