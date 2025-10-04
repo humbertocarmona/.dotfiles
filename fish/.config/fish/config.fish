@@ -51,6 +51,7 @@ if not test -d /run/tmux
     echo "criando tmux"
     sudo mkdir /run/tmux
     sudo chown -R humberto:humberto /run/
+    tmux new -s (pwd | sed 's/.*\///g')
 end
 
 # Get current directory name (used as session name)

@@ -9,6 +9,7 @@ arange
 argmax
 argmin
 arrowsize
+assortativity
 astype
 autofetch
 axislegend
@@ -26,7 +27,9 @@ bincenters
 bincounts
 binedges
 Biot
+bottomrule
 boxplot
+boxplots
 Bpcx
 bson
 bunzip
@@ -41,6 +44,7 @@ cmap
 cmun
 CNAE
 CODATA
+codebook
 coef
 coeffs
 colgap
@@ -74,6 +78,7 @@ diagind
 dicpath
 digitalfilter
 dijkstra
+disassortative
 dists
 dodgerblue
 dropmissing
@@ -81,6 +86,8 @@ dtype
 eachcol
 eachindex
 eachrow
+ecdf
+ecolor
 edgecolors
 elinewidth
 Elsevier
@@ -88,6 +95,8 @@ eltype
 ergodicity
 errorbar
 errorbars
+errorline
+errorstyle
 evolucao
 exeflags
 facecolor
@@ -132,6 +141,7 @@ hlines
 hndlr
 Hopfield's
 hspace
+hypersphere
 ibge
 ifnotexists
 igraph
@@ -172,6 +182,7 @@ latexmk
 leftjoin
 legendtitle
 lerp
+levelcode
 Lévi
 Lévy
 lightgreen
@@ -188,6 +199,7 @@ logspace
 lpad
 lualatex
 magnetizations
+makersize
 makeunique
 makie
 markercolor
@@ -196,9 +208,11 @@ markershape
 markersize
 Marsaglia
 mcolors
+meps
 Mersenne
 meshgrid
 midnightblue
+midrule
 miniconda
 missings
 missingstring
@@ -212,6 +226,7 @@ ncols
 ndarray
 nedges
 neighbouring
+NHIS
 nonstopmode
 nrows
 nsamples
@@ -228,9 +243,12 @@ parsefile
 passmissing
 patchsize
 pcolormesh
+pearson
+Penrose
 permutedims
 perspectiveness
 polycolor
+powerlaw
 precompile
 preprocess
 println
@@ -247,8 +265,14 @@ readlines
 regdic
 reginfo
 regioes
+regressivity
+renamecols
+resamplings
 resave
+RGBA
 rightspinevisible
+rmax
+rmin
 roma
 rowgap
 rowsize
@@ -262,10 +286,12 @@ scalefactor
 scatterplot
 scikit
 scipy
+secondarycolor
 selfedge
 semilog
 seriestype
 setlevel
+SFDP
 Shapefile
 sharex
 sisj
@@ -305,6 +331,7 @@ topleft
 topspinevisible
 tqdm
 triu
+Tsallis
 tsem
 typedict
 unidecode
@@ -339,6 +366,7 @@ xfine
 xgridlines
 xgridvisible
 xlabel
+xlabeloffset
 xlabelpadding
 xlabelsize
 xlim
@@ -364,6 +392,8 @@ xtickpos
 xticks
 xticksvisible
 xvec
+xypanelcolor
+xzpanelcolor
 yautolimitmargin
 yaxis
 yaxisposition
@@ -397,8 +427,10 @@ yticklabelsvisible
 ytickpos
 yticks
 yvec
+yzpanelcolor
 z-score
 zathura
+zgridvisible
 zlabel
 zlabeloffset
 zlim

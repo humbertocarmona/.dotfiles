@@ -54,5 +54,6 @@ vim.filetype.add({
 })
 
 vim.g.autoformat = true
-vim.opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+-- vim.opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.opt.formatoptions = "jcroqlnt" -- tcqj

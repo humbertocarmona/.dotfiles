@@ -17,8 +17,8 @@ abbr pa 'paru --skipreview'
 abbr q exit
 abbr qq 'wsl.exe --shutdown'
 abbr urm trash-restore
-abbr rm 'send2trash -v'
-abbr rmi 'rm -i'
+abbr rt 'send2trash -v'
+abbr rm 'rm -i'
 abbr rmf 'rm -f'
 abbr v nvim
 abbr vb 'nvim ~/.config/waybar/config.jsonc'
@@ -38,6 +38,8 @@ abbr zl 'z ~/.config/lf'
 abbr zv 'z ~/.config/nvim'
 abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avuz'
 abbr rsn 'rsync --no-perms --links --progress -avuz'
+abbr juc 'julia --project=./'
+abbr pluto 'julia --project=./ -e \'using Pluto; Pluto.run()\''
 
 alias paru='paru --skipreview'
 alias di='docker images'

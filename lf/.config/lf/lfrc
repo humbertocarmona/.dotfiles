@@ -6,7 +6,7 @@ set nohidden
 
 set previewer ~/.config/lf/lf_kitty_preview
 set cleaner ~/.config/lf/lf_kitty_clean
-
+set sortby name
 
 set icons true
 set nodrawbox
@@ -270,7 +270,8 @@ map c
 map cc icat_clear
 map cu unselect
 map ca clear
-map ch chMod
+map ch code_here
+map cH chMod
 map cC clear_lf_cache
 map cT clear_trash
 
@@ -286,9 +287,10 @@ map dc docx-preview
 # map ee $editor "$f"
 # map eu $view "$f"
 
-map f fzf_jump_home
+map f
+map fj fzf_jump_home
 map e zi
-map s fzf_search
+map fs fzf_search
 
 map gh ${{ lazygit }}
 
@@ -321,10 +323,8 @@ map ta ${{tmux attach}}
 
 map u unselect
 
-# map w setwallpaper
 map w
 map wf open $f 
-map wc code_here
 map wn neovide_here
 
 
