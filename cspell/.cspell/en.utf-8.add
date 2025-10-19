@@ -15,6 +15,7 @@ autofetch
 axislegend
 azim
 backgroundcolor
+Barabási
 barplot
 basenames
 beziersegments
@@ -79,6 +80,7 @@ dicpath
 digitalfilter
 dijkstra
 disassortative
+dissortativity
 dists
 dodgerblue
 dropmissing
@@ -97,6 +99,7 @@ errorbar
 errorbars
 errorline
 errorstyle
+Europhysics
 evolucao
 exeflags
 facecolor
@@ -220,6 +223,7 @@ mkpath
 mplot
 mult
 multiplicatively
+multiscaling
 multitoken
 nbins
 ncols
@@ -306,6 +310,7 @@ spsolve
 spzeros
 sqlite
 sqltools
+srep
 startswith
 steelblue
 stringtype

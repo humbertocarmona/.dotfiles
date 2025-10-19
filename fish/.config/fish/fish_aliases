@@ -11,7 +11,6 @@ abbr l 'eza  --icons'
 abbr ll 'eza -lha --icons'
 abbr la 'eza -lh --icons'
 abbr mv 'mv -i'
-abbr open xdg-open
 abbr pac 'sudo pacman'
 abbr pa 'paru --skipreview'
 abbr q exit
@@ -24,7 +23,6 @@ abbr v nvim
 abbr vb 'nvim ~/.config/waybar/config.jsonc'
 abbr vl 'nvim ~/.config/lf/lfrc'
 abbr vy 'nvim ~/.config/hypr/hyprland.conf'
-
 abbr z. 'z ~/.dotfiles'
 abbr zc 'z ~/.config'
 abbr zd 'z ~/Dev/'
@@ -47,6 +45,7 @@ alias dp='docker ps -a'
 alias icat='kitty +kitten icat --transfer-mode file'
 alias kb='rg "^bind.+SUPER" ~/.config/hypr/keybinds.conf | sed 's/SUPER/mod4+/''
 alias logoutkde="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
+alias open='xdg-open'
 alias pipup="pip list oudated --format=freeze | rg -v '^\-e' | cut -d= -f 1 | xargs -n1 pip install -U"
 alias ta='tmux attach-session'
 alias td='tmux detach'
