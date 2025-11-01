@@ -57,6 +57,7 @@ colourschemes
 colsize
 corrcoef
 countmap
+covary
 cpptools
 createlinestring
 createpoint
@@ -91,6 +92,7 @@ eachrow
 ecdf
 ecolor
 edgecolors
+edgelist
 elinewidth
 Elsevier
 eltype
@@ -161,6 +163,7 @@ ipynb
 isdir
 isempty
 isfile
+ishollowmarkers
 isin
 ising
 ismissing
@@ -191,6 +194,7 @@ Lévy
 lightgreen
 linalg
 linecolor
+linecycle
 lineplot
 linestyle
 linewidth
@@ -210,6 +214,7 @@ markerfacecolor
 markershape
 markersize
 Marsaglia
+maxent
 mcolors
 meps
 Mersenne
@@ -225,17 +230,20 @@ mult
 multiplicatively
 multiscaling
 multitoken
+NASC
 nbins
 ncols
 ndarray
 nedges
 neighbouring
 NHIS
+nohup
 nonstopmode
 nrows
 nsamples
 nspins
 ntriplets
+nxviz
 nzrange
 occursin
 okular
@@ -260,8 +268,11 @@ pyarrow
 pyimport
 pynvim
 pyplot
+pysus
 pytorch
 qgen
+qmod
+qobs
 quadgk
 quantile
 readdir
@@ -298,6 +309,8 @@ setlevel
 SFDP
 Shapefile
 sharex
+simsus
+SIMSUS
 sisj
 sisjsk
 skyblue
@@ -312,6 +325,7 @@ sqlite
 sqltools
 srep
 startswith
+stderror
 steelblue
 stringtype
 stripmark
@@ -380,6 +394,7 @@ xlims
 xmax
 xmin
 xpos
+xrange
 xscale
 xtick
 xtickfont
