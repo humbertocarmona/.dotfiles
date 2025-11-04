@@ -66,13 +66,13 @@ return {
             bg = "#1d2443",
             fg = "#7aa2f7",
           }
+          highlights.WinSeparator = {
+            bold = true,
+            fg = "#2d3453",
+          }
         end,
         on_colors = function(colors)
-          colors.comment = "#565f89"
-          colors.border = "#15161e"
-          colors.border_highlight = "#27a1b9"
-          colors.error = "#db4b4b"
-          -- this is a comment
+          colors.comment = "#767fa9"
         end,
       })
     end,
