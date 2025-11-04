@@ -1,4 +1,3 @@
-local colorscheme = require("lazyvim.plugins.colorscheme")
 return {
   {
     "catppuccin/nvim",
@@ -56,13 +55,33 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
-    opts = { style = "night" },
+    config = function()
+      local tokyo = require("tokyonight")
+      tokyo.setup({
+        on_highlights = function(highlights)
+          highlights.ColorColumn = {
+            bg = "#1d2443",
+          }
+          highlights.Folded = {
+            bg = "#1d2443",
+            fg = "#7aa2f7",
+          }
+        end,
+        on_colors = function(colors)
+          colors.comment = "#565f89"
+          colors.border = "#15161e"
+          colors.border_highlight = "#27a1b9"
+          colors.error = "#db4b4b"
+          -- this is a comment
+        end,
+      })
+    end,
   },
   { "rebelot/kanagawa.nvim", lazy = true, opts = { style = "dragon" } },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "tokyonight-night",
     },
   },
 }
