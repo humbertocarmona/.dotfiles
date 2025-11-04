@@ -45,7 +45,8 @@ else
 end
 # conda activate py312
 # conda deactivate
-conda activate py313
+# conda activate py313
+conda activate opensus
 # <<< conda initialize <<<
 if not test -d /run/tmux
     echo "criando tmux"

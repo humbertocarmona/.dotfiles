@@ -42,3 +42,13 @@ vim.g.autoformat = true
 -- vim.opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.opt.formatoptions = "jcroqlnt" -- tcqj
+
+-- vim.g.clipboard = {
+--   name = "WslClipboard",
+--   copy = { ["+"] = "clip.exe", ["*"] = "clip.exe" },
+--   paste = {
+--     ["+"] = "powershell.exe -NoProfile -Command Get-Clipboard",
+--     ["*"] = "powershell.exe -NoProfile -Command Get-Clipboard",
+--   },
+--   cache_enabled = 0,
+-- }

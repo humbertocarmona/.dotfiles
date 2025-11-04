@@ -232,6 +232,7 @@ multiscaling
 multitoken
 NASC
 nbins
+ncol
 ncols
 ndarray
 nedges
