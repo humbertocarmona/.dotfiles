@@ -10,9 +10,8 @@ local opt = vim.opt
 
 opt.termguicolors = true
 opt.linespace = 2
-opt.guifont = "FiraCode Nerd Font Propo:h12"
--- opt.guifont = "CaskaydiaCove NF ExtraLight"
--- opt.guifont = "CaskaydiaMono Nerd Font Mono:h12"
+-- opt.guifont = "FiraCode Nerd Font Propo:h12"
+opt.guifont = "CaskaydiaCove Nerd Font:h11"
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true

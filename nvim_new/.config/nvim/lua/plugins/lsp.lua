@@ -7,8 +7,9 @@ return {
         pylsp = {
           plugins = {
             pycodestyle = {
-              maxLineLength = 90,
+              maxLineLength = 120,
             },
+            pyflakes = { enabled = false }, -- Disable pyflakes
           },
         },
       },

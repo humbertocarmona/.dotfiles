@@ -413,6 +413,7 @@ xtickpos
 xticks
 xticksvisible
 xvec
+xycoords
 xypanelcolor
 xzpanelcolor
 yautolimitmargin
@@ -437,6 +438,7 @@ ypos
 yreversed
 yscale
 yshift
+ytick
 ytickformat
 yticklab
 yticklabel
@@ -458,6 +460,7 @@ zlim
 zlims
 zmax
 zmin
+zorder
 zscore
 ztickformat
 zvec

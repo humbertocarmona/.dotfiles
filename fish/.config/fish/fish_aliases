@@ -1,7 +1,7 @@
 abbr c 'code .'
 abbr cat bat
 abbr cls clear
-abbr df 'df -h' # human-readable sizes
+abbr df 'df -hT' # human-readable sizes and type
 abbr f lfcd
 abbr ee 'explorer.exe'
 abbr g lazygit

@@ -19,7 +19,9 @@ set -x LC_ALL en_US.UTF-8
 #set -x LANG pt_BR.UTF-8
 #set -x LC_ALL pt_BR.UTF-8
 # Set TERM depending on whether we're inside tmux
-set -x TERM screen-256color
+
+# set -x TERM screen-256color
+set -gx TERM xterm-256color
 
 # set -Ux PYENV_ROOT $HOME/.pyenv
 # set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
@@ -43,10 +45,9 @@ else
         set -x PATH /opt/miniconda3/bin $PATH
     end
 end
-# conda activate py312
 # conda deactivate
 # conda activate py313
-conda activate opensus
+# conda activate opensus
 # <<< conda initialize <<<
 if not test -d /run/tmux
     echo "criando tmux"

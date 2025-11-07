@@ -1,6 +1,8 @@
 return {
   "Vigemus/iron.nvim",
-  config = function(plugins)
+  lazy = true,
+  ft = { "python" },
+  config = function()
     local iron = require("iron.core")
     local view = require("iron.view")
     local common = require("iron.fts.common")
@@ -43,27 +45,23 @@ return {
       -- You can set them here or manually add keymaps to the functions in iron.core
       keymaps = {
         toggle_repl = "<leader>ro", -- toggles the repl open and closed.
-        -- If repl_open_command is a table as above, then the following keymaps are
-        -- available
-        -- toggle_repl_with_cmd_1 = "<leader>rv",
-        -- toggle_repl_with_cmd_2 = "<leader>rh",
         restart_repl = "<leader>rR", -- calls `IronRestart` to restart the repl
         send_motion = "<leader>rs",
-        visual_send = "<leader>rr",
-        send_file = "<leader>rf",
+        visual_send = "<leader>rv",
+        send_file = "<leader>rg",
         send_line = "<leader>rl",
         send_paragraph = "<leader>rp",
         send_until_cursor = "<leader>ru",
         send_mark = "<leader>rm",
         send_code_block = "<leader>rb",
-        send_code_block_and_move = "<leader>rn",
+        send_code_block_and_move = "<leader>rr",
         mark_motion = "<leader>mc",
         mark_visual = "<leader>mc",
         remove_mark = "<leader>md",
-        cr = "<leader>s<cr>",
-        interrupt = "<leader>s<leader>",
-        exit = "<leader>sq",
-        clear = "<leader>cl",
+        cr = "<leader>r<cr>",
+        interrupt = "<leader>r<space>",
+        exit = "<leader>rq",
+        clear = "<leader>rc",
       },
       -- If the highlight is on, you can change how it looks
       -- For the available options, check nvim_set_hl
