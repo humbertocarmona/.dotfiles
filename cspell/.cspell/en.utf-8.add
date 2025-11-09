@@ -9,6 +9,7 @@ arange
 argmax
 argmin
 arrowsize
+asanyarray
 assortativity
 astype
 autofetch

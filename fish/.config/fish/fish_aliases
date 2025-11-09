@@ -1,32 +1,28 @@
 abbr c 'code .'
 abbr cat bat
-abbr cls clear
+abbr cl clear
 abbr df 'df -hT' # human-readable sizes and type
-abbr f lfcd
 abbr ee 'explorer.exe'
+abbr f lfcd
 abbr g lazygit
 abbr isa 'ssh Isa'
-abbr j 'julia --project'
+abbr j 'julia --project=./'
 abbr l 'eza  --icons'
-abbr ll 'eza -lh --icons'
 abbr la 'eza -lha --icons'
+abbr ll 'eza -lh --icons'
 abbr mv 'mv -i'
-abbr pac 'sudo pacman'
-abbr pa 'paru --skipreview'
 abbr q exit
 abbr qq 'wsl.exe --shutdown'
-abbr urm trash-restore
-abbr rt 'send2trash -v'
 abbr rm 'rm -i'
 abbr rmf 'rm -f'
+abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avuz'
+abbr rsn 'rsync --no-perms --links --progress -avuz'
+abbr rt 'send2trash -v'
+abbr urm trash-restore
 abbr v nvim
-abbr vb 'nvim ~/.config/waybar/config.jsonc'
-abbr vl 'nvim ~/.config/lf/lfrc'
-abbr vy 'nvim ~/.config/hypr/hyprland.conf'
 abbr z. 'z ~/.dotfiles'
 abbr zc 'z ~/.config'
 abbr zd 'z ~/Dev/'
-abbr zw 'z ~/Workspace'
 abbr ze 'z ~/Dev/Cientista-Chefe/Escola'
 abbr zf 'z ~/.config/fish'
 abbr zh 'z ~/.config/hypr/'
@@ -34,30 +30,13 @@ abbr zj 'z ~/.julia/dev/'
 abbr zk 'z ~/.config/kitty/'
 abbr zl 'z ~/.config/lf'
 abbr zv 'z ~/.config/nvim'
-abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avuz'
-abbr rsn 'rsync --no-perms --links --progress -avuz'
-abbr juc 'julia --project=./'
-abbr pluto 'julia --project=./ -e \'using Pluto; Pluto.run()\''
+abbr zw 'z ~/Workspace'
 
-alias paru='paru --skipreview'
-alias di='docker images'
-alias dp='docker ps -a'
 alias icat='kitty +kitten icat --transfer-mode file'
 alias kb='rg "^bind.+SUPER" ~/.config/hypr/keybinds.conf | sed 's/SUPER/mod4+/''
-alias logoutkde="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
-alias open='xdg-open'
-alias pipup="pip list oudated --format=freeze | rg -v '^\-e' | cut -d= -f 1 | xargs -n1 pip install -U"
-alias ta='tmux attach-session'
-alias td='tmux detach'
-alias tk='tmux kill-session'
-alias tl='tmux list-sessions'
-alias tn="tmux new -s (pwd | sed 's/.*\///g')"
-alias tt="tmux new -s session_(pwd | sed 's/.*\///g') 'lfcd'"
-alias vf='nvim (ag --hidden --ignore .git --ignore .cache -g "" | fzf)'
-alias vu='nvim -u NONE'
-alias refresh-keys="sudo pacman-key --refresh-keys"
-alias fixbluetooth="sudo btmgmt ssp on"
-alias trash-view="trash-list | sort -r | fzf"
-alias ovpn="sudo /sbin/openvpn /etc/openvpn/client/gateway1-UDP4-1194-carmona.ovpn"
-alias umountnas="fusermount -u ~/NAS"
 alias mountnas="sshfs carmona@200.17.35.5:/share/CACHEDEV1_DATA/ownlet/lbs ~/lbs/"
+alias open='xdg-open'
+alias ovpn="sudo /sbin/openvpn /etc/openvpn/client/gateway1-UDP4-1194-carmona.ovpn"
+alias pipup="pip list oudated --format=freeze | rg -v '^\-e' | cut -d= -f 1 | xargs -n1 pip install -U"
+alias trash-view="trash-list | sort -r | fzf"
+alias umountnas="fusermount -u ~/NAS"
