@@ -77,7 +77,10 @@ return {
       })
     end,
   },
-  { "rebelot/kanagawa.nvim", lazy = true, opts = { style = "dragon" } },
+  { "rebelot/kanagawa.nvim", lazy = false, opts = {
+    transparent = true,
+    style = "dragon",
+  } },
   {
     "LazyVim/LazyVim",
     opts = {

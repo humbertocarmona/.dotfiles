@@ -40,4 +40,5 @@ else
         set -x PATH /opt/miniconda3/bin $PATH
     end
 end
+conda activate py313
 # <<< conda initialize <<<

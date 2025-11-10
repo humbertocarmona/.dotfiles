@@ -6,8 +6,8 @@ wname="$2"
 
 case "$wname" in
 dev) # just like the default
-    tmux set-window-option -t "$wid" window-active-style 'bg=#101034' \; \
-        set-window-option -t "$wid" window-style 'bg=colour16'
+    tmux set-window-option -t "$wid" window-active-style 'bg=#1a1b26' \; \
+        set-window-option -t "$wid" window-style 'bg=#1a1b26'
     ;;
 isa) # a bit darker
     tmux set-window-option -t "$wid" window-active-style 'bg=colour232' \; \
