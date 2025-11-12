@@ -1,7 +1,7 @@
 return {
   "Vigemus/iron.nvim",
   lazy = true,
-  ft = { "python" },
+  ft = { "python", "julia" },
   config = function()
     local iron = require("iron.core")
     local view = require("iron.view")
@@ -23,6 +23,10 @@ return {
             format = common.bracketed_paste_python,
             block_dividers = { "# %%", "#%%" },
             env = { PYTHON_BASIC_REPL = "1" }, --this is needed for python3.13 and up.
+          },
+          julia = {
+            command = { "julia", "--color=no", "--project=./" },
+            block_dividers = { "# %%", "#%%" },
           },
         },
         -- set the file type of the newly created repl to ft
@@ -52,7 +56,7 @@ return {
         send_line = "<leader>rl",
         send_paragraph = "<leader>rp",
         send_until_cursor = "<leader>ru",
-        send_mark = "<leader>rm",
+        send_mark = "<leader>im",
         send_code_block = "<leader>rb",
         send_code_block_and_move = "<leader>rr",
         mark_motion = "<leader>mc",

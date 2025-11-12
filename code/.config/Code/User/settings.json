@@ -1,0 +1,15 @@
+{
+    "settingsSync.keybindingsPerPlatform": true,
+    "workbench.colorCustomizations": {
+        "[Kanagawa]": {
+            "tab.border":"#928962",
+            "panel.border":"#928962",
+            "terminal.border":"#928962",
+            "editorGroup.border":"#928962",
+            "editorInfo.border":"#928962",
+            "sideBar.border":"#928962",
+        },
+    },
+    "workbench.colorTheme": "Kanagawa"
+// /mnt/c/Users/carmo/AppData/Code/User
+}
