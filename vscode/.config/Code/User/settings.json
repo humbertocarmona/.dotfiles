@@ -11,7 +11,7 @@
         },
     },
     "workbench.colorTheme": "Kanagawa",
-    "editor.fontFamily": "Cascadia Code NF",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
@@ -40,5 +40,8 @@
         "editor.defaultFormatter": "0h7z.vscode-julia-format"
     },
     "color-highlight.markerType": "dot-before",
-    "julia.enableCrashReporter": true
+    "julia.enableCrashReporter": true,
+    "editor.minimap.enabled": false,
+    "julia.enableTelemetry": true,
+    "git.autofetch": true
 }
