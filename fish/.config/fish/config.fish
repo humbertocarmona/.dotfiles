@@ -20,6 +20,8 @@ set -U fish_user_paths $HOME/go/bin $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
 set -x LANG en_US.UTF-8
 set -x LC_ALL en_US.UTF-8
+# set -x XDG_CONFIG_HOME $HOME/.config
+
 #set -x LANG pt_BR.UTF-8
 #set -x LC_ALL pt_BR.UTF-8
 
@@ -40,5 +42,4 @@ else
         set -x PATH /opt/miniconda3/bin $PATH
     end
 end
-conda activate py313
 # <<< conda initialize <<<
