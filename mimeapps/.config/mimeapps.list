@@ -6,6 +6,8 @@ application/x-desktop=org.kde.dolphin.desktop;code.desktop;nvim.desktop;libreoff
 application/x-docbook+xml=nvim.desktop;
 application/x-yaml=nvim.desktop;
 application/zip=qgis.desktop;org.kde.ark.desktop;
+application/x-shellscript=nvim.desktop;
+
 image/jpeg=swayimg.desktop;org.kde.gwenview.desktop;okularApplication_kimgio.desktop;gimp.desktop;com.google.Chrome.desktop;qgis.desktop;
 image/png=swayimg.desktop;org.kde.gwenview.desktop;gimp.desktop;okularApplication_kimgio.desktop;
 inode/directory=org.kde.dolphin.desktop;code.desktop;lf.desktop;kitty-open.desktop;org.kde.gwenview.desktop;org.kde.dolphinsu.desktop;

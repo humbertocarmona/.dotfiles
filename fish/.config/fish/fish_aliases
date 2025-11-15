@@ -31,7 +31,8 @@ abbr zk 'z ~/.config/kitty/'
 abbr zl 'z ~/.config/lf'
 abbr zv 'z ~/.config/nvim'
 abbr zw 'z ~/Workspace'
-
+abbr zy zypper
+abbr sy 'sudo zypper'
 alias icat='kitty +kitten icat --transfer-mode file'
 alias kb='rg "^bind.+SUPER" ~/.config/hypr/keybinds.conf | sed 's/SUPER/mod4+/''
 alias mountnas="sshfs carmona@200.17.35.5:/share/CACHEDEV1_DATA/ownlet/lbs ~/lbs/"
