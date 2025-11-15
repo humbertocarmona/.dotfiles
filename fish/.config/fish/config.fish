@@ -32,14 +32,14 @@ fish_vi_key_bindings
 fish_vi_cursor
 
 # >>> conda initialize >>>
-set -U __conda_prefix ''
-if test -f /opt/miniconda3/bin/conda
-    eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f /opt/miniconda/etc/fish/conf.d/conda.fish
-        . /opt/miniconda3/etc/fish/conf.d/conda.fish
-    else
-        set -x PATH /opt/miniconda3/bin $PATH
-    end
-end
+# set -U __conda_prefix ''
+# if test -f /opt/miniconda3/bin/conda
+#     eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
+# else
+#     if test -f /opt/miniconda/etc/fish/conf.d/conda.fish
+#         . /opt/miniconda3/etc/fish/conf.d/conda.fish
+#     else
+#         set -x PATH /opt/miniconda3/bin $PATH
+#     end
+# end
 # <<< conda initialize <<<

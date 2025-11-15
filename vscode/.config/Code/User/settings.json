@@ -9,8 +9,22 @@
             "editorInfo.border": "#928962",
             "sideBar.border": "#928962",
         },
+        "[Tokyo Night]": {
+            "tab.border": "#627792",
+            "panel.border": "#627792",
+            "terminal.border": "#627792",
+            "editorGroup.border": "#627792",
+            "editorInfo.border": "#627792",
+            "sideBar.border": "#627792",
+            "editor.selectionBackground": "#313c4eff"
+        }
     },
-    "workbench.colorTheme": "Kanagawa",
+    "editor.tokenColorCustomizations": {
+        "[Tokyo Night]": {
+            "comments": "#627792"
+        }
+    },
+    "workbench.colorTheme": "Tokyo Night",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
@@ -52,5 +66,9 @@
     "editor.minimap.enabled": false,
     "julia.enableTelemetry": true,
     "git.autofetch": true,
-    "julia.execution.codeInREPL": true
+    "julia.execution.codeInREPL": true,
+    "editor.formatOnSave": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "cSpell.language": "en,pt,pt_BR",
 }

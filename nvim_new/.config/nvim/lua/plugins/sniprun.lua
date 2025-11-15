@@ -23,8 +23,7 @@ return {
         },
         Python3_original = {
           error_truncate = "auto", --# Truncate runtime errors 'long', 'short' or 'auto'
-          --# the hint is available for every interpreter
-          --# but may not be always respected
+          venv = { "venv" },
         },
         Julia_original = {
           project = ".", --# either a fixed absolute path, or "." for nvim's current directory (from echo getcwd()  )
@@ -36,9 +35,9 @@ return {
       --# you can combo different display modes as desired and with the 'Ok' or 'Err' suffix
       --# to filter only sucessful runs (or errored-out runs respectively)
       display = {
-        "Classic", --# display results in the command-line  area
-        "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
         "Terminal",
+        -- "Classic", --# display results in the command-line  area
+        "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
         -- "VirtualText",             --# display results as virtual text
         -- "VirtualLine",             --# display results as virtual lines
         -- "TempFloatingWindow",      --# display results in a floating window
