@@ -16,7 +16,7 @@
             "editorGroup.border": "#627792",
             "editorInfo.border": "#627792",
             "sideBar.border": "#627792",
-            "editor.selectionBackground": "#313c4eff"
+            "editor.selectionBackground": "#313c4eff",
         }
     },
     "editor.tokenColorCustomizations": {
@@ -25,7 +25,7 @@
         }
     },
     "workbench.colorTheme": "Tokyo Night",
-    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
@@ -61,6 +61,8 @@
         "^#-",
         "^# %%"
     ],
+    "julia.lint.constif": false,
+    "editor.lineHeight": 1.5,
     "color-highlight.markerType": "dot-before",
     "julia.enableCrashReporter": true,
     "editor.minimap.enabled": false,
@@ -71,4 +73,9 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "cSpell.language": "en,pt,pt_BR",
+    "transparent-win.transparency": 0.2,
+    "glassit.alpha": 100,
+    "glassit-linux.opacity": 50,
+    "workbench.preferredDarkColorTheme": "Tokyo Night",
+    "explorer.confirmDragAndDrop": false,
 }
