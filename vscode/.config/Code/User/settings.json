@@ -82,6 +82,17 @@
         "foreground": "#ffaa00",
         "fontStyle": "Italic"
     },
+    "todo-tree.general.tags": [
+		"BUG",
+		"HACK",
+		"FIXME",
+		"TODO",
+        "WARN",
+        "INFO",
+		"XXX",
+		"[->]",
+		"[x]"
+	],
     "editor.bracketPairColorization.enabled": true,
     "editor.matchBrackets": "always",
     "editor.fontSize": 15,
