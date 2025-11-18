@@ -30,7 +30,7 @@ map p print
 map w recolor
 #map k 5k
 #map j 5k
-set recolor                     false
+set recolor                     true
 set recolor-keephue             true      # keep original color
 # set recolor-reverse-video       "true"
 
