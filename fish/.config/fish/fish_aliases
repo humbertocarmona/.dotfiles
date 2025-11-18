@@ -5,7 +5,7 @@ abbr df 'df -hT' # human-readable sizes and type
 abbr ee 'explorer.exe'
 abbr f lfcd
 abbr g lazygit
-abbr isa 'ssh isa'
+abbr isa 'ssh Isa'
 abbr j 'julia --project=./'
 abbr l 'eza  --icons'
 abbr la 'eza -lha --icons'
@@ -15,9 +15,9 @@ abbr q exit
 abbr qq 'wsl.exe --shutdown'
 abbr rm 'rm -i'
 abbr rmf 'rm -f'
-abbr rs 'rsync --filter=\': .rsync-filter\' --no-perms --links --progress -avuz'
+abbr rs 'rsync -F --no-perms --links --progress -avuz'
 abbr rsn 'rsync --no-perms --links --progress -avuz'
-abbr rt 'send2trash -v'
+abbr t trash-put
 abbr urm trash-restore
 abbr v nvim
 abbr z. 'z ~/.dotfiles'
@@ -33,6 +33,7 @@ abbr zv 'z ~/.config/nvim'
 abbr zw 'z ~/Workspace'
 abbr zy zypper
 abbr sy 'sudo zypper'
+
 alias icat='kitty +kitten icat --transfer-mode file'
 alias kb='rg "^bind.+SUPER" ~/.config/hypr/keybinds.conf | sed 's/SUPER/mod4+/''
 alias mountnas="sshfs carmona@200.17.35.5:/share/CACHEDEV1_DATA/ownlet/lbs ~/lbs/"
@@ -42,3 +43,4 @@ alias pipup="pip list oudated --format=freeze | rg -v '^\-e' | cut -d= -f 1 | xa
 alias trash-view="trash-list | sort -r | fzf"
 alias umountnas="fusermount -u ~/NAS"
 alias code="snap run code"
+alias cls="clear"

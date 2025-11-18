@@ -25,21 +25,21 @@
         }
     },
     "workbench.colorTheme": "Tokyo Night",
-    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontFamily": "FiraCode Nerd Font Mono Ret",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "julia.symbolCacheDownload": true,
     "[python]": {
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultColorDecorators": "never",
         "editor.formatOnType": true,
         "editor.wordBasedSuggestions": "off",
         "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 500
+        "files.autoSaveDelay": 500,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "[julia]": {
         "editor.defaultColorDecorators": "never",
@@ -54,6 +54,7 @@
         "editor.defaultFormatter": "0h7z.vscode-julia-format",
         "editor.unicodeHighlight.ambiguousCharacters": false,
     },
+    "julia.symbolCacheDownload": true,
     "julia.cellDelimiters": [
         "^\\s?#\\s#+",
         "^##(?!#)",
@@ -62,20 +63,32 @@
         "^# %%"
     ],
     "julia.lint.constif": false,
-    "editor.lineHeight": 1.5,
-    "color-highlight.markerType": "dot-before",
     "julia.enableCrashReporter": true,
-    "editor.minimap.enabled": false,
     "julia.enableTelemetry": true,
-    "git.autofetch": true,
     "julia.execution.codeInREPL": true,
+    "editor.lineHeight": 1.7,
+    "color-highlight.markerType": "dot-before",
+    "editor.minimap.enabled": false,
+    "git.autofetch": true,
     "editor.formatOnSave": true,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "cSpell.language": "en,pt,pt_BR",
-    "transparent-win.transparency": 0.2,
-    "glassit.alpha": 100,
-    "glassit-linux.opacity": 50,
     "workbench.preferredDarkColorTheme": "Tokyo Night",
     "explorer.confirmDragAndDrop": false,
+    "todo-tree.highlights.enabled": true,
+    "todo-tree.highlights.defaultHighlight": {
+        "background": "#313c4e00",
+        "foreground": "#ffaa00",
+        "fontStyle": "Italic"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.matchBrackets": "always",
+    "editor.fontSize": 15,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.startupEditor": "none",
+    // "editor.guides.bracketPairs": "active"
 }

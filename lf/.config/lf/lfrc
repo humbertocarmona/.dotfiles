@@ -223,7 +223,7 @@ cmd trash ${{
     # extract the substring from start of string up to delimiter.
     # this is the first "element" of the string.
     file=${files%%;*}
-    send2trash "$(basename $file)"
+    trash-put "$(basename $file)"
     # the next.
     if [ "$files" = "$file" ]; then
         files=''
@@ -299,9 +299,9 @@ map ig add_gitignore
 map ir add_rsync_filter
 
 map n 
-map nu ${{nvim -u NONE "$f"}}
+map nu ${{neovide -u NONE "$f"}}
 
-map nv ${{nvim -O "$fx"}}
+map nv ${{nneovide -O "$fx"}}
 
 map m
 map mf mkFile
@@ -320,6 +320,7 @@ map t
 map tt tmux_here
 map td tmux_detach
 map ta ${{tmux attach}}
+map tr restore_trash
 
 map u unselect
 

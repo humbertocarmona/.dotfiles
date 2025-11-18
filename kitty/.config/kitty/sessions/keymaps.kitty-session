@@ -1,0 +1,5 @@
+# Set the layout for the current tab
+layout tall
+cd ~/.config/hypr
+launch --title keybindings  /usr/bin/nvim keybinds.conf
+
