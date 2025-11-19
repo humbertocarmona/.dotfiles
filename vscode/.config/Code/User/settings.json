@@ -76,12 +76,6 @@
     "cSpell.language": "en,pt,pt_BR",
     "workbench.preferredDarkColorTheme": "Tokyo Night",
     "explorer.confirmDragAndDrop": false,
-    "todo-tree.highlights.enabled": true,
-    "todo-tree.highlights.defaultHighlight": {
-        "background": "#313c4e00",
-        "foreground": "#ffaa00",
-        "fontStyle": "Italic"
-    },
     "editor.bracketPairColorization.enabled": true,
     "editor.matchBrackets": "always",
     "editor.fontSize": 15,
@@ -90,5 +84,51 @@
     },
     "git.openRepositoryInParentFolders": "always",
     "workbench.startupEditor": "none",
-    // "editor.guides.bracketPairs": "active"
+    	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": true
+		},
+		{
+			"tag": "?",
+			"color": "#3498DB",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "//",
+			"color": "#474747",
+			"strikethrough": true,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "todo",
+			"color": "#FF8C00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": true
+		},
+		{
+			"tag": "*",
+			"color": "#98C379",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		}
+	],
 }
