@@ -7,7 +7,8 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
+        "niri/workspaces",
+        "niri/window"
     ],
     "modules-center": [
         "clock"
@@ -27,11 +28,17 @@
         "battery",
         "tray"
     ],
-    "hyprland/workspaces": {
-        "all-outputs": false,
+
+    // --- Niri modules ---
+
+    "niri/workspaces": {
+        "all-outputs": false,          // same idea as hyprland one
         "format": "{icon}",
         "disable-auto-back-and-forth": false,
         "format-icons": {
+            // These keys match workspace *names* in niri.
+            // If your workspaces in niri are named "1", "2", etc.,
+            // this will work as-is.
             "1": "⠁",
             "2": "⠃",
             "3": "⠉",
@@ -54,14 +61,21 @@
             "20": "⠃⠚",
             "21": "",
             "urgent": "",
-            "focused": "",
+            "active": "",   // in niri/workspaces, "active" is the visible WS
             "default": ""
         }
     },
-    "hyprland/window": {
+
+    "niri/window": {
         "format": "{}",
         "max-length": 80
+        // you can also use:
+        // "format": "{title}"
+        // and add rewrite rules if you want
     },
+
+    // --- Generic modules (unchanged) ---
+
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -71,19 +85,7 @@
             "unlocked": ""
         }
     },
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": [
-            "",
-            ""
-        ],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
+
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -110,6 +112,7 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -117,43 +120,48 @@
             "deactivated": ""
         }
     },
+
     "tray": {
         "icon-size": 21,
         "spacing": 10,
-        "show-passive-items":true
+        "show-passive-items": true
     },
+
     "clock": {
         "format": "{:%H:%M}  ",
         "format-alt": "{:%A, %B %d, %Y (%R)}  ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
+
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
+
     "memory": {
         "format": "{}% "
     },
+
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -166,6 +174,7 @@
             ""
         ]
     },
+
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
@@ -181,6 +190,7 @@
             ""
         ]
     },
+
     "battery": {
         "states": {
             // "good": 95,
@@ -202,6 +212,7 @@
             ""
         ]
     },
+
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -213,6 +224,7 @@
             "power-saver": ""
         }
     },
+
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -222,6 +234,7 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
@@ -245,6 +258,7 @@
         },
         "on-click": "pavucontrol"
     },
+
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
@@ -254,19 +268,22 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
     },
+
     "custom/language": {
         "exec": "~/.config/waybar/scripts/get_keymap_hypr.sh",
         "interval": 1,
         // "format": "  {}",
         "format": " {} ",
-        "tooltip": false,
+        "tooltip": false
     },
+
     "custom/cycle_wall": {
         "format": " 󱨑  {}",
         "interval": 1,
         "on-click": "~/.config/hypr/scripts/tools/expand cycle"
-    },
+    }
 }
+

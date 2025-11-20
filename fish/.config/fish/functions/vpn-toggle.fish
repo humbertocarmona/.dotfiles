@@ -1,5 +1,5 @@
 function vpn-toggle
-    set service openvpn@gateway
+    set service openvpn-client@gateway.service
 
     # Check whether the service is active
     if systemctl is-active --quiet $service
