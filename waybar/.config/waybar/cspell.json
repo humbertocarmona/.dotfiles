@@ -1,0 +1,25 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "bluetui",
+        "capslock",
+        "essid",
+        "ethernet",
+        "gwaddr",
+        "hwmon",
+        "hypr",
+        "hyprland",
+        "ifname",
+        "keymap",
+        "mediaplayer",
+        "niri",
+        "numlock",
+        "pavucontrol",
+        "wifi"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

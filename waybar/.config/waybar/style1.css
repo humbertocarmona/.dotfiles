@@ -13,7 +13,6 @@ window#waybar {
     transition-duration: .5s;
 }
 
-/* ------------  left -----------------------------*/
 #workspaces {
     margin: 0 4px;
 }
@@ -42,8 +41,6 @@ window#waybar {
     background-color: #f7768e;
 }
 
-/* ------------  center  -----------------------------*/
-
 #window {
     /* color: rgba(36, 40, 59, 0.8); */
     padding-right: 30px;
@@ -59,78 +56,60 @@ window#waybar {
 
 }
 
-/* ------------  center  -----------------------------*/
 #tray {
-    /* background-color: #2a3f56; */
-    background-color: #41a6b5;
+    background-color: #2a3f56;
     color: #b4f9f8;
 }
-
-
 
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
 
-#custom-bluetooth {
-    background: #73daca;
-    color: #24283b
-}
-
 #custom-language {
-    /* background: #2a3f56; */
-    background: #9ece6a;
-    color: #24283b
+    background: #2a3f56;
 }
 
 #custom-cycle_wall {
-    background: #3d59a1;
-    color: #24283b;
-    font-size: 20px;
-
+    background: #2a3f56;
 }
 
 #pulseaudio {
-    background-color: #7aa2f7;
+    background-color: #2a3f56;
     min-width: 100px;
-    color: #24283b;
-
 }
 
 #network {
-    background-color: #414868;
+    background-color: #2a3f56;
     min-width: 100px;
-    color: #a9b1d6;
-
 }
 
 #network.disconnected {
     color: #bb9af7;
 }
 
+#temperature {
+    background-color: #2a3f56;
+}
 
+#temperature.critical {
+    background-color: #f7768e;
+}
 
 #battery {
-    background-color: #545c7e;
-    color: #a9b1d6;
-
+    background-color: #2a3f56;
 }
 
 #battery.charging {
-    background-color: #545c7e;
-    color: #a9b1d6;
-
+    background-color: #2a3f56;
 }
 
 #battery.plugged {
-    background-color: #545c7e;
-    color: #a9b1d6;
-
+    background-color: #2a3f56;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #545c7e;
+    background-color: #292e42;
     color: #f7768e;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -140,11 +119,14 @@ window#waybar {
 }
 
 #clock {
+    font-weight: bolder;
     font-size: 16px;
     padding-right: 30px;
     background-color: #292e42;
     color: #a9b1d6;
 }
+
+
 
 /*
     #scratchpad {
@@ -326,13 +308,4 @@ window#waybar {
         background: inherit;
         box-shadow: inset 0 -3px #c0caf5;
     } 
-        #temperature {
-    background-color: #ff007c;
-        color: #24283b;
-
-}
-
-#temperature.critical {
-    background-color: #f7768e;
-}
     */
