@@ -26,6 +26,7 @@
         // "memory",
         "temperature",
         "battery",
+        "custom/bluetooth",
         "tray"
     ],
 
@@ -258,6 +259,16 @@
         },
         "on-click": "pavucontrol"
     },
+
+"custom/bluetooth": {
+    "format": " {}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/bluetooth_status.sh",
+    "interval": 5,
+    "tooltip": true,
+    "on-click": "kitty -e --title fly_is_kitty bluetui"
+},
+
 
     "custom/media": {
         "format": "{icon} {}",

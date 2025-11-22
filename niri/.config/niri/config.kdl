@@ -103,9 +103,9 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.33333
         proportion 0.5
-        proportion 0.66667
+        proportion 0.7
+        proportion 0.5
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
@@ -309,13 +309,31 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match title=r#"Birwarden$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^Meet.*"#
+    open-floating true
+}
+
+
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"stickynotes$"# 
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"fly_neo$"# 
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"GLMakie$"# 
     open-floating true
 }
 
@@ -358,10 +376,12 @@ binds {
     Mod+Return hotkey-overlay-title="Open kitty" { spawn "kitty"; }
     Mod+Shift+Return hotkey-overlay-title="open Flying kitty" { spawn-sh "kitty --title flying_kitty"; }
     Mod+B hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
-    Mod+Shift+B hotkey-overlay-title="Open Chrome" { spawn "com.google.Chrome"; }
+    Mod+Shift+B hotkey-overlay-title="Open Chrome" { spawn "chrome"; }
     Mod+D hotkey-overlay-title="Open Dolphin" { spawn "dolphin"; }
 
     Mod+P hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
+    Mod+Shift+C hotkey-overlay-title="Niri config" {spawn-sh "neovide --wayland_app_id fly_neo ~/.config/niri/config.kdl";}
+
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
