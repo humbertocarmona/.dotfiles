@@ -4,7 +4,7 @@ abbr cat bat
 abbr cl clear
 abbr df 'df -hT' # human-readable sizes and type
 abbr ee 'explorer.exe'
-abbr f lfcd
+# abbr f lfcd
 abbr g lazygit
 abbr isa 'ssh Isa'
 abbr j 'julia --project=./'
@@ -46,3 +46,4 @@ alias trash-view="trash-list | sort -r | fzf"
 alias umountnas="fusermount -u ~/NAS"
 alias code="snap run code"
 alias cls="clear"
+alias f="y"

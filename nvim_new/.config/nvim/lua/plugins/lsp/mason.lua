@@ -10,7 +10,6 @@ return {
         "lua_ls",
         "pyright",
         "eslint",
-        "julials",
       },
     },
     dependencies = {

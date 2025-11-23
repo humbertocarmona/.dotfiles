@@ -4,6 +4,7 @@ set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --style=numbers --color=always {}' --preview-window '~3'"
 set -xU JULIA_NUM_THREADS 8
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
+set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 set -U fish_user_paths $HOME/go/bin $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
 set -x LANG en_US.UTF-8
