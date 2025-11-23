@@ -103,6 +103,7 @@
     },
     // right- -----------------------------
     "tray": {
+        "format": " {} ",
         "icon-size": 21,
         "spacing": 15,
         "show-passive-items": false
@@ -121,7 +122,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": " {volume}% {icon} {format_source} ",
+        "format": "  {volume}%{icon}  {format_source} ",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -129,8 +130,8 @@
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -144,8 +145,9 @@
     },
     "network": {
         // "format-wifi": " {essid} ({signalStrength}%) ",
-        "format-wifi": " {essid} ",
-        "format-ethernet": " {ipaddr}/{cidr} 󰈀 ",
+        "format-wifi": " {essid}   ",
+        // "format-ethernet": " {ipaddr}/{cidr} 󰈀 ",
+        "format-ethernet": " {ifname} 󰈀  ",
         "tooltip-format": "{ifname} via {gwaddr} 󰩠",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
@@ -173,8 +175,8 @@
         ]
     },
     "clock": {
-        "format": " {:%H:%M} ",
-        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "format": " {:%H:%M} ",
+        "format-alt": " {:%A, %B %d, %Y (%R)} ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "year",
