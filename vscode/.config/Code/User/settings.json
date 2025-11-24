@@ -24,7 +24,7 @@
             "comments": "#627792"
         }
     },
-    "workbench.colorTheme": "Kanagawa",
+    "workbench.colorTheme": "Tokyo Night",
     "editor.fontFamily": "FiraCode Nerd Font Mono Ret",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
@@ -122,4 +122,12 @@
             "italic": false
         }
     ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
+    },
 }
