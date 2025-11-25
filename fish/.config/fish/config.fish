@@ -1,4 +1,5 @@
-set -gx TERM xterm-256color
+# set -gx TERM xterm-256color
+set -gx TERM xterm-kitty
 set -Ux COLORTERM truecolor
 set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --style=numbers --color=always {}' --preview-window '~3'"

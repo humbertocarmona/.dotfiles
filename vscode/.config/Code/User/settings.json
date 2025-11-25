@@ -1,133 +1,131 @@
 {
-    "settingsSync.keybindingsPerPlatform": true,
-    "workbench.colorCustomizations": {
-        "[Kanagawa]": {
-            "tab.border": "#928962",
-            "panel.border": "#928962",
-            "terminal.border": "#928962",
-            "editorGroup.border": "#928962",
-            "editorInfo.border": "#928962",
-            "sideBar.border": "#928962",
-        },
-        "[Tokyo Night]": {
-            "tab.border": "#627792",
-            "panel.border": "#627792",
-            "terminal.border": "#627792",
-            "editorGroup.border": "#627792",
-            "editorInfo.border": "#627792",
-            "sideBar.border": "#627792",
-            "editor.selectionBackground": "#313c4eff",
-        }
+  "settingsSync.keybindingsPerPlatform": true,
+  "workbench.colorCustomizations": {
+    "[Kanagawa]": {
+      "tab.border": "#928962",
+      "panel.border": "#928962",
+      "terminal.border": "#928962",
+      "editorGroup.border": "#928962",
+      "editorInfo.border": "#928962",
+      "sideBar.border": "#928962"
     },
-    "editor.tokenColorCustomizations": {
-        "[Tokyo Night]": {
-            "comments": "#627792"
-        }
-    },
-    "workbench.colorTheme": "Tokyo Night",
-    "editor.fontFamily": "FiraCode Nerd Font Mono Ret",
-    "editor.fontLigatures": true,
+    "[Tokyo Night]": {
+      "tab.border": "#627792",
+      "panel.border": "#627792",
+      "terminal.border": "#627792",
+      "editorGroup.border": "#627792",
+      "editorInfo.border": "#627792",
+      "sideBar.border": "#627792",
+      "editor.selectionBackground": "#313c4eff"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night]": {
+      "comments": "#627792"
+    }
+  },
+  "workbench.colorTheme": "Tokyo Night",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultColorDecorators": "never",
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": "off",
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "[python]": {
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.defaultColorDecorators": "never",
-        "editor.formatOnType": true,
-        "editor.wordBasedSuggestions": "off",
-        "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 500,
-        "editor.defaultFormatter": "ms-python.black-formatter"
+    "files.autoSaveDelay": 500,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[julia]": {
+    "editor.defaultColorDecorators": "never",
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
     },
-    "[julia]": {
-        "editor.defaultColorDecorators": "never",
-        "editor.quickSuggestions": {
-            "other": "on",
-            "comments": "off",
-            "strings": "off"
-        },
-        "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-        "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 500,
-        "editor.defaultFormatter": "0h7z.vscode-julia-format",
-        "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "editor.defaultFormatter": "0h7z.vscode-julia-format",
+    "editor.unicodeHighlight.ambiguousCharacters": false
+  },
+  "julia.symbolCacheDownload": true,
+  "julia.cellDelimiters": [
+    "^\\s?#\\s#+",
+    "^##(?!#)",
+    "^#(\\s?)%%",
+    "^#-",
+    "^# %%"
+  ],
+  "julia.lint.constif": false,
+  "julia.enableCrashReporter": true,
+  "julia.enableTelemetry": true,
+  "julia.execution.codeInREPL": true,
+  "editor.lineHeight": 1.7,
+  "color-highlight.markerType": "dot-before",
+  "editor.minimap.enabled": false,
+  "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "cSpell.language": "en,pt,pt_BR",
+  "workbench.preferredDarkColorTheme": "Tokyo Night",
+  "explorer.confirmDragAndDrop": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.matchBrackets": "always",
+  "editor.fontSize": 15,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "workbench.startupEditor": "none",
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
     },
-    "julia.symbolCacheDownload": true,
-    "julia.cellDelimiters": [
-        "^\\s?#\\s#+",
-        "^##(?!#)",
-        "^#(\\s?)%%",
-        "^#-",
-        "^# %%"
-    ],
-    "julia.lint.constif": false,
-    "julia.enableCrashReporter": true,
-    "julia.enableTelemetry": true,
-    "julia.execution.codeInREPL": true,
-    "editor.lineHeight": 1.7,
-    "color-highlight.markerType": "dot-before",
-    "editor.minimap.enabled": false,
-    "git.autofetch": true,
-    "editor.formatOnSave": true,
-    "git.enableSmartCommit": true,
-    "git.confirmSync": false,
-    "cSpell.language": "en,pt,pt_BR",
-    "workbench.preferredDarkColorTheme": "Tokyo Night",
-    "explorer.confirmDragAndDrop": false,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.matchBrackets": "always",
-    "editor.fontSize": 15,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
     },
-    "git.openRepositoryInParentFolders": "always",
-    "workbench.startupEditor": "none",
-    "better-comments.tags": [
-        {
-            "tag": "!",
-            "color": "#FF2D00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": true
-        },
-        {
-            "tag": "?",
-            "color": "#3498DB",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "todo",
-            "color": "#FF8C00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": true
-        },
-        {
-            "tag": "*",
-            "color": "#3498DB",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        }
-    ],
-    "cSpell.customDictionaries": {
-        "custom-dictionary-user": {
-            "name": "custom-dictionary-user",
-            "path": "~/.cspell/custom-dictionary-user.txt",
-            "addWords": true,
-            "scope": "user"
-        }
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
     },
+    {
+      "tag": "*",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  }
 }
