@@ -29,4 +29,24 @@ config.color_scheme = "Tokyo Night"
 
 config.window_background_opacity = 0.9
 config.enable_wayland = false
+
+-- just to be sure scrollback is big enough:
+config.scrollback_lines = 3500
+
+-- default mouse bindings (explicitly set to be safe)
+
+local act = wezterm.action
+
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+		mods = "NONE",
+		action = act.ScrollByLine(-3),
+	},
+	{
+		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+		mods = "NONE",
+		action = act.ScrollByLine(3),
+	},
+}
 return config
