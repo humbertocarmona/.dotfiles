@@ -58,10 +58,16 @@ return {
     config = function()
       local tokyo = require("tokyonight")
       tokyo.setup({
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+          highlights = "transparent",
+        },
         on_highlights = function(highlights)
-          highlights.ColorColumn = {
-            bg = "#1d2443",
-          }
+          -- highlights.ColorColumn = {
+          --   bg = "#1d2443",
+          -- }
           highlights.Folded = {
             bg = "#1d2443",
             fg = "#7aa2f7",
@@ -77,10 +83,14 @@ return {
       })
     end,
   },
-  { "rebelot/kanagawa.nvim", lazy = false, opts = {
-    transparent = true,
-    style = "dragon",
-  } },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    opts = {
+      transparent = true,
+      style = "dragon",
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
