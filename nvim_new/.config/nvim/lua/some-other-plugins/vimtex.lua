@@ -24,15 +24,13 @@ return {
     vim.g.vimtex_compiler_latexmk_engines = {
       _ = "-lualatex",
     }
-
-    -- 🔑 Let vimtex handle zathura + nvr automatically
+    -- vim.g.vimtex_view_method = "okular"
+    -- vim.g.vimtex_view_general_viewer = "okular"
+    -- vim.g.vimtex_view_general_options = "--unique file:@pdf#src:@line@tex"
     vim.g.vimtex_view_method = "zathura"
-
-    -- ❌ REMOVE / COMMENT these for now:
-    -- vim.g.vimtex_view_general_viewer = ...
-    -- vim.g.vimtex_view_general_options = ...
-    -- vim.g.vimtex_view_zathura_options = ...
-
+    vim.g.vimtex_view_general_viewer = "zathura"
+    vim.g.vimtex_view_general_options =
+      [[--synctex-forward @line:@col:@tex --synctex-editor-command 'nvr --remote-silent +%{line} %{input}' @pdf]]
     vim.g.vimtex_quickfix_open_on_warning = 0
   end,
 }

@@ -28,3 +28,17 @@ zoxide init fish | source
 # set -x XDG_CONFIG_HOME $HOME/.config
 # set -x LANG pt_BR.UTF-8
 # set -x LC_ALL pt_BR.UTF-8
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /usr/bin/conda
+    eval /usr/bin/conda "shell.fish" hook $argv | source
+else
+    if test -f "/usr/etc/fish/conf.d/conda.fish"
+        . "/usr/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH /usr/bin $PATH
+    end
+end
+conda deactivate
+# <<< conda initialize <<<

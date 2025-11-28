@@ -1,8 +1,10 @@
 # Synctex
 
 set synctex true
-set synctex-editor-command "nvr --remote-silent +%{line} %{input}"
+set synctex-editor-command "nvim --headless +'call cursor(%{line}, %{column})' %{input}"
+# set synctex-editor-command "nvr --remote-silent +%{line} %{input}"
 # set synctex-editor-command "nvim --remote-silent +%{line} %{input}"
+
 
 # Basic Settings
 
