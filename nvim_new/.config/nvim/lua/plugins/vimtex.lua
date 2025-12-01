@@ -12,12 +12,13 @@ return {
       continuous = 1,
       executable = "latexmk",
       options = {
-        "-shell-escape",
-        "-verbose",
-        "-file-line-error",
-        "-synctex=1",
+        "-pdf",
         "-interaction=nonstopmode",
-        "-lualatex",
+        "-shell-escape",
+        "-synctex=1",
+        "-file-line-error",
+        -- "-verbose",
+        -- "-lualatex",
       },
     }
     vim.g.vimtex_compiler_method = "latexmk"

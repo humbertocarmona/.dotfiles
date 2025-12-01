@@ -24,6 +24,8 @@ set window-title-basename true
 set window-title-page true
 set statusbar-basename true
 set guioptions n
+set recolor                     false
+set recolor-keephue             true      # keep original color
 
 map <Space> toggle_index
 map K zoom in
@@ -32,8 +34,6 @@ map p print
 map w recolor
 #map k 5k
 #map j 5k
-set recolor                     true
-set recolor-keephue             true      # keep original color
 # set recolor-reverse-video       "true"
 
 # Tokyonight color theme for Zathura

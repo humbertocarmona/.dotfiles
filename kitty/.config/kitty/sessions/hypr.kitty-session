@@ -1,5 +1,5 @@
 # Set the layout for the current tab
 layout tall
 cd ~/.config/hypr
-launch --title keybindings  /usr/bin/nvim hyprland.conf
+launch --title fly_is_kitty  /usr/bin/nvim hyprland.conf
 
