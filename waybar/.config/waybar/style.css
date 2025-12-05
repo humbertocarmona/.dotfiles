@@ -67,6 +67,8 @@ window#waybar {
     color: #b4f9f8;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    min-width: 40px;
+    margin-right: 1px;
 }
 
 #tray>.needs-attention {
@@ -76,19 +78,22 @@ window#waybar {
 
 #custom-bluetooth {
     background: #73daca;
-    color: #24283b
+    color: #24283b;
+    margin-right: 1px;
 }
 
 #custom-language {
     /* background: #2a3f56; */
     background: #9ece6a;
-    color: #24283b
+    color: #24283b;
+    margin-right: 1px;
 }
 
 #custom-cycle_wall {
     background: #3d59a1;
     color: #24283b;
     font-size: 20px;
+    margin-right: 1px;
 
 }
 
@@ -96,12 +101,14 @@ window#waybar {
     background-color: #7aa2f7;
     min-width: 100px;
     color: #24283b;
+    margin-right: 1px;
 
 }
 
 #network {
     background-color: #414868;
     color: #a9b1d6;
+    margin-right: 1px;
 
 }
 
@@ -114,6 +121,7 @@ window#waybar {
 #battery {
     background-color: #545c7e;
     color: #a9b1d6;
+    margin-right: 1px;
 
 }
 
