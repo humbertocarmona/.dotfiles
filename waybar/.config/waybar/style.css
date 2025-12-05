@@ -1,7 +1,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FiraCode Nerd Font Mono, Braille, MesloLGL Nerd Font;
+    font-family: JetBrainsMono Nerd Font, Braille, MesloLGL Nerd Font;
     font-size: 14px;
+    min-height: 10px;
 }
 
 window#waybar {
@@ -64,9 +65,9 @@ window#waybar {
     /* background-color: #2a3f56; */
     background-color: #41a6b5;
     color: #b4f9f8;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
-
-
 
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
@@ -143,6 +144,8 @@ window#waybar {
     padding-right: 30px;
     background-color: #292e42;
     color: #a9b1d6;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /*
