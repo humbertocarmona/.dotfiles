@@ -77,7 +77,8 @@
   "[latex]": {
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "recentlyUsedByPrefix",
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "files.autoSave": "off",
   },
   "julia.symbolCacheDownload": true,
   "julia.cellDelimiters": [
@@ -228,18 +229,9 @@
     }
   ],
   "editor.wrapOnEscapedLineFeeds": true,
-  "geminicodeassist.project": "maximal-coral-0hv63",
-  "latex-workshop.view.pdf.viewer": "external",
-  "latex-workshop.view.pdf.external.viewer.command": "/usr/bin/zathura",
-  "latex-workshop.view.pdf.external.viewer.args": [
-    "--synctex-editor-command",
-    "code -r -g \"%{input}:%{line}\"",
+  "latex-workshop.view.pdf.external.viewer.command": "zathura",
+  "latex-workshop.view.pdf.external.viewer.args":[
     "%PDF%"
-  ],
-  "latex-workshop.view.pdf.external.synctex.command": "/usr/bin/zathura",
-  "latex-workshop.view.pdf.external.synctex.args": [
-    "--synctex-forward=%LINE%:0:%TEX%",
-    "%PDF%"
-  ],
-  "latex-workshop.formatting.latex": "latexindent"
+  ]
+
 }

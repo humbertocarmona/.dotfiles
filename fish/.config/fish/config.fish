@@ -36,3 +36,8 @@ direnv hook fish | source
 # set -x XDG_CONFIG_HOME $HOME/.config
 # set -x LANG pt_BR.UTF-8
 # set -x LC_ALL pt_BR.UTF-8
+set -Ux PYENV_ROOT $HOME/.pyenv
+
+fish_add_path $PYENV_ROOT/bin
+status is-interactive; and pyenv init - | source
+direnv hook fish | source
