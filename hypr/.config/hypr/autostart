@@ -6,7 +6,7 @@ config=$HOME/.config/hypr
 scripts=$config/scripts
 
 # waybar
-$scripts/launch_waybar &
-
+# $scripts/launch_waybar &
+# $scripts/launch_qshell &
 # wallpaper
 # expand $scripts/wall &

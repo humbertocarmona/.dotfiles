@@ -4,19 +4,27 @@ set -Ux COLORTERM truecolor
 set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 50% --preview='bat --style=numbers --color=always {}' --preview-window '~3'"
 set -xU JULIA_NUM_THREADS 8
+set -xU JULIA_PROJECT "./"
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 set -U fish_user_paths $HOME/go/bin $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
+fish_add_path $HOME/.pyenv/bin
+
 set -x LANG en_US.UTF-8
 set -x LC_ALL en_US.UTF-8
+set -gx PYENV_ROOT $HOME/.pyenv
+set -gx PATH $PYENV_ROOT/bin $PATH
 
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
+:
 fish_vi_key_bindings
 fish_vi_cursor
 
 source $HOME/.config/fish/fish_aliases
 zoxide init fish | source
-
+direnv hook fish | source
 # set -x TERM screen-256color
 # set -gx TERMINAL kitty
 # set -gx TERM kitty
@@ -28,17 +36,3 @@ zoxide init fish | source
 # set -x XDG_CONFIG_HOME $HOME/.config
 # set -x LANG pt_BR.UTF-8
 # set -x LC_ALL pt_BR.UTF-8
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /usr/bin/conda
-    eval /usr/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/usr/etc/fish/conf.d/conda.fish"
-        . "/usr/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH /usr/bin $PATH
-    end
-end
-conda deactivate
-# <<< conda initialize <<<

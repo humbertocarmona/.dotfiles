@@ -16,7 +16,18 @@
       "editorGroup.border": "#627792",
       "editorInfo.border": "#627792",
       "sideBar.border": "#627792",
-      "editor.selectionBackground": "#313c4eff"
+      "editor.selectionBackground": "#313c4eff",
+      "list.hoverBackground": "#313c4eff",
+      "editor.background": "#011627"
+    },
+    "[Winter is Coming (Dark Blue)]": {
+      "editor.background": "#011627",
+      "list.hoverBackground": "#313c4eff",
+      "tab.border": "#627792",
+      "panel.border": "#627792",
+      "terminal.border": "#627792",
+      "editorGroup.border": "#627792",
+      "editorInfo.border": "#627792",
     }
   },
   "editor.tokenColorCustomizations": {
@@ -24,7 +35,7 @@
       "comments": "#627792"
     }
   },
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Winter is Coming (Dark Blue)",
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "files.autoSave": "afterDelay",
@@ -93,7 +104,7 @@
   "explorer.confirmDragAndDrop": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.matchBrackets": "always",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -217,4 +228,18 @@
     }
   ],
   "editor.wrapOnEscapedLineFeeds": true,
+  "geminicodeassist.project": "maximal-coral-0hv63",
+  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.view.pdf.external.viewer.command": "/usr/bin/zathura",
+  "latex-workshop.view.pdf.external.viewer.args": [
+    "--synctex-editor-command",
+    "code -r -g \"%{input}:%{line}\"",
+    "%PDF%"
+  ],
+  "latex-workshop.view.pdf.external.synctex.command": "/usr/bin/zathura",
+  "latex-workshop.view.pdf.external.synctex.args": [
+    "--synctex-forward=%LINE%:0:%TEX%",
+    "%PDF%"
+  ],
+  "latex-workshop.formatting.latex": "latexindent"
 }

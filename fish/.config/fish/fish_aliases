@@ -44,6 +44,5 @@ alias ovpn="sudo /sbin/openvpn /etc/openvpn/client/gateway1-UDP4-1194-carmona.ov
 alias pipup="pip list oudated --format=freeze | rg -v '^\-e' | cut -d= -f 1 | xargs -n1 pip install -U"
 alias trash-view="trash-list | sort -r | fzf"
 alias umountnas="fusermount -u ~/NAS"
-alias code="snap run code"
 alias cls="clear"
 alias f="y"
