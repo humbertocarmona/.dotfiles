@@ -1,7 +1,91 @@
 {
-	"Add Cell":{
-		"prefix": "cell",
-		"body": "# %% --------------------------------------------------------------------------------",
-		"description": "Add cell delimiter"
-	}
+    "Add cell": {
+        "prefix": "cell",
+        "body": [
+            "# %%  --------------------------------------------------------------------------"
+        ],
+        "description": "add cell"
+    },
+    "Add one cell": {
+        "prefix": "cellone",
+        "body": [
+            "# %% --------------------------------------------------------------------------",
+            "$1",
+            "",
+            "# %% --------------------------------------------------------------------------"
+        ],
+        "description": "add one cell"
+    },
+    "Makie lines": {
+        "prefix": "lin",
+        "body": [
+            "fig = Figure()",
+            "ax = Axis(fig[1,1])",
+            "lines!(ax, $1)",
+            "display(fig)",
+            "$0"
+        ],
+        "description": "add Makie lines"
+    },
+    "Makie scatter": {
+        "prefix": "scat",
+        "body": [
+            "fig = Figure()",
+            "ax = Axis(fig[1,1])",
+            "scatter!(ax, $1)",
+            "display(fig)",
+            "$0"
+        ],
+        "description": "add Makie scatter"
+    },
+    "Makie bar": {
+        "prefix": "bar",
+        "body": [
+            "fig = Figure()",
+            "ax = Axis(fig[1,1])",
+            "barplot!(ax, $1)",
+            "display(fig)",
+            "$0"
+        ],
+        "description": "add Makie bar"
+    },
+    "Makie figure": {
+        "prefix": "mfig",
+        "body": [
+            "f = Figure()",
+            "ax = Axis(f[1,1])",
+            "$1(ax, $2, label=\"$3\")",
+            "axislegend()",
+            "display(f)"
+        ],
+        "description": "add makie figure"
+    },
+    "Quit Makie": {
+        "prefix": "mquit",
+        "body": [
+            "using GLMakie.GLFW",
+            "using GLMakie: to_native",
+            "$1",
+            "glfw_window = to_native(display(f))",
+            "on(events(ax.scene).keyboardbutton) do _",
+            "   if ispressed(ax.scene, Keyboard.q)",
+            "   GLFW.SetWindowShouldClose(glfw_window, true)",
+            "   end",
+            "end"
+        ],
+        "description": "header to quit GLMakie window with q)"
+    },
+    "Compute histogram":{
+        "prefix":"hist",
+        "body":[
+            "nbins = $1",
+            "edges = LinRange($2,$3,nbins+1)",
+            "centers = 0.5*(edges[1:end-1] .+ edges[2:end])",
+            "$4 = fit(Histogram, $5, edges)",
+            "$4=normalize($4,mode=:pdf)",
+            "$4=$4.weights",
+            "$0"
+        ],
+        "description": "histogram requires StatsBase LinearAlgebra"
+    }
 }

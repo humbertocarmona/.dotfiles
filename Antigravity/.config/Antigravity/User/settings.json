@@ -1,12 +1,12 @@
 {
   "workbench.colorCustomizations": {
-    "[Kanagawa Dragon]": {
+    "[Kanagawa]": {
       "tab.border": "#928962",
       "panel.border": "#928962",
       "terminal.border": "#928962",
       "editorGroup.border": "#928962",
       "editorInfo.border": "#928962",
-      "sideBar.border": "#928962",
+      "sideBar.border": "#928962"
     },
     "[Tokyo Night]": {
       "tab.border": "#627792",
@@ -15,16 +15,8 @@
       "editorGroup.border": "#627792",
       "editorInfo.border": "#627792",
       "sideBar.border": "#627792",
-      "list.hoverBackground": "#313c4eff",
-    },
-    "[Winter is Coming (Dark Blue)]": {
-      "editor.background": "#011627",
-      "list.hoverBackground": "#313c4eff",
-      "tab.border": "#627792",
-      "panel.border": "#627792",
-      "terminal.border": "#627792",
-      "editorGroup.border": "#627792",
-      "editorInfo.border": "#627792",
+      "editor.selectionBackground": "#313c4eff",
+      "list.hoverBackground": "#313c4eff"
     }
   },
   "editor.tokenColorCustomizations": {
@@ -32,11 +24,9 @@
       "comments": "#627792"
     }
   },
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Quiet Light",
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
-  "editor.folding": true,
-  "editor.foldingStrategy": "indentation",
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "terminal.integrated.commandsToSkipShell": [
@@ -50,7 +40,7 @@
     "files.autoSaveDelay": 500,
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "black-formatter.args": [
     "--line-length",
@@ -70,14 +60,13 @@
     "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.defaultFormatter": "julialang.language-julia"
+    "editor.defaultFormatter": "julialang.language-julia",
+    "editor.unicodeHighlight.ambiguousCharacters": false
   },
   "[latex]": {
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "recentlyUsedByPrefix",
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "files.autoSave": "onFocusChange"
+    "editor.unicodeHighlight.ambiguousCharacters": false
   },
   "julia.symbolCacheDownload": true,
   "julia.cellDelimiters": [
@@ -158,12 +147,6 @@
   },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "explorer.confirmDelete": false,
-  "python.analysis.aiCodeActions": {
-    "generateDocstring": true,
-    "implementAbstractClasses": true,
-    "generateSymbol": true,
-    "convertFormatString": true
-  },
   "jupyter.interactiveWindow.creationMode": "perFile",
   "latex-workshop.latex.recipes": [
     {
@@ -227,18 +210,13 @@
       ]
     }
   ],
-  "editor.wrapOnEscapedLineFeeds": true,
-  "geminicodeassist.project": "maximal-coral-0hv63",
-  "latex-workshop.view.pdf.external.viewer.command": "/usr/bin/zathura",
-  "latex-workshop.view.pdf.external.viewer.args": [
-    "--synctex-editor-command",
-    "code -r -g \"%{input}:%{line}\"",
-    "%PDF%"
+  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.view.pdf.external.viewer.command": "",
+  "latex-workshop.view.pdf.external.synctex.args": [
+    "--synctex-forward",
+    "%l:1:%f",
+    "%p"
   ],
-  "latex-workshop.formatting.latex": "latexindent",
-  "julia.persistentSession.alwaysCopy": true,
-  "julia.usePlotPane": false,
-  "editor.unicodeHighlight.allowedCharacters": {
-    "–": true
-  },
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "editor.wrapOnEscapedLineFeeds": true,
 }

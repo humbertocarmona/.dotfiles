@@ -1,8 +1,3 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-// Check the wiki for a full description of the configuration:
-// https://yalter.github.io/niri/Configuration:-Introduction
-
 // Input device configuration.
 input {
     keyboard {
@@ -10,9 +5,10 @@ input {
         repeat-delay 200
         
         xkb {
-            layout "us,br"
-            variant ",abnt2"
-            options "caps:ctrl_modifier,grp:win_space_toggle"
+            layout "us,us,br"
+            variant ",intl,abnt2"
+            options "ctrl:nocaps,grp:win_space_toggle,ctrl:swap_rwin_rctl"
+            // options "caps:ctrl_modifier,grp:win_space_toggle"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -63,14 +59,8 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
-    // off
+    //off
     mode "3840x2400@60.30"
     scale 3
     transform "normal"
@@ -96,26 +86,27 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "on-overflow"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.5
         proportion 0.7
         proportion 0.5
-
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
     }
 
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
+    // preset-window-heights { 
+    //     proportion 0.5
+    //     proportion 0.99
+    // }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.7; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -136,7 +127,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -144,7 +135,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#7fc8ffAA"
 
         // Color of the ring on inactive monitors.
         //
@@ -159,7 +150,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
+        //active-gradient from="#80c8ff" to="#c7ff7f" angle=90
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -174,7 +165,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 2
+        width 1
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -247,11 +238,11 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
 spawn-at-startup "dunst"
 spawn-at-startup "udiskie"
-spawn-at-startup "qs" "-c" "noctalia-shell"
-// spawn-sh-at-startup "/home/humberto/.config/hypr/scripts/tools/expand /home/humberto/.config/hypr/scripts/wall.sh"
+// spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-sh-at-startup "/home/humberto/.config/niri/scripts/expand.sh wall"
+spawn-sh-at-startup "waybar -c /home/humberto/.config/waybar/config_niri.jsonc"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -305,6 +296,14 @@ window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#".*krusader$"#
+    open-floating true
+}
+
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
     match title=r#"^flying_kitty$"#
     open-floating true
 }
@@ -315,10 +314,19 @@ window-rule {
 }
 
 window-rule {
-    match title=r#"^Meet.*"#
+    match title=r#"^swayimg.*"#
     open-floating true
 }
 
+window-rule {
+    match title=r#"Makie"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^Meet.*"#
+    open-floating true
+}
 
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -369,18 +377,20 @@ binds {
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    //Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+O { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open alacritty" { spawn "alacritty"; }
+    Mod+T hotkey-overlay-title="Open wezterm" { spawn "wezterm"; }
     Mod+Return hotkey-overlay-title="Open kitty" { spawn "kitty"; }
     Mod+Shift+Return hotkey-overlay-title="open Flying kitty" { spawn-sh "kitty --title flying_kitty"; }
-    Mod+B hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
-    Mod+Shift+B hotkey-overlay-title="Open Chrome" { spawn "chrome"; }
+    Mod+Shift+B hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
+    Mod+B hotkey-overlay-title="Open Chrome" { spawn "chromium"; }
     Mod+D hotkey-overlay-title="Open Dolphin" { spawn "dolphin"; }
 
     Mod+P hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
-    Mod+Shift+C hotkey-overlay-title="Niri config" {spawn-sh "neovide --wayland_app_id fly_neo ~/.config/niri/config.kdl";}
+    Mod+Shift+C hotkey-overlay-title="Niri config" {spawn-sh "kitty --session ~/.config/kitty/sessions/niri.kitty-session";}
+    // Mod+Shift+C hotkey-overlay-title="Niri config" {spawn-sh "neovide --wayland_app_id fly_neo ~/.config/niri/config.kdl";}
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -413,18 +423,18 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    //Mod+O repeat=false { toggle-overview; }
+    Mod+Slash repeat=false { toggle-overview; }
 
-    Mod+W repeat=false { close-window; }
+    // Mod+W repeat=false { close-window; }
+    Mod+Backspace repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
-    // Mod+J     { focus-window-down; }
-    // Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
@@ -437,10 +447,10 @@ binds {
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
-    Mod+J     { focus-window-or-workspace-down; }
-    Mod+K     { focus-window-or-workspace-up; }
-    Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    Mod+Down     { focus-window-or-workspace-down; }
+    Mod+Up     { focus-window-or-workspace-up; }
+    // Mod+Ctrl+Down     { move-window-down-or-to-workspace-down; }
+    // Mod+Ctrl+Up     { move-window-up-or-to-workspace-up; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -456,14 +466,14 @@ binds {
     Mod+Shift+K     { focus-monitor-up; }
     Mod+Shift+L     { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    Mod+Shift+Alt+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Alt+Down  { move-column-to-monitor-down; }
+    Mod+Shift+Alt+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Alt+Right { move-column-to-monitor-right; }
+    Mod+Shift+Alt+H     { move-column-to-monitor-left; }
+    Mod+Shift+Alt+J     { move-column-to-monitor-down; }
+    Mod+Shift+Alt+K     { move-column-to-monitor-up; }
+    Mod+Shift+Alt+L     { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
@@ -572,8 +582,8 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+V { maximize-column; }
+    Mod+Shift+V { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -600,8 +610,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+F       { toggle-window-floating; }
+    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -633,9 +643,9 @@ binds {
     // The quit action will show a confirmation dialog to avoid accidental exits.
     // Mod+Shift+E { quit; }
     Mod+M { quit; }
-    Ctrl+Alt+Delete { quit; }
-
+    Mod+Alt+Delete { spawn "systemctl poweroff"; }
+    
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    Mod+Shift+P hotkey-overlay-title="power off monitors" { power-off-monitors; }
 }

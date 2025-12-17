@@ -1,0 +1,5 @@
+# Set the layout for the current tab
+layout tall
+cd ~/.config/niri
+launch --title flying_kitty /usr/bin/nvim config.kdl
+

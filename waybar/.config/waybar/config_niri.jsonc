@@ -7,10 +7,10 @@
     "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "niri/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        "niri/workspaces"
     ],
     "modules-right": [
         "tray",
@@ -118,7 +118,7 @@
     "custom/cycle_wall": {
         "format": " 󱨑 ",
         "interval": 1,
-        "on-click": "~/.config/hypr/scripts/tools/expand cycle"
+        "on-click": "~/.config/niri/scripts/expand.sh cycle"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

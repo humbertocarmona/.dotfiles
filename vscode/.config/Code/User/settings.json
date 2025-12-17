@@ -1,13 +1,12 @@
 {
-  "settingsSync.keybindingsPerPlatform": true,
   "workbench.colorCustomizations": {
-    "[Kanagawa]": {
+    "[Kanagawa Dragon]": {
       "tab.border": "#928962",
       "panel.border": "#928962",
       "terminal.border": "#928962",
       "editorGroup.border": "#928962",
       "editorInfo.border": "#928962",
-      "sideBar.border": "#928962"
+      "sideBar.border": "#928962",
     },
     "[Tokyo Night]": {
       "tab.border": "#627792",
@@ -16,9 +15,7 @@
       "editorGroup.border": "#627792",
       "editorInfo.border": "#627792",
       "sideBar.border": "#627792",
-      "editor.selectionBackground": "#313c4eff",
       "list.hoverBackground": "#313c4eff",
-      "editor.background": "#011627"
     },
     "[Winter is Coming (Dark Blue)]": {
       "editor.background": "#011627",
@@ -35,7 +32,7 @@
       "comments": "#627792"
     }
   },
-  "workbench.colorTheme": "Winter is Coming (Dark Blue)",
+  "workbench.colorTheme": "Tokyo Night",
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "files.autoSave": "afterDelay",
@@ -71,14 +68,14 @@
     "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
-    "editor.defaultFormatter": "0h7z.vscode-julia-format",
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.defaultFormatter": "julialang.language-julia"
   },
   "[latex]": {
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "files.autoSave": "off",
+    "files.autoSave": "onFocusChange"
   },
   "julia.symbolCacheDownload": true,
   "julia.cellDelimiters": [
@@ -105,7 +102,7 @@
   "explorer.confirmDragAndDrop": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.matchBrackets": "always",
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -229,9 +226,12 @@
     }
   ],
   "editor.wrapOnEscapedLineFeeds": true,
-  "latex-workshop.view.pdf.external.viewer.command": "zathura",
-  "latex-workshop.view.pdf.external.viewer.args":[
+  "geminicodeassist.project": "maximal-coral-0hv63",
+  "latex-workshop.view.pdf.external.viewer.command": "/usr/bin/zathura",
+  "latex-workshop.view.pdf.external.viewer.args": [
+    "--synctex-editor-command",
+    "code -r -g \"%{input}:%{line}\"",
     "%PDF%"
-  ]
-
+  ],
+  "latex-workshop.formatting.latex": "latexindent"
 }
