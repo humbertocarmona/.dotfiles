@@ -24,7 +24,6 @@ function git-check -d "check all git projects under pwd"
     argparse $options -- $argv
     or return
 
-
     if set -q _flag_h
         echo "check all git projects under pwd"
         return
@@ -55,7 +54,7 @@ function git-check -d "check all git projects under pwd"
                 end
                 return 0
             case '' N n
-                return 1
+                return 0
         end
     end
 end

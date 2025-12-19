@@ -319,6 +319,11 @@ window-rule {
 }
 
 window-rule {
+    match title=r#"^feh"#
+    open-floating true
+}
+
+window-rule {
     match title=r#"Makie"#
     open-floating true
 }

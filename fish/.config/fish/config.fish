@@ -7,6 +7,7 @@ set -xU JULIA_NUM_THREADS 8
 set -xU JULIA_PROJECT "./"
 set -U fish_user_paths $HOME/.config/bin $fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 set -U fish_user_paths $HOME/go/bin $fish_user_paths
 set -U fish_user_paths $HOME/.juliaup/bin $fish_user_paths
 #fish_add_path $HOME/.pyenv/bin

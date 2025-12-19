@@ -3,9 +3,9 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
-ratio = [3, 3, 4]
-sort_by = "alphabetical"
-sort_sensitive = false
+ratio = [2, 4, 4]
+sort_by = "natural"
+sort_sensitive = true
 sort_reverse = false
 sort_dir_first = true
 sort_translit = false
@@ -56,8 +56,7 @@ play = [
     { run = 'mpv --force-window %*', orphan = true, for = "windows" },
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
-# Opener that uses feh for images
-
+# added by me
 feh = [
     { run = 'feh -. "$@" &', desc = "Open with feh", orphan = true, for = "unix" },
 ]
@@ -189,7 +188,6 @@ previewers = [
     # Fallback
     { name = "*", run = "file" },
 ]
-
 [input]
 cursor_blink = false
 
