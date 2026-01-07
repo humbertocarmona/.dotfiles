@@ -109,7 +109,7 @@
         "show-passive-items": false
     },
     "custom/language": {
-        "exec": "~/.config/waybar/scripts/get_keymap_hypr.sh",
+        "exec": "~/.config/waybar/scripts/get_keymap_niri.sh",
         "interval": 1,
         // "format": "  {}",
         "format": "{} ",
