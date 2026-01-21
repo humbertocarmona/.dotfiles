@@ -1,5 +1,5 @@
-abbr c 'code .; exit'
-abbr cc 'code .'
+abbr a 'antigravity .  > /dev/null &'
+abbr c 'code .'
 abbr cat bat
 abbr cl clear
 abbr df 'df -hT' # human-readable sizes and type
