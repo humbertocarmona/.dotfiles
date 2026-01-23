@@ -1,4 +1,4 @@
-abbr a 'antigravity .  > /dev/null &'
+abbr a 'antigravity . &> /dev/null &; disown (pgrep -f "electron --app=/usr/lib/antigravity")'
 abbr c 'code .'
 abbr cat bat
 abbr cl clear

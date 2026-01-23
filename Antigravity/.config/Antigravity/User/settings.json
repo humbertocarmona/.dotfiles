@@ -6,7 +6,17 @@
       "terminal.border": "#928962",
       "editorGroup.border": "#928962",
       "editorInfo.border": "#928962",
-      "sideBar.border": "#928962"
+      "sideBar.border": "#928962",
+      "editor.selectionBackground": "#62779255"
+    },
+    "[Kanagawa Wave]": {
+      "tab.border": "#928962",
+      "panel.border": "#928962",
+      "terminal.border": "#928962",
+      "editorGroup.border": "#928962",
+      "editorInfo.border": "#928962",
+      "sideBar.border": "#928962",
+      "editor.selectionBackground": "#62779255"
     },
     "[Tokyo Night]": {
       "tab.border": "#627792",
@@ -24,8 +34,8 @@
       "comments": "#627792"
     }
   },
-  "workbench.colorTheme": "Quiet Light",
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "workbench.colorTheme": "Winter is Coming (Light)",
+  "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
@@ -93,7 +103,6 @@
   "explorer.confirmDragAndDrop": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.matchBrackets": "always",
-  "editor.fontSize": 16,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -219,4 +228,6 @@
   ],
   "latex-workshop.synctex.afterBuild.enabled": true,
   "editor.wrapOnEscapedLineFeeds": true,
+  "terminal.integrated.fontSize": 12,
+  "workbench.iconTheme": "vscode-icons",
 }
