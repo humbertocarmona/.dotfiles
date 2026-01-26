@@ -1,2 +1,10 @@
+cmap
 coef
+Colorbar
+colormap
+colorrange
 FUNCAP
+highclip
+nrow
+rsubset
+strokewidth

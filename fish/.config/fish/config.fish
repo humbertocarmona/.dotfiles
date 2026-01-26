@@ -26,10 +26,8 @@ fish_vi_cursor
 source $HOME/.config/fish/fish_aliases
 zoxide init fish | source
 # set -x XDG_CONFIG_HOME $HOME/.config
-# direnv hook fish | source
-#
-#
-# pyenv hook
+
+#pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 
