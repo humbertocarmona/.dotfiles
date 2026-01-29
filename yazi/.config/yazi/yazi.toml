@@ -62,7 +62,14 @@ feh = [
     { run = 'feh -. "$@" &', desc = "Open with feh", orphan = true, for = "unix" },
 ]
 okular = [
-    { run = 'okular "$@" &', desc = "Open with Okular", orphan = true, for = "unix" },
+    { run = 'okular "$@" &', desc = "Open with feh", orphan = true, for = "unix" },
+]
+zathura = [
+    { run = 'zathura "$@" &', desc = "Open with zathura", orphan = true, for = "unix" },
+]
+
+evince = [
+    { run = 'evince "$@" &', desc = "Open with evince", orphan = true, for = "unix" },
 ]
 
 [open]
@@ -118,7 +125,7 @@ prepend_rules = [
     { url = "*.jpeg", use = "feh" },
     { url = "*.png", use = "feh" },
     { url = "*.gif", use = "feh" },
-    { url = "*.pdf", use = "okular" },
+    { url = "*.pdf", use = "zathura" },
 ]
 
 [tasks]
