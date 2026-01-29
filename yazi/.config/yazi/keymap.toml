@@ -265,7 +265,6 @@ keymap = [
     { on = "<F1>", run = "help", desc = "Open help" },
 
 ]
-# Drag and drop files from and to Yazi
 append_keymap = [
     { on = "<A-d>", run = '''shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all "$@" | while read filepath; do cp -nR "$filepath" .; done ''', desc = "Drag-n-drop files from and to Yazi" },
     { on = "<A-D>", run = '''shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all "$@" | while read filepath; do cp -fR "$filepath" .; done ''', desc = "Drag-n-drop files to and from Yazi" },
@@ -274,7 +273,8 @@ append_keymap = [
         "g",
         "y",
     ], run = "cd ~/.config/yazi", desc = "Go ~/.config/yazi" },
-]
+    { on = "<C-k>", run = 'open --opener=okular', desc = "Open with okular" },
+] # Drag and drop files from and to Yazi
 [tasks]
 
 keymap = [
@@ -416,8 +416,8 @@ keymap = [
     { on = "<C-d>", run = "backspace --under", desc = "Delete the character under the cursor" },
 
     # Kill
-    { on = "<C-u>", run = "kill bol", desc = "Kill backwards to the BOL" },
-    { on = "<C-k>", run = "kill eol", desc = "Kill forwards to the EOL" },
+    # { on = "<C-u>", run = "kill bol", desc = "Kill backwards to the BOL" },
+    # { on = "<C-k>", run = "kill eol", desc = "Kill forwards to the EOL" },
     { on = "<C-w>", run = "kill backward", desc = "Kill backwards to the start of the current word" },
     { on = "<A-r>", run = "kill forward", desc = "Kill forwards to the end of the current word" },
 

@@ -61,6 +61,9 @@ play = [
 feh = [
     { run = 'feh -. "$@" &', desc = "Open with feh", orphan = true, for = "unix" },
 ]
+okular = [
+    { run = 'okular "$@" &', desc = "Open with Okular", orphan = true, for = "unix" },
+]
 
 [open]
 rules = [
@@ -115,6 +118,7 @@ prepend_rules = [
     { url = "*.jpeg", use = "feh" },
     { url = "*.png", use = "feh" },
     { url = "*.gif", use = "feh" },
+    { url = "*.pdf", use = "okular" },
 ]
 
 [tasks]
