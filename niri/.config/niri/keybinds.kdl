@@ -13,8 +13,8 @@ binds {
     Mod+Shift+Return hotkey-overlay-title="open Flying kitty" { spawn-sh "kitty --title flying_kitty"; }
     Mod+Shift+B hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
     // Mod+B hotkey-overlay-title="Open Chrome" { spawn "chromium"; }
-    // Mod+B hotkey-overlay-title="Open Brave" { spawn "brave"; }
-    Mod+B hotkey-overlay-title="Open Brave" { spawn-sh "flatpak run com.brave.Browser";}
+    Mod+B hotkey-overlay-title="Open Brave" { spawn "brave"; }
+    //Mod+B hotkey-overlay-title="Open Brave" { spawn-sh "flatpak run com.brave.Browser";}
     Mod+D hotkey-overlay-title="Open Dolphin" { spawn "dolphin"; }
 
     Mod+P hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
