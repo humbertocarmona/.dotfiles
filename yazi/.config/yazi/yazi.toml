@@ -67,9 +67,11 @@ okular = [
 zathura = [
     { run = 'zathura "$@" &', desc = "Open with zathura", orphan = true, for = "unix" },
 ]
-
 evince = [
     { run = 'evince "$@" &', desc = "Open with evince", orphan = true, for = "unix" },
+]
+code = [
+    { run = 'code "$@" &', desc = "Open with code", orphan = true, for = "unix" },
 ]
 
 [open]
@@ -125,7 +127,7 @@ prepend_rules = [
     { url = "*.jpeg", use = "feh" },
     { url = "*.png", use = "feh" },
     { url = "*.gif", use = "feh" },
-    { url = "*.pdf", use = "zathura" },
+    { url = "*.pdf", use = "evince" },
 ]
 
 [tasks]

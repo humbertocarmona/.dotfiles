@@ -285,6 +285,10 @@ append_keymap = [
         "o",
         "e",
     ], run = '''shell -- evince "$@"''', desc = "Open with evince" },
+    { on = [
+        "o",
+        "c",
+    ], run = '''shell -- code "$@"''', desc = "Code here" },
 ]
 
 [tasks]
