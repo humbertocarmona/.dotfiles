@@ -32,7 +32,7 @@
       "comments": "#627792"
     }
   },
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "GitHub Dark Default",
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.folding": true,
@@ -239,6 +239,5 @@
   "editor.unicodeHighlight.allowedCharacters": {
     "–": true
   },
-  "editor.fontSize": 12,
-  "terminal.integrated.fontSize": 12,
+  "editor.fontSize": 16,
 }
