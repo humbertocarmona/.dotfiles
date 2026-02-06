@@ -280,7 +280,7 @@ append_keymap = [
     { on = [
         "o",
         "o",
-    ], run = '''shell -- okular "$@"''', desc = "Open with zathura" },
+    ], run = '''shell -- okular "$@"''', desc = "Open with okular" },
     { on = [
         "o",
         "e",

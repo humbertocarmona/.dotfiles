@@ -1,7 +1,7 @@
 spawn-at-startup "/usr/bin/lxqt-policykit-agent"
 spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
 spawn-at-startup "/usr/lib/xdg-desktop-portal-gtk"
-spawn-at-startup "kwalletd5"
+// spawn-at-startup "kwalletd5"
 
 spawn-at-startup "dunst"
 spawn-at-startup "udiskie"
@@ -194,7 +194,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 window-rule {
     match app-id=r#".*krusader$"#
     match title=r#"^flying_kitty$"#
-    match title=r#"^Bitwarden$"#
+    match title=r#"Bitwarden"#
     match title=r#"^swayimg.*"#
     match title=r#"Makie"#
     match title=r#"^Meet.*"#
