@@ -1,7 +1,7 @@
-spawn-at-startup "/usr/bin/lxqt-policykit-agent"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gtk"
+// spawn-at-startup "/usr/bin/lxqt-policykit-agent"
+// spawn-at-startup "/usr/lib/xdg-desktop-portal-wlr"
 // spawn-at-startup "kwalletd5"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_SESSION_TYPE" "XDG_CURRENT_DESKTOP"
 
 spawn-at-startup "dunst"
 spawn-at-startup "udiskie"
@@ -62,7 +62,7 @@ input {
         // accel-speed 0.2
         accel-profile "flat"
         scroll-method "two-finger"
-// disabled-on-external-mouse
+disabled-on-external-mouse
     }
 
     mouse {
@@ -202,11 +202,13 @@ window-rule {
     match app-id=r#"fly_neo$"# 
     match app-id=r#"GLMakie$"#
     match app-id=r#"^Brave.*Default$"#
+    match app-id=r#"^chrome.*Default$"#
+    match app-id=r#"org.pulseaudio.pavucontrol"#
     open-floating true
 }
 
 window-rule {
-    match app-id=r#"chromium$"#
+    // match app-id=r#"chromium$"#
     match app-id=r#"mpv$"#
     opacity 1.0
 }

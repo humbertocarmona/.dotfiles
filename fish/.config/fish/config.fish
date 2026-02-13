@@ -26,14 +26,12 @@ fish_add_path $PYENV_ROOT/bin
 status --is-interactive; and pyenv init --path | source
 status --is-interactive; and pyenv init - | source
 
-#tmux
-# Auto-start tmux on interactive shells
-if status is-interactive
-    # Don't start tmux inside tmux
-    if not set -q TMUX
-        # Optional: only on local terminals
-        if test -z "$SSH_CONNECTION"
-            tmux attach-session -t default || tmux new-session -s default
-        end
-    end
-end
+set -gx XDG_CURRENT_DESKTOP sway
+set -gx XDG_SESSION_TYPE wayland
+
+# Import into systemd user environment
+# Import into DBus activation environment
+dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY
+
+systemctl --user import-environment XDG_CURRENT_DESKTOP WAYLAND_DISPLAY XDG_SESSION_TYPE
+systemctl --user restart xdg-desktop-portal

@@ -7,7 +7,7 @@
       "editorGroup.border": "#928962",
       "editorInfo.border": "#928962",
       "sideBar.border": "#928962",
-      "editor.selectionBackground": "#62779255"
+      "editor.selectionBackground": "#62779255",
     },
     "[Kanagawa Wave]": {
       "tab.border": "#928962",
@@ -16,7 +16,7 @@
       "editorGroup.border": "#928962",
       "editorInfo.border": "#928962",
       "sideBar.border": "#928962",
-      "editor.selectionBackground": "#62779255"
+      "editor.selectionBackground": "#62779255",
     },
     "[Tokyo Night]": {
       "tab.border": "#627792",
@@ -26,22 +26,20 @@
       "editorInfo.border": "#627792",
       "sideBar.border": "#627792",
       "editor.selectionBackground": "#313c4eff",
-      "list.hoverBackground": "#313c4eff"
-    }
+      "list.hoverBackground": "#313c4eff",
+    },
   },
   "editor.tokenColorCustomizations": {
     "[Tokyo Night]": {
-      "comments": "#627792"
-    }
+      "comments": "#627792",
+    },
   },
-  "workbench.colorTheme": "Winter is Coming (Light)",
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "workbench.colorTheme": "Tokyo Night",
+  "editor.fontFamily": "JetBrains Mono SemiBold",
   "editor.fontLigatures": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "terminal.integrated.commandsToSkipShell": [
-    "language-julia.interrupt"
-  ],
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.defaultColorDecorators": "never",
@@ -50,33 +48,27 @@
     "files.autoSaveDelay": 500,
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
-  "black-formatter.args": [
-    "--line-length",
-    "90"
-  ],
-  "flake8.args": [
-    "--max-line-length=90",
-    "--ignore=F841"
-  ],
+  "black-formatter.args": ["--line-length", "90"],
+  "flake8.args": ["--max-line-length=90", "--ignore=F841"],
   "[julia]": {
     "editor.defaultColorDecorators": "never",
     "editor.quickSuggestions": {
       "other": "on",
       "comments": "off",
-      "strings": "off"
+      "strings": "off",
     },
     "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
     "editor.defaultFormatter": "julialang.language-julia",
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
   },
   "[latex]": {
     "editor.formatOnPaste": false,
     "editor.suggestSelection": "recentlyUsedByPrefix",
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
   },
   "julia.symbolCacheDownload": true,
   "julia.cellDelimiters": [
@@ -84,13 +76,13 @@
     "^##(?!#)",
     "^#(\\s?)%%",
     "^#-",
-    "^# %%"
+    "^# %%",
   ],
   "julia.lint.constif": false,
   "julia.enableCrashReporter": true,
   "julia.enableTelemetry": true,
   "julia.execution.codeInREPL": true,
-  "julia-format.flag": "style=DefaultStyle(), indent=4, margin=120, always_for_in=true, for_in_replacement=\"∈\", whitespace_typedefs=true, import_to_using=true, whitespace_in_kwargs=true, align_struct_field=true, align_assignment=true, align_conditional=true, align_pair_arrow=true, normalize_line_endings=\"unix\", align_matrix=true, join_lines_based_on_source=true, indent_submodule=true, surround_whereop_typeparameters=false, yas_style_nesting=true",
+  "julia.lint.call":false,
   "editor.lineHeight": 1.7,
   "color-highlight.markerType": "dot-before",
   "editor.minimap.enabled": false,
@@ -104,7 +96,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.matchBrackets": "always",
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "git.openRepositoryInParentFolders": "always",
   "workbench.startupEditor": "none",
@@ -116,7 +108,7 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": true
+      "italic": true,
     },
     {
       "tag": "?",
@@ -125,7 +117,7 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
+      "italic": false,
     },
     {
       "tag": "todo",
@@ -134,7 +126,7 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": true
+      "italic": true,
     },
     {
       "tag": "*",
@@ -143,91 +135,67 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
-    }
+      "italic": false,
+    },
   ],
   "cSpell.customDictionaries": {
     "custom-dictionary-user": {
       "name": "custom-dictionary-user",
       "path": "~/.cspell/custom-dictionary-user.txt",
       "addWords": true,
-      "scope": "user"
-    }
+      "scope": "user",
+    },
   },
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "explorer.confirmDelete": false,
   "jupyter.interactiveWindow.creationMode": "perFile",
   "latex-workshop.latex.recipes": [
     {
       "name": "latexmk",
-      "tools": [
-        "latexmk"
-      ]
+      "tools": ["latexmk"],
     },
     {
       "name": "latexmk (latexmkrc)",
-      "tools": [
-        "latexmk_rconly"
-      ]
+      "tools": ["latexmk_rconly"],
     },
     {
       "name": "latexmk (lualatex)",
-      "tools": [
-        "lualatexmk"
-      ]
+      "tools": ["lualatexmk"],
     },
     {
       "name": "latexmk (xelatex)",
-      "tools": [
-        "xelatexmk"
-      ]
+      "tools": ["xelatexmk"],
     },
     {
       "name": "pdflatex -> bibtex -> pdflatex * 2",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"],
     },
     {
       "name": "Compile Rnw files",
-      "tools": [
-        "rnw2tex",
-        "latexmk"
-      ]
+      "tools": ["rnw2tex", "latexmk"],
     },
     {
       "name": "Compile Jnw files",
-      "tools": [
-        "jnw2tex",
-        "latexmk"
-      ]
+      "tools": ["jnw2tex", "latexmk"],
     },
     {
       "name": "Compile Pnw files",
-      "tools": [
-        "pnw2tex",
-        "latexmk"
-      ]
+      "tools": ["pnw2tex", "latexmk"],
     },
     {
       "name": "tectonic",
-      "tools": [
-        "tectonic"
-      ]
-    }
+      "tools": ["tectonic"],
+    },
   ],
   "latex-workshop.view.pdf.viewer": "external",
   "latex-workshop.view.pdf.external.viewer.command": "",
   "latex-workshop.view.pdf.external.synctex.args": [
     "--synctex-forward",
     "%l:1:%f",
-    "%p"
+    "%p",
   ],
   "latex-workshop.synctex.afterBuild.enabled": true,
   "editor.wrapOnEscapedLineFeeds": true,
-  "terminal.integrated.fontSize": 12,
   "workbench.iconTheme": "vscode-icons",
+  "editor.fontSize": 16,
 }

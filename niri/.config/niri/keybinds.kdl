@@ -10,10 +10,11 @@ binds {
     
 
     Mod+Return hotkey-overlay-title="Open kitty" { spawn "kitty"; }
-    Mod+Shift+Return hotkey-overlay-title="open Flying kitty" { spawn-sh "kitty --title flying_kitty"; }
+    Mod+Shift+Return hotkey-overlay-title="open kitty with tmux " { spawn-sh "kitty ~/.config/niri/scripts/start_tmux.sh"; }
+    //Mod+Shift+Return hotkey-overlay-title="open Flying kitty" { spawn-sh "kitty --title flying_kitty"; }
+    Mod+B hotkey-overlay-title="Open Chrome" { spawn "chromium"; }
     Mod+Shift+B hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
-    // Mod+B hotkey-overlay-title="Open Chrome" { spawn "chromium"; }
-    Mod+B hotkey-overlay-title="Open Brave" { spawn "brave"; }
+    Mod+Ctrl+B hotkey-overlay-title="Open Brave" { spawn "brave"; }
     //Mod+B hotkey-overlay-title="Open Brave" { spawn-sh "flatpak run com.brave.Browser";}
     Mod+D hotkey-overlay-title="Open Dolphin" { spawn "dolphin"; }
 
@@ -47,8 +48,8 @@ binds {
     Mod+K     { focus-window-up; }
 
     Mod+Ctrl+Left  { move-column-left; }
-    Mod+Ctrl+Down  { move-window-down; }
-    Mod+Ctrl+Up    { move-window-up; }
+    // Mod+Ctrl+Down  { move-window-down; }
+    // Mod+Ctrl+Up    { move-window-up; }
     Mod+Ctrl+Right { move-column-right; }
     Mod+Ctrl+H     { move-column-left; }
     Mod+Ctrl+L     { move-column-right; }
@@ -61,29 +62,31 @@ binds {
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
 
-    Mod+Shift+Left  { focus-monitor-left; }
-    Mod+Shift+Down  { focus-monitor-down; }
-    Mod+Shift+Up    { focus-monitor-up; }
-    Mod+Shift+Right { focus-monitor-right; }
-    Mod+Shift+H     { focus-monitor-left; }
-    Mod+Shift+J     { focus-monitor-down; }
-    Mod+Shift+K     { focus-monitor-up; }
-    Mod+Shift+L     { focus-monitor-right; }
+    Mod+Shift+Alt+Left  { focus-monitor-left; }
+    Mod+Shift+Alt+Down  { focus-monitor-down; }
+    Mod+Shift+Alt+Up    { focus-monitor-up; }
+    Mod+Shift+Alt+Right { focus-monitor-right; }
+    Mod+Shift+Alt+H     { focus-monitor-left; }
+    Mod+Shift+Alt+J     { focus-monitor-down; }
+    Mod+Shift+Alt+K     { focus-monitor-up; }
+    Mod+Shift+Alt+L     { focus-monitor-right; }
 
-    Mod+Shift+Alt+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Alt+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Alt+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Alt+Right { move-column-to-monitor-right; }
-    Mod+Shift+Alt+H     { move-column-to-monitor-left; }
-    Mod+Shift+Alt+J     { move-column-to-monitor-down; }
-    Mod+Shift+Alt+K     { move-column-to-monitor-up; }
-    Mod+Shift+Alt+L     { move-column-to-monitor-right; }
+    Mod+Shift+Left  { move-column-to-monitor-left; }
+    // Mod+Shift+Down  { move-column-to-monitor-down; }
+    // Mod+Shift+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Right { move-column-to-monitor-right; }
+    Mod+Shift+H     { move-column-to-monitor-left; }
+    Mod+Shift+J     { move-column-to-monitor-down; }
+    Mod+Shift+K     { move-column-to-monitor-up; }
+    Mod+Shift+L     { move-column-to-monitor-right; }
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
+    Mod+Ctrl+Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Up   { move-column-to-workspace-up; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }

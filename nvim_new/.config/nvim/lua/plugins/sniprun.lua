@@ -1,7 +1,7 @@
 return {
   "michaelb/sniprun",
   lazy = true,
-  ft = { "python", "julia" },
+  ft = { "python", "julia", "tex", "latex" },
   branch = "master",
 
   build = "sh install.sh",

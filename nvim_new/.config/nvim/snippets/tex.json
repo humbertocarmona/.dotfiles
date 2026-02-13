@@ -1,0 +1,18 @@
+{
+    "Inline math": {
+        "prefix": "mm",
+        "body": [
+            "\\(${1:math}$\\)"
+        ],
+        "description": "Inline math: $...$"
+    },
+    "Display math": {
+        "prefix": "dm",
+        "body": [
+            "\\[",
+            "  ${1:math}",
+            "\\]"
+        ],
+        "description": "Display math: \\[ ... \\]"
+    }
+}
