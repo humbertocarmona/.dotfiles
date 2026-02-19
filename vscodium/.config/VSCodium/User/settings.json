@@ -32,7 +32,7 @@
       "comments": "#627792"
     }
   },
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "Tokyo Night",
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.folding": true,
@@ -79,6 +79,7 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "files.autoSave": "onFocusChange"
   },
+  "julia.lint.call": false,
   "julia.symbolCacheDownload": true,
   "julia.cellDelimiters": [
     "^\\s?#\\s#+",
