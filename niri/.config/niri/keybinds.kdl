@@ -12,10 +12,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open kitty" { spawn "kitty"; }
     Mod+Shift+Return hotkey-overlay-title="open kitty with tmux " { spawn-sh "kitty ~/.config/niri/scripts/start_tmux.sh"; }
     //Mod+Shift+Return hotkey-overlay-title="open Flying kitty" { spawn-sh "kitty --title flying_kitty"; }
-    Mod+B hotkey-overlay-title="Open Chrome" { spawn "chromium"; }
-    Mod+Shift+B hotkey-overlay-title="Open Firefox" { spawn "firefox"; }
-    Mod+Ctrl+B hotkey-overlay-title="Open Brave" { spawn "brave"; }
-    //Mod+B hotkey-overlay-title="Open Brave" { spawn-sh "flatpak run com.brave.Browser";}
+    Mod+B hotkey-overlay-title="Open Chrome" { spawn "chrome"; }
     Mod+D hotkey-overlay-title="Open Dolphin" { spawn "dolphin"; }
 
     Mod+P hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }

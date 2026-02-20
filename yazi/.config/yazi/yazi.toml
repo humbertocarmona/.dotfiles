@@ -127,7 +127,7 @@ prepend_rules = [
     { url = "*.jpeg", use = "feh" },
     { url = "*.png", use = "feh" },
     { url = "*.gif", use = "feh" },
-    { url = "*.pdf", use = "evince" },
+    { url = "*.pdf", use = "zathura" },
 ]
 
 [tasks]

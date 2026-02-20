@@ -204,6 +204,8 @@ window-rule {
     match app-id=r#"^Brave.*Default$"#
     match app-id=r#"^chrome.*Default$"#
     match app-id=r#"org.pulseaudio.pavucontrol"#
+    match app-id=r#"hyprland.*"#
+    match app-id=r#"org.inkscape.Inkscape"#
     open-floating true
 }
 

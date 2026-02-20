@@ -1,13 +1,13 @@
 {
     "Inline math": {
-        "prefix": "mm",
+        "prefix": "ieq",
         "body": [
             "\\(${1:math}$\\)"
         ],
         "description": "Inline math: $...$"
     },
     "Display math": {
-        "prefix": "dm",
+        "prefix": "deq",
         "body": [
             "\\[",
             "  ${1:math}",

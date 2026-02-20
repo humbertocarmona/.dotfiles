@@ -241,4 +241,6 @@
     "–": true
   },
   "editor.fontSize": 16,
+  "rewrap.autoWrap.enabled": true,
+  "diffEditor.codeLens": true,
 }

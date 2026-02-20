@@ -26,7 +26,7 @@ fish_add_path $PYENV_ROOT/bin
 status --is-interactive; and pyenv init --path | source
 status --is-interactive; and pyenv init - | source
 
-set -gx XDG_CURRENT_DESKTOP sway
+# set -gx XDG_CURRENT_DESKTOP sway
 set -gx XDG_SESSION_TYPE wayland
 
 # Import into systemd user environment

@@ -279,7 +279,7 @@ append_keymap = [
     ], run = '''shell -- zathura "$@"''', desc = "Open with zathura" },
     { on = [
         "o",
-        "o",
+        "k",
     ], run = '''shell -- okular "$@"''', desc = "Open with okular" },
     { on = [
         "o",
@@ -289,6 +289,11 @@ append_keymap = [
         "o",
         "c",
     ], run = '''shell -- code "$@"''', desc = "Code here" },
+    { on = [
+        "o",
+        "a",
+    ], run = '''shell -- antigravity "$@"''', desc = "antigravity here" },
+
 ]
 
 [tasks]
