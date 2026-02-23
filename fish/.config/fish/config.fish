@@ -44,12 +44,10 @@ if status is-interactive
         if set -q WAYLAND_DISPLAY; or set -q DISPLAY
             # Import into DBus + systemd user environment
             dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY DISPLAY 2>/dev/null
-
             systemctl --user import-environment XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY DISPLAY 2>/dev/null
-
             # Restarting the portal on every shell is usually overkill; consider removing this.
             # If you keep it, at least silence errors:
-            systemctl --user restart xdg-desktop-portal 2>/dev/null
+            # systemctl --user restart xdg-desktop-portal 2>/dev/null
         end
     end
 end
