@@ -37,8 +37,7 @@
   "workbench.colorTheme": "GitHub Light",
   "editor.fontFamily": "JetBrains Mono SemiBold",
   "editor.fontLigatures": true,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
+  "files.autoSave":"off",
   "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,

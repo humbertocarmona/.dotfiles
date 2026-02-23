@@ -31,7 +31,25 @@ set -gx XDG_SESSION_TYPE wayland
 
 # Import into systemd user environment
 # Import into DBus activation environment
-dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY
+# dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY
+#
+# systemctl --user import-environment XDG_CURRENT_DESKTOP WAYLAND_DISPLAY XDG_SESSION_TYPE
+# systemctl --user restart xdg-desktop-portal
 
-systemctl --user import-environment XDG_CURRENT_DESKTOP WAYLAND_DISPLAY XDG_SESSION_TYPE
-systemctl --user restart xdg-desktop-portal
+# Only do desktop-portal / dbus env stuff in an interactive *local graphical* session
+if status is-interactive
+    # Don’t run in SSH sessions
+    if not set -q SSH_CONNECTION
+        # Only run when a graphical session exists
+        if set -q WAYLAND_DISPLAY; or set -q DISPLAY
+            # Import into DBus + systemd user environment
+            dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY DISPLAY 2>/dev/null
+
+            systemctl --user import-environment XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY DISPLAY 2>/dev/null
+
+            # Restarting the portal on every shell is usually overkill; consider removing this.
+            # If you keep it, at least silence errors:
+            systemctl --user restart xdg-desktop-portal 2>/dev/null
+        end
+    end
+end

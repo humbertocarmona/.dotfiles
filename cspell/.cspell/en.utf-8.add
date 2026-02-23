@@ -1,5 +1,6 @@
 backgroundcolor
 Bialek
+binarization
 binarized
 coef
 Colorbar
@@ -12,6 +13,8 @@ FUNCAP
 halign
 highclip
 Ising
+Kolmogorov
+magnetizations
 MaxEnt
 MLspike
 multielectrode
@@ -19,8 +22,11 @@ neuropil
 nrow
 organotypic
 prefrontal
+prelasing
 rsubset
+Smirnov
 strokewidth
+supremum
 tellheight
 tellwidth
 texfont
