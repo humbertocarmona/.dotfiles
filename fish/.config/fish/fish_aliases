@@ -1,5 +1,6 @@
 abbr a 'antigravity . &> /dev/null &; disown (pgrep -f "electron --app=/usr/lib/antigravity")'
 abbr c 'code .'
+abbr cf 'flatpak run com.visualstudio.code .'
 abbr cat bat
 abbr cl clear
 abbr df 'df -hT' # human-readable sizes and type
@@ -35,7 +36,7 @@ abbr zv 'z ~/.config/nvim'
 abbr zw 'z ~/Workspace'
 abbr zy zypper
 abbr sy 'sudo zypper'
-
+abbr st start_tmux
 alias icat='kitty +kitten icat --transfer-mode file'
 alias kb='rg "^bind.+SUPER" ~/.config/hypr/keybinds.conf | sed 's/SUPER/mod4+/''
 alias mountnas="sshfs carmona@200.17.35.5:/share/CACHEDEV1_DATA/ownlet/lbs ~/lbs/"

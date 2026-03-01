@@ -29,7 +29,7 @@
       "list.hoverBackground": "#313c4eff",
     },
   },
-  "editor.tokenColorCustomizations": {
+   "editor.tokenColorCustomizations": {
     "[Tokyo Night]": {
       "comments": "#627792",
     },
@@ -187,15 +187,13 @@
       "tools": ["tectonic"],
     },
   ],
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.view.pdf.external.synctex.args": [
-    "--synctex-forward",
-    "%l:1:%f",
-    "%p",
-  ],
+  "latex-workshop.view.pdf.viewer":"singleton",
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.formatting.latex": "tex-fmt",
   "editor.wrapOnEscapedLineFeeds": true,
   "workbench.iconTheme": "vscode-icons",
   "editor.fontSize": 16,
+  "vim.disableExtension": true,
+  "latex-workshop.view.autoFocus.enabled": true,
+  "latex-workshop.view.outline.sync.viewer": true,
 }

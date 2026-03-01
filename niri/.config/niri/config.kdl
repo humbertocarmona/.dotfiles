@@ -206,6 +206,7 @@ window-rule {
     match app-id=r#"org.pulseaudio.pavucontrol"#
     match app-id=r#"hyprland.*"#
     match app-id=r#"org.inkscape.Inkscape"#
+    match app-id=r#"org.klatexformula.klatexformula"#
     open-floating true
 }
 

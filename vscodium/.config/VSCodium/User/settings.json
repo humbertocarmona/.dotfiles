@@ -235,7 +235,7 @@
     "code -r -g \"%{input}:%{line}\"",
     "%PDF%"
   ],
-  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latex": "tex-fmt",
   "julia.persistentSession.alwaysCopy": true,
   "editor.unicodeHighlight.allowedCharacters": {
     "–": true
