@@ -39,9 +39,12 @@ set -gx XDG_SESSION_TYPE wayland
 # Only do desktop-portal / dbus env stuff in an interactive *local graphical* session
 if status is-interactive
     # Don’t run in SSH sessions
+    # echo "is interactive"
     if not set -q SSH_CONNECTION
+        # echo "not ssh connection"
         # Only run when a graphical session exists
         if set -q WAYLAND_DISPLAY; or set -q DISPLAY
+            # echo "display is set"
             # Import into DBus + systemd user environment
             dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY DISPLAY 2>/dev/null
             systemctl --user import-environment XDG_CURRENT_DESKTOP XDG_SESSION_TYPE WAYLAND_DISPLAY DISPLAY 2>/dev/null
